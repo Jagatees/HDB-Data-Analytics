@@ -1,7 +1,16 @@
-- deep crawling
-- multi threading 
-- django ui
-- machine learning
+- flask UI
+
+Task
+- web crawling
+- proxy ip
+- deep crawling 
+- multithread the web crawling 
+- data anyltice
+- matplotlib
+- json 
+- read and write json
+- data comparision 
+- data cleaning 
 
 Possible Tasks:
 Data Reading - From XML / HTML (IDK)
