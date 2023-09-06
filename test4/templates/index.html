@@ -1,0 +1,38 @@
+<h1>Welcome to Capital Analysis</h1>
+<p>Scrapping Page</p>
+
+<form id="myForm" action="/get_scrap" method="POST">
+
+    <!-- DropDown Return Website to Scrap -->
+    <label for="my_dropdown">Chose Website:</label>
+    <select name="my_dropdown" id="my_dropdown">
+        <option value="1">https://www.w3schools.com/html/default.asp</option>
+        <option value="2">https://www.youtube.com/</option>
+    </select>
+    <br><br>
+    <label for="my_page">Pages (between 1 and 100):</label>
+    <input id="my_page" name="my_page" type="number" min="1" max="100">
+    <br><br>    
+    <input type="submit" value=OK />
+</form>
+
+<button id="runScriptButton">Run Script</button>
+<div id="resultContainer"></div>
+
+<script>
+    document.getElementById('runScriptButton').addEventListener('click', function() {
+        // Send an AJAX request to the server to run the script
+        fetch('/run_script', {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server
+            document.getElementById('resultContainer').textContent = data.result;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+
+
+
