@@ -1,7 +1,9 @@
 import tkinter as tk
+from tkinter import ttk
+from tkinter import filedialog
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
-
+import pandas as pd
 
 from data import sales_data, inventory_data, product_data, sales_year_data, inventory_month_data
 
@@ -9,13 +11,32 @@ root = tk.Tk()
 root.geometry('1000x600')
 root.title('Test Side Nav')
 
+
 #Function to show home page
 def Home_Page():
     Home_frame = tk.Frame(main_frame)
-
     #Code here for Home page
-    lb = tk.Label(Home_frame, text='Home \npage', font=('Bold', 30))
+    rowcount  = 0
+    for row in open("ProjTest\Excel Data\Test Data.csv"):
+        rowcount = rowcount + 1
+
+    lb = tk.Label(Home_frame, text='Home \npage\n There are ' + str(rowcount) + " row in the csv file", font=('Bold', 30))
     lb.pack()
+
+    df = pd.read_csv('ProjTest\Excel Data\Test Data.csv', header=None)
+    df.head()
+    Xaxis = df[0]
+    Yaxis = df[1]
+
+    fig, ax = plt.subplots(figsize=(10,7))
+    ax.bar(Xaxis,Yaxis)
+    ax.set_xlabel('Name',fontsize=14)
+    ax.set_ylabel('Salary',fontsize=14)
+    ax.set_title('Test Graph from CSV',fontsize=14)
+
+    canvas = FigureCanvasTkAgg(fig, Home_frame)
+    canvas.draw()
+    canvas.get_tk_widget().pack(side="left", expand=False)
 
     Home_frame.pack(pady=20)
 
@@ -27,7 +48,30 @@ def Upload_Page():
     lb = tk.Label(Upload_frame, text='Upload \npage', font=('Bold', 30))
     lb.pack()
 
+    label3_text = tk.StringVar()
+    label3_text.set("PENDING LOCATION")
+
+    def getfiledirectory():
+        filenames = filedialog.askopenfilenames()
+        if filenames:
+            print("Selected files:")
+            for filename in filenames:
+                print(filename)
+                label3_text.set(filenames[0])
+        else:
+            label3_text.set('No File got')
+
+    button = tk.Button(Upload_frame, text="Browse", command=getfiledirectory)
+    label2 = tk.Label(Upload_frame, text="Save File Location :")
+    label3 = tk.Label(Upload_frame, textvariable=label3_text)  
+    label3_text.set("") 
+    button.pack(expand=True, fill='both', pady=20)
+    label2.pack()
+    label3.pack()    
+
     Upload_frame.pack(pady=20)
+
+
 
 #Function to show Analytics page
 def Analytics_Page():
