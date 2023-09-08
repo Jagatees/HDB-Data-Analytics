@@ -5,8 +5,10 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as py
+import json
 
 from data import sales_data, inventory_data, product_data, sales_year_data, inventory_month_data
+
 
 root = tk.Tk()
 root.geometry('1000x600')
@@ -18,11 +20,7 @@ def Home_Page():
     Home_frame = tk.Frame(main_frame)
     #Code here for Home page
     rowcount  = 0
-    #TestCol=""
-    df = pd.read_csv("ProjTest\Excel Data\Test Data.csv", header=None)
-    for row in df:
-        rowcount = rowcount + 1
-
+    rowcount = TestDataCSV.shape[0] - 1
     Xaxis = TestDataCSV[0]
     Yaxis = TestDataCSV[1]
 
@@ -79,13 +77,23 @@ def Upload_Page():
 #Function to show Analytics page
 def Analytics_Page():
     Analytics_frame = tk.Frame(main_frame)
-
-    #SexCount = TestDataCSV.groupby("Gender").count()
-    #grouped_data = len(TestDataCSV[(TestDataCSV['Gender']=='Male')])
     #Code here for Analytics page
+
+    Scamdata = pd.read_json('ProjTest\ScamData.json')
+    Years = [i["Types of scam"] for i in Scamdata["TelegramScamDataTable"]]
+    TypesofScams = [i["Times it happen"] for i in Scamdata["TelegramScamDataTable"]]
+
+    plt.plot(Years, TypesofScams)
+    canvas1 = FigureCanvasTkAgg(plt, Analytics_frame)
+    canvas1.draw()
+    canvas1.get_tk_widget().pack(side="left", expand=False)
+    #plt.show()
+    
+
     lb = tk.Label(Analytics_frame, text='Analytics \npage', font=('Bold', 30))
     lb.pack()
 
+ 
 
 
     Analytics_frame.pack(pady=20)
