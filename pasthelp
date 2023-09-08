@@ -1,0 +1,6 @@
+To-do-List
+- web scrapping
+ - use selium to interract and use beautiful soup to return the html 
+ - multi treading (for pages)
+ - proxy server
+ - clean data into json 

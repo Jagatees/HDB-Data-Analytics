@@ -1,30 +1,49 @@
 from bs4 import BeautifulSoup
-import requests
-import re
 
-# web scrapping
 def displayText():
-    # url = "https://www.newegg.com/global/sg-en/msi-geforce-rtx-3060-rtx-3060-ventus-3x-12g-oc/p/N82E16814137631"
-    # result = requests.get(url)
-    # doc = BeautifulSoup(result.text, "html.parser")
-    # # print(doc.prettify)
+    with open("web_site_test.html", "r") as f:
+        soup = BeautifulSoup(f, "html.parser")
+        room_wide_listing_container = soup.find_all('div', class_='room__wide listing-container')
+        room_sub_location = soup.find_all('h3', class_='room-sublocation mobile-room-sublocation')
+        room_description = soup.find_all('p', class_='room-description')
+        price = soup.find_all('div', class_='pull-right')
 
-    # prices = doc.find_all(text="$")
-    # parent = prices[0].parent
-    # strong = parent.find("strong")
-    # print(strong.text)
 
-    # with open("./scripts/index.html", "r") as f:
-    #     doc = BeautifulSoup(f, "html.parser")
+        # Title 
+        print('Title')
+        for div in room_sub_location:
+            print(div.get_text())
 
-    #     tag = doc.find_all(text=re.compile("\$.*"), limit=1)
-    #     for x in tag:
-    #         print(x.strip())
+        print('Links')
+        # Links (Mising Append + to add to make full link)
+        for div in room_wide_listing_container:
+            a_tags_link = div.find_all('a')
+            
+            for a_tag in a_tags_link:
+                link = a_tag['href']
+                print(link)
 
-    url = "https://coninmarketcap.com"
-    result = requests.get(url).text
-    doc = BeautifulSoup(result, "html.parser")
+        print('Sub Heading')
+        # Sub Heading
+        for div in room_wide_listing_container:
+            a_tags_link = div.find_all('a')
 
-      
+            for a_tag in a_tags_link:
+                a_tags_title = a_tag['title']
+                print(a_tags_title)
+
+        print('Description')
+        # Sub Heading
+        for div in room_description:
+            print(div.get_text())
+            print('\n')
+
+        # Price (remove free to contact from the data)
+        print('Price')
+        for div in price:
+            print(div.get_text())
+
+       
+            
 
 displayText()

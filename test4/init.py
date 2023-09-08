@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 from flask import Flask, render_template,jsonify
 from flask import request
 
-
-
 app = Flask(__name__)
 
 @app.route('/run_script', methods=['POST'])
@@ -15,13 +13,11 @@ def run_script():
     scripts.your_script.displayText()
     return render_template('index.html')
    
-
-
 @app.route('/')
 def hello():
     return render_template('index.html')
 
-@app.route('/get_scrap', methods=['GET', 'POST'])
+@app.route('/get_scrap', methods=['POST'])
 def get_scrap():
 	if request.method == 'POST':
 		# this return the index of the array 
@@ -36,8 +32,6 @@ def get_scrap():
 		return render_template('index.html')
 	else:
 		return render_template('index.html')
-	
-
 	
 app.secret_key = 'some key that you will never guess'
 
