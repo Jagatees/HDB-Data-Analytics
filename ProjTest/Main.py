@@ -4,35 +4,38 @@ from tkinter import filedialog
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as py
 
 from data import sales_data, inventory_data, product_data, sales_year_data, inventory_month_data
 
 root = tk.Tk()
 root.geometry('1000x600')
 root.title('Test Side Nav')
-
+TestDataCSV = pd.read_csv("ProjTest\Excel Data\Test Data.csv", header=None)
 
 #Function to show home page
 def Home_Page():
     Home_frame = tk.Frame(main_frame)
     #Code here for Home page
     rowcount  = 0
-    for row in open("ProjTest\Excel Data\Test Data.csv"):
+    #TestCol=""
+    df = pd.read_csv("ProjTest\Excel Data\Test Data.csv", header=None)
+    for row in df:
         rowcount = rowcount + 1
 
-    lb = tk.Label(Home_frame, text='Home \npage\n There are ' + str(rowcount) + " row in the csv file", font=('Bold', 30))
-    lb.pack()
+    Xaxis = TestDataCSV[0]
+    Yaxis = TestDataCSV[1]
 
-    df = pd.read_csv('ProjTest\Excel Data\Test Data.csv', header=None)
-    df.head()
-    Xaxis = df[0]
-    Yaxis = df[1]
+    lb = tk.Label(Home_frame, text='Home \npage\n There are ' + str(rowcount) + " column in the csv file ", font=('Bold', 30))
+    lb.pack()
 
     fig, ax = plt.subplots(figsize=(10,7))
     ax.bar(Xaxis,Yaxis)
+    ax.set_xlim(xmin=0.0)
     ax.set_xlabel('Name',fontsize=14)
-    ax.set_ylabel('Salary',fontsize=14)
+    ax.set_ylabel('Age',fontsize=14)
     ax.set_title('Test Graph from CSV',fontsize=14)
+
 
     canvas = FigureCanvasTkAgg(fig, Home_frame)
     canvas.draw()
@@ -77,9 +80,13 @@ def Upload_Page():
 def Analytics_Page():
     Analytics_frame = tk.Frame(main_frame)
 
+    #SexCount = TestDataCSV.groupby("Gender").count()
+    #grouped_data = len(TestDataCSV[(TestDataCSV['Gender']=='Male')])
     #Code here for Analytics page
     lb = tk.Label(Analytics_frame, text='Analytics \npage', font=('Bold', 30))
     lb.pack()
+
+
 
     Analytics_frame.pack(pady=20)
 
