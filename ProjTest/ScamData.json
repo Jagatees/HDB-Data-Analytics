@@ -1,23 +1,63 @@
-{"TelegramScamDataTable":[
+{"Scam":[
     {
-        "Year": "2018",
-        "Times it happen": "200"
+        "Year": "0",
+        "Amt Fallen": "0"
     },
     {
-        "Year": "2019",
-        "Times it happen": "300"
+        "Year": "2020 Q1",
+        "Amt Fallen": "7M"
     },
     {
-        "Year": "2020",
-        "Times it happen": "350"
+        "Year": "2020 Q2",
+        "Amt Fallen": "8M"
     },
     {
-        "Year": "2021",
-        "Times it happen": "25"
+        "Year": "2020 Q3",
+        "Amt Fallen": "9M"
     },
     {
-        "Year": "2022",
-        "Times it happen": "10"
+        "Year": "2020 Q4",
+        "Amt Fallen": "10M"
+    },
+    {
+        "Year": "2021 Q1",
+        "Amt Fallen": "12M"
+    },
+    {
+        "Year": "2021 Q2",
+        "Amt Fallen": "22M"
+    },
+    {
+        "Year": "2021 Q3",
+        "Amt Fallen": "14M"
+    },
+    {
+        "Year": "2021 Q4",
+        "Amt Fallen": "23M"
+    },
+    {
+        "Year": "2022 Q1",
+        "Amt Fallen": "28M"
+    },
+    {
+        "Year": "2022 Q2",
+        "Amt Fallen": "23M"
+    },
+    {
+        "Year": "2022 Q3",
+        "Amt Fallen": "22M"
+    },
+    {
+        "Year": "2022 Q4",
+        "Amt Fallen": "26M"
+    },
+    {
+        "Year": "2023 Q1",
+        "Amt Fallen": "42M"
+    },
+    {
+        "Year": "2023 Q2",
+        "Amt Fallen": "44M"
     }
-    ]
+]
 }

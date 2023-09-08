@@ -46,6 +46,7 @@ def Upload_Page():
     Upload_frame = tk.Frame(main_frame)
 
     #Code here for Upload page
+    FilePath = ""
     lb = tk.Label(Upload_frame, text='Upload \npage', font=('Bold', 30))
     lb.pack()
 
@@ -59,16 +60,62 @@ def Upload_Page():
             for filename in filenames:
                 print(filename)
                 label3_text.set(filenames[0])
+                FilePath = filenames[0]
         else:
             label3_text.set('No File got')
 
+    def ShowGraph():
+        #Read JSON File
+        #Scamdata = pd.read_json(FilePath)
+        #Years = [i["Year"] for i in Scamdata["Scam"]]
+        #Amt = [i["Amt Fallen"] for i in Scamdata["Scam"]]
+
+        #Read CSV File
+        ReadCSV = pd.read_csv(label3.cget("text"), header=None)
+        Years = ReadCSV[0]
+        Amt = ReadCSV[1]
+
+        fig, ax = plt.subplots(figsize=(10,7))
+        ax.bar(Years,Amt, color='maroon')
+        ax.set_xlim(xmin=0.0)
+        ax.set_xlabel('Years',fontsize=14)
+        ax.set_ylabel('Amt Fallen to Scam',fontsize=14)
+        ax.set_title('Test Graph from JSON',fontsize=14)
+
+        canvas1 = FigureCanvasTkAgg(fig, Upload_frame)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side="left", expand=False)
+
     button = tk.Button(Upload_frame, text="Browse", command=getfiledirectory)
-    label2 = tk.Label(Upload_frame, text="Save File Location :")
+    label2 = tk.Label(Upload_frame, text="File Location :")
     label3 = tk.Label(Upload_frame, textvariable=label3_text)  
+ 
+
+    label4 = tk.Label(Upload_frame, text="X axis: ")
+    Xparameter_choices = ["Website 1", "Website 2", "Website 3"]  
+    selected_parameters = tk.StringVar()
+    Xparameters_combobox = ttk.Combobox(Upload_frame, textvariable=selected_parameters, values=Xparameter_choices)
+    selected_parameters.set(Xparameter_choices[0])  # Set the default selection
+
+    label5 = tk.Label(Upload_frame, text="Y axis: ")
+    Yparameter_choices = ["Website 1", "Website 2", "Website 3"] 
+    selected_parameters = tk.StringVar()
+    Yparameters_combobox = ttk.Combobox(Upload_frame, textvariable=selected_parameters, values=Yparameter_choices)
+    selected_parameters.set(Yparameter_choices[0])  # Set the default selection
+
+    ShowGraphBtn = tk.Button(Upload_frame, text="Show Graph", command=ShowGraph)
+
     label3_text.set("") 
+
     button.pack(expand=True, fill='both', pady=20)
     label2.pack()
-    label3.pack()    
+    label3.pack()
+    label4.pack(side='left') 
+    Xparameters_combobox.pack(side='left', padx=5) 
+    label5.pack(side='left') 
+    Yparameters_combobox.pack(side='left', padx=5)
+    ShowGraphBtn.pack()
+
 
     Upload_frame.pack(pady=20)
 
@@ -80,21 +127,22 @@ def Analytics_Page():
     #Code here for Analytics page
 
     Scamdata = pd.read_json('ProjTest\ScamData.json')
-    Years = [i["Types of scam"] for i in Scamdata["TelegramScamDataTable"]]
-    TypesofScams = [i["Times it happen"] for i in Scamdata["TelegramScamDataTable"]]
+    Years = [i["Year"] for i in Scamdata["Scam"]]
+    Amt = [i["Amt Fallen"] for i in Scamdata["Scam"]]
 
-    plt.plot(Years, TypesofScams)
-    canvas1 = FigureCanvasTkAgg(plt, Analytics_frame)
+    fig, ax = plt.subplots(figsize=(10,7))
+    ax.bar(Years,Amt, color='maroon')
+    ax.set_xlim(xmin=0.0)
+    ax.set_xlabel('Years',fontsize=14)
+    ax.set_ylabel('Amt Fallen to Scam',fontsize=14)
+    ax.set_title('Test Graph from JSON',fontsize=14)
+
+    canvas1 = FigureCanvasTkAgg(fig, Analytics_frame)
     canvas1.draw()
     canvas1.get_tk_widget().pack(side="left", expand=False)
-    #plt.show()
-    
 
     lb = tk.Label(Analytics_frame, text='Analytics \npage', font=('Bold', 30))
     lb.pack()
-
- 
-
 
     Analytics_frame.pack(pady=20)
 
