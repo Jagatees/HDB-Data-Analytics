@@ -3,7 +3,7 @@ To-do List
     - main page (Done) 
     - Send to Json File (Done)
     - Scrap Mutiple Page (Done)
-    - Full page 
+    - Full page
     - Proxy Server
     - Multithreading (Data async?)
     - let user chose
@@ -17,7 +17,58 @@ To-do List
 
 
 - website data set is from current to 2020
+Idea 
+- scrap image also ?
 
 
+
+# https://rentinsingapore.com.sg/rooms-for-rent
+# https://rentinsingapore.com.sg/rooms-for-rent/page-1
+# https://rentinsingapore.com.sg/ID679822
+
+"""
+
+{
+
+    https://rentinsingapore.com.sg/rooms-for-rent
+
+    ID : []
+    {
+        Tyle : Whole Unit / Room / Tenants
+        Title : Lorem ipsum
+        Price : $X,XXX
+        Link : 
+        Sub-Heading : Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        Tags : 
+        {
+            {
+             Tags 
+            }
+        }
+    }
+
+    https://rentinsingapore.com.sg/rooms-for-rent/page-1
+
+    ID : []
+    {
+        Title : Lorem ipsum
+        Sub Heading : Lorem ipsum
+        Description : Lorem ipsum
+        Prce : $XXXX
+        Property {
+            - Lorem ipsum
+            - Lorem ipsum
+            - Lorem ipsum
+        }
+        Location : Lorem ipsum
+    }
+
+    
+
+
+}
+
+"""""""""
 
 
