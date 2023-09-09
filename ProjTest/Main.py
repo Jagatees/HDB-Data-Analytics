@@ -47,6 +47,8 @@ def Upload_Page():
 
     #Code here for Upload page
     FilePath = ""
+    ColList = ""
+    
     lb = tk.Label(Upload_frame, text='Upload \npage', font=('Bold', 30))
     lb.pack()
 
@@ -66,14 +68,16 @@ def Upload_Page():
 
     def ShowGraph():
         #Read JSON File
-        #Scamdata = pd.read_json(FilePath)
-        #Years = [i["Year"] for i in Scamdata["Scam"]]
-        #Amt = [i["Amt Fallen"] for i in Scamdata["Scam"]]
+        Scamdata = pd.read_json(label3.cget("text"))
+        Years = [i["Year"] for i in Scamdata["Scam"]]
+        Amt = [i["Amt Fallen"] for i in Scamdata["Scam"]]
+        #ColList = Scamdata.columns.values.tolist()
+        #print (ColList)
 
         #Read CSV File
-        ReadCSV = pd.read_csv(label3.cget("text"), header=None)
-        Years = ReadCSV[0]
-        Amt = ReadCSV[1]
+        #ReadCSV = pd.read_csv(label3.cget("text"), header=None)
+        #Years = ReadCSV[0]
+        #Amt = ReadCSV[1]
 
         fig, ax = plt.subplots(figsize=(10,7))
         ax.bar(Years,Amt, color='maroon')
@@ -92,7 +96,7 @@ def Upload_Page():
  
 
     label4 = tk.Label(Upload_frame, text="X axis: ")
-    Xparameter_choices = ["Website 1", "Website 2", "Website 3"]  
+    Xparameter_choices = ["Website 1", "Website 2", "Website 3"]
     selected_parameters = tk.StringVar()
     Xparameters_combobox = ttk.Combobox(Upload_frame, textvariable=selected_parameters, values=Xparameter_choices)
     selected_parameters.set(Xparameter_choices[0])  # Set the default selection
