@@ -1,25 +1,23 @@
-- flask UI
+To-do List
+- Web Scrapping (https://rentinsingapore.com.sg/rooms-for-rent) && (https://www.propertyguru.com.sg/property-for-rent)
+    - main page (Done) 
+    - Send to Json File (Done)
+    - Scrap Mutiple Page (Done)
+    - Full page 
+    - Proxy Server
+    - Multithreading (Data async?)
+    - let user chose
+    - maybe selanium
+- Flask UI
+- Marchine Learning 
+- Read and Write JSON
+- Data Cleaning 
+- Deep Crawling 
+- Data Comparison
 
-Task
-- web crawling
-- proxy ip
-- deep crawling 
-- multithread the web crawling 
-- data anyltice
-- matplotlib
-- json 
-- read and write json
-- data comparision 
-- data cleaning 
 
-Possible Tasks:
-Data Reading - From XML / HTML (IDK)
- a. Air Flight
- b. Covid19 Cases
-Data Comparison
-Data UI <— After Reading & Comparison
+- website data set is from current to 2020
 
-Things to consider: 
-Multi Thread - Read both of the Data async?
 
-update github repo with protection
+
+

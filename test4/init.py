@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/run_script', methods=['POST'])
 def run_script():
-    scripts.your_script.displayText()
+    scripts.your_script.displayJson()
     return render_template('index.html')
    
 @app.route('/')
