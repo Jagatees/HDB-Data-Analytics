@@ -23,7 +23,7 @@ def scrapping():
     max_number_page = math.ceil(int(total_count.get_text()) / 10)
     print(max_number_page)
 
-    for page in range(1):
+    for page in range(100):
         url = f'https://rentinsingapore.com.sg/rooms-for-rent/page-{page}'
         print('at page ' + str(page))
         page = requests.get(url).text
@@ -32,7 +32,8 @@ def scrapping():
         # Convert to Function and return the list args (str, str)
         room_wide_listing_container = soup.find_all('div', class_='room__wide listing-container')
         room_sub_location = soup.find_all('h3', class_='room-sublocation mobile-room-sublocation')
-        price = soup.find_all('div', class_='room-price')  
+        price = soup.find_all('div', class_='room-price')       
+
 
         for div in room_sub_location:
             remove_text = div.get_text()
@@ -63,8 +64,6 @@ def scrapping():
         'Title': title_room[i],
         'Links': links_room[i],
         'Sub Heading': sub_heading_room[i],
-        'Description': 'DID NOT GET IT',
-        'Tags': ['tags' , 'tags' , 'tags', 'tags']
         
     }
     for i in range(len(title_room))
@@ -91,7 +90,9 @@ def deepCrawling():
         # Load the JSON data into a Python data structure
         file_data = json.load(json_file)
 
-        for i in range(5):
+     
+        for i in range(len(file_data)):
+            print(i)
             url = file_data[i]['Links']
             page = requests.get(url).text
             links_testing.append(str(url))
@@ -141,5 +142,5 @@ def deepCrawling():
             
 
     
-scrapping()      
-# deepCrawling()
+# scrapping()      
+deepCrawling()

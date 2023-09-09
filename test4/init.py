@@ -1,6 +1,6 @@
 import matplotlib
 
-import scripts.your_script 
+import scripts.scraper 
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 from flask import Flask, render_template,jsonify
