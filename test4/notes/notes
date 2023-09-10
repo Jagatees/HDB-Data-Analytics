@@ -5,21 +5,32 @@ To-do List
     - Scrap Mutiple Page (Done)
     - Full page
     - Proxy Server
-    - Multithreading (Data async?)
+    - Multithreading 
     - let user chose
     - maybe selanium
 - Flask UI
 - Marchine Learning 
-- Read and Write JSON
-- Data Cleaning 
-- Deep Crawling 
-- Data Comparison
+- Read and Write JSON (Done)
+- Data Cleaning (PENDING)
+- Deep Crawling (Done)
+- Data Comparison (PENDING)
 
 
 - website data set is from current to 2020
 Idea 
 - scrap image also ?
 
+# No-Async
+# Scrapping :  139 seconds
+# Deep Crawling : 1242 seconds
+
+# Async 
+# Scrapping : 14 seconds
+# Deep Crawling : 711 seconds 
+
+# Multi-threading
+# Scrapping :
+# Deep Crawling : 
 
 
 # https://rentinsingapore.com.sg/rooms-for-rent

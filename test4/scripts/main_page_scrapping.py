@@ -82,7 +82,7 @@ async def element_scrapping(s, index):
     ]
 
     # Save the data as JSON
-    with open("scrap.json", "w") as json_file:
+    with open("main_page.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
 
@@ -102,101 +102,10 @@ async def main_scrapping():
     return await asyncio.gather(*tasks)
 
 
-# Deep Crawling
-dc_title = []
-dc_description = []
-dc_location = []
-dc_details = []
-links_testing = []
-day = []
-month = []
-year = []
-
-
-def store_url():
-    with open('scrap.json', 'r') as json_file:
-        file_data = json.load(json_file)
-
-        urls_y = []
-        for index in file_data:
-            urls_y.append(index['Links'])
-        # print(urls_y)
-        return urls_y
-
-async def content_html(s, url):
-    # url = file_data[i]['Links']
-    page = await s.get(url)
-    links_testing.append(str(url))
-    soup = BeautifulSoup(page.text, "html.parser")
-    response = requests.get(url)
-    # print('Index '+ str(i) + 'Scrapping @' + str(url))
-
-    if response.status_code == 200:
-        # Title
-        title_fp = soup.find('h1')
-        dc_title.append(title_fp.get_text() if title_fp else "")
-        # print(dc_title)
-
-        # Room Details 
-        room_details_div = soup.find('div', class_='room-details')
-        li_elements = room_details_div.find_all('li')
-        li_text_list = [li.get_text() for li in li_elements]
-        # print(li_text_list)
-        dc_details.append(li_text_list)
-        time = dc_details[0][0].split('on ', 1)[1].split('.')
-        day.append(time[0])
-        month.append(time[1])
-        year.append(time[2])
-        # print(dc_details)
-
-        # Location
-        location_fp = soup.find(class_='room-street')
-        dc_location.append(location_fp.get_text() if location_fp else "")
-        # print(dc_location)
-
-        # Description
-        description_elements = soup.find(class_='room-description')
-        description_text = description_elements.get('description-text')
-        dc_description.append(description_text)
-
-    deep_crawling_data = [
-        {
-            'UID' : str(i),
-            'Title': dc_title[i],
-            'Location': dc_location[i],
-            'Tags': dc_details[i],
-            'Links' : links_testing[i],
-            'Description': dc_description[i],
-            'Day' : day[i],
-            'Month' : month[i],
-            'Year' : year[i]
-
-        }
-        for i in range(len(dc_title))
-    ]
-
-    # Save the data as JSON
-    with open("deep_crawl.json", "w") as json_file:
-        json.dump(deep_crawling_data, json_file, indent=4)
-
-async def main_scrawling_hopeing():
-    urls = store_url()
-    s = AsyncHTMLSession()
-    tasks = (content_html(s,x) for x in urls)
-    return await asyncio.gather(*tasks)
-
 print('starting')
 start = time.perf_counter()
 asyncio.run(main_scrapping())
-# asyncio.run(main_scrawling_hopeing())
 fin = time.perf_counter() - start
 print('Time Taken : ' + str(fin))
 
 
-# No-Async
-# Scrapping :  seconds
-# Deep Crawling :  sec 
-
-# Async 
-# Scrapping : 14 seconds
-# Deep Crawling : 711 sec 
