@@ -32,9 +32,9 @@ def count_max_page(page_count):
 
 
 
-def get_request_page_range():
+def get_request_page_range(int):
     urls_x = []
-    for index in range(1, 30):
+    for index in range(1, int):
         urls_x.append(f'https://rentinsingapore.com.sg/rooms-for-rent/page-{index}')
     return urls_x
 
@@ -89,10 +89,7 @@ async def scrapping_part(info):
     return await asyncio.gather(*tasks)
 
 
-    #  for index in info:
-    #     scrapping_part_2(index)
-
-def scrapping():
+async def main_scrapping():
     # Get Total Page Number <-- Start
     request_web = get_request_home_page_website('https://rentinsingapore.com.sg/rooms-for-rent')
     soup = BeautifulSoup(request_web.text, "html.parser")
@@ -102,11 +99,12 @@ def scrapping():
     total_count = get_content_website(soup, 'span', 'total-count')
     max_number_page = count_max_page(total_count)
 
-    x = get_request_page_range()
-    asyncio.run(scrapping_part(x))
+    x = get_request_page_range(max_number_page)
+    s = AsyncHTMLSession()
+    tasks = (scrapping_part_2(s, url) for url in x) 
+    return await asyncio.gather(*tasks)
 
     
-
 
 def deepCrawling():
     dc_title = []
@@ -188,7 +186,7 @@ def deepCrawling():
 
 # deepCrawling()
 start = time.perf_counter()
-scrapping()
+asyncio.run(main_scrapping())
 fin = time.perf_counter() - start
 print(fin)
 # def main():
