@@ -5,7 +5,6 @@ import math
 import requests
 import asyncio
 from requests_html import AsyncHTMLSession
-from httpx import AsyncClient
 
 type_room = []
 title_room = []
@@ -124,12 +123,11 @@ def store_url():
         print(urls_y)
         return urls_y
 
-
-def content_html(url):
+async def content_html(s, url):
     # url = file_data[i]['Links']
-    page = requests.get(url).text
+    page = await s.get(url)
     links_testing.append(str(url))
-    soup = BeautifulSoup(page, "html.parser")
+    soup = BeautifulSoup(page.text, "html.parser")
     response = requests.get(url)
     # print('Index '+ str(i) + 'Scrapping @' + str(url))
 
@@ -181,16 +179,14 @@ def content_html(url):
     with open("deep_crawl.json", "w") as json_file:
         json.dump(deep_crawling_data, json_file, indent=4)
 
-def main_scrawling_hopeing():
-    x = store_url()
-
-    for index in x:
-        content_html(index)
-
-
+async def main_scrawling_hopeing():
+    urls = store_url()
+    s = AsyncHTMLSession()
+    tasks = (content_html(s,x) for x in urls)
+    return await asyncio.gather(*tasks)
 
 print('starting')
 start = time.perf_counter()
-main_scrawling_hopeing()
+asyncio.run(main_scrawling_hopeing())
 fin = time.perf_counter() - start
 print('Time Taken : ' + str(fin))
