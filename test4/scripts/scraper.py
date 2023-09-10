@@ -120,7 +120,7 @@ def store_url():
         urls_y = []
         for index in file_data:
             urls_y.append(index['Links'])
-        print(urls_y)
+        # print(urls_y)
         return urls_y
 
 async def content_html(s, url):
@@ -135,7 +135,7 @@ async def content_html(s, url):
         # Title
         title_fp = soup.find('h1')
         dc_title.append(title_fp.get_text() if title_fp else "")
-        print(dc_title)
+        # print(dc_title)
 
         # Room Details 
         room_details_div = soup.find('div', class_='room-details')
@@ -187,6 +187,16 @@ async def main_scrawling_hopeing():
 
 print('starting')
 start = time.perf_counter()
-asyncio.run(main_scrawling_hopeing())
+asyncio.run(main_scrapping())
+# asyncio.run(main_scrawling_hopeing())
 fin = time.perf_counter() - start
 print('Time Taken : ' + str(fin))
+
+
+# No-Async
+# Scrapping :  seconds
+# Deep Crawling :  sec 
+
+# Async 
+# Scrapping : 14 seconds
+# Deep Crawling : 711 sec 
