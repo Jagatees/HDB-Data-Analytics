@@ -37,4 +37,4 @@ app.secret_key = 'some key that you will never guess'
 
 #Run the app on localhost port 5000
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5001, debug = True)
+    app.run('127.0.0.1', 5002, debug = True)
