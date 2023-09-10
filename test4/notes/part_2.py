@@ -139,39 +139,10 @@ def content_html(url):
         dc_title.append(title_fp.get_text() if title_fp else "")
         print(dc_title)
 
-        # Room Details 
-        room_details_div = soup.find('div', class_='room-details')
-        li_elements = room_details_div.find_all('li')
-        li_text_list = [li.get_text() for li in li_elements]
-        # print(li_text_list)
-        dc_details.append(li_text_list)
-        time = dc_details[0][0].split('on ', 1)[1].split('.')
-        day.append(time[0])
-        month.append(time[1])
-        year.append(time[2])
-        # print(dc_details)
-
-        # Location
-        location_fp = soup.find(class_='room-street')
-        dc_location.append(location_fp.get_text() if location_fp else "")
-        # print(dc_location)
-
-        # Description
-        description_elements = soup.find(class_='room-description')
-        description_text = description_elements.get('description-text')
-        dc_description.append(description_text)
-
     deep_crawling_data = [
         {
-            'UID' : str(i),
-            'Title': dc_title[i],
-            'Location': dc_location[i],
-            'Tags': dc_details[i],
-            'Links' : links_testing[i],
-            'Description': dc_description[i],
-            'Day' : day[i],
-            'Month' : month[i],
-            'Year' : year[i]
+            'UID': str(i),
+            'Title': dc_title[i]
 
         }
         for i in range(len(dc_title))
