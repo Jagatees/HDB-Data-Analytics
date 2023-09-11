@@ -71,13 +71,6 @@ def Upload_Page():
         Scamdata = pd.read_json(label3.cget("text"))
         Years = [i["Year"] for i in Scamdata["Scam"]]
         Amt = [i["Amt Fallen"] for i in Scamdata["Scam"]]
-        #ColList = Scamdata.columns.values.tolist()
-        #print (ColList)
-
-        #Read CSV File
-        #ReadCSV = pd.read_csv(label3.cget("text"), header=None)
-        #Years = ReadCSV[0]
-        #Amt = ReadCSV[1]
 
         fig, ax = plt.subplots(figsize=(10,7))
         ax.bar(Years,Amt, color='maroon')
@@ -94,19 +87,6 @@ def Upload_Page():
     label2 = tk.Label(Upload_frame, text="File Location :")
     label3 = tk.Label(Upload_frame, textvariable=label3_text)  
  
-
-    label4 = tk.Label(Upload_frame, text="X axis: ")
-    Xparameter_choices = ["Website 1", "Website 2", "Website 3"]
-    selected_parameters = tk.StringVar()
-    Xparameters_combobox = ttk.Combobox(Upload_frame, textvariable=selected_parameters, values=Xparameter_choices)
-    selected_parameters.set(Xparameter_choices[0])  # Set the default selection
-
-    label5 = tk.Label(Upload_frame, text="Y axis: ")
-    Yparameter_choices = ["Website 1", "Website 2", "Website 3"] 
-    selected_parameters = tk.StringVar()
-    Yparameters_combobox = ttk.Combobox(Upload_frame, textvariable=selected_parameters, values=Yparameter_choices)
-    selected_parameters.set(Yparameter_choices[0])  # Set the default selection
-
     ShowGraphBtn = tk.Button(Upload_frame, text="Show Graph", command=ShowGraph)
 
     label3_text.set("") 
@@ -114,10 +94,6 @@ def Upload_Page():
     button.pack(expand=True, fill='both', pady=20)
     label2.pack()
     label3.pack()
-    label4.pack(side='left') 
-    Xparameters_combobox.pack(side='left', padx=5) 
-    label5.pack(side='left') 
-    Yparameters_combobox.pack(side='left', padx=5)
     ShowGraphBtn.pack()
 
 
@@ -129,24 +105,58 @@ def Upload_Page():
 def Analytics_Page():
     Analytics_frame = tk.Frame(main_frame)
     #Code here for Analytics page
+    RentalDB = pd.read_json("ProjTest\Scrap_Rental.json")
 
-    Scamdata = pd.read_json('ProjTest\ScamData.json')
-    Years = [i["Year"] for i in Scamdata["Scam"]]
-    Amt = [i["Amt Fallen"] for i in Scamdata["Scam"]]
+    def ShowGraph():
+        #Read JSON File
+        RentalDBT = pd.read_json("ProjTest\Scrap_Rental_DB.json")
+        #RentalDBT = json.load(open('ProjTest\Scrap_Rental_DB.json'))
+        GetXaxis = Xparameters_combobox.get()
+        GetYaxis = Yparameters_combobox.get()
+        print(GetXaxis + GetYaxis)
+        Xaxis = [i[GetXaxis] for i in RentalDBT["Scam"]]
+        Yaxis = [i[GetYaxis] for i in RentalDBT["Scam"]]
 
-    fig, ax = plt.subplots(figsize=(10,7))
-    ax.bar(Years,Amt, color='maroon')
-    ax.set_xlim(xmin=0.0)
-    ax.set_xlabel('Years',fontsize=14)
-    ax.set_ylabel('Amt Fallen to Scam',fontsize=14)
-    ax.set_title('Test Graph from JSON',fontsize=14)
+        fig, ax = plt.subplots(figsize=(10,7))
+        #ax.plot(x=GetXaxis, y=GetYaxis, kind="bar", figsize=(9, 8))
+        ax.bar(Xaxis,Yaxis, color='maroon')
+        ax.set_xlim(xmin=0.0)
+        ax.set_xlabel(Xparameters_combobox.get(),fontsize=14)
+        ax.set_ylabel(Yparameters_combobox.get(),fontsize=14)
+        ax.set_title('Test Graph from JSON',fontsize=14)
 
-    canvas1 = FigureCanvasTkAgg(fig, Analytics_frame)
-    canvas1.draw()
-    canvas1.get_tk_widget().pack(side="left", expand=False)
+        canvas1 = FigureCanvasTkAgg(fig, Analytics_frame)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side="left", expand=False)
 
-    lb = tk.Label(Analytics_frame, text='Analytics \npage', font=('Bold', 30))
-    lb.pack()
+    def Printing():
+        print(Xparameters_combobox.get())
+
+    ColNames = list(RentalDB.columns) #Get the col names store in a list
+    AreaNames = list(RentalDB['Title'].unique())
+    print (AreaNames)
+    print (RentalDB.groupby(['Title'])['Title'].count())
+
+    #Take col name and store in dropdown 
+    label4 = tk.Label(Analytics_frame, text="X axis: ")
+    Xparameter_choices = ColNames
+    selected_parameters = tk.StringVar()
+    Xparameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Xparameter_choices)
+    selected_parameters.set("Please select")
+
+    label5 = tk.Label(Analytics_frame, text="Y axis: ")
+    Yparameter_choices = ColNames
+    selected_parameters = tk.StringVar()
+    Yparameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Yparameter_choices)
+    selected_parameters.set(Yparameter_choices[0])  # Set the default selection
+
+    ShowGraphBtn = tk.Button(Analytics_frame, text="Show Graph", command=ShowGraph)
+
+    label4.pack(side='left') 
+    Xparameters_combobox.pack(side='left', padx=5) 
+    label5.pack(side='left') 
+    Yparameters_combobox.pack(side='left', padx=5)
+    ShowGraphBtn.pack()
 
     Analytics_frame.pack(pady=20)
 
