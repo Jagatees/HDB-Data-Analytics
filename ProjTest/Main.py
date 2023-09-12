@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as py
 import json
+from statistics import mean
 
 from data import sales_data, inventory_data, product_data, sales_year_data, inventory_month_data
 
@@ -128,9 +129,19 @@ def Analytics_Page():
     #Save dataframe into new csv file
     TestRentalCSV.to_csv('ProjTest\Excel Data\cleanedRental_data.csv', index=False)
 
+    def Average(RentList):
+        return mean(RentList)
+    
     #Filter Col
+    FilterColName = ' Holland Village'
+    FilterTypeofRent = 'Room for Rent '
     FilterRentalCol = TestRentalCSV.copy()
-    #FilterRentalCol = FilterRentalCol[FilterRentalCol[0].str.contains(' Holland Village') & FilterRentalCol[1].str.contains('Room for Rent ')]
+    FilterRentalCol = FilterRentalCol[FilterRentalCol['Area'].str.contains(FilterColName) & FilterRentalCol['Type'].str.contains(FilterTypeofRent)]
+    AverageRentList = list(FilterRentalCol['Price'])
+    RentList = [eval(x) for x in AverageRentList]
+    AverageRent = round(Average(RentList), 2)
+
+    print("The Avergae rent for 2023 in" + FilterColName + ' is $' + str(AverageRent))
 
     def ShowGraph():
         GetXaxis = Xparameters_combobox.get()
