@@ -64,6 +64,8 @@ async def element_scrapping(s, index):
                 sub_heading_room.append(a_tags_title)
         for div in price:
             price_text = div.get_text().strip()
+            price_text = price_text[1:].replace(',', '')
+            
             price_list_room.append(price_text)
     else:
         None
@@ -75,10 +77,11 @@ async def element_scrapping(s, index):
             'Type': type_room[i],
             'Title': title_room[i],
             'Links': links_room[i],
-            'Sub Heading': sub_heading_room[i],
+            'Sub_Heading': sub_heading_room[i],
 
         }
         for i in range(len(title_room))
+        
     ]
 
     # Save the data as JSON
