@@ -106,14 +106,14 @@ def Analytics_Page():
     Analytics_frame = tk.Frame(main_frame)
     #Code here for Analytics page
     RentalDB = pd.read_json("ProjTest\Scrap_Rental.json")
+    RentalDBT = pd.read_json("ProjTest\Scrap_Rental_DB.json")   
 
     def ShowGraph():
         #Read JSON File
-        RentalDBT = pd.read_json("ProjTest\Scrap_Rental_DB.json")
         #RentalDBT = json.load(open('ProjTest\Scrap_Rental_DB.json'))
         GetXaxis = Xparameters_combobox.get()
         GetYaxis = Yparameters_combobox.get()
-        print(GetXaxis + GetYaxis)
+
         Xaxis = [i[GetXaxis] for i in RentalDBT["Scam"]]
         Yaxis = [i[GetYaxis] for i in RentalDBT["Scam"]]
 
@@ -129,13 +129,18 @@ def Analytics_Page():
         canvas1.draw()
         canvas1.get_tk_widget().pack(side="left", expand=False)
 
-    def Printing():
-        print(Xparameters_combobox.get())
+    def ReturnCol():
+        Col_Keep = ['Title', 'Price']
+        filtered_data = [{col: row[col] for col in Col_Keep} for row in RentalDBT['Scam']]
+        filtered_json = json.dumps(filtered_data)
+        print(filtered_json)
+
 
     ColNames = list(RentalDB.columns) #Get the col names store in a list
     AreaNames = list(RentalDB['Title'].unique())
     print (AreaNames)
-    print (RentalDB.groupby(['Title'])['Title'].count())
+
+
 
     #Take col name and store in dropdown 
     label4 = tk.Label(Analytics_frame, text="X axis: ")
@@ -145,12 +150,12 @@ def Analytics_Page():
     selected_parameters.set("Please select")
 
     label5 = tk.Label(Analytics_frame, text="Y axis: ")
-    Yparameter_choices = ColNames
+    Yparameter_choices = AreaNames
     selected_parameters = tk.StringVar()
     Yparameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Yparameter_choices)
     selected_parameters.set(Yparameter_choices[0])  # Set the default selection
 
-    ShowGraphBtn = tk.Button(Analytics_frame, text="Show Graph", command=ShowGraph)
+    ShowGraphBtn = tk.Button(Analytics_frame, text="Show Graph", command=ReturnCol)
 
     label4.pack(side='left') 
     Xparameters_combobox.pack(side='left', padx=5) 
