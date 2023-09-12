@@ -13,7 +13,7 @@ from data import sales_data, inventory_data, product_data, sales_year_data, inve
 root = tk.Tk()
 root.geometry('1000x600')
 root.title('Test Side Nav')
-TestDataCSV = pd.read_csv("ProjTest\Excel Data\Test Data.csv", header=None)
+TestDataCSV = pd.read_csv("ProjTest\Excel Data\TestRental.csv", header=None)
 
 #Function to show home page
 def Home_Page():
@@ -106,16 +106,38 @@ def Analytics_Page():
     Analytics_frame = tk.Frame(main_frame)
     #Code here for Analytics page
     RentalDB = pd.read_json("ProjTest\Scrap_Rental.json")
-    RentalDBT = pd.read_json("ProjTest\Scrap_Rental_DB.json")   
+
+    #Convert JSON to CSV
+    csv_file = 'ProjTest\Excel Data\TestRental.csv'  
+    RentalDB.to_csv(csv_file, index=False)   
+
+    #Read Excel file
+    TestRentalCSV = pd.read_csv("ProjTest\Excel Data\TestRental.csv", header=None)
+
+    #Clean data
+    Col_ToClean = [1]
+    for column in Col_ToClean:
+        TestRentalCSV[column] = TestRentalCSV[column].str.replace('$', '').str.replace(',', '')
+
+    #Take only selected col
+    TestRentalCSV = TestRentalCSV[[1, 2, 3]]
+    #Change col name
+    TestRentalCSV.columns = ['Price', 'Type' ,'Area']
+    #Drop first row
+    TestRentalCSV = TestRentalCSV.drop(0)
+    #Save dataframe into new csv file
+    TestRentalCSV.to_csv('ProjTest\Excel Data\cleanedRental_data.csv', index=False)
+
+    #Filter Col
+    FilterRentalCol = TestRentalCSV.copy()
+    #FilterRentalCol = FilterRentalCol[FilterRentalCol[0].str.contains(' Holland Village') & FilterRentalCol[1].str.contains('Room for Rent ')]
 
     def ShowGraph():
-        #Read JSON File
-        #RentalDBT = json.load(open('ProjTest\Scrap_Rental_DB.json'))
         GetXaxis = Xparameters_combobox.get()
         GetYaxis = Yparameters_combobox.get()
 
-        Xaxis = [i[GetXaxis] for i in RentalDBT["Scam"]]
-        Yaxis = [i[GetYaxis] for i in RentalDBT["Scam"]]
+        Xaxis = TestRentalCSV[GetXaxis]
+        Yaxis = TestRentalCSV[GetYaxis]
 
         fig, ax = plt.subplots(figsize=(10,7))
         #ax.plot(x=GetXaxis, y=GetYaxis, kind="bar", figsize=(9, 8))
@@ -123,24 +145,15 @@ def Analytics_Page():
         ax.set_xlim(xmin=0.0)
         ax.set_xlabel(Xparameters_combobox.get(),fontsize=14)
         ax.set_ylabel(Yparameters_combobox.get(),fontsize=14)
-        ax.set_title('Test Graph from JSON',fontsize=14)
+        ax.set_title('CSV Graph',fontsize=14)
 
         canvas1 = FigureCanvasTkAgg(fig, Analytics_frame)
         canvas1.draw()
         canvas1.get_tk_widget().pack(side="left", expand=False)
 
-    def ReturnCol():
-        Col_Keep = ['Title', 'Price']
-        filtered_data = [{col: row[col] for col in Col_Keep} for row in RentalDBT['Scam']]
-        filtered_json = json.dumps(filtered_data)
-        print(filtered_json)
-
 
     ColNames = list(RentalDB.columns) #Get the col names store in a list
     AreaNames = list(RentalDB['Title'].unique())
-    print (AreaNames)
-
-
 
     #Take col name and store in dropdown 
     label4 = tk.Label(Analytics_frame, text="X axis: ")
@@ -155,7 +168,7 @@ def Analytics_Page():
     Yparameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Yparameter_choices)
     selected_parameters.set(Yparameter_choices[0])  # Set the default selection
 
-    ShowGraphBtn = tk.Button(Analytics_frame, text="Show Graph", command=ReturnCol)
+    ShowGraphBtn = tk.Button(Analytics_frame, text="Show Graph", command=ShowGraph)
 
     label4.pack(side='left') 
     Xparameters_combobox.pack(side='left', padx=5) 
