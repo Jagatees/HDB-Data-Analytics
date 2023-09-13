@@ -108,6 +108,9 @@ def Analytics_Page():
     #Code here for Analytics page
     RentalDB = pd.read_json("ProjTest\Scrap_Rental.json")
 
+    #To get all the unique value from the JSON file
+    AreaNames = list(RentalDB['Title'].unique())
+
     #Convert JSON to CSV
     csv_file = 'ProjTest\Excel Data\TestRental.csv'  
     RentalDB.to_csv(csv_file, index=False)   
@@ -128,20 +131,36 @@ def Analytics_Page():
     TestRentalCSV = TestRentalCSV.drop(0)
     #Save dataframe into new csv file
     TestRentalCSV.to_csv('ProjTest\Excel Data\cleanedRental_data.csv', index=False)
-
-    def Average(RentList):
-        return mean(RentList)
     
     #Filter Col
-    FilterColName = ' Holland Village'
     FilterTypeofRent = 'Room for Rent '
     FilterRentalCol = TestRentalCSV.copy()
-    FilterRentalCol = FilterRentalCol[FilterRentalCol['Area'].str.contains(FilterColName) & FilterRentalCol['Type'].str.contains(FilterTypeofRent)]
-    AverageRentList = list(FilterRentalCol['Price'])
-    RentList = [eval(x) for x in AverageRentList]
-    AverageRent = round(Average(RentList), 2)
 
-    print("The Avergae rent for 2023 in" + FilterColName + ' is $' + str(AverageRent))
+    #Create empty list
+    FilterResult_List = []
+
+    for FilterColName in AreaNames:
+        FilterTypeofRent = 'Room for Rent'
+        FilterRentalCol = TestRentalCSV.copy()
+        FilterRentalCol = FilterRentalCol[FilterRentalCol['Area'].str.contains(FilterColName) & FilterRentalCol['Type'].str.contains(FilterTypeofRent)]
+        
+        AverageRentList = list(FilterRentalCol['Price'])
+        RentList = [float(x) for x in AverageRentList]
+
+        # Check if the df is empty
+        if not FilterRentalCol.empty:
+            AverageRentList = list(FilterRentalCol['Price'])
+            RentList = [eval(x) for x in AverageRentList]
+            
+            # Calculate the average rent
+            AverageRent = round(sum(RentList) / len(RentList), 2)
+            
+            # Append the location and average rent to the FilterResult_List
+            FilterResult_List.append((FilterColName, AverageRent))
+
+    #Store FilterResult_List in a dataframe
+    Filter_DF = pd.DataFrame(FilterResult_List, columns=['Location', 'Average Rent'])
+    print(Filter_DF)
 
     def ShowGraph():
         GetXaxis = Xparameters_combobox.get()
@@ -164,7 +183,6 @@ def Analytics_Page():
 
 
     ColNames = list(RentalDB.columns) #Get the col names store in a list
-    AreaNames = list(RentalDB['Title'].unique())
 
     #Take col name and store in dropdown 
     label4 = tk.Label(Analytics_frame, text="X axis: ")
