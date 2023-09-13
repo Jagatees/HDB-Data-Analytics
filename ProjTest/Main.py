@@ -130,19 +130,23 @@ def Analytics_Page():
     #Drop first row
     TestRentalCSV = TestRentalCSV.drop(0)
     #Save dataframe into new csv file
-    TestRentalCSV.to_csv('ProjTest\Excel Data\cleanedRental_data.csv', index=False)
+    #TestRentalCSV.to_csv('ProjTest\Excel Data\Cleaned_Rent_2022.csv', index=False)
     
     #Filter Col
     FilterTypeofRent = 'Room for Rent '
-    FilterRentalCol = TestRentalCSV.copy()
+    YearRent = '2023'
 
+    FilterRentalCol = pd.read_csv("ProjTest\Excel Data\Cleaned_Rent.csv", header=None)
+    FilterRentalCol.columns = ['Year', 'Price', 'Type' ,'Area']
+    FilterRentalCol = FilterRentalCol.drop(0)
+    print(FilterRentalCol)
     #Create empty list
     FilterResult_List = []
 
     for FilterColName in AreaNames:
         FilterTypeofRent = 'Room for Rent'
-        FilterRentalCol = TestRentalCSV.copy()
-        FilterRentalCol = FilterRentalCol[FilterRentalCol['Area'].str.contains(FilterColName) & FilterRentalCol['Type'].str.contains(FilterTypeofRent)]
+        #FilterRentalCol = TestRentalCSV.copy()
+        FilterRentalCol = FilterRentalCol[FilterRentalCol['Year'].str.contains(YearRent) & FilterRentalCol['Area'].str.contains(FilterColName) & FilterRentalCol['Type'].str.contains(FilterTypeofRent)]
         
         AverageRentList = list(FilterRentalCol['Price'])
         RentList = [float(x) for x in AverageRentList]
