@@ -1,33 +1,6 @@
 [
     {
         "UID": 0,
-        "Title": "2 Room HDB in 8 Holland Avenue",
-        "Price": "3600",
-        "Links": "https://www.99.co/singapore/rent/property/8-holland-avenue-hdb-XDxQcEBD9gUYLcQex3V4Mv",
-        "Type": "HDB (2RM)",
-        "Num_Bed": "2",
-        "Num_Toilet": "1"
-    },
-    {
-        "UID": 1,
-        "Title": "3 Room HDB in 103 Bedok Reservoir Road",
-        "Price": "3000",
-        "Links": "https://www.99.co/singapore/rent/property/103-bedok-reservoir-road-hdb-8HhnjwiddiMU5ohnaoAwtL",
-        "Type": "HDB (3NG)",
-        "Num_Bed": "2",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 2,
-        "Title": "Exec HDB in 506 Serangoon North Avenue 4",
-        "Price": "3800",
-        "Links": "https://www.99.co/singapore/rent/property/506-serangoon-north-avenue-4-hdb-yfqjoc9sfGpGEEsr8tNbvg",
-        "Type": "HDB (EA)",
-        "Num_Bed": "4",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 3,
         "Title": "4 Room HDB in 573 Ang Mo Kio Avenue 3",
         "Price": "4000",
         "Links": "https://www.99.co/singapore/rent/property/573-ang-mo-kio-avenue-3-hdb-2r8taDn9QD5F8HPq4CpSy5",
@@ -36,61 +9,16 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 4,
-        "Title": "5 Room HDB in 766 Jurong West Street 74",
-        "Price": "4299",
-        "Links": "https://www.99.co/singapore/rent/property/766-jurong-west-street-74-hdb-kbBahE9LyhgxVB7VtXabGB",
-        "Type": "HDB (5I)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 5,
-        "Title": "4 Room HDB in 617 Hougang Avenue 8",
-        "Price": "3600",
-        "Links": "https://www.99.co/singapore/rent/property/617-hougang-avenue-8-hdb-UbNrE9go8NaMd6iSmugqBD",
-        "Type": "HDB (4RM)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 6,
-        "Title": "5 Room HDB in 674A Choa Chu Kang Crescent",
-        "Price": "4400",
-        "Links": "https://www.99.co/singapore/rent/property/674a-choa-chu-kang-crescent-hdb-3Ag6wNLRmFDNUGUuDrbBia",
-        "Type": "HDB (5I)",
+        "UID": 1,
+        "Title": "Exec HDB in 506 Serangoon North Avenue 4",
+        "Price": "3800",
+        "Links": "https://www.99.co/singapore/rent/property/506-serangoon-north-avenue-4-hdb-yfqjoc9sfGpGEEsr8tNbvg",
+        "Type": "HDB (EA)",
         "Num_Bed": "4",
         "Num_Toilet": "2"
     },
     {
-        "UID": 7,
-        "Title": "3 Bed HDB in 512C Yishun Street 51",
-        "Price": "4500",
-        "Links": "https://www.99.co/singapore/rent/property/512c-yishun-street-51-hdb-GuX9AXeQPPrBR48HSvAQL5",
-        "Type": "HDB",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 8,
-        "Title": "3 Room HDB in 31 Marine Crescent",
-        "Price": "3600",
-        "Links": "https://www.99.co/singapore/rent/property/31-marine-crescent-hdb-JQggVstH7N234jNNs25vaC",
-        "Type": "HDB (3I)",
-        "Num_Bed": "2",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 9,
-        "Title": "5 Room HDB in 485B Choa Chu Kang Avenue 5",
-        "Price": "4000",
-        "Links": "https://www.99.co/singapore/rent/property/485b-choa-chu-kang-avenue-5-hdb-eiSHXvCzXwCr6ERyZJ9ZET",
-        "Type": "HDB (5I)",
-        "Num_Bed": "2",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 10,
+        "UID": 2,
         "Title": "4 Room HDB in 807 Tampines Avenue 4",
         "Price": "3600",
         "Links": "https://www.99.co/singapore/rent/property/807-tampines-avenue-4-hdb-5SVJKbSAQ4VwS7mzaETyJh",
@@ -99,7 +27,16 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 11,
+        "UID": 3,
+        "Title": "3 Room HDB in 31 Marine Crescent",
+        "Price": "3600",
+        "Links": "https://www.99.co/singapore/rent/property/31-marine-crescent-hdb-JQggVstH7N234jNNs25vaC",
+        "Type": "HDB (3I)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 4,
         "Title": "5 Room HDB in 116 Bukit Merah Central",
         "Price": "4450",
         "Links": "https://www.99.co/singapore/rent/property/116-bukit-merah-central-hdb-DxhTaED5eHNScZZN9tkuxj",
@@ -108,7 +45,25 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 12,
+        "UID": 5,
+        "Title": "5 Room HDB in 766 Jurong West Street 74",
+        "Price": "4299",
+        "Links": "https://www.99.co/singapore/rent/property/766-jurong-west-street-74-hdb-kbBahE9LyhgxVB7VtXabGB",
+        "Type": "HDB (5I)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 6,
+        "Title": "5 Room HDB in 485B Choa Chu Kang Avenue 5",
+        "Price": "4000",
+        "Links": "https://www.99.co/singapore/rent/property/485b-choa-chu-kang-avenue-5-hdb-eiSHXvCzXwCr6ERyZJ9ZET",
+        "Type": "HDB (5I)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 7,
         "Title": "3 Bed HDB in 20 Eunos Crescent",
         "Price": "3200",
         "Links": "https://www.99.co/singapore/rent/property/20-eunos-crescent-hdb-eBUfBxWhBc74amDexrmdcf",
@@ -117,16 +72,25 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 13,
-        "Title": "5 Room HDB in 401 Ang Mo Kio Avenue 10",
-        "Price": "4500",
-        "Links": "https://www.99.co/singapore/rent/property/401-ang-mo-kio-avenue-10-hdb-Z6FPnjApFMxvm6W32gHCYw",
-        "Type": "HDB (5I)",
+        "UID": 8,
+        "Title": "4 Room HDB in 617 Hougang Avenue 8",
+        "Price": "3600",
+        "Links": "https://www.99.co/singapore/rent/property/617-hougang-avenue-8-hdb-UbNrE9go8NaMd6iSmugqBD",
+        "Type": "HDB (4RM)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
-        "UID": 14,
+        "UID": 9,
+        "Title": "5 Room HDB in 674A Choa Chu Kang Crescent",
+        "Price": "4400",
+        "Links": "https://www.99.co/singapore/rent/property/674a-choa-chu-kang-crescent-hdb-3Ag6wNLRmFDNUGUuDrbBia",
+        "Type": "HDB (5I)",
+        "Num_Bed": "4",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 10,
         "Title": "5 Room HDB in 228 Jurong East Street 21",
         "Price": "1000",
         "Links": "https://www.99.co/singapore/rent/property/228-jurong-east-street-21-hdb-Lw7W7WDVKTbfZDAAadR39Y",
@@ -135,7 +99,25 @@
         "Num_Toilet": "1"
     },
     {
-        "UID": 15,
+        "UID": 11,
+        "Title": "3 Bed HDB in 512C Yishun Street 51",
+        "Price": "4500",
+        "Links": "https://www.99.co/singapore/rent/property/512c-yishun-street-51-hdb-GuX9AXeQPPrBR48HSvAQL5",
+        "Type": "HDB",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 12,
+        "Title": "5 Room HDB in 401 Ang Mo Kio Avenue 10",
+        "Price": "4500",
+        "Links": "https://www.99.co/singapore/rent/property/401-ang-mo-kio-avenue-10-hdb-Z6FPnjApFMxvm6W32gHCYw",
+        "Type": "HDB (5I)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 13,
         "Title": "3 Room HDB in 93 Jalan Dua",
         "Price": "2800",
         "Links": "https://www.99.co/singapore/rent/property/93-jalan-dua-hdb-3TZfMBueFiuYNod6UMtmxU",
@@ -144,7 +126,7 @@
         "Num_Toilet": "1"
     },
     {
-        "UID": 16,
+        "UID": 14,
         "Title": "4 Room HDB in 438 Tampines Street 43",
         "Price": "3900",
         "Links": "https://www.99.co/singapore/rent/property/438-tampines-street-43-hdb-5a87qLm8MToqbmYFjQQoYX",
@@ -153,7 +135,151 @@
         "Num_Toilet": "2"
     },
     {
+        "UID": 15,
+        "Title": "2 Room HDB in 8 Holland Avenue",
+        "Price": "3600",
+        "Links": "https://www.99.co/singapore/rent/property/8-holland-avenue-hdb-XDxQcEBD9gUYLcQex3V4Mv",
+        "Type": "HDB (2RM)",
+        "Num_Bed": "2",
+        "Num_Toilet": "1"
+    },
+    {
+        "UID": 16,
+        "Title": "3 Room HDB in 103 Bedok Reservoir Road",
+        "Price": "3000",
+        "Links": "https://www.99.co/singapore/rent/property/103-bedok-reservoir-road-hdb-8HhnjwiddiMU5ohnaoAwtL",
+        "Type": "HDB (3NG)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
         "UID": 17,
+        "Title": "Exec HDB in 110 Clementi Street 13",
+        "Price": "2600",
+        "Links": "https://www.99.co/singapore/rent/property/110-clementi-street-13-hdb-KQrrBre4o3SrbUds73GFbD",
+        "Type": "HDB (EM)",
+        "Num_Bed": "1Bed",
+        "Num_Toilet": "1"
+    },
+    {
+        "UID": 18,
+        "Title": "Master Room in 154 Lorong 2 Toa Payoh",
+        "Price": "1600",
+        "Links": "https://www.99.co/singapore/rooms/property/154-lorong-2-toa-payoh-hdb-WAyhcdXPcm6faJjGNhR7W8",
+        "Type": "HDB (4A)",
+        "Num_Bed": "None",
+        "Num_Toilet": "1"
+    },
+    {
+        "UID": 19,
+        "Title": "4 Room HDB in 99 Whampoa Drive",
+        "Price": "4500",
+        "Links": "https://www.99.co/singapore/rent/property/99-whampoa-drive-hdb-DHXFn8WDZc5BkcfVVRXNd8",
+        "Type": "HDB (4I)",
+        "Num_Bed": "3",
+        "Num_Toilet": "1"
+    },
+    {
+        "UID": 20,
+        "Title": "4 Room HDB in 310A Punggol Walk",
+        "Price": "3900",
+        "Links": "https://www.99.co/singapore/rent/property/310a-punggol-walk-hdb-8YfDxivTyD32pee2695duV",
+        "Type": "HDB (4A)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 21,
+        "Title": "4 Room HDB in 407 Pasir Ris Drive 6",
+        "Price": "3800",
+        "Links": "https://www.99.co/singapore/rent/property/407-pasir-ris-drive-6-hdb-VSNWfY8fDDZnWuCJ2zPVFR",
+        "Type": "HDB",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 22,
+        "Title": "4 Room HDB in 34 Marsiling Drive",
+        "Price": "3600",
+        "Links": "https://www.99.co/singapore/rent/property/34-marsiling-drive-hdb-nLVoPDAJ8QEGwg23cAUKPe",
+        "Type": "HDB (4A)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 23,
+        "Title": "Common Room in 802A Keat Hong Close",
+        "Price": "1000",
+        "Links": "https://www.99.co/singapore/rooms/property/802a-keat-hong-close-hdb-iJBunMsEWbVq6JLmt4jTDK",
+        "Type": "HDB",
+        "Num_Bed": "None",
+        "Num_Toilet": "None"
+    },
+    {
+        "UID": 24,
+        "Title": "Common Room in 172 Bukit Batok West Avenue 8",
+        "Price": "900",
+        "Links": "https://www.99.co/singapore/rooms/property/172-bukit-batok-west-avenue-8-hdb-Ej9tKHZbxwTc7CS9gcv6dv",
+        "Type": "HDB (4NG)",
+        "Num_Bed": "None",
+        "Num_Toilet": "None"
+    },
+    {
+        "UID": 25,
+        "Title": "Common Room in 363 Clementi Avenue 2",
+        "Price": "800",
+        "Links": "https://www.99.co/singapore/rooms/property/363-clementi-avenue-2-hdb-EK3FJcRnPsHkrdK7xYjThv",
+        "Type": "HDB",
+        "Num_Bed": "None",
+        "Num_Toilet": "None"
+    },
+    {
+        "UID": 26,
+        "Title": "Exec HDB in 859 Jurong West Street 81",
+        "Price": "4500",
+        "Links": "https://www.99.co/singapore/rent/property/859-jurong-west-street-81-hdb-LgBfVfUzZACKXg2QKBcGPe",
+        "Type": "HDB (EA)",
+        "Num_Bed": "4",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 27,
+        "Title": "4 Room HDB in 439A Sengkang West Avenue",
+        "Price": "3500",
+        "Links": "https://www.99.co/singapore/rent/property/439a-sengkang-west-avenue-hdb-2Lf9LRsseMYXfLmkoKp6D",
+        "Type": "HDB (4RM)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 28,
+        "Title": "Common Room in 404B Fernvale Lane",
+        "Price": "1000",
+        "Links": "https://www.99.co/singapore/rooms/property/404b-fernvale-lane-hdb-fKx29VDTBF52sos5G22L2H",
+        "Type": "HDB (4A)",
+        "Num_Bed": "None",
+        "Num_Toilet": "None"
+    },
+    {
+        "UID": 29,
+        "Title": "3 Room HDB in 218 Bedok North Street 1",
+        "Price": "2900",
+        "Links": "https://www.99.co/singapore/rent/property/218-bedok-north-street-1-hdb-aSazEqaSnw3DQTS75ihKRr",
+        "Type": "HDB (3NG)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 30,
+        "Title": "3 Room HDB in 119B Rivervale Drive",
+        "Price": "4000",
+        "Links": "https://www.99.co/singapore/rent/property/119b-rivervale-drive-hdb-4AnDXdZ2GJUqBYwjDufw6k",
+        "Type": "HDB (3RM)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 31,
         "Title": "5 Room HDB in 172 Lorong 1 Toa Payoh",
         "Price": "4600",
         "Links": "https://www.99.co/singapore/rent/property/172-lorong-1-toa-payoh-hdb-HJM5P8uvxVrmJ7Jg9pyWke",
@@ -162,7 +288,7 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 18,
+        "UID": 32,
         "Title": "Common Room in 808A Chai Chee Road",
         "Price": "1200",
         "Links": "https://www.99.co/singapore/rooms/property/808a-chai-chee-road-hdb-XF2rTkAiedinrb6rtppQMx",
@@ -171,7 +297,7 @@
         "Num_Toilet": "None"
     },
     {
-        "UID": 19,
+        "UID": 33,
         "Title": "Common Room in 152 Yung Ho Road",
         "Price": "850",
         "Links": "https://www.99.co/singapore/rooms/property/152-yung-ho-road-hdb-UZrqMmyDXfkxoYwJ9muUPH",
@@ -180,138 +306,12 @@
         "Num_Toilet": "None"
     },
     {
-        "UID": 20,
+        "UID": 34,
         "Title": "3 Room HDB in 454 Yishun Street 41",
         "Price": "3000",
         "Links": "https://www.99.co/singapore/rent/property/454-yishun-street-41-hdb-NQC9bdjKXkYjqaBVFz3xyN",
         "Type": "HDB (3STD)",
         "Num_Bed": "2",
         "Num_Toilet": "2"
-    },
-    {
-        "UID": 21,
-        "Title": "3 Room HDB in 777 Yishun Avenue 2",
-        "Price": "3000",
-        "Links": "https://www.99.co/singapore/rent/property/777-yishun-avenue-2-hdb-dLsBnBBNFeYhyzbh8baa8b",
-        "Type": "HDB (3S)",
-        "Num_Bed": "2",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 22,
-        "Title": "Common Room in 529 Woodlands Drive 14",
-        "Price": "1000",
-        "Links": "https://www.99.co/singapore/rooms/property/529-woodlands-drive-14-hdb-aCxYUDgNgatjG4UUqpcq45",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "None"
-    },
-    {
-        "UID": 23,
-        "Title": "Common Room in 420 Canberra Road",
-        "Price": "800",
-        "Links": "https://www.99.co/singapore/rooms/property/420-canberra-road-hdb-BSWRtUkKRchSWcNGEhUU85",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "None"
-    },
-    {
-        "UID": 24,
-        "Title": "Common Room in 124 Marsiling Rise",
-        "Price": "850",
-        "Links": "https://www.99.co/singapore/rooms/property/124-marsiling-rise-hdb-NptTW6gVbX6CaH9LqmbLPX",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "None"
-    },
-    {
-        "UID": 25,
-        "Title": "Room in 528 Bukit Batok Street 51",
-        "Price": "800",
-        "Links": "https://www.99.co/singapore/rooms/property/528-bukit-batok-street-51-hdb-erSuxvM6svFbfDRZDqkn7P",
-        "Type": "HDB (3I)",
-        "Num_Bed": "None",
-        "Num_Toilet": "None"
-    },
-    {
-        "UID": 26,
-        "Title": "Common Room in 185B Rivervale Crescent",
-        "Price": "850",
-        "Links": "https://www.99.co/singapore/rooms/property/185b-rivervale-crescent-hdb-naRrQSGnefbQH98UE2YH63",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "None"
-    },
-    {
-        "UID": 27,
-        "Title": "Common Room in 251 Compassvale Street",
-        "Price": "850",
-        "Links": "https://www.99.co/singapore/rooms/property/251-compassvale-street-hdb-aQpyLX6Ut7m4PtSZ8xBbEe",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "None"
-    },
-    {
-        "UID": 28,
-        "Title": "Master Room in 873 Woodlands Street 81",
-        "Price": "1800",
-        "Links": "https://www.99.co/singapore/rooms/property/873-woodlands-street-81-hdb-XNAA7r2hwpqxHqyCXk9hke",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "1"
-    },
-    {
-        "UID": 29,
-        "Title": "Master Room in 374 Bukit Batok Street 31",
-        "Price": "1300",
-        "Links": "https://www.99.co/singapore/rooms/property/374-bukit-batok-street-31-hdb-LpRodUt3URCcEsi6GB9G9d",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "1"
-    },
-    {
-        "UID": 30,
-        "Title": "Exec HDB in 798 Woodlands Drive 72",
-        "Price": "4300",
-        "Links": "https://www.99.co/singapore/rent/property/798-woodlands-drive-72-hdb-KtQAaDaHQNZzVJAwsywiuv",
-        "Type": "HDB (EM)",
-        "Num_Bed": "4",
-        "Num_Toilet": "3"
-    },
-    {
-        "UID": 31,
-        "Title": "Master Room in 121 Yishun Street 11",
-        "Price": "1000",
-        "Links": "https://www.99.co/singapore/rooms/property/121-yishun-street-11-hdb-PFoUAiJMRLiEVn5U8bZutK",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "1"
-    },
-    {
-        "UID": 32,
-        "Title": "5 Room HDB in 749 Woodlands Circle",
-        "Price": "3800",
-        "Links": "https://www.99.co/singapore/rent/property/749-woodlands-circle-hdb-aJgxEsybDoE7H6zvAUX7MC",
-        "Type": "HDB (5I)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 33,
-        "Title": "Master Room in 603 Hougang Avenue 4",
-        "Price": "1400",
-        "Links": "https://www.99.co/singapore/rooms/property/603-hougang-avenue-4-hdb-JqD4k3aLgZAkzibofRsJvc",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "1"
-    },
-    {
-        "UID": 34,
-        "Title": "Common Room in 229 Bukit Batok East Avenue 3",
-        "Price": "850",
-        "Links": "https://www.99.co/singapore/rooms/property/229-bukit-batok-east-avenue-3-hdb-SXymDfF2z2nByneSb2F6fs",
-        "Type": "HDB",
-        "Num_Bed": "None",
-        "Num_Toilet": "None"
     }
 ]

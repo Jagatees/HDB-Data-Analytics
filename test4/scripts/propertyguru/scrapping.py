@@ -20,7 +20,7 @@ def test():
 
         # Get Higest Page Count 
         page_count = doc.find(class_='kiAZx').find_all('a')[4]['aria-label'].split(' ')[1]
-        # print(page_count)
+        print(page_count)
 
         title_of_room = doc.find_all(class_ = '_12dss')
         x = 0
