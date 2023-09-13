@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as py
 import json
 from statistics import mean
+from sklearn.linear_model import LinearRegression
 
 from data import sales_data, inventory_data, product_data, sales_year_data, inventory_month_data
 
@@ -139,7 +140,7 @@ def Analytics_Page():
 
         #Store FilterResult_List in a dataframe
         Filter_DF = pd.DataFrame(FilterResult_List, columns=['Year','Location','Average_Price'])
-        print(Filter_DF)
+        #print(Filter_DF)
 
         fig, ax = plt.subplots()
 
@@ -154,6 +155,28 @@ def Analytics_Page():
         canvas.draw()
         canvas.get_tk_widget().pack(side="left", expand=False)
         ax.legend()
+
+        #Data prediction
+        Predict_DF = Filter_DF.copy()
+        print(Predict_DF)
+
+
+        #Not Working Yet
+        Predicted_Data = Predict_DF[Predict_DF['Location'] == Y1parameters_combobox.get()]
+
+        PredictX = Predicted_Data[['Year']]
+        PredictY = Predicted_Data[['Average_Price']]
+
+        model = LinearRegression()
+
+        model.fit(PredictX, PredictY)
+
+        Predict_2024 = [[2024]]
+        predicted_price = model.predict(Predict_2024)[0]
+
+        print(predicted_price)
+
+
 
     #Take col name and store in dropdown 
     label4 = tk.Label(Analytics_frame, text="Y1 axis: ")
