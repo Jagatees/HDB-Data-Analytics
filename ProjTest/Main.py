@@ -14,7 +14,7 @@ from data import sales_data, inventory_data, product_data, sales_year_data, inve
 root = tk.Tk()
 root.geometry('1000x600')
 root.title('Test Side Nav')
-TestDataCSV = pd.read_csv("ProjTest\Excel Data\TestRental.csv", header=None)
+TestDataCSV = pd.read_csv("ProjTest\Excel Data\TestRentalData.csv", header=None)
 
 #Function to show home page
 def Home_Page():
@@ -116,7 +116,7 @@ def Analytics_Page():
     RentalDB.to_csv(csv_file, index=False)   
 
     #Read Excel file
-    TestRentalCSV = pd.read_csv("ProjTest\Excel Data\TestRental.csv", header=None)
+    TestRentalCSV = pd.read_csv("ProjTest\Excel Data\TestRentalData.csv", header=None)
 
     #Clean data
     Col_ToClean = [1]
@@ -124,47 +124,45 @@ def Analytics_Page():
         TestRentalCSV[column] = TestRentalCSV[column].str.replace('$', '').str.replace(',', '')
 
     #Take only selected col
-    TestRentalCSV = TestRentalCSV[[1, 2, 3]]
+    TestRentalCSV = TestRentalCSV[[1, 2, 3, 4]]
     #Change col name
-    TestRentalCSV.columns = ['Price', 'Type' ,'Area']
+    TestRentalCSV.columns = ['Year', 'Price', 'Type' ,'Area']
     #Drop first row
     TestRentalCSV = TestRentalCSV.drop(0)
     #Save dataframe into new csv file
-    #TestRentalCSV.to_csv('ProjTest\Excel Data\Cleaned_Rent_2022.csv', index=False)
+    TestRentalCSV.to_csv('ProjTest\Excel Data\Cleaned_Rent_2022.csv', index=False)
     
+    #print(TestRentalCSV)
+
     #Filter Col
     FilterTypeofRent = 'Room for Rent '
     YearRent = '2023'
 
-    FilterRentalCol = pd.read_csv("ProjTest\Excel Data\Cleaned_Rent.csv", header=None)
-    FilterRentalCol.columns = ['Year', 'Price', 'Type' ,'Area']
-    FilterRentalCol = FilterRentalCol.drop(0)
-    print(FilterRentalCol)
     #Create empty list
     FilterResult_List = []
 
     for FilterColName in AreaNames:
-        FilterTypeofRent = 'Room for Rent'
-        #FilterRentalCol = TestRentalCSV.copy()
+        FilterRentalCol = TestRentalCSV.copy()
         FilterRentalCol = FilterRentalCol[FilterRentalCol['Year'].str.contains(YearRent) & FilterRentalCol['Area'].str.contains(FilterColName) & FilterRentalCol['Type'].str.contains(FilterTypeofRent)]
-        
-        AverageRentList = list(FilterRentalCol['Price'])
-        RentList = [float(x) for x in AverageRentList]
+    
+    print(FilterRentalCol)
+        #AverageRentList = list(FilterRentalCol['Price'])
+        #RentList = [float(x) for x in AverageRentList]
 
         # Check if the df is empty
-        if not FilterRentalCol.empty:
-            AverageRentList = list(FilterRentalCol['Price'])
-            RentList = [eval(x) for x in AverageRentList]
+        #if not FilterRentalCol.empty:
+           #AverageRentList = list(FilterRentalCol['Price'])
+            #RentList = [eval(x) for x in AverageRentList]
             
             # Calculate the average rent
-            AverageRent = round(sum(RentList) / len(RentList), 2)
+            #AverageRent = round(sum(RentList) / len(RentList), 2)
             
             # Append the location and average rent to the FilterResult_List
-            FilterResult_List.append((FilterColName, AverageRent))
+            #FilterResult_List.append((FilterColName, AverageRent))
 
     #Store FilterResult_List in a dataframe
-    Filter_DF = pd.DataFrame(FilterResult_List, columns=['Location', 'Average Rent'])
-    print(Filter_DF)
+    #Filter_DF = pd.DataFrame(FilterResult_List, columns=['Location', 'Average Rent'])
+    #print(Filter_DF)
 
     def ShowGraph():
         GetXaxis = Xparameters_combobox.get()
