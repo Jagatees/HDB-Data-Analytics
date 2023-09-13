@@ -20,25 +20,9 @@ TestDataCSV = pd.read_csv("ProjTest\Excel Data\TestRentalData.csv", header=None)
 def Home_Page():
     Home_frame = tk.Frame(main_frame)
     #Code here for Home page
-    rowcount  = 0
-    rowcount = TestDataCSV.shape[0] - 1
-    Xaxis = TestDataCSV[0]
-    Yaxis = TestDataCSV[1]
 
-    lb = tk.Label(Home_frame, text='Home \npage\n There are ' + str(rowcount) + " column in the csv file ", font=('Bold', 30))
+    lb = tk.Label(Home_frame, text='Home \npage', font=('Bold', 30))
     lb.pack()
-
-    fig, ax = plt.subplots(figsize=(10,7))
-    ax.bar(Xaxis,Yaxis)
-    ax.set_xlim(xmin=0.0)
-    ax.set_xlabel('Name',fontsize=14)
-    ax.set_ylabel('Age',fontsize=14)
-    ax.set_title('Test Graph from CSV',fontsize=14)
-
-
-    canvas = FigureCanvasTkAgg(fig, Home_frame)
-    canvas.draw()
-    canvas.get_tk_widget().pack(side="left", expand=False)
 
     Home_frame.pack(pady=20)
 
@@ -106,20 +90,11 @@ def Upload_Page():
 def Analytics_Page():
     Analytics_frame = tk.Frame(main_frame)
     #Code here for Analytics page
-    RentalDB = pd.read_json("ProjTest\Scrap_Rental.json")
-
-    #To get all the unique value from the JSON file
-    AreaNames = list(RentalDB['Title'].unique())
-
-    #Convert JSON to CSV
-    csv_file = 'ProjTest\Excel Data\TestRental.csv'  
-    RentalDB.to_csv(csv_file, index=False)   
-
-    #Read Excel file
-    TestRentalCSV = pd.read_csv("ProjTest\Excel Data\TestRentalData.csv", header=None)
+    csv_file = 'ProjTest\Excel Data\TestRentalData.csv'
+    TestRentalCSV = pd.read_csv(csv_file, header=None)
 
     #Clean data
-    Col_ToClean = [1]
+    Col_ToClean = [2]
     for column in Col_ToClean:
         TestRentalCSV[column] = TestRentalCSV[column].str.replace('$', '').str.replace(',', '')
 
@@ -130,81 +105,75 @@ def Analytics_Page():
     #Drop first row
     TestRentalCSV = TestRentalCSV.drop(0)
     #Save dataframe into new csv file
-    TestRentalCSV.to_csv('ProjTest\Excel Data\Cleaned_Rent_2022.csv', index=False)
-    
+    TestRentalCSV.to_csv('ProjTest\Excel Data\Cleaned_Rent.csv', index=False)
     #print(TestRentalCSV)
-
-    #Filter Col
-    FilterTypeofRent = 'Room for Rent '
-    YearRent = '2023'
-
-    #Create empty list
-    FilterResult_List = []
-
-    for FilterColName in AreaNames:
-        FilterRentalCol = TestRentalCSV.copy()
-        FilterRentalCol = FilterRentalCol[FilterRentalCol['Year'].str.contains(YearRent) & FilterRentalCol['Area'].str.contains(FilterColName) & FilterRentalCol['Type'].str.contains(FilterTypeofRent)]
     
-    print(FilterRentalCol)
-        #AverageRentList = list(FilterRentalCol['Price'])
-        #RentList = [float(x) for x in AverageRentList]
-
-        # Check if the df is empty
-        #if not FilterRentalCol.empty:
-           #AverageRentList = list(FilterRentalCol['Price'])
-            #RentList = [eval(x) for x in AverageRentList]
-            
-            # Calculate the average rent
-            #AverageRent = round(sum(RentList) / len(RentList), 2)
-            
-            # Append the location and average rent to the FilterResult_List
-            #FilterResult_List.append((FilterColName, AverageRent))
-
-    #Store FilterResult_List in a dataframe
-    #Filter_DF = pd.DataFrame(FilterResult_List, columns=['Location', 'Average Rent'])
-    #print(Filter_DF)
+    #Get unique value from a col
+    AreaNames = TestRentalCSV['Area'].unique().tolist()
+    unique_Year = TestRentalCSV['Year'].unique().tolist()
+    #Filter_DF = pd.DataFrame()
+    #TestAreaName = []
 
     def ShowGraph():
-        GetXaxis = Xparameters_combobox.get()
-        GetYaxis = Yparameters_combobox.get()
+        #Create empty list
+        TestAreaName = [Y1parameters_combobox.get(), Y2parameters_combobox.get()]
 
-        Xaxis = TestRentalCSV[GetXaxis]
-        Yaxis = TestRentalCSV[GetYaxis]
+        FilterResult_List = []
+        for year in unique_Year:
+            for FilterColName in TestAreaName:
+                FilterTypeofRent = 'Room for Rent'
+                #YearRent = '2023'
+                FilterRentalCol = TestRentalCSV.copy()
+                FilterRentalCol = FilterRentalCol[FilterRentalCol['Year'].str.contains(year) & FilterRentalCol['Type'].str.contains(FilterTypeofRent) & FilterRentalCol['Area'].str.contains(FilterColName) ]
 
-        fig, ax = plt.subplots(figsize=(10,7))
-        #ax.plot(x=GetXaxis, y=GetYaxis, kind="bar", figsize=(9, 8))
-        ax.bar(Xaxis,Yaxis, color='maroon')
-        ax.set_xlim(xmin=0.0)
-        ax.set_xlabel(Xparameters_combobox.get(),fontsize=14)
-        ax.set_ylabel(Yparameters_combobox.get(),fontsize=14)
-        ax.set_title('CSV Graph',fontsize=14)
+                # Check if the df is empty
+                if not FilterRentalCol.empty:
+                    AverageRentList = list(FilterRentalCol['Price'])
+                    RentList = [eval(x) for x in AverageRentList]
+                    
+                    # Calculate the average rent
+                    AverageRent = round(sum(RentList) / len(RentList), 2)
+                    
+                    # Append the location and average rent to the FilterResult_List
+                    FilterResult_List.append((year, FilterColName, AverageRent))
 
-        canvas1 = FigureCanvasTkAgg(fig, Analytics_frame)
-        canvas1.draw()
-        canvas1.get_tk_widget().pack(side="left", expand=False)
+        #Store FilterResult_List in a dataframe
+        Filter_DF = pd.DataFrame(FilterResult_List, columns=['Year','Location','Average_Price'])
+        print(Filter_DF)
 
+        fig, ax = plt.subplots()
 
-    ColNames = list(RentalDB.columns) #Get the col names store in a list
+        for location, location_data in Filter_DF.groupby('Location'):
+            ax.plot(location_data['Year'], location_data['Average_Price'], label=location)
+
+        ax.set_xlabel('Year')
+        ax.set_ylabel('Average Price')
+        ax.set_title('Line Chart')
+        
+        canvas = FigureCanvasTkAgg(fig, Analytics_frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(side="left", expand=False)
+        ax.legend()
 
     #Take col name and store in dropdown 
-    label4 = tk.Label(Analytics_frame, text="X axis: ")
-    Xparameter_choices = ColNames
+    label4 = tk.Label(Analytics_frame, text="Y1 axis: ")
+    Y1parameter_choices = AreaNames
     selected_parameters = tk.StringVar()
-    Xparameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Xparameter_choices)
+    Y1parameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Y1parameter_choices)
     selected_parameters.set("Please select")
 
-    label5 = tk.Label(Analytics_frame, text="Y axis: ")
-    Yparameter_choices = AreaNames
+    label5 = tk.Label(Analytics_frame, text="Y2 axis: ")
+    Y2parameter_choices = AreaNames
     selected_parameters = tk.StringVar()
-    Yparameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Yparameter_choices)
-    selected_parameters.set(Yparameter_choices[0])  # Set the default selection
+    Y2parameters_combobox = ttk.Combobox(Analytics_frame, textvariable=selected_parameters, values=Y2parameter_choices)
+    selected_parameters.set("Please select")  # Set the default selection
 
     ShowGraphBtn = tk.Button(Analytics_frame, text="Show Graph", command=ShowGraph)
 
     label4.pack(side='left') 
-    Xparameters_combobox.pack(side='left', padx=5) 
+    Y1parameters_combobox.pack(side='left', padx=5) 
     label5.pack(side='left') 
-    Yparameters_combobox.pack(side='left', padx=5)
+    Y2parameters_combobox.pack(side='left', padx=5)
     ShowGraphBtn.pack()
 
     Analytics_frame.pack(pady=20)
@@ -216,33 +185,6 @@ def Data_Page():
     #Code here for Data page
     lb = tk.Label(Data_frame, text='Data page', font=('Bold', 30))
     lb.pack()
-
-    # 1st graph (Bar Chart), .keys = column name, .values = row value
-    fig1, ax1 = plt.subplots()
-    ax1.bar(sales_data.keys(), sales_data.values())
-    ax1.set_title("Sales of Product") #Set graph title
-    ax1.set_xlabel("Product")
-    ax1.set_ylabel("Sales")
-    fig1.set_figheight(4)
-    fig1.set_figwidth(6)
-
-    canvas1 = FigureCanvasTkAgg(fig1, Data_frame)
-    canvas1.draw()
-    canvas1.get_tk_widget().pack(side="left", expand=False)
-    
-
-    # Chart 2: Horizontal bar chart of inventory data
-    fig2, ax2 = plt.subplots()
-    ax2.barh(list(inventory_data.keys()), inventory_data.values())
-    ax2.set_title("Inventory by Product")
-    ax2.set_xlabel("Inventory")
-    ax2.set_ylabel("Product")
-    fig2.set_figheight(4)
-    fig2.set_figwidth(6)
-
-    canvas2 = FigureCanvasTkAgg(fig2, Data_frame)
-    canvas2.draw()
-    canvas2.get_tk_widget().pack(side="left", expand=False)
 
     Data_frame.pack(pady=20)
 
