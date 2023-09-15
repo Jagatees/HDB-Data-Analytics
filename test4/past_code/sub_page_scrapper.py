@@ -31,7 +31,7 @@ def count_max_page(page_count):
 def get_request_page_range(int):
     urls_x = []
     for index in range(1, int):
-        urls_x.append(f'https://rentinsingapore.com.sg/rooms-for-rent/page-{index}')
+        urls_x.append(f'https://rentinsingapore.com.sg/properties-for-rent/page-{index}')
     return urls_x
 
 def element_scrapping(index):
@@ -50,7 +50,7 @@ def element_scrapping(index):
         for div in room_wide_listing_container:
             a_tags_link = div.find_all('a')
             for a_tag in a_tags_link:
-                link = 'https://rentinsingapore.com.sg/rooms-for-rent' + a_tag['href']
+                link = 'https://rentinsingapore.com.sg/properties-for-rent' + a_tag['href']
                 links_room.append(link)
                 a_tags_title = a_tag['title']
                 sub_heading_room.append(a_tags_title)
@@ -85,7 +85,6 @@ day = []
 month = []
 year = []
 
-# Create a lock to synchronize file writes
 file_lock = Lock()
 
 def store_url():
@@ -124,27 +123,31 @@ def content_html(url):
             description_text = description_elements.get('description-text')
             dc_description.append(description_text)
 
-        deep_crawling_data = [
-            {
-                'UID': str(i),
-                'Title': dc_title[i],
-                'Location': dc_location[i],
-                'Tags': dc_details[i],
-                'Links': links_testing[i],
-                'Description': dc_description[i],
-                'Day': day[i],
-                'Month': month[i],
-                'Year': year[i]
-            }
-            for i in range(len(dc_title))
-        ]
-
-        # Use the lock to ensure only one process writes to the file at a time
-        with file_lock:
-            with open("deep_crawl.json", "w") as json_file:
-                json.dump(deep_crawling_data, json_file, indent=4)
     except Exception as e:
         print(f"Error scraping {url}: {e}")
+
+    
+    # Save the data even if an exception occurred
+    deep_crawling_data = [
+        {
+            'UID': str(i),
+            'Title': dc_title[i],
+            # 'Location': dc_location[i],
+            # 'Tags': dc_details[i],
+            # 'Links': links_testing[i],
+            # 'Description': dc_description[i],
+            # 'Day': day[i],
+            # 'Month': month[i],
+            # 'Year': year[i]
+        }
+        for i in range(len(dc_title))
+    ]
+
+    with file_lock:
+        with open("deep_crawl.json", "w") as json_file:
+            json.dump(deep_crawling_data, json_file, indent=4)
+            # print(len(dc_title))
+
 
 def main_scrawling_hopeing():
     urls = store_url()
@@ -158,19 +161,13 @@ if __name__ == '__main__':
     print('starting')
     start = time.perf_counter()
     
-    request_web = get_request_home_page_website('https://rentinsingapore.com.sg/rooms-for-rent')
+    request_web = get_request_home_page_website('https://rentinsingapore.com.sg/properties-for-rent')
     soup = BeautifulSoup(request_web.text, "html.parser")
 
     total_count = get_content_website(soup, 'span', 'total-count')
     max_number_page = count_max_page(total_count)
 
     x = get_request_page_range(max_number_page)
-    
-    with Pool(cpu_count()) as p:
-        p.map(element_scrapping, x)
-    
-    fin = time.perf_counter() - start
-    print('Time Taken for Scraping: ' + str(fin))
     
     start = time.perf_counter()
     main_scrawling_hopeing()

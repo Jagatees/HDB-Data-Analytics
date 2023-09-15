@@ -1,17 +1,23 @@
 import matplotlib
 
-import scripts.main_page_scrapping 
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 from flask import Flask, render_template,jsonify
 from flask import request
+import scripts.rentingSingpoare.main_page_scrapping as mainone
+import scripts.rentingSingpoare.scraperr_multi_threading as maintwo
 
 app = Flask(__name__)
 
 @app.route('/run_script', methods=['POST'])
 def run_script():
-    scripts.main_page_scrapping.main_scrapping()
-    return render_template('index.html')
+	mainone.main()
+	return 'Done Scrapping'
+
+@app.route('/run_risdc', methods=['POST'])
+def run_risdc():
+	maintwo.main()
+	return 'Done Scrapping'
    
 @app.route('/')
 def hello():

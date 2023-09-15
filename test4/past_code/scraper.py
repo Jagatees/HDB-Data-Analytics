@@ -35,7 +35,7 @@ def get_request_page_range(int):
     urls_x = []
     for index in range(1, int):
         urls_x.append(
-            f'https://rentinsingapore.com.sg/rooms-for-rent/page-{index}')
+            f'https://rentinsingapore.com.sg/properties-for-rent/page-{index}')
     return urls_x
 
 
@@ -57,7 +57,7 @@ async def element_scrapping(s, index):
         for div in room_wide_listing_container:
             a_tags_link = div.find_all('a')
             for a_tag in a_tags_link:
-                link = 'https://rentinsingapore.com.sg/rooms-for-rent' + \
+                link = 'https://rentinsingapore.com.sg' + \
                     a_tag['href']
                 links_room.append(link)
                 a_tags_title = a_tag['title']
@@ -89,7 +89,7 @@ async def element_scrapping(s, index):
 async def main_scrapping():
     # Get Total Page Number <-- Start
     request_web = get_request_home_page_website(
-        'https://rentinsingapore.com.sg/rooms-for-rent')
+        'https://rentinsingapore.com.sg/properties-for-rent')
     soup = BeautifulSoup(request_web.text, "html.parser")
 
     total_count = get_content_website(soup, 'span', 'total-count')

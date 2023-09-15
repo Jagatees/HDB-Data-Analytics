@@ -22,10 +22,8 @@ FIRST_PAGE_NUMBER = 1
 def get_request_home_page_website(website):
     return requests.get(website)
 
-
 def get_content_website(soup, element, _class):
     return soup.find(element, class_=_class)
-
 
 def count_max_page(page_count):
     return math.ceil(int(page_count.get_text()) / 10)
@@ -43,7 +41,7 @@ async def element_scrapping(s, index):
     page = await s.get(index)
     soup = BeautifulSoup(page.text, "html.parser")
 
-    if page.status_code == 200:
+    if True:
         room_wide_listing_container = soup.find_all(
             'div', class_='room__wide listing-container')
         room_sub_location = soup.find_all(
@@ -62,7 +60,7 @@ async def element_scrapping(s, index):
                 links_room.append(link)
                 a_tags_title = a_tag['title']
                 sub_heading_room.append(a_tags_title)
-                print(links_room)
+                # print(links_room)
         for div in price:
             price_text = div.get_text().strip()
             price_text = price_text[1:].replace(',', '')
@@ -89,11 +87,10 @@ async def element_scrapping(s, index):
     with open("main_page.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
-
 async def main_scrapping():
     # Get Total Page Number <-- Start
     request_web = get_request_home_page_website(
-        'https://rentinsingapore.com.sg/rooms-for-rent')
+        'https://rentinsingapore.com.sg/properties-for-rent')
     soup = BeautifulSoup(request_web.text, "html.parser")
 
     total_count = get_content_website(soup, 'span', 'total-count')
@@ -105,11 +102,15 @@ async def main_scrapping():
     tasks = (element_scrapping(s, url) for url in x)
     return await asyncio.gather(*tasks)
 
+def main():
+    print('starting')
+    start = time.perf_counter()
+    asyncio.run(main_scrapping())
+    fin = time.perf_counter() - start
+    print('Time Taken : ' + str(fin))
 
-print('starting')
-start = time.perf_counter()
-asyncio.run(main_scrapping())
-fin = time.perf_counter() - start
-print('Time Taken : ' + str(fin))
+if __name__=="__main__":
+    main()
+   
 
 

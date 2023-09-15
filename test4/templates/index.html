@@ -15,13 +15,27 @@
     <input type="submit" value=OK />
 </form>
 
-<button id="runScriptButton">Run Script</button>
-<div id="resultContainer"></div>
+<button id="runScriptButton">RIS_Scrapping</button>
+<button id="runRISDeepCrawling">RIS_Deep_Crawling</button>
+<!-- <div id="resultContainer">Testing</div> -->
 
 <script>
     document.getElementById('runScriptButton').addEventListener('click', function() {
         // Send an AJAX request to the server to run the script
         fetch('/run_script', {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server
+            document.getElementById('resultContainer').textContent = data.result;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+
+    document.getElementById('runRISDeepCrawling').addEventListener('click', function() {
+        // Send an AJAX request to the server to run the script
+        fetch('/run_risdc', {
             method: 'POST'
         })
         .then(response => response.json())

@@ -1,5 +1,16 @@
-To-do List
-- Web Scrapping (https://rentinsingapore.com.sg/rooms-for-rent) && (https://www.propertyguru.com.sg/property-for-rent)
+Bugs (MUST DO ASAP)
+
+1. # Bug only can scrap until page 115 when suppose to be at least 900+ pages - deep crawling (scraperr_multi_threading.py)
+
+
+Todo list CURRENT LIST
+- 99.co (Scrap the website)
+    - main page (done)
+    - subpage (pending)
+
+
+Featuers
+- Web Scrapping (https://rentinsingapore.com.sg/properties-for-rent) && (https://www.99.co)
     - main page (Done) 
     - Send to Json File (Done)
     - Scrap Mutiple Page (Done)
