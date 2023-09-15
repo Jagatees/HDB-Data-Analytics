@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import json
+import requests
+import csv
+from geopy.geocoders import Nominatim
 from statistics import mean
 from sklearn.linear_model import LinearRegression
 
@@ -31,6 +34,9 @@ def Upload_Page():
     #Code here for Upload page
     FilePath = ""
     ColList = ""
+
+    #Store address in this array
+    AddressArray = []
     
     lb = tk.Label(Upload_frame, text='Upload \npage', font=('Bold', 30))
     lb.pack()
@@ -48,29 +54,74 @@ def Upload_Page():
                 FilePath = filenames[0]
         else:
             label3_text.set('No File got')
+        
+        #Read CSV File
+        TestAddressCSV = pd.read_csv(FilePath, header=None)
+        TestAddressCSV.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+        TestAddressCSV = TestAddressCSV.drop(0)
+        # Iterate through the DataFrame
+        for index, row in TestAddressCSV.iterrows():
+            # Extract values from the two columns and concatenate them
+            value1 = row['Blk_No']
+            value2 = row['Address']
+            concatenated = str(value1) + " " + str(value2)  # Convert to string if not already
 
-    def ShowGraph():
-        #Read JSON File
-        Scamdata = pd.read_json(label3.cget("text"))
-        Years = [i["Year"] for i in Scamdata["Scam"]]
-        Amt = [i["Amt Fallen"] for i in Scamdata["Scam"]]
+            # Append the concatenated value to the list
+            AddressArray.append(concatenated)
 
-        fig, ax = plt.subplots(figsize=(10,7))
-        ax.bar(Years,Amt, color='maroon')
-        ax.set_xlim(xmin=0.0)
-        ax.set_xlabel('Years',fontsize=14)
-        ax.set_ylabel('Amt Fallen to Scam',fontsize=14)
-        ax.set_title('Test Graph from JSON',fontsize=14)
+    def GetLongLatFromAddress():
+        #LocationIQ API key
+        api_key = "pk.e1b6b31b46f4a037730c34a22ffdd6d3"
 
-        canvas1 = FigureCanvasTkAgg(fig, Upload_frame)
-        canvas1.draw()
-        canvas1.get_tk_widget().pack(side="left", expand=False)
+        # Replace with the address you want to convert
+        #address = "70 Woodlands Avenue 7"
+
+        # Initialize an empty list to store the coordinates
+        coordinates = []
+
+        # Iterate through the addresses and convert them to coordinates
+        for address in AddressArray:
+            # Construct the API request URL
+            url = f"https://us1.locationiq.com/v1/search.php?key={api_key}&q={address}&format=json"
+            
+            try:
+                # Make the API request
+                response = requests.get(url)
+
+                # Check if the request was successful (status code 200)
+                if response.status_code == 200:
+                    # Parse the JSON response
+                    data = response.json()
+
+                    if data:
+                        # Extract and append the latitude and longitude to the coordinates list
+                        latitude = data[0]["lat"]
+                        longitude = data[0]["lon"]
+                        coordinates.append((latitude, longitude))
+                    else:
+                        print(f"Location not found for address: {address}")
+                else:
+                    print(f"Error: Unable to access the LocationIQ API for address: {address}")
+            except requests.exceptions.RequestException as e:
+                print(f"Error: {e}")
+
+        # Print the coordinates for each address
+        #for i, (lat, lon) in enumerate(coordinates, start=1):
+            #print(f"Address {i}: Latitude: {lat}, Longitude: {lon}")
+        # Create a DataFrame from the coordinates
+        df = pd.DataFrame(coordinates, columns=["Latitude", "Longitude"])
+
+        # Add the original addresses as a column in the DataFrame
+        df["Address"] = AddressArray
+
+        # Print the DataFrame
+        print(df)
 
     button = tk.Button(Upload_frame, text="Browse", command=getfiledirectory)
     label2 = tk.Label(Upload_frame, text="File Location :")
     label3 = tk.Label(Upload_frame, textvariable=label3_text)  
  
-    ShowGraphBtn = tk.Button(Upload_frame, text="Show Graph", command=ShowGraph)
+    ShowGraphBtn = tk.Button(Upload_frame, text="Show Graph", command=GetLongLatFromAddress)
 
     label3_text.set("") 
 
@@ -81,7 +132,6 @@ def Upload_Page():
 
 
     Upload_frame.pack(pady=20)
-
 
 
 #Function to show Analytics page
