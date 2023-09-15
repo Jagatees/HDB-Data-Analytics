@@ -272,18 +272,19 @@ def Data_Page():
         predicted_price = model.predict(Predict_2024)[0]
 
         Price_Predicted = float(predicted_price)
-        Xaxis = Predicted_Data['Year']
-        Yaxis = Predicted_Data['Average_Price']
+
+        #Plotting Graph with predicted values
+        Xaxis = [int(Data_Year) for Data_Year in Predicted_Data['Year'].values]
+        Yaxis = Predicted_Data['Average_Price'].values
+        Predict_Year = 2024
         print(Xaxis)
+        print(Yaxis)
 
         fig, ax = plt.subplots()
 
-        for years, Predicted_Data in Predict_DF.groupby('Year'):
-            ax.plot(Predicted_Data['Year'], Predicted_Data['Average_Price'], label=years)
-
-        #ax.plot(Xaxis, Yaxis, marker='o', label='Historical Data')
-
-        ax.plot(2024, Price_Predicted, marker='o', color='red', label=f'Predicted Price: {Price_Predicted:.2f}')
+        ax.plot(Xaxis, Yaxis, marker='o', linestyle='-', label='Historical Data')
+        ax.plot(Predict_Year, Price_Predicted, marker='o', color='red', linestyle='-', label=f'Predicted Price: {Price_Predicted:.2f}')
+        #ax.set_xlim(2021, 2024)
         ax.set_xlabel('Year')
         ax.set_ylabel('Average Price')
         ax.set_title('Line Chart')
