@@ -9,9 +9,6 @@ import json
 from statistics import mean
 from sklearn.linear_model import LinearRegression
 
-from data import sales_data, inventory_data, product_data, sales_year_data, inventory_month_data
-
-
 root = tk.Tk()
 root.geometry('1000x600')
 root.title('Test Side Nav')
