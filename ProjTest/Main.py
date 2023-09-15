@@ -4,7 +4,7 @@ from tkinter import filedialog
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as py
+import numpy as np
 import json
 from statistics import mean
 from sklearn.linear_model import LinearRegression
@@ -275,16 +275,19 @@ def Data_Page():
 
         #Plotting Graph with predicted values
         Xaxis = [int(Data_Year) for Data_Year in Predicted_Data['Year'].values]
-        Yaxis = Predicted_Data['Average_Price'].values
+        Yaxis = Predicted_Data['Average_Price']
         Predict_Year = 2024
-        print(Xaxis)
-        print(Yaxis)
+
+        #Creat new array to store predicted year tgt with the rest and used it to set the range of X axis
+        Xaxis_Array = Predicted_Data['Year'].values
+        Xaxis_Array = np.append(Xaxis_Array, str(Predict_Year))
+        Xaxis_Range = [int(XaxisA) for XaxisA in Xaxis_Array]
 
         fig, ax = plt.subplots()
 
         ax.plot(Xaxis, Yaxis, marker='o', linestyle='-', label='Historical Data')
         ax.plot(Predict_Year, Price_Predicted, marker='o', color='red', linestyle='-', label=f'Predicted Price: {Price_Predicted:.2f}')
-        #ax.set_xlim(2021, 2024)
+        ax.set_xticks(Xaxis_Range)
         ax.set_xlabel('Year')
         ax.set_ylabel('Average Price')
         ax.set_title('Line Chart')
