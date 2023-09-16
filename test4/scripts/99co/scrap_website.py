@@ -6,7 +6,6 @@ import requests
 import asyncio
 from requests_html import AsyncHTMLSession
 
-
 title = []
 price = []
 link = []
@@ -15,7 +14,7 @@ num_beds = []
 num_toilet = []
 
 def test():
-    with open("website.html", "r") as f:
+    with open("page_scrape/page-1-0.html", "r") as f:
         doc = BeautifulSoup(f, "html.parser")
 
         # Get Higest Page Count 

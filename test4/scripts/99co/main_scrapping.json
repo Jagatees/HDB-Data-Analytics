@@ -1,141 +1,132 @@
 [
     {
         "UID": 0,
-        "Title": "Exec HDB in 345 Woodlands Street 32",
-        "Price": "980000",
-        "Links": "https://www.99.co/singapore/sale/property/345-woodlands-street-32-hdb-ZsPLJwvmc3BWnwxukDnYW9",
-        "Type": "HDB (6RM Jumbo)",
-        "Num_Bed": "6",
-        "Num_Toilet": "4"
-    },
-    {
-        "UID": 1,
-        "Title": "4 Room HDB in 271C Punggol Walk",
-        "Price": "718000",
-        "Links": "https://www.99.co/singapore/sale/property/271c-punggol-walk-hdb-UcuLne5YCiytqzLsZzZjHJ",
-        "Type": "HDB (4I)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 2,
-        "Title": "5 Room HDB in 805A Keat Hong Close",
-        "Price": "648888",
-        "Links": "https://www.99.co/singapore/sale/property/805a-keat-hong-close-hdb-5iW2zURXKQ3DAmJbzkzsTC",
+        "Title": "5 Room HDB in 257 Tampines Street 21",
+        "Price": "650000",
+        "Links": "https://www.99.co/singapore/sale/property/257-tampines-street-21-hdb-RNpemBcXkRzr4pogNzzwGJ",
         "Type": "HDB (5I)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
+        "UID": 1,
+        "Title": "4 Room HDB in 122 Lorong 2 Toa Payoh",
+        "Price": "838000",
+        "Links": "https://www.99.co/singapore/sale/property/122-lorong-2-toa-payoh-hdb-TaadnSHzvZ5goqpijJD6og",
+        "Type": "HDB (4A)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 2,
+        "Title": "3 Room HDB in 652 Hougang Avenue 8",
+        "Price": "349999",
+        "Links": "https://www.99.co/singapore/sale/property/652-hougang-avenue-8-hdb-Ymvsvvh7dhrMmqVuq6vLtu",
+        "Type": "HDB (3I)",
+        "Num_Bed": "2",
+        "Num_Toilet": "1"
+    },
+    {
         "UID": 3,
-        "Title": "3 Room HDB in 296A Bukit Batok Street 22",
-        "Price": "780000",
-        "Links": "https://www.99.co/singapore/sale/property/296a-bukit-batok-street-22-hdb-jmYvpJCFEd54GgxWKkhFuS",
-        "Type": "HDB (3RM)",
+        "Title": "5 Room HDB in 604 Senja Road",
+        "Price": "790000",
+        "Links": "https://www.99.co/singapore/sale/property/604-senja-road-hdb-MtKbyvruGcg9gZYJwy3F8F",
+        "Type": "HDB (5I)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 4,
-        "Title": "4 Room HDB in 965 Hougang Avenue 9",
-        "Price": "513000",
-        "Links": "https://www.99.co/singapore/sale/property/965-hougang-avenue-9-hdb-EnJK5WBPbbM2if5GY3zwtr",
+        "Title": "4 Room HDB in 197A Boon Lay Drive",
+        "Price": "638000",
+        "Links": "https://www.99.co/singapore/sale/property/197a-boon-lay-drive-hdb-mXpJU4Aa4kDVzNM5jGLwyh",
         "Type": "HDB (4A)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 5,
-        "Title": "5 Room HDB in 452A Bukit Batok West Avenue 6",
-        "Price": "810000",
-        "Links": "https://www.99.co/singapore/sale/property/452a-bukit-batok-west-avenue-6-hdb-Gfae4rMoKRhFhXevYpn6c8",
+        "Title": "5 Room HDB in 650A Jurong West Street 61",
+        "Price": "620000",
+        "Links": "https://www.99.co/singapore/sale/property/650a-jurong-west-street-61-hdb-UyFJzxGhGLBPs8y6RScb3Y",
         "Type": "HDB (5I)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 6,
-        "Title": "3 Room HDB in 537 Ang Mo Kio Avenue 5",
-        "Price": "518000",
-        "Links": "https://www.99.co/singapore/sale/property/537-ang-mo-kio-avenue-5-hdb-Sd3tBfp3UYMyUwQDknjBN6",
-        "Type": "HDB (3RM)",
+        "Title": "4 Room HDB in 859 Tampines Avenue 5",
+        "Price": "630000",
+        "Links": "https://www.99.co/singapore/sale/property/859-tampines-avenue-5-hdb-EhM2huVmRnZGuK5vhMNCbE",
+        "Type": "HDB (4A)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 7,
-        "Title": "4 Room HDB in 351A Anchorvale Road",
-        "Price": "580000",
-        "Links": "https://www.99.co/singapore/sale/property/351a-anchorvale-road-hdb-Y7UErK43wbA4wnDr3fmHTH",
-        "Type": "HDB (4STD)",
+        "Title": "4 Room HDB in 426 Ang Mo Kio Avenue 3",
+        "Price": "500000",
+        "Links": "https://www.99.co/singapore/sale/property/426-ang-mo-kio-avenue-3-hdb-7zbvCnL6rJAAYAAXHwnz5t",
+        "Type": "HDB (4NG)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 8,
-        "Title": "4 Room HDB in 310A Ang Mo Kio Avenue 1",
-        "Price": "748865",
-        "Links": "https://www.99.co/singapore/sale/property/310a-ang-mo-kio-avenue-1-hdb-FpHtEbCbDvhPCEkRXdtFiS",
-        "Type": "HDB (4A)",
+        "Title": "4 Room HDB in 510A Wellington Circle",
+        "Price": "528000",
+        "Links": "https://www.99.co/singapore/sale/property/510a-wellington-circle-hdb-RS2gWYmZHNz5gZkYjroXpa",
+        "Type": "HDB (4STD)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 9,
-        "Title": "4 Room HDB in 455A Ang Mo Kio Street 44",
-        "Price": "950000",
-        "Links": "https://www.99.co/singapore/sale/property/455a-ang-mo-kio-street-44-hdb-EtcobEN6s8uJ6cnVVT6X7r",
+        "Title": "Exec HDB in 181 Edgefield Plains",
+        "Price": "799999",
+        "Links": "https://www.99.co/singapore/sale/property/181-edgefield-plains-hdb-gTe35DYCCTgTv2B5Xjww8R",
+        "Type": "HDB (EA)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 10,
+        "Title": "4 Room HDB in 267 Yishun Street 22",
+        "Price": "530000",
+        "Links": "https://www.99.co/singapore/sale/property/267-yishun-street-22-hdb-MDPfhEqyTbw4vRdwBSEWef",
         "Type": "HDB (4A)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
-        "UID": 10,
-        "Title": "3 Room HDB in 729 Clementi West Street 2",
-        "Price": "360000",
-        "Links": "https://www.99.co/singapore/sale/property/729-clementi-west-street-2-hdb-8vsX4vrxxazMDto3j38DSz",
-        "Type": "HDB (3NG)",
-        "Num_Bed": "2",
+        "UID": 11,
+        "Title": "4 Room HDB in 114 Edgefield Plains",
+        "Price": "750000",
+        "Links": "https://www.99.co/singapore/sale/property/114-edgefield-plains-hdb-naoir3hTgrmMnbFw6FNr5X",
+        "Type": "HDB (4RM)",
+        "Num_Bed": "4",
         "Num_Toilet": "2"
     },
     {
-        "UID": 11,
-        "Title": "3 Room HDB in 38 Beo Crescent",
-        "Price": "388000",
-        "Links": "https://www.99.co/singapore/sale/property/38-beo-crescent-hdb-KeKCJMzzRbnbAuthDd7Gms",
-        "Type": "HDB (3S)",
-        "Num_Bed": "2",
-        "Num_Toilet": "1"
-    },
-    {
         "UID": 12,
-        "Title": "3 Room HDB in 110 Ang Mo Kio Avenue 4",
-        "Price": "360000",
-        "Links": "https://www.99.co/singapore/sale/property/110-ang-mo-kio-avenue-4-hdb-XUUkxRJXzSdTotEbQebsCF",
-        "Type": "HDB (3NG)",
-        "Num_Bed": "2",
+        "Title": "4 Room HDB in 223D Compassvale Walk",
+        "Price": "600000",
+        "Links": "https://www.99.co/singapore/sale/property/223d-compassvale-walk-hdb-6eDHVNatiPiN2Qt7qGFeFz",
+        "Type": "HDB (4A)",
+        "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 13,
-        "Title": "3 Bed HDB in 237 Serangoon Avenue 3",
-        "Price": "599800",
-        "Links": "https://www.99.co/singapore/sale/property/237-serangoon-avenue-3-hdb-4mRFtWDMjCStHoqXvn5sQ9",
-        "Type": "HDB",
-        "Num_Bed": "3",
+        "Title": "3 Room HDB in 182 Ang Mo Kio Avenue 5",
+        "Price": "390000",
+        "Links": "https://www.99.co/singapore/sale/property/182-ang-mo-kio-avenue-5-hdb-ac5VsmN97gF9YyqQ2BP7Wc",
+        "Type": "HDB (3NG)",
+        "Num_Bed": "2",
         "Num_Toilet": "2"
     },
     {
         "UID": 14,
-        "Title": "5 Room HDB in 453A Bukit Batok West Avenue 6",
-        "Price": "735000",
-        "Links": "https://www.99.co/singapore/sale/property/453a-bukit-batok-west-avenue-6-hdb-KL5U6EdSazY87jsQD439FE",
-        "Type": "HDB (5I)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 15,
         "Title": "4 Room HDB in 91A Telok Blangah Street 31",
         "Price": "880000",
         "Links": "https://www.99.co/singapore/sale/property/91a-telok-blangah-street-31-hdb-WRCD2vkAb9GL2y93MQnc9P",
@@ -144,97 +135,34 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 16,
-        "Title": "3 Room HDB in 461D Bukit Batok West Avenue 8",
-        "Price": "618000",
-        "Links": "https://www.99.co/singapore/sale/property/461d-bukit-batok-west-avenue-8-hdb-X8aijhAQwKXvYytX7FJkdz",
-        "Type": "HDB (3RM)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 17,
-        "Title": "2 Bed HDB in 432A Yishun Avenue 1",
-        "Price": "650000",
-        "Links": "https://www.99.co/singapore/sale/property/432a-yishun-avenue-1-hdb-EST8J6nQjmVaPHbb9YdagP",
-        "Type": "HDB",
-        "Num_Bed": "2",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 18,
-        "Title": "Exec HDB in 606 Yishun Street 61",
-        "Price": "830000",
-        "Links": "https://www.99.co/singapore/sale/property/606-yishun-street-61-hdb-BZM94XrBWsnHhK3nDEYN4k",
-        "Type": "HDB (EA)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 19,
-        "Title": "4 Room HDB in 663A Punggol Drive",
-        "Price": "608000",
-        "Links": "https://www.99.co/singapore/sale/property/663a-punggol-drive-hdb-jWgksqMRjP7AS9VeQixq6N",
-        "Type": "HDB (4A)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 20,
-        "Title": "5 Room HDB in 186 Bukit Batok West Avenue 6",
-        "Price": "750000",
-        "Links": "https://www.99.co/singapore/sale/property/186-bukit-batok-west-avenue-6-hdb-TGgzRcv8knvtmSKoEps8WR",
-        "Type": "HDB (5I)",
-        "Num_Bed": "4",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 21,
-        "Title": "Exec HDB in 863 Tampines Street 83",
-        "Price": "980000",
-        "Links": "https://www.99.co/singapore/sale/property/863-tampines-street-83-hdb-UstaE6jtTfr2LGAUvpBMmx",
-        "Type": "HDB (EM)",
-        "Num_Bed": "4",
-        "Num_Toilet": "3"
-    },
-    {
-        "UID": 22,
-        "Title": "4 Room HDB in 976 Hougang Street 91",
-        "Price": "608000",
-        "Links": "https://www.99.co/singapore/sale/property/976-hougang-street-91-hdb-mkn3R5w87DFoy38rCm8rnt",
-        "Type": "HDB (4A)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 23,
-        "Title": "3 Room HDB in 306 Clementi Avenue 4",
-        "Price": "360000",
-        "Links": "https://www.99.co/singapore/sale/property/306-clementi-avenue-4-hdb-3tz9xe7ZAWuKEJzSfEYUE4",
+        "UID": 15,
+        "Title": "3 Room HDB in 419 Ang Mo Kio Avenue 10",
+        "Price": "450000",
+        "Links": "https://www.99.co/singapore/sale/property/419-ang-mo-kio-avenue-10-hdb-b83xY7xfvR89iG34cPuFjK",
         "Type": "HDB (3NG)",
         "Num_Bed": "2",
         "Num_Toilet": "2"
     },
     {
-        "UID": 24,
-        "Title": "1 Bed HDB in 992A Buangkok Link",
-        "Price": "348888",
-        "Links": "https://www.99.co/singapore/sale/property/992a-buangkok-link-hdb-6XTu7kevxtgmE6Dd6r87wd",
-        "Type": "HDB (1RM)",
-        "Num_Bed": "1Bed",
-        "Num_Toilet": "1"
-    },
-    {
-        "UID": 25,
-        "Title": "4 Room HDB in 811A Choa Chu Kang Avenue 7",
-        "Price": "586000",
-        "Links": "https://www.99.co/singapore/sale/property/811a-choa-chu-kang-avenue-7-hdb-jJnMxSMif86G3Nge8mknpk",
-        "Type": "HDB (4RM)",
+        "UID": 16,
+        "Title": "5 Room HDB in 310 Serangoon Avenue 2",
+        "Price": "800000",
+        "Links": "https://www.99.co/singapore/sale/property/310-serangoon-avenue-2-hdb-VjuPHV8fRXFzhG5mRvy6Vm",
+        "Type": "HDB (5I)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
-        "UID": 26,
+        "UID": 17,
+        "Title": "4 Room HDB in 259 Kim Keat Avenue",
+        "Price": "630000",
+        "Links": "https://www.99.co/singapore/sale/property/259-kim-keat-avenue-hdb-iKekcjrku979NvKLLNjohg",
+        "Type": "HDB (4A)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 18,
         "Title": "4 Room HDB in 108 Bukit Batok West Avenue 6",
         "Price": "545000",
         "Links": "https://www.99.co/singapore/sale/property/108-bukit-batok-west-avenue-6-hdb-78SWWeuTvJHazJmDScFSj4",
@@ -243,25 +171,133 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 27,
-        "Title": "3 Room HDB in 418 Ang Mo Kio Avenue 10",
-        "Price": "399999",
-        "Links": "https://www.99.co/singapore/sale/property/418-ang-mo-kio-avenue-10-hdb-DNa66C8jb7DbRc3XKo74hu",
+        "UID": 19,
+        "Title": "2 Room HDB in 573B Woodlands Drive 16",
+        "Price": "329999",
+        "Links": "https://www.99.co/singapore/sale/property/573b-woodlands-drive-16-hdb-NxiXYXP5fcaLP7euq4A6kR",
+        "Type": "HDB (2A)",
+        "Num_Bed": "1Bed",
+        "Num_Toilet": "1"
+    },
+    {
+        "UID": 20,
+        "Title": "5 Room HDB in 111 Jurong East Street 13",
+        "Price": "628000",
+        "Links": "https://www.99.co/singapore/sale/property/111-jurong-east-street-13-hdb-EvrsHpMAmdRUTv3yaWELu8",
+        "Type": "HDB (5I)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 21,
+        "Title": "3 Room HDB in 345 Clementi Avenue 5",
+        "Price": "498000",
+        "Links": "https://www.99.co/singapore/sale/property/345-clementi-avenue-5-hdb-AryVKTtLEn2WRAz4tNGFWU",
         "Type": "HDB (3NG)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 22,
+        "Title": "3 Room HDB in 38 Beo Crescent",
+        "Price": "388000",
+        "Links": "https://www.99.co/singapore/sale/property/38-beo-crescent-hdb-KeKCJMzzRbnbAuthDd7Gms",
+        "Type": "HDB (3S)",
+        "Num_Bed": "2",
+        "Num_Toilet": "1"
+    },
+    {
+        "UID": 23,
+        "Title": "Exec HDB in 345 Woodlands Street 32",
+        "Price": "980000",
+        "Links": "https://www.99.co/singapore/sale/property/345-woodlands-street-32-hdb-ZsPLJwvmc3BWnwxukDnYW9",
+        "Type": "HDB (6RM Jumbo)",
+        "Num_Bed": "6",
+        "Num_Toilet": "4"
+    },
+    {
+        "UID": 24,
+        "Title": "5 Room HDB in 453A Bukit Batok West Avenue 6",
+        "Price": "735000",
+        "Links": "https://www.99.co/singapore/sale/property/453a-bukit-batok-west-avenue-6-hdb-KL5U6EdSazY87jsQD439FE",
+        "Type": "HDB (5I)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 25,
+        "Title": "4 Room HDB in 271C Punggol Walk",
+        "Price": "680000",
+        "Links": "https://www.99.co/singapore/sale/property/271c-punggol-walk-hdb-7LH5yxyD2CkxDyurMtYtoE",
+        "Type": "HDB (4A)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 26,
+        "Title": "3 Room HDB in 110 Ang Mo Kio Avenue 4",
+        "Price": "360000",
+        "Links": "https://www.99.co/singapore/sale/property/110-ang-mo-kio-avenue-4-hdb-XUUkxRJXzSdTotEbQebsCF",
+        "Type": "HDB (3NG)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 27,
+        "Title": "3 Bed HDB in 237 Serangoon Avenue 3",
+        "Price": "599800",
+        "Links": "https://www.99.co/singapore/sale/property/237-serangoon-avenue-3-hdb-4mRFtWDMjCStHoqXvn5sQ9",
+        "Type": "HDB",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 28,
-        "Title": "4 Room HDB in 341 Ubi Avenue 1",
-        "Price": "480000",
-        "Links": "https://www.99.co/singapore/sale/property/341-ubi-avenue-1-hdb-R3Hk2zYHcrFrFBi968f5GU",
-        "Type": "HDB (4S)",
+        "Title": "5 Room HDB in 452A Bukit Batok West Avenue 6",
+        "Price": "810000",
+        "Links": "https://www.99.co/singapore/sale/property/452a-bukit-batok-west-avenue-6-hdb-Gfae4rMoKRhFhXevYpn6c8",
+        "Type": "HDB (5I)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
     },
     {
         "UID": 29,
+        "Title": "4 Room HDB in 271C Punggol Walk",
+        "Price": "718000",
+        "Links": "https://www.99.co/singapore/sale/property/271c-punggol-walk-hdb-UcuLne5YCiytqzLsZzZjHJ",
+        "Type": "HDB (4I)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 30,
+        "Title": "3 Room HDB in 729 Clementi West Street 2",
+        "Price": "360000",
+        "Links": "https://www.99.co/singapore/sale/property/729-clementi-west-street-2-hdb-8vsX4vrxxazMDto3j38DSz",
+        "Type": "HDB (3NG)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 31,
+        "Title": "3 Room HDB in 662 Hougang Avenue 4",
+        "Price": "450000",
+        "Links": "https://www.99.co/singapore/sale/property/662-hougang-avenue-4-hdb-X6pL9FeLaLGwG7zBswMzvp",
+        "Type": "HDB (3A)",
+        "Num_Bed": "2",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 32,
+        "Title": "4 Room HDB in 455A Ang Mo Kio Street 44",
+        "Price": "950000",
+        "Links": "https://www.99.co/singapore/sale/property/455a-ang-mo-kio-street-44-hdb-EtcobEN6s8uJ6cnVVT6X7r",
+        "Type": "HDB (4A)",
+        "Num_Bed": "3",
+        "Num_Toilet": "2"
+    },
+    {
+        "UID": 33,
         "Title": "5 Room HDB in 117 Serangoon North Avenue 1",
         "Price": "655000",
         "Links": "https://www.99.co/singapore/sale/property/117-serangoon-north-avenue-1-hdb-Pen5eXrLveuVEi3XNTiAjv",
@@ -270,46 +306,10 @@
         "Num_Toilet": "2"
     },
     {
-        "UID": 30,
-        "Title": "4 Room HDB in 506 Jelapang Road",
-        "Price": "520000",
-        "Links": "https://www.99.co/singapore/sale/property/506-jelapang-road-hdb-mzo3yEuAfCeKr8rLRLy6ZH",
-        "Type": "HDB (4A)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 31,
-        "Title": "4 Room HDB in 134 Edgedale Plains",
-        "Price": "600000",
-        "Links": "https://www.99.co/singapore/sale/property/134-edgedale-plains-hdb-7yNEFNxpStzaUBkGwAS582",
-        "Type": "HDB (4A)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
-        "UID": 32,
-        "Title": "3 Room HDB in 21 Balam Road",
-        "Price": "320000",
-        "Links": "https://www.99.co/singapore/sale/property/21-balam-road-hdb-YEV4BQWYD9XtjMrH4JaLDB",
-        "Type": "HDB (3STD)",
-        "Num_Bed": "2",
-        "Num_Toilet": "1"
-    },
-    {
-        "UID": 33,
-        "Title": "5 Room HDB in 481 Segar Road",
-        "Price": "515000",
-        "Links": "https://www.99.co/singapore/sale/property/481-segar-road-hdb-7cyTaxVSLnf4yPu99NmqrW",
-        "Type": "HDB (5I)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2"
-    },
-    {
         "UID": 34,
-        "Title": "4 Room HDB in 449B Bukit Batok West Avenue 9",
-        "Price": "580000",
-        "Links": "https://www.99.co/singapore/sale/property/449b-bukit-batok-west-avenue-9-hdb-28GHdjVWyAjQuzaKQQozVG",
+        "Title": "4 Room HDB in 261 Toa Payoh East",
+        "Price": "1100000",
+        "Links": "https://www.99.co/singapore/sale/property/261-toa-payoh-east-hdb-EQcNGVyuPUaVUjivwqPbU5",
         "Type": "HDB (4A)",
         "Num_Bed": "3",
         "Num_Toilet": "2"
