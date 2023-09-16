@@ -43,6 +43,7 @@ def Upload_Page():
 
     label3_text = tk.StringVar()
     label3_text.set("PENDING LOCATION")
+    AddressDataFrame = pd.DataFrame()
 
     def getfiledirectory():
         filenames = filedialog.askopenfilenames()
@@ -77,7 +78,9 @@ def Upload_Page():
         #address = "70 Woodlands Avenue 7"
 
         # Initialize an empty list to store the coordinates
-        coordinates = []
+        coordinatesLong = []
+        coordinatesLat = []
+        AddressData = []
 
         # Iterate through the addresses and convert them to coordinates
         for address in AddressArray:
@@ -97,7 +100,9 @@ def Upload_Page():
                         # Extract and append the latitude and longitude to the coordinates list
                         latitude = data[0]["lat"]
                         longitude = data[0]["lon"]
-                        coordinates.append((latitude, longitude))
+                        coordinatesLong.append((longitude))
+                        coordinatesLat.append((latitude))
+                        
                     else:
                         print(f"Location not found for address: {address}")
                 else:
@@ -105,17 +110,16 @@ def Upload_Page():
             except requests.exceptions.RequestException as e:
                 print(f"Error: {e}")
 
-        # Print the coordinates for each address
-        #for i, (lat, lon) in enumerate(coordinates, start=1):
-            #print(f"Address {i}: Latitude: {lat}, Longitude: {lon}")
-        # Create a DataFrame from the coordinates
-        df = pd.DataFrame(coordinates, columns=["Latitude", "Longitude"])
+        #Store data back into excel
+        File = label3.cget("text")
+        AddressDataFrame = pd.read_csv(File, header=None)
+        AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+        AddressDataFrame = AddressDataFrame.drop(0)
 
-        # Add the original addresses as a column in the DataFrame
-        df["Address"] = AddressArray
+        AddressDataFrame['Long'] = coordinatesLong
+        AddressDataFrame['Lat'] = coordinatesLat
 
-        # Print the DataFrame
-        print(df)
+        AddressDataFrame.to_csv(File, index=False)
 
     button = tk.Button(Upload_frame, text="Browse", command=getfiledirectory)
     label2 = tk.Label(Upload_frame, text="File Location :")
