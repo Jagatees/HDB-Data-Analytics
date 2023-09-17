@@ -5,10 +5,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-import json
 import requests
-import csv
-from geopy.geocoders import Nominatim
 from statistics import mean
 from sklearn.linear_model import LinearRegression
 
