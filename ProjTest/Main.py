@@ -15,7 +15,6 @@ from sklearn.linear_model import LinearRegression
 root = tk.Tk()
 root.geometry('1000x600')
 root.title('Test Side Nav')
-TestDataCSV = pd.read_csv("ProjTest\Excel Data\TestRentalData.csv", header=None)
 
 #Function to show home page
 def Home_Page():
@@ -48,7 +47,7 @@ def Upload_Page():
     def getfiledirectory():
         filenames = filedialog.askopenfilenames()
         if filenames:
-            print("Selected files:")
+            #print("Selected files:")
             for filename in filenames:
                 print(filename)
                 label3_text.set(filenames[0])
@@ -74,13 +73,9 @@ def Upload_Page():
         #LocationIQ API key
         api_key = "pk.e1b6b31b46f4a037730c34a22ffdd6d3"
 
-        # Replace with the address you want to convert
-        #address = "70 Woodlands Avenue 7"
-
         # Initialize an empty list to store the coordinates
         coordinatesLong = []
         coordinatesLat = []
-        AddressData = []
 
         # Iterate through the addresses and convert them to coordinates
         for address in AddressArray:
@@ -120,12 +115,13 @@ def Upload_Page():
         AddressDataFrame['Lat'] = coordinatesLat
 
         AddressDataFrame.to_csv(File, index=False)
+        print("Generate Sucessful")
 
     button = tk.Button(Upload_frame, text="Browse", command=getfiledirectory)
     label2 = tk.Label(Upload_frame, text="File Location :")
     label3 = tk.Label(Upload_frame, textvariable=label3_text)  
  
-    ShowGraphBtn = tk.Button(Upload_frame, text="Show Graph", command=GetLongLatFromAddress)
+    ShowGraphBtn = tk.Button(Upload_frame, text="Generate Long&Lat", command=GetLongLatFromAddress)
 
     label3_text.set("") 
 
@@ -134,9 +130,7 @@ def Upload_Page():
     label3.pack()
     ShowGraphBtn.pack()
 
-
     Upload_frame.pack(pady=20)
-
 
 #Function to show Analytics page
 def Analytics_Page():
