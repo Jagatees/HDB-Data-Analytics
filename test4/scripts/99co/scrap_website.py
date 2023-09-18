@@ -8,6 +8,8 @@ import asyncio
 from requests_html import AsyncHTMLSession
 
 title = []
+room_type_title = []
+address = []
 price = []
 link = []
 type_ = []
@@ -24,7 +26,6 @@ def get_item_in_dic():
     return txtfiles
 
 def test():
-
     list_item = get_item_in_dic()
     print('Length : ' + str(len(list_item)))
 
@@ -44,8 +45,14 @@ def test():
                 # Title 
                 title_of_room = index.find(class_ = '_3FkoX')
                 title_of_room = title_of_room.find('a')['title']
-                # print(title_of_room)
                 title.append(title_of_room)
+
+
+                # Break_Down_Title 
+                title_of_room = index.find(class_ = '_3FkoX')
+                title_of_room = title_of_room.find('a')['title'].split('in')
+                room_type_title.append(title_of_room[0])
+                address.append('Singapore,' + title_of_room[1])
 
                 # Price
                 price_of_room = index.find(class_ = '_3XjHl')
@@ -77,7 +84,7 @@ def test():
                     num_beds.append('None')
 
 
-                # X Beds
+                # X toilet
                 toilet = index.find('li', class_='_1x-U1', itemprop='numberOfBathroomsTotal')
                 if toilet != None:
                     toilet = toilet.text.replace('\n','').replace(" ", "").replace("Baths", "").replace("Bath", "")
@@ -88,7 +95,7 @@ def test():
                     num_toilet.append('None')
 
 
-                 # Type of Room
+                 # Lease
                 le = index.find('li', itemprop='leaseLength')
                 if le != None:
                     # print(le.text)
@@ -103,6 +110,8 @@ def test():
     data = [
         {
             'Title': title[i],
+            'Room_Type' : room_type_title[i],
+            'Location' : address[i],
             'Price': price[i],
             'Links': link[i],
             'Type' : type_[i],
