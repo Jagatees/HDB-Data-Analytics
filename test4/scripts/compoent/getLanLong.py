@@ -1,73 +1,49 @@
-import requests
+import asyncio
+import time
 import json
+from requests_html import AsyncHTMLSession
 
-
+# Need add in Same
 API_KEY = "pk.e1b6b31b46f4a037730c34a22ffdd6d3"
 
-lat = []
-long = []
-lat_long = []
+lat_1 = []
+lon_1 = []
+lat_lon = []
+data = []
 
-AddressArray = [{
-    "Title": "4 Room HDB in 102 Henderson Crescent",
-    "Room_Type": "4 Room HDB ",
-    "Location": "Singapore, 102 Henderson Crescent",
-    "Price": "525000",
-    "Links": "https://www.99.co/singapore/sale/property/102-henderson-crescent-hdb-Rs8vFNGCDVfa3krk4wgC8X",
-    "Type": "HDB (4S)",
-    "Num_Bed": "3",
-    "Num_Toilet": "1",
-    "Lease": "99 years"
-},
-    {
-        "Title": "4 Room HDB in 671A Edgefield Plains",
-        "Room_Type": "4 Room HDB ",
-        "Location": "Singapore, 671A Edgefield Pla",
-        "Price": "600000",
-        "Links": "https://www.99.co/singapore/sale/property/671a-edgefield-plains-hdb-eM4E23YHt5U6Uy7RsnS2Dy",
-        "Type": "HDB (4A)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2",
-        "Lease": "99 years"
-},
-    {
-        "Title": "5 Room HDB in 685C Jurong West Central 1",
-        "Room_Type": "5 Room HDB ",
-        "Location": "Singapore, 685C Jurong West Central 1",
-        "Price": "700000",
-        "Links": "https://www.99.co/singapore/sale/property/685c-jurong-west-central-1-hdb-NWwCwjD7oexeN5XtYnWxjq",
-        "Type": "HDB (5A)",
-        "Num_Bed": "3",
-        "Num_Toilet": "2",
-        "Lease": "99 years"
-},]
-
-def GetLongLatFromAddress(location):
+async def GetLongLatFromAddress(session, location):
     url = f"https://us1.locationiq.com/v1/search.php?key={API_KEY}&q={location}&format=json"
-
-    response = requests.get(url)
-
+    response = await session.get(url)
     if response.status_code == 200:
         data = response.json()
-    else:
-        print(f"Error: Unable to access the LocationIQ API for address:")
-        return ['None','None']
-    return data[0]["lat"],data[0]["lon"]
+        if data:
+            return data[0]["lat"], data[0]["lon"]
+    return 'None', 'None'
 
+async def main_test():
+    s = AsyncHTMLSession()
+    tasks = [GetLongLatFromAddress(s, item['Location']) for item in data]
+    results = await asyncio.gather(*tasks)
 
+    for lat, lon in results:
+        lat_1.append(lat)  # This should be lat.append(lat) and lon.append(lon)
+        lon_1.append(lon)  # Change 'long' to 'lon' to avoid conflicts with the 'long' variable name
 
-with open('../99co/main_scrapping.json') as f:
-   data = json.load(f)
+def main():
+    print('starting')
+    start = time.perf_counter()
+    asyncio.run(main_test())
+    fin = time.perf_counter() - start
+    print('Time Taken : ' + str(fin))
 
+if __name__ == "__main__":
+    with open('main_scrapping.json') as f:
+        data = json.load(f)
+    main()
 
-# x = len(data)
-x = 3
-for index in range(x):
-    x = GetLongLatFromAddress(data[index]['Location'])
-    print(x)
-    print(x[0])
-    print(x[1])
-    lat.append(x[0])
-    long.append(x[1])
+result_data = [{'lat': lat, 'lon': lon} for lat, lon in zip(lat_1, lon_1)]
 
+with open('location_coordinates.json', 'w') as json_file:
+    json.dump(result_data, json_file)
 
+print("Results saved to location_coordinates.json")
