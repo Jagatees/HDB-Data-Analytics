@@ -28,6 +28,16 @@ def get_content_website(soup, element, _class):
 def count_max_page(page_count):
     return math.ceil(int(page_count.get_text()) / 10)
 
+def pageCount():
+    request_web = get_request_home_page_website(
+        'https://rentinsingapore.com.sg/properties-for-rent')
+    soup = BeautifulSoup(request_web.text, "html.parser")
+
+    total_count = get_content_website(soup, 'span', 'total-count')
+    max_number_page = count_max_page(total_count)
+
+    return max_number_page
+
 
 def get_request_page_range(int):
     urls_x = []
@@ -87,7 +97,7 @@ async def element_scrapping(s, index):
     with open("main_page.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
-async def main_scrapping():
+async def main_scrapping(cccount):
     # Get Total Page Number <-- Start
     request_web = get_request_home_page_website(
         'https://rentinsingapore.com.sg/properties-for-rent')
@@ -96,18 +106,19 @@ async def main_scrapping():
     total_count = get_content_website(soup, 'span', 'total-count')
     max_number_page = count_max_page(total_count)
 
-    x = get_request_page_range(max_number_page)
+    x = get_request_page_range(cccount)
 
     s = AsyncHTMLSession()
     tasks = (element_scrapping(s, url) for url in x)
     return await asyncio.gather(*tasks)
 
-def main():
+def main(cccount):
     print('starting')
     start = time.perf_counter()
-    asyncio.run(main_scrapping())
+    asyncio.run(main_scrapping(cccount))
     fin = time.perf_counter() - start
     print('Time Taken : ' + str(fin))
+    return ('Completed scrapping done in :' + str(fin))
 
 if __name__=="__main__":
     main()

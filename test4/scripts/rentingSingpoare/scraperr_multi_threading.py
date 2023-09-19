@@ -44,12 +44,13 @@ year = []
 file_lock = Lock()
 
 def store_url():
-    with open('test.json', 'r') as json_file:
+    with open('main_page.json', 'r') as json_file:
         file_data = json.load(json_file)
 
         urls_y = []
         for index in file_data:
             urls_y.append(index['Links'])
+        print(len(file_data))
         return urls_y
 
 def content_html(url):
@@ -113,6 +114,7 @@ def main():
         p.map(deep_crawl, store_url())
     fin = time.perf_counter() - start
     print('Time Taken for Deep Crawling: ' + str(fin))
+    return ('Completed Deep Crawling done in :' + str(fin))
 
 if __name__ == '__main__':
     main()
