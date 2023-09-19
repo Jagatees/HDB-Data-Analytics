@@ -94,7 +94,7 @@ async def element_scrapping(s, index):
     ]
 
     # Save the data as JSON
-    with open("main_page.json", "w") as json_file:
+    with open("ris_scrapping.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
 async def main_scrapping(cccount):
