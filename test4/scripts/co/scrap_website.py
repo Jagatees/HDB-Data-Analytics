@@ -18,26 +18,26 @@ num_toilet = []
 lease = []
 
 # Return list of item in folder
-def get_item_in_dic():
+def get_item_in_dic(x):
     txtfiles = []
-    arr = os.listdir('page_scrape')
+    arr = os.listdir(x)
     for file in arr:
         txtfiles.append(file)
     return txtfiles
 
-def test():
-    list_item = get_item_in_dic()
+def main(x):
+    list_item = get_item_in_dic(x)
     print('Length : ' + str(len(list_item)))
 
     counter = 0
 
     for index in list_item:
         print(index)
-        with open("page_scrape/" + str(index), "r") as f:
+        with open(x + "/" + str(index), "r") as f:
             doc = BeautifulSoup(f, "html.parser")
 
             # Get Higest Page Count 
-            page_count = doc.find(class_='kiAZx').find_all('a')[4]['aria-label'].split(' ')[1]
+            # page_count = doc.find(class_='kiAZx').find_all('a')[4]['aria-label'].split(' ')[1]
             # print(page_count)
 
             title_of_room = doc.find_all(class_ = '_12dss')
@@ -126,10 +126,4 @@ def test():
     # Save the data as JSON
     with open("main_scrapping.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
-
-
-
-
-
-test()
 

@@ -154,3 +154,6 @@ test4/logger/renting_room_deep_crawlling_times.txt
 test4/logger/renting_room_scrapping_times.txt
 test4/scripts/99co/page_scrape/output1.html
 test4/scripts/99co/page_scrape
+test4/page_scrape/0.html
+test4/page_scrape
+test4/scripts/co/page_scrape

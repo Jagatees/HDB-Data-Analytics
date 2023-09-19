@@ -20,8 +20,7 @@ def get_item_in_dic(location):
         txtfiles.append(file)
     return txtfiles
 
-# renameFiles('page_scrape')
-print(get_item_in_dic())
+
 
 
 # get all name inside the directory of the folder and store into array

@@ -1,12 +1,13 @@
 import asyncio
 import time
+from bs4 import BeautifulSoup
+import requests
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 import threading
 
+PAGE_NUMBER = 228
 # Set the path to the Chrome WebDriver executable
-
-NUMBER_OF_PAGE = 228
 
 WEBSITE_MAIN = 'https://www.99.co/singapore/s/sale?bathrooms=any&building_age=any&composite_floor_level=any&composite_furnishing=any&composite_views=any&features_and_amenities=any&has_floor_plan=false&isFilterUnapplied=false&main_category=hdb&map_bounds=1.5827095153768858%2C103.49449749970108%2C1.1090706240313446%2C104.12483807587296&page_num=1&page_size=35&path=%2Fsingapore%2Fs%2Frent&period_of_availability=any&property_segments=residential&query_coords=1.3039947%2C103.8298507&query_limit=radius&query_type=city&rental_type=all&rooms=any&show_cluster_preview=true&show_description=true&show_future_mrts=true&show_internal_linking=true&show_meta_description=true&show_nearby=true&zoom=11'
 
@@ -14,8 +15,8 @@ urls_X = []
 threads = []
 
 
-def storeallurl():
-    for index in range(1, NUMBER_OF_PAGE + 1):
+def storeallurl(x):
+    for index in range(1, x + 1):
         urls_X.append(f'https://www.99.co/singapore/s/sale?bathrooms=any&building_age=any&composite_floor_level=any&composite_furnishing=any&composite_views=any&features_and_amenities=any&has_floor_plan=false&isFilterUnapplied=false&main_category=hdb&map_bounds=1.5827095153768858%2C103.49449749970108%2C1.1090706240313446%2C104.12483807587296&page_num={index}&page_size=35&path=%2Fsingapore%2Fs%2Frent&period_of_availability=any&property_segments=residential&query_coords=1.3039947%2C103.8298507&query_limit=radius&query_type=city&rental_type=all&rooms=any&show_cluster_preview=true&show_description=true&show_future_mrts=true&show_internal_linking=true&show_meta_description=true&show_nearby=true&zoom=11')
 
 def GetHTMLPAGE(url, output):
@@ -49,8 +50,9 @@ def scrape_urls(urls_chunk, thread_num):
         GetHTMLPAGE(url, output_path)
     
 
-if __name__ == '__main__':
-    storeallurl()
+
+def main(pagelength):
+    storeallurl(pagelength)
 
     start = time.perf_counter()
 
@@ -59,10 +61,7 @@ if __name__ == '__main__':
 
     chunk_size = len(urls_X) // num_threads
     url_chunks = [urls_X[i:i+chunk_size] for i in range(0, len(urls_X), chunk_size)]
-    # print(len(url_chunks))
-    # print(len(url_chunks[0]))
-
-    # Create and start threads
+    
     threads = []
     for i, url_chunk in enumerate(url_chunks):
         thread = threading.Thread(target=scrape_urls, args=(url_chunk, i + 1))
@@ -75,6 +74,11 @@ if __name__ == '__main__':
 
     fin = time.perf_counter() - start
     print('Time Taken : ' + str(fin))
+    return ('Completed scrapping done in :' + str(fin))
+
+
+
+    
 
    
 
