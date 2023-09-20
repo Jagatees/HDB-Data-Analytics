@@ -5,6 +5,8 @@
 
 <body>
 <div class="container">
+
+    <!-- Sidebar Section -->
     <nav class="sidebar">            
         <div>
             <div class="sidebar__logo">
@@ -19,10 +21,10 @@
                     </clipPath>
                     </defs>
                 </svg>
-                <h2 class="sidebar__logo-header">Spend.In</h2>    
+                <h2 class="sidebar__logo-header">Resale HDB Analysis</h2>    
             </div>
             <ul class="side-nav">
-                <span class="side-nav__header">Main Menu</span>
+                <span class="side-nav__header">Sidebar</span>
                 <li class="side-nav__item side-nav__item-active">
                     <svg width="22" height="23" viewBox="0 0 22 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.23201 3.4202L9.23239 3.41989C10.2108 2.63408 11.7843 2.63834 12.7781 3.42994C12.7783 3.43005 12.7784 3.43015 12.7785 3.43025L18.7784 8.2301C18.7789 8.23054 18.7795 8.23099 18.78 8.23143C19.1189 8.50835 19.4146 8.94381 19.6058 9.44415C19.7968 9.94409 19.8672 10.4662 19.8014 10.8985L18.6475 17.8037C18.6474 17.8042 18.6473 17.8047 18.6472 17.8052C18.4217 19.0989 17.1608 20.1667 15.8585 20.1667H6.1418C4.81982 20.1667 3.58766 19.1252 3.36227 17.8148C3.36221 17.8145 3.36215 17.8142 3.36209 17.8138L2.20746 10.9043L2.20726 10.9032C2.13345 10.4677 2.19947 9.94466 2.39002 9.44498C2.58055 8.94535 2.87982 8.51038 3.22697 8.2334L3.22784 8.2327L9.23201 3.4202ZM11.0001 18.1876C11.6521 18.1876 12.1876 17.652 12.1876 17.0001V14.2501C12.1876 13.5981 11.6521 13.0626 11.0001 13.0626C10.3482 13.0626 9.81263 13.5981 9.81263 14.2501V17.0001C9.81263 17.652 10.3482 18.1876 11.0001 18.1876Z" fill="currentColor" stroke="currentColor"/>
@@ -46,21 +48,24 @@
                  
     </nav>
 
+    <!-- Main Content page -->
     <main class="main-content">
         <div class="top-container">
-            <!-- XXXXXX -->
         </div>
         <div class="bottom-container">
             <div class="bottom-container__left">
+
+                <!-- Section 1 -->
                 <div class="box spending-box">
                     <div class="header-container">
-                      <form id="myForm" action="/" method="POST">
+                      <!-- Title Website Scrapping Selection -->
+                      <form id="myForm" action="/" method="POST"> 
                         <h3 class="section-header">HDB Scrapping Section</h3>
                       </form> 
                     </div>
 
+                    <!-- Website Scrapping Selection -->
                     <form id="myForm" action="/website" method="POST">
-                        <!-- DropDown Return Website to Scrap -->
                         <label for="my_dropdown">Chose Website : (1st)</label>
                         <select name="my_dropdown" id="my_dropdown">
                             <option value="1">RENTinSINGAPORE</option>
@@ -68,75 +73,56 @@
                         </select>
                         <input type="submit" value=OK />
                       </form>
-                      
-                      <br>
-                      <p>RENTinSINGAPORE</p>
-
-                      <form id="myForm_PageCount" action="/get_page_count" method="POST">
-                        <label for="my_page">Number of Page : (2nd)</label>
-                        <input id="my_page" name="my_page" type="number" min="0" max={{ value }}>
-                        <input type="submit" value=OK />
-                      </form>
-
-                     <form id="myForm_PageCount" action="/scrappingRIS" method="POST">
-                      <input type="submit" value="Scraping-RENTinSINGAPORE" />
-                      <label>
-                          {{ valueTwo }}
-                      </label>
-                     </form>
-
-                     <form id="myForm_PageCount" action="/deepcrawlingRIS" method="POST">
-                      <input type="submit" value="DeepCrawling-RENTinSINGAPORE" />
-                      <label>
-                          {{ valueThree }}
-                      </label>
-                  </form>
-                  
-                  <p>99co</p>
-                  
-                  <form id="myForm_PageCount" action="/get_page_count_co" method="POST">
-                      <label for="my_page_co">Number of Page : (2nd)</label>
-                      <input id="my_page_co" name="my_page_co" type="number" min="0" max={{ valueFive }}>
-                      <input type="submit" value=OK />
-                  </form>
-                  
-                  <form id="myForm_PageCount" action="/scrapping_co" method="POST">
-                      <input type="submit" value="Scrapping-99co" />
-                      <label>
-                          {{ valueSix }}
-                      </label>
-                  </form>
 
                     <div class="bar-chart">
                         <canvas id="myChart" height="220px" width="660px"></canvas>
                     </div>
                 </div>
 
-                <!-- End  -->
+              <!-- Section 2 -->
                 <div class="box total-box">
                     <div class="total-box__left">
                         <div class="header-container">
-                            <h3 class="section-header">Total Income</h3>
-                            <svg class="up-arrow" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="42" height="42" rx="8" fill="#F6F7F9"/>
-                                <path d="M27.0702 18.57L21.0002 12.5L14.9302 18.57" stroke="#7FB519" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M21 29.5V12.67" stroke="#7FB519" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>                                
+                            <h3 class="section-header">RENTinSINGAPORE</h3>                        
                         </div>
-                        <h1 class="price">$50,530.00<span class="price-currency">(USD)</span></h1>
-                        <p><span class="percentage-increase">20%</span> increase compared to last week</p>                         
+                          
+                        <form id="myForm_PageCount" action="/get_page_count" method="POST">
+                          <label for="my_page">Number of Page : (2nd)</label>
+                          <input id="my_page" name="my_page" type="number" min="0" max={{ value }}>
+                          <input type="submit" value=OK />
+                        </form>
+  
+                        <form id="myForm_PageCount" action="/scrappingRIS" method="POST">
+                          <input type="submit" value="Scraping-RENTinSINGAPORE" />
+                          <label>
+                              {{ valueTwo }}
+                          </label>
+                        </form>
+  
+                       <form id="myForm_PageCount" action="/deepcrawlingRIS" method="POST">
+                          <input type="submit" value="DeepCrawling-RENTinSINGAPORE" />
+                          <label>
+                              {{ valueThree }}
+                          </label>
+                        </form>  
+
                     </div>
                     <div class="total-box__right">
                         <div class="header-container">
-                            <h3 class="section-header">Total Expense</h3>
-                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="42" height="42" rx="8" fill="#F6F7F9"/>
-                                <path d="M27.0702 23.43L21.0002 29.5L14.9302 23.43" stroke="#FF4423" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M21 12.5V29.33" stroke="#FF4423" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>                                                                    
+                            <h3 class="section-header">99co</h3>                                                              
                         </div>
-                        <h1 class="price">$50,530.00<span class="price-currency">(USD)</span></h1>                            
-                        <p><span class="percentage-decrease">10%</span> decrease compared to last week</p>
+                          <form id="myForm_PageCount" action="/get_page_count_co" method="POST">
+                            <label for="my_page_co">Number of Page : (2nd)</label>
+                            <input id="my_page_co" name="my_page_co" type="number" min="0" max={{ valueFive }}>
+                            <input type="submit" value=OK />
+                          </form>
+                      
+                        <form id="myForm_PageCount" action="/scrapping_co" method="POST">
+                          <input type="submit" value="Scrapping-99co" />
+                          <label>
+                              {{ valueSix }}
+                          </label>
+                        </form>
                     </div>
                 </div>          
             </div>
