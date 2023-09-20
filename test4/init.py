@@ -1,9 +1,6 @@
 # Stuff to fix
 # 1) auto create the page_scrape folder (99co)
 # 2) fix big on renting room deep crawl only get 115 page even those got 1k rooms seems werid
-# 3) Add in deep crawling from 99co (PENDING)
-# 4) Start making simple website design for dashboard UI
-    # like this kind style - https://codepen.io/ed-demircioglu/pen/PodpLoj
 # 5) merger the two json file into one big one , RIS + 99co (merger scrapping / deep crawling)
 # 6) loading bar on website
 # 7) add docker so everyone can run the project due to selium
@@ -16,15 +13,11 @@ from flask import Flask, render_template, request
 import scripts.rentingSingpoare.main_page_scrapping as mainone
 import scripts.rentingSingpoare.scraperr_multi_threading as maintwo
 
-# 99co - Scrapping (threading) & Deep Crawling ()
+# 99co - Scrapping (threading)
 import scripts.co.getpagecount as co_firstpage
 import scripts.co.getHTMLfromPage as co_secondpage
 import scripts.co.rename_folder as co_thirdpage
 import scripts.co.scrap_website as co_fourpage
-# import scripts
-
-# 99co - Deep Crawling (PENDING)
-
 
 
 app = Flask(__name__)
@@ -95,8 +88,24 @@ def scrapping_co():
     return render_template('index.html', valueSix = x)
 
 
+
+@app.route('/get_options', methods = ['GET', 'POST'])
+def get_options():
+    option_to_image = {
+        '1': 'static/99co.png',
+        '2': 'static/ris.png',
+        '3': 'static/99co.png',
+        '4': 'static/ris.png'
+    }
+
+    selected_option = request.form.get('options')
+    image_value = option_to_image.get(selected_option, None)
+    return render_template('index.html', imagevalue=image_value)
+
+
+
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5003, debug=True)
+    app.run('127.0.0.1', 5000, debug=True)
 
 
 

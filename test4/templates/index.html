@@ -14,10 +14,11 @@
             </div>
             <ul class="side-nav">
                 <span class="side-nav__header">Navigation Bar</span>
-                <li class="side-nav__item">                     
+                <li class="side-nav__item">
+                    <!-- side-nav__item-active -->
                     <span>Scrapping</span>
                 </li>
-                <li class="side-nav__item">
+                <li class="side-nav__item ">
                     <span>Team</span>
                 </li>
             </ul>
@@ -102,7 +103,36 @@
                           </label>
                         </form>
                     </div>
-                </div>          
+                </div>
+                
+                 <!-- Section 3 -->
+                 <div class="box spending-box">
+                    <div class="header-container">
+                      <!-- Title Website Scrapping Selection -->
+                      <h3 class="section-header">Get Chart Custom</h3>
+                    </div>
+                    
+                    <form action="/get_options" method="POST">
+                        <label for="options">Choose a Options : </label>
+                        <select name="options" id="options">
+                          <option value="1">Options 1</option>
+                          <option value="2">Options 2</option>
+                          <option value="3">Options 3</option>
+                          <option value="4">Options4</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Generate Chat">
+
+                        <img action="/get_options" method="GET" src= {{ imagevalue }} alt="Italian Trulli">
+
+                        
+                       
+                    </form>
+
+                   
+
+                    
+                </div>
             </div>
         </div>
     </main>

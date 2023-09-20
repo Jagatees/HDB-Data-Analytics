@@ -355,7 +355,7 @@ tr > td:first-child {
 }
 
 .btn-purple {
-    background-color: #7C5CFC;
+    background-color: hsl(252, 96%, 67%);
     color: white;
 }
 
@@ -570,4 +570,21 @@ tr > td:first-child {
         width: 100%;
         font-size: 15px;
     }
+}
+
+
+#myForm_PageCount input[type="submit"] {
+    /* Your CSS styles here */
+    /* For example, changing the background color */
+    background-color: hsl(252, 96%, 67%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#myForm_PageCount input[type="submit"]:hover {
+     background-color: rgb(187, 163, 232);
+      transition: 0.7s;
 }
