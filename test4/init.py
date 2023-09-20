@@ -39,7 +39,7 @@ user_input_page_count_co = 0
 # DO NOT DELETE THIS HELLO WORLD
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    print('hello world')
+    print('Welcome to ICT1001 Porgramming A1')
     return render_template('index.html')
 
 # Get Value from dropdown
