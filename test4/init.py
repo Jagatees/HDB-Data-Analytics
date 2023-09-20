@@ -12,14 +12,16 @@
 
 from flask import Flask, render_template, request
 
+# RentInSingapore - Scrapping (asyncio) & Deep Crawling (multiprocessing)
 import scripts.rentingSingpoare.main_page_scrapping as mainone
 import scripts.rentingSingpoare.scraperr_multi_threading as maintwo
 
-# 99co - Scrapping
+# 99co - Scrapping (threading) & Deep Crawling ()
 import scripts.co.getpagecount as co_firstpage
 import scripts.co.getHTMLfromPage as co_secondpage
 import scripts.co.rename_folder as co_thirdpage
 import scripts.co.scrap_website as co_fourpage
+# import scripts
 
 # 99co - Deep Crawling (PENDING)
 
