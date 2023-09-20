@@ -4,8 +4,7 @@
 # 5) merger the two json file into one big one , RIS + 99co (merger scrapping / deep crawling)
 # 6) loading bar on website
 # 7) add docker so everyone can run the project due to selium
-
-
+# 8) nav bar flask 
 
 from flask import Flask, render_template, request
 
