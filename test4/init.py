@@ -6,11 +6,12 @@
     # like this kind style - https://codepen.io/ed-demircioglu/pen/PodpLoj
 # 5) merger the two json file into one big one , RIS + 99co (merger scrapping / deep crawling)
 # 6) loading bar on website
-
+# 7) add docker so everyone can run the project due to selium
 
 
 
 from flask import Flask, render_template, request
+
 import scripts.rentingSingpoare.main_page_scrapping as mainone
 import scripts.rentingSingpoare.scraperr_multi_threading as maintwo
 
@@ -24,15 +25,14 @@ import scripts.co.scrap_website as co_fourpage
 
 
 
-
-
-
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
+
 
 user_input_page_count = 0
 timer_scrapping_ris = ''
 user_input_page_count_co = 0
+
 
 # DO NOT DELETE THIS HELLO WORLD
 @app.route('/', methods=['GET', 'POST'])
