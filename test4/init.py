@@ -5,6 +5,7 @@
 # 6) loading bar on website
 # 7) add docker so everyone can run the project due to selium
 # 8) nav bar flask 
+# 9) scrap the js and css from the site also
 
 from flask import Flask, render_template, request
 
@@ -104,7 +105,7 @@ def get_options():
 
 
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5000, debug=True)
+    app.run(host = '0.0.0.0', port = 5000)
 
 
 
