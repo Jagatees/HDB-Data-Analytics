@@ -11,3 +11,4 @@
 
 Things to take note
 1. It will take super long to generate the long lat due to enormous amount of data u guys srape so be patient tks. (Took me 2.5 min to process and save the long and lat for 140 data)
+2. save ur excel file in csv  format "CSV UTF-8 (Comma delimited)"

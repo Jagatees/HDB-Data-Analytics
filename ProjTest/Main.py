@@ -59,6 +59,7 @@ def Upload_Page():
         # Iterate through the DataFrame
         for index, row in TestAddressCSV.iterrows():
             # Extract values from the two columns and concatenate them
+
             value1 = row['Blk_No']
             value2 = row['Address']
             concatenated = str(value1) + " " + str(value2)  # Convert to string if not already
@@ -66,9 +67,11 @@ def Upload_Page():
             # Append the concatenated value to the list
             AddressArray.append(concatenated)
 
+        print(AddressArray)
+
     def GetLongLatFromAddress():
         #LocationIQ API key
-        api_key = "pk.e1b6b31b46f4a037730c34a22ffdd6d3"
+        api_key = "pk.02ff73880ec7a133cfe62191e54c3bd1"
 
         # Initialize an empty list to store the coordinates
         coordinatesLong = []
