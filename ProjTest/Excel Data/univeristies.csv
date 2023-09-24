@@ -1,7 +1,7 @@
 ﻿Location_Name,Location_Type,Blk_No,Address,Postal_Code,Full_Address,Long,Lat
-National University of Singapore,School,21,Lower Kent Ridge Rd,119077,"21 Lower Kent Ridge Rd, Singapore 119077",103.7805713,1.2974121
-Nanyang Technological University,School,50,Nanyang Ave,639798,"50 Nanyang Ave, 639798",103.6829332,1.3484104
-Singapore Management University,School,81,Victoria Street Singapore,188065,81 Victoria Street Singapore 188065,103.8500437,1.29616795
-Singapore Institute of Technology,School,10,Dover Drive,138683,10 Dover Drive Singapore 138683,103.7799727,1.3003557
-Singapore University of Social Sciences,School,463,Clementi Rd,599494,"463 Clementi Rd, Singapore 599494",103.7703776,1.3012489
-Singapore University of Technology and Design,School,8,Somapah Road,487372,"8 Somapah Road, Singapore 487372",103.9643433,1.341603
+National University of Singapore,Uni School,21,Lower Kent Ridge Rd,119077,"21 Lower Kent Ridge Rd, Singapore 119077",103.7805713,1.2974121
+Nanyang Technological University,Uni School,50,Nanyang Ave,639798,"50 Nanyang Ave, 639798",103.6829332,1.3484104
+Singapore Management University,Uni School,81,Victoria Street Singapore,188065,81 Victoria Street Singapore 188065,103.8500437,1.29616795
+Singapore Institute of Technology,Uni School,10,Dover Drive,138683,10 Dover Drive Singapore 138683,103.7799727,1.3003557
+Singapore University of Social Sciences,Uni School,463,Clementi Rd,599494,"463 Clementi Rd, Singapore 599494",103.7703776,1.3012489
+Singapore University of Technology and Design,Uni School,8,Somapah Road,487372,"8 Somapah Road, Singapore 487372",103.9643433,1.341603

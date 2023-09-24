@@ -1,5 +1,6 @@
 import math
 import requests
+import pandas as pd
 
 def GetLongLatFromAddress(Address):
     #LocationIQ API key
@@ -77,3 +78,17 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 #Distance2Dp = "{:.2f}".format(distance)
 
 #print(str(Distance2Dp) + "Meters")
+
+def GetCoordinatesfromcsv(FilePath):
+
+    column_names = ['Location_Type', 'Long', 'Lat']
+
+    CSVLongLat = pd.read_csv(FilePath, header=None)
+    CSVLongLat = CSVLongLat[[1, 6, 7]]
+    CSVLongLat.columns = ['Location_Type', 'Long', 'Lat']
+    CSVLongLat = CSVLongLat.drop(0)
+
+    return CSVLongLat
+
+
+

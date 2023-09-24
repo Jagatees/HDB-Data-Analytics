@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import requests
+import KerwinFunction
 from statistics import mean
 from sklearn.linear_model import LinearRegression
 
@@ -17,6 +18,38 @@ root.title('Test Side Nav')
 def Home_Page():
     Home_frame = tk.Frame(main_frame)
     #Code here for Home page
+
+    #CSV File Paths
+    FairpriceFilePath = 'ProjTest\\Excel Data\\fairprice.csv'
+    HospitalFilePath = 'ProjTest\\Excel Data\\HospitalClinic.csv'
+    MallsFilePath = 'ProjTest\\Excel Data\\Malls.csv'
+    MRTDataFilePath = 'ProjTest\\Excel Data\\MRTData.csv'
+    ParksFilePath = 'ProjTest\\Excel Data\\Parks.csv'
+    PriSchFilePath = 'ProjTest\\Excel Data\\primaryschool.csv'
+    SecSchFilePath = 'ProjTest\\Excel Data\\secondaryschool.csv'
+    TertiaryFilePath = 'ProjTest\\Excel Data\\tertiaryschool.csv'
+    UniversityFilePath = 'ProjTest\\Excel Data\\univeristies.csv'
+    MDollarHseFilePath = 'ProjTest\\Excel Data\\MillionDollarHse.csv'
+
+    #Dummy user add
+    UserAddress = "443A Fernvale Road"
+
+    #convert user address into long and lat
+    UserCoordinates = KerwinFunction.GetLongLatFromAddress(UserAddress).split(",")
+    UserLong = UserCoordinates[1].strip()
+    Userlat = UserCoordinates[0].strip()
+
+    #get long and lat from all csv file save into datatable
+    FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
+    HospitalDT = KerwinFunction.GetCoordinatesfromcsv(HospitalFilePath)
+    MallsDT = KerwinFunction.GetCoordinatesfromcsv(MallsFilePath)
+    MRTDataDT = KerwinFunction.GetCoordinatesfromcsv(MRTDataFilePath)
+    ParksDT = KerwinFunction.GetCoordinatesfromcsv(ParksFilePath)
+    PriSchDT = KerwinFunction.GetCoordinatesfromcsv(PriSchFilePath)
+    SecSchDT = KerwinFunction.GetCoordinatesfromcsv(SecSchFilePath)
+    TertairyDT = KerwinFunction.GetCoordinatesfromcsv(TertiaryFilePath)
+    UniversityDT = KerwinFunction.GetCoordinatesfromcsv(UniversityFilePath)
+    MDollarHseDT =  KerwinFunction.GetCoordinatesfromcsv(MDollarHseFilePath)
 
     lb = tk.Label(Home_frame, text='Home \npage', font=('Bold', 30))
     lb.pack()
