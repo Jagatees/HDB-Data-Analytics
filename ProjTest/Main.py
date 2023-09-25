@@ -37,7 +37,7 @@ def Home_Page():
     #convert user address into long and lat
     UserCoordinates = KerwinFunction.GetLongLatFromAddress(UserAddress).split(",")
     UserLong = UserCoordinates[1].strip()
-    Userlat = UserCoordinates[0].strip()
+    UserLat = UserCoordinates[0].strip()
 
     #get long and lat from all csv file save into datatable
     FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
@@ -50,6 +50,135 @@ def Home_Page():
     TertairyDT = KerwinFunction.GetCoordinatesfromcsv(TertiaryFilePath)
     UniversityDT = KerwinFunction.GetCoordinatesfromcsv(UniversityFilePath)
     MDollarHseDT =  KerwinFunction.GetCoordinatesfromcsv(MDollarHseFilePath)
+
+    FairpriceLong = FairpriceDT['Long'].tolist()
+    FairpriceLat = FairpriceDT['Lat'].tolist()
+    HospitalLong = HospitalDT['Long'].tolist()
+    HospitalLat = HospitalDT['Lat'].tolist()
+    MallsLong = MallsDT['Long'].tolist()
+    MallsLat = MallsDT['Lat'].tolist()
+    MRTLong = MRTDataDT['Long'].tolist()
+    MRTLat = MRTDataDT['Lat'].tolist()
+    ParksLong = ParksDT['Long'].tolist()
+    ParksLat = ParksDT['Lat'].tolist()
+    PriSchLong = PriSchDT['Long'].tolist()
+    PriSchLat = PriSchDT['Lat'].tolist()
+    SecSchLong = SecSchDT['Long'].tolist()
+    SecSchLat = SecSchDT['Lat'].tolist()
+    TertairyLong = TertairyDT['Long'].tolist()
+    TertairyLat = TertairyDT['Lat'].tolist()
+    UniLong = UniversityDT['Long'].tolist()
+    UniLat = UniversityDT['Lat'].tolist()
+    MDollarHseLong = MDollarHseDT['Long'].tolist()
+    MDollarHseLat = MDollarHseDT['Lat'].tolist()
+
+    ###Million Dollar Hse to Admenties###
+    
+
+    ###User Address to Admenties###
+    #Calculate Distance between user and all Fairprice
+    User_FairpriceDistResult = []
+
+    for lat2, lon2 in zip(FairpriceLat, FairpriceLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_FairpriceDistResult.append({'Table_Name': 'User_FairpriceDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_FairpriceDistDT = pd.DataFrame(User_FairpriceDistResult)
+
+    #Calculate Distance between user and all Hospital/Clinic
+    User_HospitalClinicDistResult = []
+
+    for lat2, lon2 in zip(HospitalLat, HospitalLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_HospitalClinicDistResult.append({'Table_Name': 'User_HospitalCLinicDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_HospitalClinicDistDT = pd.DataFrame(User_HospitalClinicDistResult)
+
+    #Calculate Distance between user and all Malls
+    User_MallsDistResult = []
+
+    for lat2, lon2 in zip(MallsLat, MallsLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_MallsDistResult.append({'Table_Name': 'User_MallsDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_MallsDistDT = pd.DataFrame(User_MallsDistResult)
+
+    #Calculate Distance between user and all MRT
+    User_MRTDistResult = []
+
+    for lat2, lon2 in zip(MRTLat, MRTLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_MRTDistResult.append({'Table_Name': 'User_MRTDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_MRTDistDT = pd.DataFrame(User_MRTDistResult)
+
+    #Calculate Distance between user and all Parks
+    User_ParksDistResult = []
+
+    for lat2, lon2 in zip(ParksLat, ParksLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_ParksDistResult.append({'Table_Name': 'User_ParksDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_ParksDistDT = pd.DataFrame(User_ParksDistResult)
+
+    #Calculate Distance between user and all Primary school
+    User_PriSchDistResult = []
+
+    for lat2, lon2 in zip(PriSchLat, PriSchLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_PriSchDistResult.append({'Table_Name': 'User_PriSchDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_PriSchDistDT = pd.DataFrame(User_PriSchDistResult)
+
+    #Calculate Distance between user and all Secondary School
+    User_SecSchDistResult = []
+
+    for lat2, lon2 in zip(SecSchLat, SecSchLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_SecSchDistResult.append({'Table_Name': 'User_SecSchDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_SecSchDistDT = pd.DataFrame(User_SecSchDistResult)
+
+    #Calculate Distance between user and all Tertairy School
+    User_TertairyDistResult = []
+
+    for lat2, lon2 in zip(TertairyLat, TertairyLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_TertairyDistResult.append({'Table_Name': 'User_TertiaryDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_TertiaryDistDT = pd.DataFrame(User_TertairyDistResult)
+
+    #Calculate Distance between user and all Uni
+    User_UniDistResult = []
+
+    for lat2, lon2 in zip(UniLat, UniLong):
+        distance_km = KerwinFunction.DistanceBetween2Coordinates(float(UserLat), float(UserLong), float(lat2), float(lon2))
+        User_UniDistResult.append({'Table_Name': 'User_UniDist', 'Latitude': lat2, 'Longitude': lon2, 'Distance (km)': distance_km})
+
+    User_UniDistDT = pd.DataFrame(User_UniDistResult)
+
+    DistanceinKM = 1.0
+    FilterFairpriceDistDT = KerwinFunction.FilterDataTableByDistance(User_FairpriceDistDT, DistanceinKM)
+    FilterHosClinicDistDT = KerwinFunction.FilterDataTableByDistance(User_HospitalClinicDistDT, DistanceinKM)
+    FilterMallDistDT = KerwinFunction.FilterDataTableByDistance(User_MallsDistDT, DistanceinKM)
+    FilterMRTDistDT = KerwinFunction.FilterDataTableByDistance(User_MRTDistDT, DistanceinKM)
+    FilterParkDistDT = KerwinFunction.FilterDataTableByDistance(User_ParksDistDT, DistanceinKM)
+    FilterPriSchDistDT = KerwinFunction.FilterDataTableByDistance(User_PriSchDistDT, DistanceinKM)
+    FilterSecSchDistDT = KerwinFunction.FilterDataTableByDistance(User_SecSchDistDT, DistanceinKM)
+    FilterTertiaryDistDT = KerwinFunction.FilterDataTableByDistance(User_TertiaryDistDT, DistanceinKM)
+    FIlterUniDistDT = KerwinFunction.FilterDataTableByDistance(User_UniDistDT, DistanceinKM)
+
+    FilterFairpriceCount = "There are " + str(len(FilterFairpriceDistDT)) + " Fairprice within 1km from the address\n"
+    FilterHosClinicCount = "There are " + str(len(FilterHosClinicDistDT)) + " Hospital or clinic within 1km from the address\n"
+    FilterMallsCount = "There are " + str(len(FilterMallDistDT)) + " Malls within 1km from the address\n"
+    FilterMRTCount = "There are " + str(len(FilterMRTDistDT)) + " MRT within 1km from the address\n"
+    FilterParkCount = "There are " + str(len(FilterParkDistDT)) + " Park within 1km from the address\n"
+    FilterPriSchCount = "There are " + str(len(FilterPriSchDistDT)) + " Primary School within 1km from the address\n"
+    FilterSecSchCount = "There are " + str(len(FilterSecSchDistDT)) + " Secondary School within 1km from the address\n"
+    FilterTertiaryCount = "There are " + str(len(FilterTertiaryDistDT)) + " Tertiary School within 1km from the address\n"
+    FIlterUniCount = "There are " + str(len(FIlterUniDistDT)) + " Universities within 1km from the address"
+
+    print(FilterFairpriceCount + FilterHosClinicCount + FilterMallsCount + FilterMRTCount + FilterParkCount + FilterPriSchCount + FilterSecSchCount + FilterTertiaryCount + FIlterUniCount)
 
     lb = tk.Label(Home_frame, text='Home \npage', font=('Bold', 30))
     lb.pack()
