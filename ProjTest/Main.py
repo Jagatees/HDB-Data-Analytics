@@ -9,6 +9,7 @@ import requests
 import KerwinFunction
 from statistics import mean
 from sklearn.linear_model import LinearRegression
+import ast
 
 root = tk.Tk()
 root.geometry('1000x600')
@@ -50,6 +51,7 @@ def Home_Page():
     TertairyDT = KerwinFunction.GetCoordinatesfromcsv(TertiaryFilePath)
     UniversityDT = KerwinFunction.GetCoordinatesfromcsv(UniversityFilePath)
     MDollarHseDT =  KerwinFunction.GetCoordinatesfromcsv(MDollarHseFilePath)
+    MDollarHseDF = MDollarHseDT.drop_duplicates()
 
     FairpriceLong = FairpriceDT['Long'].tolist()
     FairpriceLat = FairpriceDT['Lat'].tolist()
@@ -69,11 +71,115 @@ def Home_Page():
     TertairyLat = TertairyDT['Lat'].tolist()
     UniLong = UniversityDT['Long'].tolist()
     UniLat = UniversityDT['Lat'].tolist()
-    MDollarHseLong = MDollarHseDT['Long'].tolist()
-    MDollarHseLat = MDollarHseDT['Lat'].tolist()
+    MDollarHseLong = MDollarHseDF['Long'].tolist()
+    MDollarHseLat = MDollarHseDF['Lat'].tolist()
+
+    MDollarHseCoordinates = [f'{x},{y}' for x, y in zip(MDollarHseLat, MDollarHseLong)]
 
     ###Million Dollar Hse to Admenties###
+
+    #Convert string list to float list
+    FairpriceLat_Float = [eval(x) for x in FairpriceLat]
+    FairpriceLong_Float = [eval(x) for x in FairpriceLong]
+    HospitalLat_Float = [eval(x) for x in HospitalLat]
+    HospitalLong_Float = [eval(x) for x in HospitalLong]
+    MallsLat_Float = [eval(x) for x in MallsLat]
+    MallsLong_Float = [eval(x) for x in MallsLong]
+    MRTLat_Float = [eval(x) for x in MRTLat]
+    MRTLong_Float = [eval(x) for x in MRTLong]
+    ParksLat_Float = [eval(x) for x in ParksLat]
+    ParksLong_Float = [eval(x) for x in ParksLong]
+    PriSchLat_Float = [eval(x) for x in PriSchLat]
+    PriSchLong_Float = [eval(x) for x in PriSchLong]
+    SecSchLat_Float = [eval(x) for x in SecSchLat]
+    SecSchLong_Float = [eval(x) for x in SecSchLong]
+    TertairyLat_Float = [eval(x) for x in TertairyLat]
+    TertairyLong_Float = [eval(x) for x in TertairyLong]
+    UniLat_Float = [eval(x) for x in UniLat]
+    UniLong_Float = [eval(x) for x in UniLong]
+    MDollarHseLat_Float = [eval(x) for x in MDollarHseLat]
+    MDollarHseLong_Float = [eval(x) for x in MDollarHseLong]
+
+    #Calculate distance between MDollarhse and the amenties
+    MDollarHse_FairpriceDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, FairpriceLat_Float, FairpriceLong_Float, 'Fairprice')
+    MDollarHse_FairpriceDT = pd.DataFrame(MDollarHse_FairpriceDist)
+
+    MDollarHse_HosDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, HospitalLat_Float, HospitalLong_Float, 'HosClinic')
+    MDollarHse_HosDT = pd.DataFrame(MDollarHse_HosDist)
+
+    MDollarHse_MallsDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, MallsLat_Float, MallsLong_Float, 'Malls')
+    MDollarHse_MallsDT = pd.DataFrame(MDollarHse_MallsDist)
+
+    MDollarHse_MRTDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, MRTLat_Float, MRTLong_Float, 'MRT')
+    MDollarHse_MRTDT = pd.DataFrame(MDollarHse_MRTDist)
+
+    MDollarHse_ParksDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, ParksLat_Float, ParksLong_Float, 'Parks')
+    MDollarHse_ParksDT = pd.DataFrame(MDollarHse_ParksDist)
+
+    MDollarHse_PriSchDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, PriSchLat_Float, PriSchLong_Float, 'Primary School')
+    MDollarHse_PriSchDT = pd.DataFrame(MDollarHse_PriSchDist)
+
+    MDollarHse_SecSchDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, SecSchLat_Float, SecSchLong_Float, 'Secondary School')
+    MDollarHse_SecSchDT = pd.DataFrame(MDollarHse_SecSchDist)
+
+    MDollarHse_TertairyDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, TertairyLat_Float, TertairyLong_Float, 'Tertairy')
+    MDollarHse_TertairyDT = pd.DataFrame(MDollarHse_TertairyDist)
+
+    MDollarHse_UniDist = KerwinFunction.Calculate_MDollar_Amenities_Dist(MDollarHseLat_Float, MDollarHseLong_Float, UniLat_Float, UniLong_Float, 'Uni')
+    MDollarHse_UniDT = pd.DataFrame(MDollarHse_UniDist)
+
+    #Filter and get all amenties within 1km radius
+    MDollarHse_DistanceinKM = 0.5
+
+    FilterMDollarHse_FairpriceDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_FairpriceDT, MDollarHse_DistanceinKM)
+    FilterMDollarHse_HosDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_HosDT, MDollarHse_DistanceinKM)
+    FilterMDollarHse_MallsDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_MallsDT, MDollarHse_DistanceinKM)
+    FilterMDollarHse_MRTDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_MRTDT, MDollarHse_DistanceinKM)
+    FilterMDollarHse_ParksDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_ParksDT, MDollarHse_DistanceinKM)
+    FilterMDollarHse_PriSchDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_PriSchDT, MDollarHse_DistanceinKM)
+    FilterMDollarHse_SecSchDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_SecSchDT, MDollarHse_DistanceinKM)
+    FilterMDollarHse_TertairyDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_TertairyDT, MDollarHse_DistanceinKM)
+    FIlterMDollarHse_UniDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_UniDT, MDollarHse_DistanceinKM)
+
+    #count the unique rows
+    Fairprice_Count = FilterMDollarHse_FairpriceDT['MDollarHse_Coordinates'].value_counts()
+    Hos_Count = FilterMDollarHse_HosDT['MDollarHse_Coordinates'].value_counts()
+    Malls_Count = FilterMDollarHse_MallsDT['MDollarHse_Coordinates'].value_counts()
+    MRT_Count = FilterMDollarHse_MRTDT['MDollarHse_Coordinates'].value_counts()
+    Parks_Count = FilterMDollarHse_ParksDT['MDollarHse_Coordinates'].value_counts()
+    PriSch_Count = FilterMDollarHse_PriSchDT['MDollarHse_Coordinates'].value_counts()
+    SecSch_Count = FilterMDollarHse_SecSchDT['MDollarHse_Coordinates'].value_counts()
+    Tertiary_Count = FilterMDollarHse_TertairyDT['MDollarHse_Coordinates'].value_counts()
+    Uni_Count = FIlterMDollarHse_UniDT['MDollarHse_Coordinates'].value_counts()
     
+    All_CountDT = [Fairprice_Count, Hos_Count, Malls_Count, MRT_Count, Parks_Count, PriSch_Count, SecSch_Count, Tertiary_Count, Uni_Count]
+    Merged_All_CountDT = pd.concat(All_CountDT, axis=1)
+
+    unique_column_names = []
+    base_name = 'count'
+    for i in range(len(Merged_All_CountDT.columns)):
+        unique_column_names.append(f'{base_name}{chr(65 + i)}')
+
+    # Rename the columns
+    Merged_All_CountDT.columns = unique_column_names
+
+    new_column_names = {'countA': 'Fairprice_Count','countB': 'Hos_Count','countC': 'Malls_Count','countD': 'MRT_Count','countE': 'Parks_Count','countF': 'PriSch_Count','countG': 'SecSch_Count','countH': 'Tertiary_Count','countI': 'Uni_Count'}
+    
+    Merged_All_CountDT = Merged_All_CountDT.rename(columns=new_column_names)
+
+    #index_values = Merged_All_CountDT.index
+    #df = pd.DataFrame(Merged_All_CountDT, index=index_values)
+
+    # Copy the index to a new column
+    #df['MDollarHse_Coordinates'] = df.index
+
+    # Reset the index to integer index (optional)
+    #print(index_values)
+    print(Merged_All_CountDT)
+
+    Merged_All_CountDT.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
+    
+
 
     ###User Address to Admenties###
     #Calculate Distance between user and all Fairprice
@@ -157,16 +263,16 @@ def Home_Page():
 
     User_UniDistDT = pd.DataFrame(User_UniDistResult)
 
-    DistanceinKM = 1.0
-    FilterFairpriceDistDT = KerwinFunction.FilterDataTableByDistance(User_FairpriceDistDT, DistanceinKM)
-    FilterHosClinicDistDT = KerwinFunction.FilterDataTableByDistance(User_HospitalClinicDistDT, DistanceinKM)
-    FilterMallDistDT = KerwinFunction.FilterDataTableByDistance(User_MallsDistDT, DistanceinKM)
-    FilterMRTDistDT = KerwinFunction.FilterDataTableByDistance(User_MRTDistDT, DistanceinKM)
-    FilterParkDistDT = KerwinFunction.FilterDataTableByDistance(User_ParksDistDT, DistanceinKM)
-    FilterPriSchDistDT = KerwinFunction.FilterDataTableByDistance(User_PriSchDistDT, DistanceinKM)
-    FilterSecSchDistDT = KerwinFunction.FilterDataTableByDistance(User_SecSchDistDT, DistanceinKM)
-    FilterTertiaryDistDT = KerwinFunction.FilterDataTableByDistance(User_TertiaryDistDT, DistanceinKM)
-    FIlterUniDistDT = KerwinFunction.FilterDataTableByDistance(User_UniDistDT, DistanceinKM)
+    UserDistanceinKM = 1.0
+    FilterFairpriceDistDT = KerwinFunction.FilterDataTableByDistance(User_FairpriceDistDT, UserDistanceinKM)
+    FilterHosClinicDistDT = KerwinFunction.FilterDataTableByDistance(User_HospitalClinicDistDT, UserDistanceinKM)
+    FilterMallDistDT = KerwinFunction.FilterDataTableByDistance(User_MallsDistDT, UserDistanceinKM)
+    FilterMRTDistDT = KerwinFunction.FilterDataTableByDistance(User_MRTDistDT, UserDistanceinKM)
+    FilterParkDistDT = KerwinFunction.FilterDataTableByDistance(User_ParksDistDT, UserDistanceinKM)
+    FilterPriSchDistDT = KerwinFunction.FilterDataTableByDistance(User_PriSchDistDT, UserDistanceinKM)
+    FilterSecSchDistDT = KerwinFunction.FilterDataTableByDistance(User_SecSchDistDT, UserDistanceinKM)
+    FilterTertiaryDistDT = KerwinFunction.FilterDataTableByDistance(User_TertiaryDistDT, UserDistanceinKM)
+    FIlterUniDistDT = KerwinFunction.FilterDataTableByDistance(User_UniDistDT, UserDistanceinKM)
 
     FilterFairpriceCount = "There are " + str(len(FilterFairpriceDistDT)) + " Fairprice within 1km from the address\n"
     FilterHosClinicCount = "There are " + str(len(FilterHosClinicDistDT)) + " Hospital or clinic within 1km from the address\n"
@@ -178,7 +284,7 @@ def Home_Page():
     FilterTertiaryCount = "There are " + str(len(FilterTertiaryDistDT)) + " Tertiary School within 1km from the address\n"
     FIlterUniCount = "There are " + str(len(FIlterUniDistDT)) + " Universities within 1km from the address"
 
-    print(FilterFairpriceCount + FilterHosClinicCount + FilterMallsCount + FilterMRTCount + FilterParkCount + FilterPriSchCount + FilterSecSchCount + FilterTertiaryCount + FIlterUniCount)
+    #print(FilterFairpriceCount + FilterHosClinicCount + FilterMallsCount + FilterMRTCount + FilterParkCount + FilterPriSchCount + FilterSecSchCount + FilterTertiaryCount + FIlterUniCount)
 
     lb = tk.Label(Home_frame, text='Home \npage', font=('Bold', 30))
     lb.pack()
