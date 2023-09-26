@@ -169,6 +169,9 @@ def Home_Page():
     #Calculate the points 
     Merged_All_CountDT['Total_Points'] = Merged_All_CountDT.iloc[:, 0:].sum(axis=1)
 
+    #calculate average points
+    MDollar_AveragePoint = Merged_All_CountDT['Total_Points'].mean()
+    print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
     #pass the dataframe into a CSV file
     Merged_All_CountDT.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
 
