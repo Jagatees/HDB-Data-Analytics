@@ -51,7 +51,7 @@ def Home_Page():
     TertairyDT = KerwinFunction.GetCoordinatesfromcsv(TertiaryFilePath)
     UniversityDT = KerwinFunction.GetCoordinatesfromcsv(UniversityFilePath)
     MDollarHseDT =  KerwinFunction.GetCoordinatesfromcsv(MDollarHseFilePath)
-    MDollarHseDF = MDollarHseDT.drop_duplicates()
+    MDollarHseDF = MDollarHseDT.drop_duplicates() #Remove all the duplicated values
 
     FairpriceLong = FairpriceDT['Long'].tolist()
     FairpriceLat = FairpriceDT['Lat'].tolist()
@@ -73,8 +73,6 @@ def Home_Page():
     UniLat = UniversityDT['Lat'].tolist()
     MDollarHseLong = MDollarHseDF['Long'].tolist()
     MDollarHseLat = MDollarHseDF['Lat'].tolist()
-
-    MDollarHseCoordinates = [f'{x},{y}' for x, y in zip(MDollarHseLat, MDollarHseLong)]
 
     ###Million Dollar Hse to Admenties###
 
@@ -152,33 +150,27 @@ def Home_Page():
     Tertiary_Count = FilterMDollarHse_TertairyDT['MDollarHse_Coordinates'].value_counts()
     Uni_Count = FIlterMDollarHse_UniDT['MDollarHse_Coordinates'].value_counts()
     
+    #Merge all dataframe into 1
     All_CountDT = [Fairprice_Count, Hos_Count, Malls_Count, MRT_Count, Parks_Count, PriSch_Count, SecSch_Count, Tertiary_Count, Uni_Count]
     Merged_All_CountDT = pd.concat(All_CountDT, axis=1)
 
+    #Rename column name
     unique_column_names = []
     base_name = 'count'
     for i in range(len(Merged_All_CountDT.columns)):
         unique_column_names.append(f'{base_name}{chr(65 + i)}')
 
-    # Rename the columns
     Merged_All_CountDT.columns = unique_column_names
 
     new_column_names = {'countA': 'Fairprice_Count','countB': 'Hos_Count','countC': 'Malls_Count','countD': 'MRT_Count','countE': 'Parks_Count','countF': 'PriSch_Count','countG': 'SecSch_Count','countH': 'Tertiary_Count','countI': 'Uni_Count'}
     
     Merged_All_CountDT = Merged_All_CountDT.rename(columns=new_column_names)
 
-    #index_values = Merged_All_CountDT.index
-    #df = pd.DataFrame(Merged_All_CountDT, index=index_values)
+    #Calculate the points 
+    Merged_All_CountDT['Total_Points'] = Merged_All_CountDT.iloc[:, 0:].sum(axis=1)
 
-    # Copy the index to a new column
-    #df['MDollarHse_Coordinates'] = df.index
-
-    # Reset the index to integer index (optional)
-    #print(index_values)
-    print(Merged_All_CountDT)
-
+    #pass the dataframe into a CSV file
     Merged_All_CountDT.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
-    
 
 
     ###User Address to Admenties###
@@ -285,6 +277,8 @@ def Home_Page():
     FIlterUniCount = "There are " + str(len(FIlterUniDistDT)) + " Universities within 1km from the address"
 
     #print(FilterFairpriceCount + FilterHosClinicCount + FilterMallsCount + FilterMRTCount + FilterParkCount + FilterPriSchCount + FilterSecSchCount + FilterTertiaryCount + FIlterUniCount)
+    User_TotalPoint = int(len(FilterFairpriceDistDT)) + int(len(FilterHosClinicDistDT)) + int(len(FilterMallDistDT)) + int(len(FilterMRTDistDT)) + int(len(FilterParkDistDT)) + int(len(FilterPriSchDistDT)) + int(len(FilterSecSchDistDT)) + int(len(FilterTertiaryDistDT)) + int(len(FIlterUniDistDT))
+    print("User total point is: " + str(User_TotalPoint))
 
     lb = tk.Label(Home_frame, text='Home \npage', font=('Bold', 30))
     lb.pack()
