@@ -44,7 +44,7 @@ year = []
 file_lock = Lock()
 
 def store_url():
-    with open('ris_scrapping.json', 'r') as json_file:
+    with open('rent_in_singapore_scrapping.json', 'r') as json_file:
         file_data = json.load(json_file)
 
         urls_y = []
@@ -99,7 +99,7 @@ def deep_crawl(url):
 
     # print(len(dc_title))
     with file_lock:
-        with open("dc_scrapping.json", "w") as json_file:
+        with open("rent_in_singapore_deep_crawling_scrapping.json", "w") as json_file:
             json.dump(deep_crawling_data, json_file, indent=4)
 
 

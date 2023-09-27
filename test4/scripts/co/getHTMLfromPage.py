@@ -5,6 +5,7 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 import threading
+import os
 
 PAGE_NUMBER = 228
 # Set the path to the Chrome WebDriver executable
@@ -13,7 +14,6 @@ WEBSITE_MAIN = 'https://www.99.co/singapore/s/sale?bathrooms=any&building_age=an
 
 urls_X = []
 threads = []
-
 
 def storeallurl(x):
     for index in range(1, x + 1):
@@ -45,6 +45,8 @@ def GetHTMLPAGE(url, output):
 
 # Function to scrape a chunk of URLs
 def scrape_urls(urls_chunk, thread_num):
+    if not os.path.exists("page_scrape"):
+        os.makedirs("page_scrape")
     for i, url in enumerate(urls_chunk):
         output_path = f'page_scrape/page-{thread_num}-{i}.html'
         GetHTMLPAGE(url, output_path)

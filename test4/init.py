@@ -100,10 +100,8 @@ def get_options():
     image_value = option_to_image.get(selected_option, None)
     return render_template('index.html', imagevalue=image_value)
 
-
-
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5001, debug=True)
+    app.run('127.0.0.1', 5005, debug=True)
 
 
 

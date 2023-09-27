@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import os
 
 def main():
     # Set the path to the Chrome WebDriver executable
@@ -35,5 +36,6 @@ def main():
         # Get Higest Page Count 
         page_count = doc.find(class_='kiAZx').find_all('a')[4]['aria-label'].split(' ')[1]
         print(page_count)
+        os.remove("pagecount.html")
         return page_count
     

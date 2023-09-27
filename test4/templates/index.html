@@ -79,8 +79,8 @@
                         </form>
   
                        <form id="myForm_PageCount" action="/deepcrawlingRIS" method="POST">
-                          <input type="submit" value="DeepCrawling-RENTinSINGAPORE" />
-                          <label>
+                          <input type="submit" value="DeepCrawling-RENTinSINGAPORE" onclick="loadingText()" />
+                          <label id = "demo">
                               {{ valueThree }}
                           </label>
                         </form>  
@@ -122,21 +122,22 @@
                         </select>
                         <br><br>
                         <input type="submit" value="Generate Chat">
-
-                        <img action="/get_options" method="GET" src= {{ imagevalue }} alt="Italian Trulli">
-
-                        
-                       
-                    </form>
-
-                   
-
-                    
+                        <img action="/get_options" method="GET" src= {{ imagevalue }} alt="Italian Trulli">   
+                      </form>
                 </div>
             </div>
         </div>
     </main>
 </div>
+<script>
+function loadingText() {
+        // Get the element with the ID "demo"
+        var element = document.getElementById("demo");
+
+        // Change the text of the element
+        element.innerHTML = "Loading Scrapping";
+}
+</script
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<scrip src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
