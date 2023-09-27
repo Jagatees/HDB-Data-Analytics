@@ -53,14 +53,14 @@ def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
 
     return distance
 
-def Calculate_MDollar_Amenities_Dist(MDollarHse_lat, MDollarHse_long, Amenties_lat, Amenties_long, AmentiesName):
+def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long, AmentiesName):
     distances = []
 
-    for lat1, lon1 in zip(MDollarHse_lat, MDollarHse_long):
+    for lat1, lon1 in zip(Hse_lat, Hse_long):
         for lat2, lon2 in zip(Amenties_lat, Amenties_long):
             distance = DistanceBetween2Coordinates(lat1, lon1, lat2, lon2)
             Coordinates = str(lat1) + ", " + str(lon1)
-            distances.append({'MDollarHse_Coordinates': Coordinates, 'Amenties_Name': AmentiesName, 'Amenties_lat': lat2, 'Amenties_lon': lon2 , 'Distance (km)': distance})
+            distances.append({'Coordinates': Coordinates, 'Amenties_Name': AmentiesName, 'Amenties_lat': lat2, 'Amenties_lon': lon2 , 'Distance (km)': distance})
 
     return distances
 
