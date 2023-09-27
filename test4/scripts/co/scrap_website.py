@@ -47,12 +47,11 @@ def main(x):
                 title_of_room = title_of_room.find('a')['title']
                 title.append(title_of_room)
 
-
-                # Break_Down_Title 
+                # Break_Down_Title - Location
                 title_of_room = index.find(class_ = '_3FkoX')
                 title_of_room = title_of_room.find('a')['title'].split('in')
                 room_type_title.append(title_of_room[0])
-                address.append('Singapore,' + title_of_room[1])
+                address.append(title_of_room[1])
 
                 # Price
                 price_of_room = index.find(class_ = '_3XjHl')

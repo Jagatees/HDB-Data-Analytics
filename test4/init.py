@@ -4,8 +4,6 @@
 # 5) merger the two json file into one big one , RIS + 99co (merger scrapping / deep crawling)
 # 6) loading bar on website
 # 7) add docker so everyone can run the project due to selium
-# 8) nav bar flask 
-# 9) scrap the js and css from the site also
 
 from flask import Flask, render_template, request
 
@@ -103,8 +101,9 @@ def get_options():
     return render_template('index.html', imagevalue=image_value)
 
 
+
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5000)
+    app.run('127.0.0.1', 5001, debug=True)
 
 
 
