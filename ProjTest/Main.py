@@ -302,10 +302,15 @@ def Home_Page():
 
     #calculate average points
     MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+
     print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
+
+    ##Compare all the user address points towards the average points and get those above average out.
+    Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
+
     #pass the dataframe into a CSV file
     MDollarHSe_Meraged_Points.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
-    UserHse_Meraged_Points.to_csv('ProjTest\\Excel Data\\FilteredUserHse.csv', index=True)
+    Filtered_UserHse.to_csv('ProjTest\\Excel Data\\FilteredUserHse.csv', index=True)
 
     """
     ###User Address to Admenties###
