@@ -72,18 +72,20 @@
                         </form>
   
                         <form id="myForm_PageCount" action="/scrappingRIS" method="POST">
-                          <input type="submit" value="Scraping-RENTinSINGAPORE" />
-                          <label>
+                          <input type="submit" value="Scraping-RENTinSINGAPORE" onclick="startLoadingOne()" />
+                          <div id="loadingCircleOne" class="loading"></div>
+                          <label id="demoOne">
                               {{ valueTwo }}
                           </label>
                         </form>
   
-                       <form id="myForm_PageCount" action="/deepcrawlingRIS" method="POST">
-                          <input type="submit" value="DeepCrawling-RENTinSINGAPORE" onclick="loadingText()" />
-                          <label id = "demo">
-                              {{ valueThree }}
+                        <form id="myForm_PageCount" action="/deepcrawlingRIS" method="POST">
+                          <input type="submit" value="DeepCrawling-RENTinSINGAPORE" onclick="startLoadingTwo()" />
+                          <div id="loadingCircleTwo" class="loading"></div>
+                          <label id="demoTwo">
+                            {{ valueThree }}
                           </label>
-                        </form>  
+                        </form>
 
                     </div>
                     <div class="total-box__right">
@@ -97,8 +99,9 @@
                           </form>
                       
                         <form id="myForm_PageCount" action="/scrapping_co" method="POST">
-                          <input type="submit" value="Scrapping-99co" />
-                          <label>
+                          <input type="submit" value="Scrapping-99co" onclick="startLoadingThree()"/>
+                          <div id="loadingCircleThree" class="loading"></div>
+                          <label id="demoThree">
                               {{ valueSix }}
                           </label>
                         </form>
@@ -130,12 +133,49 @@
     </main>
 </div>
 <script>
-function loadingText() {
-        // Get the element with the ID "demo"
-        var element = document.getElementById("demo");
+function startLoadingOne() {
+  var loadingCircle = document.getElementById("loadingCircleOne");
+  var demoLabel = document.getElementById("demoOne");
 
-        // Change the text of the element
-        element.innerHTML = "Loading Scrapping";
+  loadingCircle.style.display = "block"; // Show loading circle
+  demoLabel.style.display = "none"; // Hide demo label
+
+  // Simulate loading time with a timeout (replace with your actual data loading logic)
+  setTimeout(function() {
+    // Once the value is available, hide loading circle and show demo label
+    loadingCircle.style.display = "none";
+    demoLabel.style.display = "block";
+  }, 1000000); // Adjust the time as needed
+}
+
+function startLoadingTwo() {
+  var loadingCircle = document.getElementById("loadingCircleTwo");
+  var demoLabel = document.getElementById("demoTwo");
+
+  loadingCircle.style.display = "block"; // Show loading circle
+  demoLabel.style.display = "none"; // Hide demo label
+
+  // Simulate loading time with a timeout (replace with your actual data loading logic)
+  setTimeout(function() {
+    // Once the value is available, hide loading circle and show demo label
+    loadingCircle.style.display = "none";
+    demoLabel.style.display = "block";
+  }, 1000000); // Adjust the time as needed
+}
+
+function startLoadingThree() {
+  var loadingCircle = document.getElementById("loadingCircleThree");
+  var demoLabel = document.getElementById("demoThree");
+
+  loadingCircle.style.display = "block"; // Show loading circle
+  demoLabel.style.display = "none"; // Hide demo label
+
+  // Simulate loading time with a timeout (replace with your actual data loading logic)
+  setTimeout(function() {
+    // Once the value is available, hide loading circle and show demo label
+    loadingCircle.style.display = "none";
+    demoLabel.style.display = "block";
+  }, 1000000); // Adjust the time as needed
 }
 </script
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js"></script>
