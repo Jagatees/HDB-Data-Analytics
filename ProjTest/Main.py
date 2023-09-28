@@ -9,7 +9,6 @@ import requests
 import KerwinFunction
 from statistics import mean
 from sklearn.linear_model import LinearRegression
-import ast
 
 root = tk.Tk()
 root.geometry('1000x600')
