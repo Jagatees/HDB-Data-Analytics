@@ -157,3 +157,4 @@ test4/scripts/99co/page_scrape
 test4/page_scrape/0.html
 test4/page_scrape
 test4/scripts/co/page_scrape
+*.html

@@ -1,3 +1,4 @@
+import json
 import asyncio
 import time
 from bs4 import BeautifulSoup
@@ -10,9 +11,13 @@ import os
 urls_X = []
 threads = []
 
-def storeallurl(x):
-    for index in range(1, x + 1):
-        urls_X.append(f'https://www.99.co/singapore/s/sale?bathrooms=any&building_age=any&composite_floor_level=any&composite_furnishing=any&composite_views=any&features_and_amenities=any&has_floor_plan=false&isFilterUnapplied=false&main_category=hdb&map_bounds=1.5827095153768858%2C103.49449749970108%2C1.1090706240313446%2C104.12483807587296&page_num={index}&page_size=35&path=%2Fsingapore%2Fs%2Frent&period_of_availability=any&property_segments=residential&query_coords=1.3039947%2C103.8298507&query_limit=radius&query_type=city&rental_type=all&rooms=any&show_cluster_preview=true&show_description=true&show_future_mrts=true&show_internal_linking=true&show_meta_description=true&show_nearby=true&zoom=11')
+def store_url():
+    with open('../propnex/propnex_scrapping.json', 'r') as json_file:
+        file_data = json.load(json_file)
+
+        for index in file_data:
+            urls_X.append(index['Deep_Crawl_Links'])    
+
 
 def GetHTMLPAGE(url, output):
     chrome_driver_path = '/Users/jagatees/Downloads/chromedriver'
@@ -22,7 +27,7 @@ def GetHTMLPAGE(url, output):
     # Open the URL
     driver.get(url)
 
-    driver.implicitly_wait(10)  # Implicitly wait up to 10 seconds (adjust as needed)
+    # driver.implicitly_wait(10)  # Implicitly wait up to 10 seconds (adjust as needed)
 
     # Get the HTML content of the entire webpage
     html_content = driver.page_source
@@ -40,16 +45,16 @@ def GetHTMLPAGE(url, output):
 
 # Function to scrape a chunk of URLs
 def scrape_urls(urls_chunk, thread_num):
-    if not os.path.exists("page_scrape"):
-        os.makedirs("page_scrape")
+    if not os.path.exists("deep_crawling_propnex_scrapped_html"):
+        os.makedirs("deep_crawling_propnex_scrapped_html")
     for i, url in enumerate(urls_chunk):
-        output_path = f'page_scrape/page-{thread_num}-{i}.html'
+        output_path = f'deep_crawling_propnex_scrapped_html/page-{thread_num}-{i}.html'
         GetHTMLPAGE(url, output_path)
     
 
 
-def main(pagelength):
-    storeallurl(pagelength)
+def main():
+    store_url()
 
     start = time.perf_counter()
 
@@ -74,9 +79,16 @@ def main(pagelength):
     return ('Completed scrapping done in :' + str(fin))
 
 
+main()
+
+
 
     
 
    
+
+
+
+    
 
 
