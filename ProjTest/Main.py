@@ -486,24 +486,25 @@ def Upload_Page():
             
             try:
                 # Make the API request
-                response = requests.get(url)
+                with requests.Session() as session:
+                    response = session.get(url)
 
-                # Check if the request was successful (status code 200)
-                if response.status_code == 200:
-                    # Parse the JSON response
-                    data = response.json()
+                    # Check if the request was successful (status code 200)
+                    if response.status_code == 200:
+                        # Parse the JSON response
+                        data = response.json()
 
-                    if data:
-                        # Extract and append the latitude and longitude to the coordinates list
-                        latitude = data[0]["lat"]
-                        longitude = data[0]["lon"]
-                        coordinatesLong.append((longitude))
-                        coordinatesLat.append((latitude))
-                        
+                        if data:
+                            # Extract and append the latitude and longitude to the coordinates list
+                            latitude = data[0]["lat"]
+                            longitude = data[0]["lon"]
+                            coordinatesLong.append((longitude))
+                            coordinatesLat.append((latitude))
+                            
+                        else:
+                            print(f"Location not found for address: {address}")
                     else:
-                        print(f"Location not found for address: {address}")
-                else:
-                    print(f"Error: Unable to access the LocationIQ API for address: {address}")
+                        print(f"Error: Unable to access the LocationIQ API for address: {address}")
             except requests.exceptions.RequestException as e:
                 print(f"Error: {e}")
 
