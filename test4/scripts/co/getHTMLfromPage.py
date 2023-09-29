@@ -17,7 +17,14 @@ def storeallurl(x):
 def GetHTMLPAGE(url, output):
     chrome_driver_path = '/Users/jagatees/Downloads/chromedriver'
 
-    driver = webdriver.Chrome()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')
+    prefs = {"profile.managed_default_content_settings.images": 2}
+    chrome_options.add_experimental_option("prefs", prefs)
+
+    # options=chrome_options
+    driver = webdriver.Chrome(options=chrome_options)
+
 
     # Open the URL
     driver.get(url)
