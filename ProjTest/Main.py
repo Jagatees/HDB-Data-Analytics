@@ -1,3 +1,4 @@
+import time
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
@@ -489,6 +490,10 @@ def Upload_Page():
                 with requests.Session() as session:
                     response = session.get(url)
 
+                    # min 1 min no lesser
+                    # Add 1 min is so it give it breather time to make a request and not prevent any closing and open session at the same time 
+                    time.sleep(1) 
+                    
                     # Check if the request was successful (status code 200)
                     if response.status_code == 200:
                         # Parse the JSON response
