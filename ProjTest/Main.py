@@ -31,7 +31,7 @@ def Home_Page():
     TertiaryFilePath = 'ProjTest\\Excel Data\\tertiaryschool.csv'
     UniversityFilePath = 'ProjTest\\Excel Data\\univeristies.csv'
     MDollarHseFilePath = 'ProjTest\\Excel Data\\MillionDollarHse.csv'
-    UserHseFilePath = 'ProjTest\Excel Data\DummyUserAddress.csv'
+    UserHseFilePath = 'ProjTest\\Excel Data\\DummyUserAddress.csv'
 
     #Dummy user add
     UserAddress = "443A Fernvale Road" #NO unit number, NO postal code
