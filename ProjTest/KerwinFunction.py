@@ -1,38 +1,56 @@
 import math
+import time
 import requests
 import pandas as pd
 
-def GetLongLatFromAddress(Address):
+def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = "pk.e1b6b31b46f4a037730c34a22ffdd6d3"
+    api_key = "pk.02ff73880ec7a133cfe62191e54c3bd1"
 
-    Coordinates = ""
+    coordinatesLong = []
+    coordinatesLat = []
+    #Coordinates = ""
 
-    # Construct the API request URL
-    url = f"https://us1.locationiq.com/v1/search.php?key={api_key}&q={Address}&format=json"
+    # Iterate through the addresses and convert them to coordinates
+    for address in AddressArray:
+        # Construct the API request URL
+        url = f"https://us1.locationiq.com/v1/search.php?key={api_key}&q={address}&format=json"
             
-    try:
-        # Make the API request
-        response = requests.get(url)
+        try:
+            # Make the API request
+            with requests.Session() as session:
+                response = session.get(url)
 
-        # Check if the request was successful (status code 200)
-        if response.status_code == 200:
-            # Parse the JSON response
-            data = response.json()
+                # min 1 min no lesser
+                # Add 1 min is so it give it breather time to make a request and not prevent any closing and open session at the same time 
+                time.sleep(1) 
+                    
+                # Check if the request was successful (status code 200)
+                if response.status_code == 200:
+                    # Parse the JSON response
+                    data = response.json()
 
-            if data:
-                # Extract and append the latitude and longitude to the coordinates list
-                latitude = data[0]["lat"]
-                longitude = data[0]["lon"]
-                Coordinates = latitude + ", " + longitude
-            else:
-                print(f"Location not found for address: {Address}")
-        else:
-            print(f"Error: Unable to access the LocationIQ API for address: {Address}")
-    except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
+                    if data:
+                        # Extract and append the latitude and longitude to the coordinates list
+                        latitude = data[0]["lat"]
+                        longitude = data[0]["lon"]
+                        coordinatesLong.append((longitude))
+                        coordinatesLat.append((latitude))
+                        #Coordinates = latitude + ", " + longitude
+                    else:
+                        print(f"Location not found for address: {address}")
+                else:
+                    print(f"Error: Unable to access the LocationIQ API for address: {address}")
+        except requests.exceptions.RequestException as e:
+            print(f"Error: {e}")
+    AddressDataFrame = pd.read_csv(Filepath, header=None)
+    AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+    AddressDataFrame = AddressDataFrame.drop(0)
 
-    return Coordinates
+    AddressDataFrame['Long'] = coordinatesLong
+    AddressDataFrame['Lat'] = coordinatesLat
+
+    AddressDataFrame.to_csv(Filepath, index=False)
 
 def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
     # Convert latitude and longitude from degrees to radians
@@ -63,6 +81,29 @@ def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long,
             distances.append({'Coordinates': Coordinates, 'Amenties_Name': AmentiesName, 'Amenties_lat': lat2, 'Amenties_lon': lon2 , 'Distance (km)': distance})
 
     return distances
+
+def ReadCSVFile(FilePath):
+
+    #Store address in this array
+    AddressArray = []
+
+    #Read CSV File
+    AddressCSV = pd.read_csv(FilePath, header=None)
+    AddressCSV.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+    AddressCSV = AddressCSV.drop(0)
+
+    # Iterate through the DataFrame
+    for index, row in AddressCSV.iterrows():
+        # Extract values from the two columns and concatenate them
+
+        value1 = row['Blk_No']
+        value2 = row['Address']
+        concatenated = str(value1) + " " + str(value2)  # Convert to string if not already
+
+        # Append the concatenated value to the list
+        AddressArray.append(concatenated)
+
+    return AddressArray
 
 def GetCoordinatesfromcsv(FilePath):
 

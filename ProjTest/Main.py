@@ -172,8 +172,8 @@ def Home_Page():
     UserHse_UniDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, UniLat_Float, UniLong_Float, 'Uni')
     UserHse_UniDT = pd.DataFrame(UserHse_UniDist)
 
-    #Filter and get all amenties within 0.5km radius
-    DistanceinKM = 0.5
+    #Filter and get all amenties within 1km radius
+    DistanceinKM = 1
 
     FilterMDollarHse_FairpriceDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_FairpriceDT, DistanceinKM)
     FilterMDollarHse_HosDT = KerwinFunction.FilterDataTableByDistance(MDollarHse_HosDT, DistanceinKM)
