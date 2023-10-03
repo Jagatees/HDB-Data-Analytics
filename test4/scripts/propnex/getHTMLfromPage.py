@@ -84,8 +84,6 @@ def main(pagelength):
     return ('Completed scrapping done in :' + str(fin))
 
 
-main(59)
-
 
 
     

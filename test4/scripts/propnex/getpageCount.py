@@ -39,4 +39,3 @@ def main():
         os.remove("pagecount.html")
         return page_count
     
-main()

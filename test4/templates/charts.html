@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='website2.css') }}">
 </head>
 <body>
-    
+<div class="container">
+    <!-- Sidebar Section -->
+    <nav class="sidebar">            
+        <!-- ... Your sidebar content ... -->
+    </nav>
+
+    <!-- Main Content page -->
+    <main class="main-content">
+        <div class="top-container">
+        </div>
+        <div class="bottom-container">
+            <div class="bottom-container__left">
+                <!-- Section 1 -->
+                <div class="box spending-box">
+                    <div class="header-container">
+                        <!-- Title Website Scrapping Selection -->
+                        <h3 class="section-header">HDB Scrapping Section</h3>
+                    </div>
+                </div>
+                
+                <!-- Display Plotly chart here -->
+                {{ plot_div | safe }}
+
+                <!-- Form to request chart -->
+                <form action="/request_chart" method="POST">
+                    <button type="submit" class="btn btn-primary">Request Chart</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
 </body>
 </html>

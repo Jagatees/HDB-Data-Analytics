@@ -132,5 +132,3 @@ def main(x):
         json.dump(data, json_file, indent=4)   
         
     
-main('deep_crawling_propnex_scrapped_html')
-print(len(beds_list))

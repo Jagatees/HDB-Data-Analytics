@@ -8,14 +8,26 @@
 from flask import Flask, render_template, request
 
 # RentInSingapore - Scrapping (asyncio) & Deep Crawling (multiprocessing)
-import scripts.rentingSingpoare.main_page_scrapping as mainone
-import scripts.rentingSingpoare.scraperr_multi_threading as maintwo
+import backup.rentingSingpoare.main_page_scrapping as mainone
+import backup.rentingSingpoare.scraperr_multi_threading as maintwo
 
 # 99co - Scrapping (threading)
 import scripts.co.getpagecount as co_firstpage
 import scripts.co.getHTMLfromPage as co_secondpage
 import scripts.co.rename_folder as co_thirdpage
 import scripts.co.scrap_website as co_fourpage
+
+# Propnex
+import scripts.propnex.getpageCount as propnex_firstpage
+import scripts.propnex.getHTMLfromPage as propnex_secondpage
+import scripts.propnex.getdatafromHTML as propnex_thirdpage
+
+# Deep Crawling 
+import scripts.dcpropnex.getHTMLfromWebsite as dc_prop_one
+import scripts.dcpropnex.getdatafromHTML as dc_prop_two
+
+# Map
+import map_layout.chrolopleth_maps as mapsone
 
 
 app = Flask(__name__)
@@ -25,6 +37,7 @@ app.secret_key = 'some key that you will never guess'
 user_input_page_count = 0
 timer_scrapping_ris = ''
 user_input_page_count_co = 0
+user_input_page_count_prop = 0
 
 
 # DO NOT DELETE THIS HELLO WORLD
@@ -41,34 +54,11 @@ def website():
         selected_option = request.form['my_dropdown']
         # RENTinSINGAPORE
         if selected_option == '1':
-            return render_template('index.html', value=mainone.pageCount())
-        elif selected_option == '2':
             return render_template('index.html', valueFive=co_firstpage.main())
+        elif selected_option == '2':
+            return render_template('index.html', prop_value_page = propnex_firstpage.main())
         
-# Get Number from Dropdown 
-@app.route('/get_page_count', methods=['POST'])
-def get_page_count():
-    global user_input_page_count
-    selected_option = request.form['my_page']
-    user_input_page_count = selected_option
-    print(selected_option)  # Print the selected option for debugging
-    return render_template('index.html')
-
-# Scrapp Rent in Singapore
-@app.route('/scrappingRIS', methods = ['GET', 'POST'])
-def scrap_ris():
-    global user_input_page_count
-    global timer_scrapping_ris
-    x = mainone.main(int(user_input_page_count))
-    timer_scrapping_ris = x
-    return render_template('index.html', valueTwo = x)
-
-# Deep Crawling Rent in Singapore
-@app.route('/deepcrawlingRIS', methods = ['GET', 'POST'])
-def deepcrawl_ris():
-    return render_template('index.html', valueTwo = timer_scrapping_ris, valueThree = maintwo.main())
-
-# get page count 
+# 99co
 @app.route('/get_page_count_co', methods=['POST'])
 def get_page_count_co():
     global user_input_page_count_co
@@ -85,8 +75,34 @@ def scrapping_co():
     co_fourpage.main('page_scrape')
     return render_template('index.html', valueSix = x)
 
+# PropNet
+
+# Get Page Count from User Choice
+@app.route('/get_page_count_prop', methods=['POST'])
+def get_page_count_prop():
+    global user_input_page_count_prop
+    selected_option = request.form['my_page_prop']
+    user_input_page_count_prop = selected_option
+    print(selected_option)  # Print the selected option for debugging
+    return render_template('index.html')
+
+# Scrapp prop page 
+@app.route('/scrapping_prop', methods = ['GET', 'POST'])
+def scrapping_prop():
+    global user_input_page_count_prop
+    x = propnex_secondpage.main(int(user_input_page_count_prop))
+    propnex_thirdpage.main('propnex_scrapped_html')
+    return render_template('index.html', prop_one = x)
+
+# Deep Crawling prop page 
+@app.route('/dc_scrapping_prop', methods = ['GET', 'POST'])
+def dc_scrapping_prop():
+    x = dc_prop_one.main()
+    dc_prop_two.main('deep_crawling_propnex_scrapped_html')
+    return render_template('index.html', prop_two = x)
 
 
+# Charts Display 
 @app.route('/get_options', methods = ['GET', 'POST'])
 def get_options():
     option_to_image = {
@@ -109,10 +125,16 @@ def Charts():
 def scrapping():
     return render_template('index.html')
 
+@app.route('/request_chart', methods=['POST'])
+def request_chart():
+    plot_div = mapsone.generate_plotly_chart()
+    return render_template('charts.html', plot_div=plot_div)
+
+
 
 
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5005, debug=True)
+    app.run('127.0.0.1', 5004, debug=True)
 
 
 

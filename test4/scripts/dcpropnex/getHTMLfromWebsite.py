@@ -13,7 +13,7 @@ urls_y = []
 
 
 def store_url():
-    with open('../propnex/propnex_scrapping.json', 'r') as json_file:
+    with open('propnex_scrapping.json', 'r') as json_file:
         file_data = json.load(json_file)
 
         for index in file_data:
@@ -89,5 +89,3 @@ def main():
     print('Time Taken : ' + str(fin))
     return ('Completed scrapping done in :' + str(fin))
 
-
-main()

@@ -64,6 +64,3 @@ def main(x):
     # Save the data as JSON
     with open("propnex_scrapping.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
-
-
-main('propnex_scrapped_html')
