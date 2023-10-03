@@ -10,6 +10,9 @@ from requests_html import AsyncHTMLSession
 beds_list = []
 baths_list = []
 numbers_and_sqft_list = []
+title = []
+deep_crawlling_link = []
+
 
 counter = 0
 
@@ -30,23 +33,27 @@ def main(x):
     target_image_sources = [
     '/img/listing/ic_baths.png',
     '/img/listing/ic_beds.png',
-    '/img/listing/ic_sqft.png'
+    '/img/listing/ic_sqft.png',
+    '/img/listing/ic_location.png'
     ]
 
     for index in list_item:
         # print(index)
         with open(x + "/" + str(index), "r") as f:
-            
-            # Parse the HTML content
             soup = BeautifulSoup(f, 'html.parser')
 
-            # Find the parent element with class 'lbb-21'
+            
+
             parent_element = soup.find('div', class_='lbb-21')
-
-            # print(parent_element)
-
-            # print("Length of Elements : " + str(len(li_elements)))
             if parent_element is not None:
+
+                # Get hyperlink  
+                link_element = soup.find('link', rel='canonical')
+                href = link_element.get('href')
+                deep_crawlling_link.append(href)
+
+
+                # Extract Bullet Point from Stats
                 li_elements = parent_element.find_all('li')
                 if len(li_elements) == 4:
                     counter = counter + 1
@@ -63,9 +70,13 @@ def main(x):
                             beds_list.append(text)
                         if src == target_image_sources[2]:
                             numbers_and_sqft_list.append(text)
-                if len(li_elements) == 3:
+                        if src == target_image_sources[3]:
+                            title.append(text)
+
+
+                if len(li_elements) <= 3:
                     counter = counter + 1
-                    bathsIsTrue, bedIsTrue, roomIstrue = False, False, False
+                    bathsIsTrue, bedIsTrue, roomIstrue, titleIstitle = False, False, False, False
                     for index in range(len(li_elements)):
                         img_tag = li_elements[index].find('img', {'class': 'img img-fluid'})
                         src = img_tag.get('src')
@@ -82,6 +93,9 @@ def main(x):
                         if src == target_image_sources[2]:
                             numbers_and_sqft_list.append(text)
                             roomIstrue = True
+                        if src == target_image_sources[3]:
+                            title.append(text)
+                            titleIstitle = True
 
                     if bathsIsTrue != True:
                         baths_list.append("empty")
@@ -89,32 +103,8 @@ def main(x):
                         beds_list.append("empty")
                     if roomIstrue != True:
                         numbers_and_sqft_list.append("empty")
-                if len(li_elements) == 2:
-                    counter = counter + 1
-                    bathsIsTrue, bedIsTrue, roomIstrue = False, False, False
-                    for index in range(len(li_elements)):
-                        img_tag = li_elements[index].find('img', {'class': 'img img-fluid'})
-                        src = img_tag.get('src')
-                        print(src)
-                        text = li_elements[index].get_text(strip=True)
-                        print(text)
-
-                        if src == target_image_sources[0]:
-                            baths_list.append(text)
-                            bathsIsTrue = True
-                        if src == target_image_sources[1]:
-                            beds_list.append(text)
-                            bedIsTrue = True
-                        if src == target_image_sources[2]:
-                            numbers_and_sqft_list.append(text)
-                            roomIstrue = True
-
-                    if bathsIsTrue != True:
-                        baths_list.append("empty")
-                    if bedIsTrue != True:
-                        beds_list.append("empty")
-                    if roomIstrue != True:
-                        numbers_and_sqft_list.append("empty")
+                    if titleIstitle != True:
+                        title.append("empty")
 
 
                     
@@ -129,6 +119,8 @@ def main(x):
             'Baths': baths_list[i],
             'Beds': beds_list[i],
             'Sqft' : numbers_and_sqft_list[i], 
+            'Deep_Crawling' : deep_crawlling_link[i],
+            'Title': title[i]
         }
         for i in range(counter)
         
