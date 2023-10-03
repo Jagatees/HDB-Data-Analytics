@@ -1,0 +1,4302 @@
+[
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,442 sqft (134 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,000 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,238 sqft (115 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "107 sqft (10 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,066 sqft (99 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,022 sqft (95 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "904 sqft (84 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,011 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,280 sqft (119 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,625 sqft (151 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,334 sqft (124 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,604 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,120 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,570 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,399 sqft (130 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,324 sqft (123 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "980 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,237 sqft (115 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,367 sqft (127 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,150 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,044 sqft (97 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,227 sqft (114 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "2",
+        "Sqft": "786 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,895 sqft (176 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,162 sqft (108 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "904 sqft (84 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "947 sqft (88 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "506 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "empty",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,248 sqft (116 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,259 sqft (117 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,011 sqft (94 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,022 sqft (95 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,615 sqft (150 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,120 sqft (104 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,517 sqft (141 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "900 sqft (84 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,011 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,033 sqft (96 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,130 sqft (105 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "688 sqft (64 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,097 sqft (102 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "882 sqft (82 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "828 sqft (77 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "empty",
+        "Sqft": "409 sqft (38 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "506 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,356 sqft (126 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "979 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,291 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,280 sqft (119 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,130 sqft (105 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "915 sqft (85 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "409 sqft (38 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "979 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,431 sqft (133 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "689 sqft (64 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,604 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,012 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "883 sqft (82 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,194 sqft (111 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,658 sqft (154 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "688 sqft (64 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "980 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,603 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,335 sqft (124 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "710 sqft (66 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "645 sqft (60 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,151 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,098 sqft (102 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,614 sqft (150 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,291 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,356 sqft (126 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,593 sqft (148 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,517 sqft (141 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,180 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,098 sqft (102 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,280 sqft (119 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "925 sqft (86 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,163 sqft (108 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,539 sqft (143 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "635 sqft (59 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,187 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "883 sqft (82 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "5",
+        "Sqft": "1,905 sqft (177 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "882 sqft (82 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,377 sqft (128 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "743 sqft (69 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,109 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,152 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,151 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,862 sqft (173 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,496 sqft (139 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,173 sqft (109 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "893 sqft (83 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,194 sqft (111 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "839 sqft (78 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "925 sqft (86 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "474 sqft (44 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "667 sqft (62 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,463 sqft (136 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,442 sqft (134 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "1,237 sqft (115 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "505 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,582 sqft (147 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,173 sqft (109 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "667 sqft (62 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,582 sqft (147 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,033 sqft (96 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,194 sqft (111 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,012 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,022 sqft (95 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "635 sqft (59 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,603 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,636 sqft (152 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,399 sqft (130 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,195 sqft (111 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,614 sqft (150 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "398 sqft (37 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "645 sqft (60 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,066 sqft (99 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,463 sqft (136 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,206 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,259 sqft (117 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,399 sqft (130 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,560 sqft (145 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,195 sqft (111 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,183 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,011 sqft (94 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,561 sqft (145 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,603 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,259 sqft (117 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,227 sqft (114 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "979 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,399 sqft (130 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "484 sqft (45 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,291 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,162 sqft (108 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,540 sqft (143 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,140 sqft (106 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,238 sqft (115 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "630 sqft (59 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "667 sqft (62 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "839 sqft (78 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "696 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,238 sqft (115 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "947 sqft (88 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,496 sqft (139 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "635 sqft (59 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,367 sqft (127 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "764 sqft (71 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,238 sqft (115 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "624 sqft (58 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "829 sqft (77 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "505 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,040 sqft (97 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,603 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "980 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,151 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "710 sqft (66 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,345 sqft (125 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,227 sqft (114 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,237 sqft (115 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,227 sqft (114 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "107 sqft (10 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "empty",
+        "Sqft": "110 sqft (10 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,206 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,292 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,151 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "958 sqft (89 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "979 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,475 sqft (137 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,829 sqft (170 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,194 sqft (111 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "979 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "689 sqft (64 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,097 sqft (102 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,259 sqft (117 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,109 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "5",
+        "Sqft": "1,227 sqft (114 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "839 sqft (78 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "979 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "970 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "699 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,345 sqft (125 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,185 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,356 sqft (126 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "699 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,162 sqft (108 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "333 sqft (31 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "505 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,012 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "473 sqft (44 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,248 sqft (116 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,249 sqft (116 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,421 sqft (132 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "11,926 sqft (1,108 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,206 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,194 sqft (111 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "979 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,259 sqft (117 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,463 sqft (136 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "635 sqft (59 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,173 sqft (109 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "419 sqft (39 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,238 sqft (115 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,603 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,259 sqft (117 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "710 sqft (66 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,280 sqft (119 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "75 sqft (7 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "635 sqft (59 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,464 sqft (136 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,657 sqft (154 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "807 sqft (75 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,292 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,120 sqft (104 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,560 sqft (145 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,012 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,598 sqft (148 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "797 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "11,237 sqft (1,044 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,367 sqft (127 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,367 sqft (127 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "914 sqft (85 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "947 sqft (88 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,130 sqft (105 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "505 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,012 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,098 sqft (102 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "904 sqft (84 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,291 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "8,449 sqft (785 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,044 sqft (97 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "624 sqft (58 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,378 sqft (128 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "958 sqft (89 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "786 sqft (73 sqm)"
+    },
+    {
+        "Baths": "4",
+        "Beds": "7",
+        "Sqft": "1,905 sqft (177 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,237 sqft (115 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "4",
+        "Beds": "5",
+        "Sqft": "1,442 sqft (134 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,130 sqft (105 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,335 sqft (124 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,130 sqft (105 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "500 sqft (46 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,582 sqft (147 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,378 sqft (128 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "699 sqft (65 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,657 sqft (154 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "688 sqft (64 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,012 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,186 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,604 sqft (149 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,022 sqft (95 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,012 sqft (94 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "5",
+        "Sqft": "1,765 sqft (164 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,109 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,485 sqft (138 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "5",
+        "Sqft": "1,646 sqft (153 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,054 sqft (98 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,011 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "635 sqft (59 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,100 sqft (102 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,151 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "5",
+        "Sqft": "1,442 sqft (134 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,000 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,475 sqft (137 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,281 sqft (119 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,560 sqft (145 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "699 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "904 sqft (84 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,292 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,378 sqft (128 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,097 sqft (102 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,377 sqft (128 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,206 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "505 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "696 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "634 sqft (59 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,291 sqft (120 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "893 sqft (83 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "506 sqft (47 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,087 sqft (101 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "797 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,237 sqft (115 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,140 sqft (106 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "786 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,582 sqft (147 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,033 sqft (96 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "699 sqft (65 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,582 sqft (147 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "893 sqft (83 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "882 sqft (82 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,873 sqft (174 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "808 sqft (75 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,076 sqft (100 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "5",
+        "Sqft": "150 sqft (14 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,410 sqft (131 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "642 sqft (60 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "2,066 sqft (192 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "3",
+        "Sqft": "1,194 sqft (111 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,517 sqft (141 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "904 sqft (84 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "646 sqft (60 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,151 sqft (107 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,539 sqft (143 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "807 sqft (75 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,109 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "980 sqft (91 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,205 sqft (112 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,323 sqft (123 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "743 sqft (69 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "5",
+        "Sqft": "1,872 sqft (174 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,162 sqft (108 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,000 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,194 sqft (111 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,582 sqft (147 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "796 sqft (74 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,119 sqft (104 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,055 sqft (98 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,550 sqft (144 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,604 sqft (149 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "882 sqft (82 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "965 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,109 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,227 sqft (114 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,109 sqft (103 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "699 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,571 sqft (146 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "700 sqft (65 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,528 sqft (142 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "1,011 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "1",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,894 sqft (176 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "947 sqft (88 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,109 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,300 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,162 sqft (108 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "968 sqft (90 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "731 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,636 sqft (152 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "904 sqft (84 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,302 sqft (121 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "807 sqft (75 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "947 sqft (88 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,184 sqft (110 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "17,146 sqft (1,593 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,518 sqft (141 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,216 sqft (113 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,313 sqft (122 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,518 sqft (141 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,399 sqft (130 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,033 sqft (96 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "721 sqft (67 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "4",
+        "Sqft": "1,431 sqft (133 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,539 sqft (143 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,604 sqft (149 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,592 sqft (148 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "1",
+        "Sqft": "495 sqft (46 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,281 sqft (119 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "3",
+        "Sqft": "7,523 sqft (699 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "969 sqft (90 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "4",
+        "Sqft": "1,615 sqft (150 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "empty",
+        "Beds": "3",
+        "Sqft": "1,130 sqft (105 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "990 sqft (92 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,011 sqft (94 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "2",
+        "Sqft": "732 sqft (68 sqm)"
+    },
+    {
+        "Baths": "1",
+        "Beds": "2",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,001 sqft (93 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "785 sqft (73 sqm)"
+    },
+    {
+        "Baths": "3",
+        "Beds": "3",
+        "Sqft": "1,506 sqft (140 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,054 sqft (98 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,270 sqft (118 sqm)"
+    },
+    {
+        "Baths": "2",
+        "Beds": "3",
+        "Sqft": "1,108 sqft (103 sqm)"
+    }
+]

@@ -10,6 +10,10 @@ from requests_html import AsyncHTMLSession
 title = []
 price_house = []
 links = []
+roomsize = []
+
+bullet_points = []
+
 
 # Return list of item in folder
 def get_item_in_dic(x):
@@ -35,26 +39,24 @@ def main(x):
                 counter += 1
                 roomtitle = index.find('h3')['data-original-title']
                 title.append(roomtitle)
-                # print(roomtitle)
 
             price = doc.find_all(class_ = 'lbb-22')
             for index in price:
                 p = index.find('h4').text
                 price_house.append(p)
-                # print(p)
 
-            link = doc.findAll('div',class_='lbb-flex')
+            link = doc.find_all('div',class_='lbb-flex')
             for index in link:
                 p = index.find('a', class_='lbb-2').get('href')
                 p = 'https://www.propnex.com' + p
                 links.append(p)
-                # print(p)
+ 
 
     data = [
         {
             'Title': title[i],
             'Price': price_house[i],
-            'Deep_Crawl_Links' : links[i],
+            'Deep_Crawl_Links' : links[i], 
         }
         for i in range(counter)
         
