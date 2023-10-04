@@ -36,19 +36,19 @@ def generate_plotly_chart(map_style):
     longitude_column = df['Longitude']
 
     num_points = len(df)
-    num_points_new_df = len(new_df)
   
     df['Amenties'] = np.random.randint(1, 100, num_points)
-    # df['size_dot'] = np.random.randint(1, 20 + 1, num_points)
     df['size_dot'] = 1
     df['Description'] = "Plot1"
 
+    num_points_new_df = len(new_df)
+
     new_df['Amenties_2'] = np.random.randint(1, 100, num_points_new_df)
-    # df['size_dot'] = np.random.randint(1, 20 + 1, num_points)
-    new_df['size_dot_2'] = 1
-    new_df['Description_2'] = "Plot2"
+    new_df['size_dot_2'] =np.random.randint(1, 2, num_points_new_df)
+    new_df['Description_2'] = "FairPrice"
     
-    
+    # work on the size problem 
+    # able to disable the data set and plot the map
 
 
     fig = px.scatter_mapbox(df,
