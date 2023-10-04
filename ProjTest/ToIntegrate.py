@@ -25,10 +25,10 @@ Supermarket_MallPoint = 2
 ParksPoint = 1
 
 #Read the CSV File
-UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
+#UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
 
 #Convert User Address into coordinates
-KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+#KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
 
 #get long and lat from all csv file save into datatable
 FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
@@ -41,7 +41,7 @@ SecSchDT = KerwinFunction.GetCoordinatesfromcsv(SecSchFilePath)
 TertairyDT = KerwinFunction.GetCoordinatesfromcsv(TertiaryFilePath)
 UniversityDT = KerwinFunction.GetCoordinatesfromcsv(UniversityFilePath)
 MDollarHseDT =  KerwinFunction.GetCoordinatesfromcsv(MDollarHseFilePath)
-UserHseDT = KerwinFunction.GetCoordinatesfromcsv(UserHseFilePath)
+UserHseDT = KerwinFunction.GetUserDatafromcsv(UserHseFilePath)
 
 #Remove all the duplicated values
 MDollarHseDF = MDollarHseDT.drop_duplicates() 
@@ -129,29 +129,38 @@ MDollarHse_UniDT = pd.DataFrame(MDollarHse_UniDist)
 UserHse_FairpriceDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, FairpriceLat_Float, FairpriceLong_Float, 'Fairprice')
 UserHse_FairpriceDT = pd.DataFrame(UserHse_FairpriceDist)
 
+
 UserHse_HosDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, HospitalLat_Float, HospitalLong_Float, 'HosClinic')
 UserHse_HosDT = pd.DataFrame(UserHse_HosDist)
+
 
 UserHse_MallsDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, MallsLat_Float, MallsLong_Float, 'Malls')
 UserHse_MallsDT = pd.DataFrame(UserHse_MallsDist)
 
+
 UserHse_MRTDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, MRTLat_Float, MRTLong_Float, 'MRT')
 UserHse_MRTDT = pd.DataFrame(UserHse_MRTDist)
+
 
 UserHse_ParksDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, ParksLat_Float, ParksLong_Float, 'Parks')
 UserHse_ParksDT = pd.DataFrame(UserHse_ParksDist)
 
+
 UserHse_PriSchDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, PriSchLat_Float, PriSchLong_Float, 'Primary School')
 UserHse_PriSchDT = pd.DataFrame(UserHse_PriSchDist)
+
 
 UserHse_SecSchDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, SecSchLat_Float, SecSchLong_Float, 'Secondary School')
 UserHse_SecSchDT = pd.DataFrame(UserHse_SecSchDist)
 
+
 UserHse_TertairyDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, TertairyLat_Float, TertairyLong_Float, 'Tertairy')
 UserHse_TertairyDT = pd.DataFrame(UserHse_TertairyDist)
 
+
 UserHse_UniDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, UniLat_Float, UniLong_Float, 'Uni')
 UserHse_UniDT = pd.DataFrame(UserHse_UniDist)
+
 
 #Filter and get all amenties within 1km radius
 DistanceinKM = 1
@@ -196,6 +205,7 @@ FilterUserHse_PriSchDT['Distance(M)'] = FilterUserHse_PriSchDT['Distance (km)'] 
 FilterUserHse_SecSchDT['Distance(M)'] = FilterUserHse_SecSchDT['Distance (km)'] * 1000
 FilterUserHse_TertairyDT['Distance(M)'] = FilterUserHse_TertairyDT['Distance (km)'] * 1000
 FIlterUserHse_UniDT['Distance(M)'] = FIlterUserHse_UniDT['Distance (km)'] * 1000
+
  
 #Calculate the points
 FilterMDollarHse_FairpriceDT['FairpricePoints'] = Supermarket_MallPoint *( 1 / FilterMDollarHse_FairpriceDT['Distance(M)'])
@@ -292,6 +302,32 @@ print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoi
 ##Compare all the user address points towards the average points and get those above average out.
 Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
 
+UserFilteredCoordinates = Filtered_UserHse['Coordinates'].to_list()
+
+# Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
+SplitLat = [coord.split(', ')[0] for coord in UserFilteredCoordinates]
+SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
+
+# Create 2 list to store the matching datas
+matched_areas = []
+matched_Links = []
+
+# Check if SplitLat and SplitLong match DataDF 'Lat' and DataDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
+for i in range(len(SplitLat)):
+    lat = SplitLat[i]
+    long = SplitLong[i]
+    for index, row in UserHseDF.iterrows():
+         if lat == row['Lat'] and long == row['Long']:
+             matched_area = row['Location_Name']
+             matched_Link = row['Link']
+             matched_areas.append(matched_area)
+             matched_Links.append(matched_Link)
+
+Filtered_UserHse['Area'] = matched_areas
+Filtered_UserHse['Link'] = matched_Links
+
 #pass the dataframe into a CSV file
 MDollarHSe_Meraged_Points.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
 Filtered_UserHse.to_csv('ProjTest\\Excel Data\\FilteredUserHse.csv', index=True)
+
+print("Done")

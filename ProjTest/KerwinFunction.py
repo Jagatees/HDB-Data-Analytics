@@ -106,15 +106,20 @@ def ReadCSVFile(FilePath):
     return AddressArray
 
 def GetCoordinatesfromcsv(FilePath):
-
-    column_names = ['Location_Type', 'Long', 'Lat']
-
     CSVLongLat = pd.read_csv(FilePath, header=None)
-    CSVLongLat = CSVLongLat[[1, 6, 7]]
-    CSVLongLat.columns = ['Location_Type', 'Long', 'Lat']
+    CSVLongLat = CSVLongLat[[0, 6, 7]]
+    CSVLongLat.columns = ['Location_Name', 'Long', 'Lat']
     CSVLongLat = CSVLongLat.drop(0)
 
     return CSVLongLat
+
+def GetUserDatafromcsv(FilePath):
+    UserData = pd.read_csv(FilePath, header=None)
+    UserData = UserData[[0, 6, 7, 8]]
+    UserData.columns = ['Location_Name', 'Long', 'Lat', 'Link']
+    UserData = UserData.drop(0)
+
+    return UserData
 
 def FilterDataTableByDistance(datatable, distance):
     
