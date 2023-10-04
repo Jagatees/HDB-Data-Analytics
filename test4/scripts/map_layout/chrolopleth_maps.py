@@ -5,6 +5,28 @@ import pandas as pd
 
 
 def generate_plotly_chart(map_style):
+
+    # Replace 'data.csv' with the actual file path to your CSV file.
+    file_path = "scripts/algo/Excel/output/FilteredUserHse.csv"
+
+    # Read the CSV file into a DataFrame.
+    df = pd.read_csv(file_path)
+
+    # Split the "Coordinates" column into "Latitude" and "Longitude" columns
+    df[['Latitude', 'Longitude']] = df['Coordinates'].str.split(', ', expand=True)
+
+    # Convert the new columns to numeric data types
+    df['Latitude'] = pd.to_numeric(df['Latitude'])
+    df['Longitude'] = pd.to_numeric(df['Longitude'])
+
+    # Now, your DataFrame 'df' contains two new columns: 'Latitude' and 'Longitude'.
+    # You can access them like this:
+    latitude_column = df['Latitude']
+    longitude_column = df['Longitude']
+
+    # Print the first few rows to verify
+    print(latitude_column)
+
     df = px.data.carshare()
 
     # Define the geographical boundaries of Singapore
@@ -14,7 +36,7 @@ def generate_plotly_chart(map_style):
     max_lat = 1.47
 
     # Define the number of data points you want
-    num_points = 100
+    num_points = 10
 
     # Generate random coordinates within the boundaries of Singapore
     lon_values = np.random.uniform(min_lon, max_lon, num_points)
@@ -31,8 +53,8 @@ def generate_plotly_chart(map_style):
     df['Description'] = "HDB House"
 
     fig = px.scatter_mapbox(df,
-                            lon=df['lon'],
-                            lat=df['lat'],
+                            lon=longitude_column,
+                            lat=latitude_column,
                             zoom=10,
                             color=df['Amenties'],
                             size=df['size_dot'],
@@ -47,3 +69,6 @@ def generate_plotly_chart(map_style):
     plot_div = fig.to_html(full_html=False)
 
     return plot_div
+
+
+

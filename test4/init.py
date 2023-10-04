@@ -29,6 +29,9 @@ import scripts.dcpropnex.getdatafromHTML as dc_prop_two
 # Map
 import scripts.map_layout.chrolopleth_maps as mapsone
 
+# Algo
+import scripts.algo.ToIntegrate as alogone
+
 
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
@@ -135,7 +138,8 @@ def Charts():
 def scrapping():
     return render_template('index.html')
 
-@app.route('/request_chart', methods=['POST'])
+# Interactive Chart
+@app.route('/request_chart', methods = ['GET', 'POST'])
 def request_chart():
     if request.method == 'POST':
         selected_option = request.form['my_dropdown_map']
@@ -143,9 +147,18 @@ def request_chart():
         return render_template('charts.html', plot_div=plot_div)
     
 
+# Logic
+@app.route('/run_logic', methods = ['GET', 'POST'])
+def run_logic():
+    if request.method == 'POST':
+        alogone.algo()
+        return render_template('charts.html')
+    
+    
+
 
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5004, debug=True)
+    app.run('127.0.0.1', 5012, debug=True)
 
 
 
