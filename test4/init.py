@@ -1,10 +1,3 @@
-# Stuff to fix
-# 1) auto create the page_scrape folder (99co)
-# 2) fix big on renting room deep crawl only get 115 page even those got 1k rooms seems werid
-# 5) merger the two json file into one big one , RIS + 99co (merger scrapping / deep crawling)
-# 6) loading bar on website
-# 7) add docker so everyone can run the project due to selium
-
 from flask import Flask, render_template, request
 
 # RentInSingapore - Scrapping (asyncio) & Deep Crawling (multiprocessing)
@@ -156,9 +149,8 @@ def run_logic():
     
     
 
-
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5012, debug=True)
+    app.run('127.0.0.1', 5002, debug=True)
 
 
 
