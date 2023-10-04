@@ -27,7 +27,7 @@ import scripts.dcpropnex.getHTMLfromWebsite as dc_prop_one
 import scripts.dcpropnex.getdatafromHTML as dc_prop_two
 
 # Map
-import map_layout.chrolopleth_maps as mapsone
+import scripts.map_layout.chrolopleth_maps as mapsone
 
 
 app = Flask(__name__)
@@ -38,6 +38,15 @@ user_input_page_count = 0
 timer_scrapping_ris = ''
 user_input_page_count_co = 0
 user_input_page_count_prop = 0
+
+mapbox_styles = [
+    "open-street-map",
+    "carto-positron",
+    "carto-darkmatter",
+    "stamen-terrain",
+    "stamen-toner",
+    "stamen-watercolor",
+]
 
 
 # DO NOT DELETE THIS HELLO WORLD
@@ -127,8 +136,17 @@ def scrapping():
 
 @app.route('/request_chart', methods=['POST'])
 def request_chart():
-    plot_div = mapsone.generate_plotly_chart()
-    return render_template('charts.html', plot_div=plot_div)
+    if request.method == 'POST':
+        # Get user choices
+        selected_option = request.form['my_dropdown_map']
+        # RENTinSINGAPORE
+        if selected_option == '1':
+            plot_div = mapsone.generate_plotly_chart(mapbox_styles[3])
+            return render_template('charts.html', plot_div=plot_div)
+        elif selected_option == '2':
+            plot_div = mapsone.generate_plotly_chart(mapbox_styles[0])
+            return render_template('charts.html', plot_div=plot_div)
+    
 
 
 

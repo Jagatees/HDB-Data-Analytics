@@ -27,10 +27,14 @@
                 <!-- Display Plotly chart here -->
                 {{ plot_div | safe }}
 
-                <!-- Form to request chart -->
-                <form action="/request_chart" method="POST">
-                    <button type="submit" class="btn btn-primary">Request Chart</button>
-                </form>
+                <form id="myForm" action="/request_chart" method="POST">
+                    <label for="my_dropdown_map">Map</label>
+                    <select name="my_dropdown_map" id="my_dropdown">
+                        <option value="1">Style One</option>
+                        <option value="2">Style Two</option>
+                    </select>
+                    <input type="submit" value="Request Chart" />
+                  </form>
             </div>
         </div>
     </main>
