@@ -7,7 +7,24 @@
 <div class="container">
     <!-- Sidebar Section -->
     <nav class="sidebar">            
-        <!-- ... Your sidebar content ... -->
+        <div>
+            <div class="sidebar__logo">
+                <h2 class="sidebar__logo-header">Resale HDB</h2>    
+            </div>
+            <ul class="side-nav">
+              <span class="side-nav__header">Navigation Bar</span>
+              <a href="/scrapping">
+                  <li class="side-nav__item">
+                      Scrapping
+                  </li>
+              </a>
+              <a href="/Charts">
+                  <li class="side-nav__item">
+                      Charts
+                  </li>
+              </a>
+          </ul>
+        </div>        
     </nav>
 
     <!-- Main Content page -->
@@ -21,20 +38,24 @@
                     <div class="header-container">
                         <!-- Title Website Scrapping Selection -->
                         <h3 class="section-header">HDB Scrapping Section</h3>
+                        <form id="myForm" action="/request_chart" method="POST">
+                            <label for="my_dropdown_map">Map</label>
+                            <select name="my_dropdown_map" id="my_dropdown">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <input type="submit" value="Request Chart" />
+                          </form>
                     </div>
                 </div>
                 
-                <!-- Display Plotly chart here -->
-                {{ plot_div | safe }}
 
-                <form id="myForm" action="/request_chart" method="POST">
-                    <label for="my_dropdown_map">Map</label>
-                    <select name="my_dropdown_map" id="my_dropdown">
-                        <option value="1">Style One</option>
-                        <option value="2">Style Two</option>
-                    </select>
-                    <input type="submit" value="Request Chart" />
-                  </form>
+                {{ plot_div | safe }}
+               
             </div>
         </div>
     </main>

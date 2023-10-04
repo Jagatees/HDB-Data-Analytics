@@ -34,6 +34,7 @@ app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
 
 
+# Variable for use 
 user_input_page_count = 0
 timer_scrapping_ris = ''
 user_input_page_count_co = 0
@@ -137,18 +138,10 @@ def scrapping():
 @app.route('/request_chart', methods=['POST'])
 def request_chart():
     if request.method == 'POST':
-        # Get user choices
         selected_option = request.form['my_dropdown_map']
-        # RENTinSINGAPORE
-        if selected_option == '1':
-            plot_div = mapsone.generate_plotly_chart(mapbox_styles[3])
-            return render_template('charts.html', plot_div=plot_div)
-        elif selected_option == '2':
-            plot_div = mapsone.generate_plotly_chart(mapbox_styles[0])
-            return render_template('charts.html', plot_div=plot_div)
+        plot_div = mapsone.generate_plotly_chart(mapbox_styles[int(selected_option)])
+        return render_template('charts.html', plot_div=plot_div)
     
-
-
 
 
 if __name__ == "__main__":

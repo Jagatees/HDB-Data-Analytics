@@ -23,15 +23,12 @@ def generate_plotly_chart(map_style):
     # Create a DataFrame with lon and lat columns
     df = pd.DataFrame({'lon': lon_values, 'lat': lat_values})
 
-    # Generate random values for color and size columns
-    min_color = 1
-    max_color = 100
+    min = 1
+    max = 100
 
-    # Color of dot is based on the number of amenties it has the point
-    df['Amenties'] = np.random.randint(min_color, max_color + 1, num_points)
-    df['size_dot'] = 5
-    df['Description'] = ['This is the description for House {}'.format(
-        i) for i in range(1, num_points + 1)]
+    df['Amenties'] = 1
+    df['size_dot'] = np.random.randint(min, max + 1, num_points)
+    df['Description'] = "HDB House"
 
     fig = px.scatter_mapbox(df,
                             lon=df['lon'],
@@ -40,9 +37,8 @@ def generate_plotly_chart(map_style):
                             color=df['Amenties'],
                             size=df['size_dot'],
                             hover_data=['Description'],
-                            width=1200,
-                            height=900,
-                            title='1 Million Dollar House',
+                            width=800,
+                            height=600,
                             )
     fig.update_layout(mapbox_style=map_style)
     fig.update_layout(margin={"r": 0, "t": 50, "l": 0, "b": 10})

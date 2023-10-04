@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def clean_data(csv_file_location, clean_csv_file_location):
+def co_clean_data(csv_file_location, clean_csv_file_location):
     # Read the CSV file
     df = pd.read_csv(csv_file_location)
 
