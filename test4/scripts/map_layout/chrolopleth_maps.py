@@ -6,35 +6,68 @@ import pandas as pd
 import plotly.graph_objects as go
 
 
+
+
 def generate_plotly_chart(map_style):
    
-    file_path = "scripts/algo/Excel/output/FilteredUserHse.csv"
+    file_path1 = "scripts/algo/Excel/output/FilteredUserHse.csv"
+    file_path2 = "scripts/algo/Excel/Amenities/fairprice.csv"  # Replace with the path to your second CSV file
 
-    df = pd.read_csv(file_path)
-    df[['Latitude', 'Longitude']] = df['Coordinates'].str.split(', ', expand=True)
-    df['Latitude'] = pd.to_numeric(df['Latitude'])
-    df['Longitude'] = pd.to_numeric(df['Longitude'])
-    latitude_column = df['Latitude']
-    longitude_column = df['Longitude']
+    df1 = pd.read_csv(file_path1)
+    df2 = pd.read_csv(file_path2)
+
+    # Split and convert coordinates for the first DataFrame (if needed)
+    df1[['Latitude', 'Longitude']] = df1['Coordinates'].str.split(', ', expand=True)
+    df1['Latitude'] = pd.to_numeric(df1['Latitude'])
+    df1['Longitude'] = pd.to_numeric(df1['Longitude'])
+
+    # Extract latitude and longitude columns for the second DataFrame
+    lat2 = df2['Lat']
+    lon2 = df2['Long']
+
+    # Combine latitude and longitude columns from both DataFrames
+    latitude_column = pd.concat([df1['Latitude'], lat2])
+    longitude_column = pd.concat([df1['Longitude'], lon2])
     
+    # Define different colors for df1 and df2
+    color1 = "#ff0000"  # Red for df1
+    color2 = "#00ff00"  # Green for df2
 
-    fig = go.Figure(go.Scattermapbox(
-        lat= latitude_column,
-        lon=longitude_column,
+    # Create a trace for df1
+    trace1 = go.Scattermapbox(
+        lat=df1['Latitude'],
+        lon=df1['Longitude'],
         mode='markers',
         marker=go.scattermapbox.Marker(
-            size=20
-        )
-    ))
+            size=20,
+            color=color1,
+        ),
+        text=df1['Total_Points'],  # If df1 has "Total_Points"
+    )
+
+    # Create a trace for df2
+    trace2 = go.Scattermapbox(
+        lat=lat2,
+        lon=lon2,
+        mode='markers',
+        marker=go.scattermapbox.Marker(
+            size=20,
+            color=color2,
+        ),
+        text=None,  # No "Total_Points" in df2
+    )
 
     # Set the desired center coordinates and zoom level
     center_lat = 1.3521  # Replace with your desired latitude
     center_lon = 103.8198  # Replace with your desired longitude
     zoom_level = 10  # Adjust the zoom level as needed
 
+    # Create a figure with both traces
+    fig = go.Figure(data=[trace1, trace2])
 
-    fig.update_layout(mapbox_style=map_style,mapbox_center={"lat": center_lat, "lon": center_lon}, mapbox_zoom=zoom_level)
-    plot_div = fig.to_html(full_html=False)
+    fig.update_layout(mapbox_style=map_style, mapbox_center={"lat": center_lat, "lon": center_lon}, mapbox_zoom=zoom_level)
+    plot_div = fig.to_html(full_html=False) 
+    
 
     return plot_div
 
