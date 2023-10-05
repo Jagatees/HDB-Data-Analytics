@@ -48,6 +48,9 @@
                         </select>
                         <input type="submit" value=OK />
                       </form>
+
+
+
                 </div>
 
               <!-- Section 2 -->
@@ -97,6 +100,15 @@
                               {{ valueSix }}
                           </label>
                         </form>
+
+                        <form id="myForm_PageCount" action="/formatCO" method="POST">
+                          <input type="submit" value="Clean Data" onclick="startLoadingFive()"/>
+                          <div id="loadingCircleFive" class="loading"></div>
+                          <label id="demoFive">
+                              {{ valueClean }}
+                          </label>
+                        </form>
+
                     </div>
                 </div>
                 
@@ -120,6 +132,7 @@
                         <img action="/get_options" method="GET" src= {{ imagevalue }} alt="Italian Trulli">   
                       </form>
                 </div>
+
             </div>
         </div>
     </main>
@@ -158,6 +171,21 @@ function startLoadingThree() {
 function startLoadingFour() {
   var loadingCircle = document.getElementById("loadingCircleFour");
   var demoLabel = document.getElementById("demoFour");
+
+  loadingCircle.style.display = "block"; // Show loading circle
+  demoLabel.style.display = "none"; // Hide demo label
+
+  // Simulate loading time with a timeout (replace with your actual data loading logic)
+  setTimeout(function() {
+    // Once the value is available, hide loading circle and show demo label
+    loadingCircle.style.display = "none";
+    demoLabel.style.display = "block";
+  }, 1000000); // Adjust the time as needed
+}
+
+function startLoadingFive() {
+  var loadingCircle = document.getElementById("loadingCircleFive");
+  var demoLabel = document.getElementById("demoFive");
 
   loadingCircle.style.display = "block"; // Show loading circle
   demoLabel.style.display = "none"; // Hide demo label

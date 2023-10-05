@@ -25,6 +25,9 @@ import scripts.map_layout.chrolopleth_maps as mapsone
 # Algo
 import scripts.algo.ToIntegrate as alogone
 
+# Merge Json
+import scripts.merger_json.cleandata as clean_CO
+
 
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
@@ -146,6 +149,13 @@ def run_logic():
     if request.method == 'POST':
         alogone.algo()
         return render_template('charts.html')
+    
+# Json mergeing 
+@app.route('/formatCO', methods = ['GET', 'POST'])
+def formatCO():
+    if request.method == 'POST':
+        clean_CO.co_clean_data('scripts/merger_json/data.csv','scripts/merger_json/clean_data.csv')
+        return render_template('index.html')
     
     
 

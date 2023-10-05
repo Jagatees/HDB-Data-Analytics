@@ -15,7 +15,6 @@ def generate_plotly_chart(map_style):
     new_long = new_df['Long']
     
 
-
     # Replace 'data.csv' with the actual file path to your CSV file.
     file_path = "scripts/algo/Excel/output/FilteredUserHse.csv"
 
