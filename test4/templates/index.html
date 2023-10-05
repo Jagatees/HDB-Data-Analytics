@@ -82,6 +82,14 @@
                       </label>
                     </form>
 
+                    <form id="myForm_PageCount" action="/clean_data_prop" method="POST">
+                      <input type="submit" value="Clean Data" onclick="startLoadingTwo()"/>
+                      <!-- <div id="loadingCircleTwo" class="loading"></div>
+                      <label id="demoTwo">
+                          {{ valueSix }}
+                      </label> -->
+                    </form>
+
                     </div>
                     <div class="total-box__right">
                         <div class="header-container">
@@ -116,10 +124,19 @@
                  <div class="box spending-box">
                     <div class="header-container">
                       <!-- Title Website Scrapping Selection -->
-                      <h3 class="section-header">Get Chart Custom</h3>
+                      <h3 class="section-header">Merge Json</h3>
                     </div>
+
+                    <form id="myForm_PageCount" action="/merger_data" method="POST">
+                      <input type="submit" value="Merge-Data" onclick="startLoadingTwo()"/>
+                      <!-- <div id="loadingCircleTwo" class="loading"></div>
+                      <label id="demoTwo">
+                          {{ valueSix }}
+                      </label> -->
+                    </form>
+
                     
-                    <form action="/get_options" method="POST">
+                    <!-- <form action="/get_options" method="POST">
                         <label for="options">Choose a Options : </label>
                         <select name="options" id="options">
                           <option value="1">Options 1</option>
@@ -130,7 +147,7 @@
                         <br><br>
                         <input type="submit" value="Generate Chat">
                         <img action="/get_options" method="GET" src= {{ imagevalue }} alt="Italian Trulli">   
-                      </form>
+                    </form> -->
                 </div>
 
             </div>

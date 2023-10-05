@@ -18,7 +18,9 @@ def GetHTMLPAGE(url, output):
     chrome_driver_path = '/Users/jagatees/Downloads/chromedriver'
 
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
+    # BUG TO FIX 
+    # chrome_options.add_argument('--headless') 
+    # the above is it is not comment then for some reason i can not get the whole html 
     prefs = {"profile.managed_default_content_settings.images": 2}
     chrome_options.add_experimental_option("prefs", prefs)
 
@@ -29,7 +31,7 @@ def GetHTMLPAGE(url, output):
     # Open the URL
     driver.get(url)
 
-    driver.implicitly_wait(10)  # Implicitly wait up to 10 seconds (adjust as needed)
+    driver.implicitly_wait(30)  # Implicitly wait up to 10 seconds (adjust as needed)
 
     # Get the HTML content of the entire webpage
     html_content = driver.page_source
@@ -47,10 +49,11 @@ def GetHTMLPAGE(url, output):
 
 # Function to scrape a chunk of URLs
 def scrape_urls(urls_chunk, thread_num):
-    if not os.path.exists("page_scrape"):
-        os.makedirs("page_scrape")
+    if not os.path.exists("centralized/99co/scrapping"):
+        os.makedirs("centralized/99co/scrapping")
+        os.makedirs("centralized/99co/json")
     for i, url in enumerate(urls_chunk):
-        output_path = f'page_scrape/page-{thread_num}-{i}.html'
+        output_path = f'centralized/99co/scrapping/page-{thread_num}-{i}.html'
         GetHTMLPAGE(url, output_path)
     
 

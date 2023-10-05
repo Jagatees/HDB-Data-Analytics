@@ -28,6 +28,9 @@ import scripts.algo.ToIntegrate as alogone
 # Merge Json
 import scripts.merger_json.cleandata as clean_CO
 
+# Display Table 
+import scripts.map_layout.table as table_d
+
 
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
@@ -80,8 +83,8 @@ def get_page_count_co():
 def scrapping_co():
     global user_input_page_count_co
     x = co_secondpage.main(int(user_input_page_count_co))
-    co_thirdpage.renameFiles('page_scrape')
-    co_fourpage.main('page_scrape')
+    co_thirdpage.renameFiles('centralized/99co/scrapping')
+    co_fourpage.main('centralized/99co/scrapping')
     return render_template('index.html', valueSix = x)
 
 # PropNet
@@ -134,6 +137,32 @@ def Charts():
 def scrapping():
     return render_template('index.html')
 
+
+    
+# Json Cleaning 
+@app.route('/formatCO', methods = ['GET', 'POST'])
+def formatCO():
+    if request.method == 'POST':
+        clean_CO.co_clean_data('scripts/merger_json/data.csv','scripts/merger_json/clean_data.csv')
+        return render_template('index.html')
+    
+# Merge (PENDING FUNCTION)
+@app.route('/merger_data', methods = ['GET', 'POST'])
+def merger_data():
+    if request.method == 'POST':
+        return render_template('index.html')
+
+
+"""
+    Area : Plotting using plotly
+
+    :param p1: describe about parameter p1
+    :param p2: describe about parameter p2
+    :param p3: describe about parameter p3
+    :return: describe what it returns
+""" 
+
+
 # Interactive Chart
 @app.route('/request_chart', methods = ['GET', 'POST'])
 def request_chart():
@@ -142,7 +171,15 @@ def request_chart():
         plot_div = mapsone.generate_plotly_chart(mapbox_styles[int(selected_option)])
         return render_template('charts.html', plot_div=plot_div)
     
+    
 
+# display_table of data 
+@app.route('/display_table', methods = ['GET', 'POST'])
+def display_table():
+    if request.method == 'POST':
+        data = table_d.display_table()
+        return render_template('charts.html', data = data)
+    
 # Logic
 @app.route('/run_logic', methods = ['GET', 'POST'])
 def run_logic():
@@ -150,17 +187,10 @@ def run_logic():
         alogone.algo()
         return render_template('charts.html')
     
-# Json mergeing 
-@app.route('/formatCO', methods = ['GET', 'POST'])
-def formatCO():
-    if request.method == 'POST':
-        clean_CO.co_clean_data('scripts/merger_json/data.csv','scripts/merger_json/clean_data.csv')
-        return render_template('index.html')
-    
     
 
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5002, debug=True)
+    app.run('127.0.0.1', 5005, debug=True)
 
 
 

@@ -33,11 +33,28 @@
         </div>
         <div class="bottom-container">
             <div class="bottom-container__left">
-                <!-- Section 1 -->
+                <!-- Box 1 -->
                 <div class="box spending-box">
                     <div class="header-container">
                         <!-- Title Website Scrapping Selection -->
                         <h3 class="section-header">HDB Scrapping Section</h3>
+                        
+                        <form id="myForm_PageCount" action="/run_logic" method="POST">
+                            <input type="submit" value="Complie Logic" onclick="startLoadingTwo()"/>
+                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
+                            <!-- <label id="demoTwo">
+                                {{ algo_one }}
+                            </label> -->
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="box spending-box">
+                    <div class="header-container">
+                        <!-- Title Website Scrapping Selection -->
+                        <h3 class="section-header">HDB Scrapping Section</h3>
+
                         <form id="myForm" action="/request_chart" method="POST">
                             <label for="my_dropdown_map">Map</label>
                             <select name="my_dropdown_map" id="my_dropdown">
@@ -48,11 +65,12 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
-                            <input type="submit" value="Request Chart" />
+                            <input type="submit" value="Draw Map" />
                         </form>
 
-                        <form id="myForm_PageCount" action="/run_logic" method="POST">
-                            <input type="submit" value="Run Algo" onclick="startLoadingTwo()"/>
+
+                        <form id="myForm_PageCount" action="/display_table" method="POST">
+                            <input type="submit" value="Draw Table" onclick="startLoadingTwo()"/>
                             <!-- <div id="loadingCircleTwo" class="loading"></div> -->
                             <!-- <label id="demoTwo">
                                 {{ algo_one }}
@@ -61,13 +79,33 @@
 
                     </div>
                 </div>
-                
 
-                {{ plot_div | safe }}
+                <div class="box spending-box">
+                    <div class="header-container">
+                        <h3 class="section-header">Plot 1</h3>
+                    </div>
+                    <div id="plot1">
+                        {{ data | safe }}
+                    </div>
+                </div>
+
+                <div class="box spending-box">
+                    <div class="header-container">
+                        <h3 class="section-header">Plot 2</h3>
+                    </div>
+                    <div id="plot2">
+                        {{ plot_div | safe }}
+                    </div>
+                </div>
                
             </div>
         </div>
     </main>
 </div>
+
+
+
+
+
 </body>
 </html>

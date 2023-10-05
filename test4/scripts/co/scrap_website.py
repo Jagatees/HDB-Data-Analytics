@@ -123,6 +123,6 @@ def main(x):
         
     ]
     # Save the data as JSON
-    with open("99_co_scrapping.json", "w") as json_file:
+    with open("centralized/99co/json/99_co_scrapping.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
