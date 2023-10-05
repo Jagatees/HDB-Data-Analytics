@@ -312,7 +312,7 @@ SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
 matched_areas = []
 matched_Links = []
 
-# Check if SplitLat and SplitLong match DataDF 'Lat' and DataDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
+# Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
 for i in range(len(SplitLat)):
     lat = SplitLat[i]
     long = SplitLong[i]
@@ -329,5 +329,3 @@ Filtered_UserHse['Link'] = matched_Links
 #pass the dataframe into a CSV file
 MDollarHSe_Meraged_Points.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
 Filtered_UserHse.to_csv('ProjTest\\Excel Data\\FilteredUserHse.csv', index=True)
-
-print("Done")
