@@ -299,9 +299,10 @@ MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
 
 print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
-##Compare all the user address points towards the average points and get those above average out.
+##Compare all the user address points towards the average points.
 Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
 
+#Adding 2 Column into FilteredUserHse.csv
 UserFilteredCoordinates = Filtered_UserHse['Coordinates'].to_list()
 
 # Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
@@ -311,6 +312,7 @@ SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
 # Create 2 list to store the matching datas
 matched_areas = []
 matched_Links = []
+matched_USerHseTypes = []
 
 # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
 for i in range(len(SplitLat)):
@@ -318,14 +320,65 @@ for i in range(len(SplitLat)):
     long = SplitLong[i]
     for index, row in UserHseDF.iterrows():
          if lat == row['Lat'] and long == row['Long']:
-             matched_area = row['Location_Name']
-             matched_Link = row['Link']
-             matched_areas.append(matched_area)
-             matched_Links.append(matched_Link)
+            matched_area = row['Location_Name']
+            matched_Link = row['Link']
+            matched_USerHseType = row['Location_Type']
+            matched_areas.append(matched_area)
+            matched_Links.append(matched_Link)
+            matched_USerHseTypes.append(matched_USerHseType)
 
 Filtered_UserHse['Area'] = matched_areas
+Filtered_UserHse['Location_Type'] = matched_USerHseType
 Filtered_UserHse['Link'] = matched_Links
+
+#Adding 2 col to FilteredMillionDollarHse.CSV
+MillionFilteredCoordinates = MDollarHSe_Meraged_Points['Coordinates'].to_list()
+
+# Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
+SplitMillionLat = [coord.split(', ')[0] for coord in MillionFilteredCoordinates]
+SplitMillionLong = [coord.split(', ')[1] for coord in MillionFilteredCoordinates]
+
+# Create empty lists to store the matching data
+matched_Millionareas = []
+matched_Milliontypes = []
+
+# Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Location_Type' Data
+for Mlat, Mlong in zip(SplitMillionLat, SplitMillionLong):
+    match_found = False
+    for index, row in MDollarHseDF.iterrows():
+        if Mlat == row['Lat'] and Mlong == row['Long']:
+            matched_Millionareas.append(row['Location_Name'])
+            matched_Milliontypes.append(row['Location_Type'])
+            match_found = True
+            break  # Exit inner loop once a match is found
+
+    if not match_found:
+        matched_Millionareas.append(None)  # or any placeholder value
+        matched_Milliontypes.append(None)  # or any placeholder value
+
+# Add the new columns to MDollarHSe_Meraged_Points
+MDollarHSe_Meraged_Points['Area'] = matched_Millionareas
+MDollarHSe_Meraged_Points['Location_Type'] = matched_Milliontypes
+
+
+#Take only the last 3 column from FilteredMillionDollarHse.CSV
+PercentageCalculationDF = MDollarHSe_Meraged_Points.iloc[:, -3:]
+
+#Calculate the Average of total points based on the Area and Location_Type
+grouped_Area_HseType = PercentageCalculationDF.groupby(["Area", "Location_Type"])["Total_Points"].mean().reset_index()
+
+# Merge based on 'Area' and 'Location_Type'
+merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
+
+# Rename the 'Total_Points' column
+merged_df.rename(columns={'Total_Points_x': 'Total_Points', 'Total_Points_y': 'History_Avg_Point'}, inplace=True)
+
+#calculate the accuracy percentage
+merged_df['Percent'] = (merged_df['Total_Points'] / merged_df['History_Avg_Point'] * 100).clip(upper=100)
+merged_df['Percent'] = merged_df['Percent'].apply(lambda x: 100 if x > 100 else x / 2)
 
 #pass the dataframe into a CSV file
 MDollarHSe_Meraged_Points.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
-Filtered_UserHse.to_csv('ProjTest\\Excel Data\\FilteredUserHse.csv', index=True)
+grouped_Area_HseType.to_csv('ProjTest\\Excel Data\\ForPredictionHistory.csv', index=True)
+merged_df.to_csv('ProjTest\\Excel Data\\FilteredUserHse.csv', index=True)
+
