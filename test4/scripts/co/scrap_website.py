@@ -6,6 +6,8 @@ import math
 import requests
 import asyncio
 from requests_html import AsyncHTMLSession
+from datetime import datetime
+
 
 title = []
 room_type_title = []
@@ -16,6 +18,9 @@ type_ = []
 num_beds = []
 num_toilet = []
 lease = []
+sqrt_feet = []
+yearbuilt = []
+remaingyear = []
 
 # Return list of item in folder
 def get_item_in_dic(x):
@@ -102,27 +107,60 @@ def main(x):
                 else: 
                     # print('None')
                     lease.append('None')
-                
+
+                # Sqrt Feet Floor
+                le = index.find('li', itemprop='floorSize')
+                if le != None:
+                    text = le.text
+                    output = text.split('/')                    
+                    sqft_part = output[0]
+                    sqft_part = sqft_part.replace('sqft', '').strip()
+                    sqrt_feet.append(sqft_part)
+                else: 
+                    # print('None')
+                    sqrt_feet.append('None')
+
+
+
+
+                 # yearbuilt
+                le = index.find('li', itemprop='yearbuilt')
+                if le != None:
+                    # print(le.text)
+                    yearbuilt.append(le.text)
+                    last = datetime.now().year - int(le.text)
+                    remaingyear.append(last)
+                else: 
+                    # print('None')
+                    remaingyear.append('None')
+                    yearbuilt.append('None')
+
+
                 counter = counter + 1
+
+
 
 
     data = [
         {
             'Title': title[i],
             'Room_Type' : room_type_title[i],
-            'Location' : address[i],
+            'Full Address' : address[i],
             'Price': price[i],
-            'Links': link[i],
+            'Link': link[i],
             'Type' : type_[i],
             'Num_Bed' : num_beds[i],
             'Num_Toilet' : num_toilet[i],
             'Lease' : lease[i],
+            'Yearbuilt' : yearbuilt[i],
+            'YearLeft' : remaingyear[i],
+            'Sqft' : sqrt_feet[i],
 
         }
         for i in range(counter)
         
     ]
     # Save the data as JSON
-    with open("centralized/99co/json/99_co_scrapping.json", "w") as json_file:
+    with open("centralized/99co/json/nintynine_scrap.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 

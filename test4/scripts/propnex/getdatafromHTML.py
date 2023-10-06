@@ -7,13 +7,10 @@ import requests
 import asyncio
 from requests_html import AsyncHTMLSession
 
-title = []
-price_house = []
+
 links = []
-roomsize = []
-
-bullet_points = []
-
+title = []
+room_type = []
 
 # Return list of item in folder
 def get_item_in_dic(x):
@@ -34,29 +31,26 @@ def main(x):
         with open(x + "/" + str(index), "r") as f:
             doc = BeautifulSoup(f, "html.parser")
 
-            title_of_room = doc.find_all(class_ = 'lbb-1')
+            title_of_room = doc.find_all(class_ = 'listingDetailTitle')
             for index in title_of_room:
-                counter += 1
-                roomtitle = index.find('h3')['data-original-title']
+                roomtitle = index.text
+                roomtitle = roomtitle.replace("\n", "")
+                # print(roomtitle)
                 title.append(roomtitle)
 
-            price = doc.find_all(class_ = 'lbb-22')
-            for index in price:
-                p = index.find('h4').text
-                price_house.append(p)
-
-            link = doc.find_all('div',class_='lbb-flex')
+            link = doc.find_all('a',class_='listingDetailTitle')
             for index in link:
-                p = index.find('a', class_='lbb-2').get('href')
-                p = 'https://www.propnex.com' + p
+                p = index.get('href')
+                p = 'https://www.srx.com.sg' + p
                 links.append(p)
+
+            counter += 1
  
 
     data = [
         {
-            'Title': title[i],
-            'Price': price_house[i],
-            'Deep_Crawl_Links' : links[i], 
+            'Title' : title[i],
+            'Link' : links[i],
         }
         for i in range(counter)
         

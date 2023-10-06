@@ -17,7 +17,7 @@ def store_url():
         file_data = json.load(json_file)
 
         for index in file_data:
-            urls_y.append(index['Deep_Crawl_Links'])
+            urls_y.append(index['Link'])
         print(urls_y)
         return urls_y
     
@@ -28,7 +28,7 @@ def GetHTMLPAGE(url, output):
     # Options - look into the lib to see the options
     # idsable image on website 
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
+    # chrome_options.add_argument('--headless')
     prefs = {"profile.managed_default_content_settings.images": 2}
     chrome_options.add_experimental_option("prefs", prefs)
 

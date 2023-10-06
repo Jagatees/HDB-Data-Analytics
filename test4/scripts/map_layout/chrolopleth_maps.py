@@ -6,8 +6,6 @@ import pandas as pd
 import plotly.graph_objects as go
 
 
-
-
 def generate_plotly_chart(map_style):
    
     file_path1 = "scripts/algo/Excel/output/FilteredUserHse.csv"

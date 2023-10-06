@@ -10,7 +10,7 @@ def main():
     driver = webdriver.Chrome()
 
     # Open the URL
-    url = 'https://www.propnex.com/buy?propertyType=HDB&sortBy=newest&listingType=SALE&typeOfSale=Resale&pageNumber=1'
+    url = 'https://www.srx.com.sg/singapore-property-listings/hdb-for-sale?page=1'
     driver.get(url)
 
     # Wait for the page to load completely (you can adjust the timeout as needed)
@@ -33,9 +33,23 @@ def main():
 
     with open("pagecount.html", "r") as f:
         doc = BeautifulSoup(f, "html.parser")
-        # Get Higest Page Count 
-        page_count = doc.find(class_='paginationjs-page paginationjs-last J-paginationjs-page').a.text
-        print(page_count)
+
+        # Find the h1 element and extract the text
+        h1_element = doc.find('h1')
+        if h1_element:
+            text = h1_element.text.strip()
+            # Split the text to get the number part
+            parts = text.split()
+            if len(parts) > 0:
+                number = parts[0].replace(",", "")
+                number = str(int(int(number) / 20) + 1) 
+                print(number)
+            else:
+                print("Number not found")
+        else:
+            print("H1 element not found")
+
+        print(number)
         os.remove("pagecount.html")
-        return page_count
+        return number
     

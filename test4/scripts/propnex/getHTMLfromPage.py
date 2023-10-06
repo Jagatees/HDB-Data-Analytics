@@ -14,7 +14,7 @@ threads = []
 
 def storeallurl(x):
     for index in range(1, x + 1):
-        urls_X.append(f'https://www.propnex.com/buy?propertyType=HDB&sortBy=newest&listingType=SALE&typeOfSale=Resale&pageNumber={index}')
+        urls_X.append(f'https://www.srx.com.sg/singapore-property-listings/hdb-for-sale?page={index}')
 
 def GetHTMLPAGE(url, output):
     chrome_driver_path = '/Users/jagatees/Downloads/chromedriver'
@@ -22,7 +22,7 @@ def GetHTMLPAGE(url, output):
     # Options - look into the lib to see the options
     # idsable image on website 
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
+    # chrome_options.add_argument('--headless')
     prefs = {"profile.managed_default_content_settings.images": 2}
     chrome_options.add_experimental_option("prefs", prefs)
 
