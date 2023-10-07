@@ -133,5 +133,5 @@ def main(x):
         
     ]
     # Save the data as JSON
-    with open("propnex_scrapping.json", "w") as json_file:
+    with open("centralized/srx/json/nintynine_scrap.json", "w") as json_file:
         json.dump(data, json_file, indent=4)

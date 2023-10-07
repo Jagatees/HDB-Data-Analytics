@@ -50,10 +50,11 @@ def GetHTMLPAGE(url, output):
 
 # Function to scrape a chunk of URLs
 def scrape_urls(urls_chunk, thread_num):
-    if not os.path.exists("propnex_scrapped_html"):
-        os.makedirs("propnex_scrapped_html")
+    if not os.path.exists("centralized/srx/scrapping"):
+        os.makedirs("centralized/srx/scrapping")
+        os.makedirs("centralized/srx/json")
     for i, url in enumerate(urls_chunk):
-        output_path = f'propnex_scrapped_html/page-{thread_num}-{i}.html'
+        output_path = f'centralized/srx/scrapping/page-{thread_num}-{i}.html'
         GetHTMLPAGE(url, output_path)
     
 

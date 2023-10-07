@@ -1,40 +1,40 @@
+
+# Importing Flask modules for web application development
 from flask import Flask, render_template, request
 
-# RentInSingapore - Scrapping (asyncio) & Deep Crawling (multiprocessing)
-import backup.rentingSingpoare.main_page_scrapping as mainone
-import backup.rentingSingpoare.scraperr_multi_threading as maintwo
-
-# 99co - Scrapping (threading)
+# Importing custom web scraping functions from 'scripts.co' module
 import scripts.co.getpagecount as co_firstpage
 import scripts.co.getHTMLfromPage as co_secondpage
 import scripts.co.rename_folder as co_thirdpage
 import scripts.co.scrap_website as co_fourpage
 
-# Propnex
-import scripts.propnex.getpageCount as propnex_firstpage
-import scripts.propnex.getHTMLfromPage as propnex_secondpage
-import scripts.propnex.getdatafromHTML as propnex_thirdpage
+# Importing custom web scraping functions from 'scripts.srx' module
+import scripts.srx.getpageCount as srx_firstpage
+import scripts.srx.getHTMLfromPage as srx_secondpage
+import scripts.srx.getdatafromHTML as srx_thirdpage
 
-# Map
+# Importing custom map plottinh functions from 'scripts.maplayput' module
 import scripts.map_layout.chrolopleth_maps as mapsone
 
-# Algo
+# Importing [PENDING] from 'scripts.algo' module
 import scripts.algo.ToIntegrate as alogone
 
-# Merge Json
+# Importing Mergering functions from 'scripts.merger_json' module
 import scripts.merger_json.cleandata as clean_CO
 
-# Display Table 
+# Importing Table Plotting functions from 'scripts.map_layout' module
 import scripts.map_layout.table as table_d
 
 
+# Create a Flask web application instance and set a secret key for session security
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
 
 
-# Variable for use 
+'''
+    ---------- Initialize Init 
+'''
 user_input_page_count = 0
-timer_scrapping_ris = ''
 user_input_page_count_co = 0
 user_input_page_count_prop = 0
 
@@ -48,13 +48,26 @@ mapbox_styles = [
 ]
 
 
-# DO NOT DELETE THIS HELLO WORLD
+'''
+    ---------- Initialize Root URL Route
+'''
+
+
+'''
+    Route : /
+    Description : Hello World Test
+    Methods : GET & POST
+'''
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
     print('Welcome to ICT1001 Porgramming A1')
     return render_template('index.html')
 
-# Get Value from dropdown
+'''
+    Route : /website
+    Description : Get User Choice to chose which website to scrap
+    Methods : GET & POST
+'''
 @app.route('/website', methods=['GET', 'POST'])
 def website():
     if request.method == 'POST':
@@ -64,9 +77,13 @@ def website():
         if selected_option == '1':
             return render_template('index.html', valueFive=co_firstpage.main())
         elif selected_option == '2':
-            return render_template('index.html', prop_value_page = propnex_firstpage.main())
+            return render_template('index.html', prop_value_page = srx_firstpage.main())
         
-# 99co
+'''
+    Route : /get_page_count_co
+    Description : Store Selected Options into a Global Var for 99co Website 
+    Methods : POST
+'''
 @app.route('/get_page_count_co', methods=['POST'])
 def get_page_count_co():
     global user_input_page_count_co
@@ -75,6 +92,11 @@ def get_page_count_co():
     print(selected_option)  # Print the selected option for debugging
     return render_template('index.html')
 
+'''
+    Route : /scrapping_co
+    Description : Scrapping 99co Website 
+    Methods : GET & POST
+'''
 @app.route('/scrapping_co', methods = ['GET', 'POST'])
 def scrapping_co():
     global user_input_page_count_co
@@ -83,9 +105,12 @@ def scrapping_co():
     co_fourpage.main('centralized/99co/scrapping')
     return render_template('index.html', valueSix = x)
 
-# PropNet
 
-# Get Page Count from User Choice
+'''
+    Route : /get_page_count_prop
+    Description : Store Selected Options into a Global Var for SRX Website 
+    Methods : GET & POST
+'''
 @app.route('/get_page_count_prop', methods=['POST'])
 def get_page_count_prop():
     global user_input_page_count_prop
@@ -94,16 +119,22 @@ def get_page_count_prop():
     print(selected_option)  # Print the selected option for debugging
     return render_template('index.html')
 
-# Scrapp prop page 
+'''
+    Route : /scrapping_prop
+    Description : Scrapping SRX Website 
+    Methods : GET & POST
+'''
 @app.route('/scrapping_prop', methods = ['GET', 'POST'])
 def scrapping_prop():
     global user_input_page_count_prop
-    x = propnex_secondpage.main(int(user_input_page_count_prop))
-    propnex_thirdpage.main('propnex_scrapped_html')
+    x = srx_secondpage.main(int(user_input_page_count_prop))
+    srx_thirdpage.main('centralized/srx/scrapping')
     return render_template('index.html', prop_one = x)
 
 
-# Charts Display 
+'''
+    TESTING 
+'''
 @app.route('/get_options', methods = ['GET', 'POST'])
 def get_options():
     option_to_image = {
@@ -142,14 +173,7 @@ def merger_data():
         return render_template('index.html')
 
 
-"""
-    Area : Plotting using plotly
 
-    :param p1: describe about parameter p1
-    :param p2: describe about parameter p2
-    :param p3: describe about parameter p3
-    :return: describe what it returns
-""" 
 
 
 # Interactive Chart
@@ -177,7 +201,9 @@ def run_logic():
         return render_template('charts.html')
     
     
-
+'''
+    Run the Flask application on the local server 
+'''
 if __name__ == "__main__":
     app.run('127.0.0.1', 5005, debug=True)
 

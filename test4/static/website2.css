@@ -146,7 +146,7 @@ body {
     width: 44px;
 }
 
-/* -------------- NOTIFICATION -------------- */
+/* -------------- NOTIFICATION --------------
 .notification {
     border: 1px solid #C3D4E9;
     background-color: transparent;
@@ -172,7 +172,7 @@ body {
     border-radius: 50%;
     top: -2px;
     right: 3px;
-}
+} */
 
 /* -------------- BOTTOM CONTAINER -------------- */
 .bottom-container {

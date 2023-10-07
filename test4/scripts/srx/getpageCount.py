@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import os
 
+
+
 def main():
     # Set the path to the Chrome WebDriver executable
     chrome_driver_path = '/Users/jagatees/Downloads/chromedriver'
