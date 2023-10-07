@@ -15,10 +15,6 @@ import scripts.propnex.getpageCount as propnex_firstpage
 import scripts.propnex.getHTMLfromPage as propnex_secondpage
 import scripts.propnex.getdatafromHTML as propnex_thirdpage
 
-# Deep Crawling 
-import scripts.dcpropnex.getHTMLfromWebsite as dc_prop_one
-import scripts.dcpropnex.getdatafromHTML as dc_prop_two
-
 # Map
 import scripts.map_layout.chrolopleth_maps as mapsone
 
@@ -106,13 +102,6 @@ def scrapping_prop():
     propnex_thirdpage.main('propnex_scrapped_html')
     return render_template('index.html', prop_one = x)
 
-# Deep Crawling prop page 
-@app.route('/dc_scrapping_prop', methods = ['GET', 'POST'])
-def dc_scrapping_prop():
-    x = dc_prop_one.main()
-    dc_prop_two.main('deep_crawling_propnex_scrapped_html')
-    return render_template('index.html', prop_two = x)
-
 
 # Charts Display 
 @app.route('/get_options', methods = ['GET', 'POST'])
@@ -190,7 +179,7 @@ def run_logic():
     
 
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5002, debug=True)
+    app.run('127.0.0.1', 5005, debug=True)
 
 
 
