@@ -1,29 +1,23 @@
 
 # Importing Flask modules for web application development
 from flask import Flask, render_template, request
-
 # Importing custom web scraping functions from 'scripts.co' module
-import scripts.co.getpagecount as co_firstpage
-import scripts.co.getHTMLfromPage as co_secondpage
-import scripts.co.rename_folder as co_thirdpage
-import scripts.co.scrap_website as co_fourpage
-
+import scripts.ninety_nine_co.getpagecount as co_firstpage
+import scripts.ninety_nine_co.getHTMLfromPage as co_secondpage
+import scripts.ninety_nine_co.rename_folder as co_thirdpage
+import scripts.ninety_nine_co.scrap_website as co_fourpage
 # Importing custom web scraping functions from 'scripts.srx' module
 import scripts.srx.getpageCount as srx_firstpage
 import scripts.srx.getHTMLfromPage as srx_secondpage
 import scripts.srx.getdatafromHTML as srx_thirdpage
-
-# Importing custom map plottinh functions from 'scripts.maplayput' module
-import scripts.map_layout.chrolopleth_maps as mapsone
-
 # Importing [PENDING] from 'scripts.algo' module
 import scripts.algo.ToIntegrate as alogone
-
 # Importing Mergering functions from 'scripts.merger_json' module
 import scripts.merger_json.cleandata as clean_CO
-
+# Importing custom map plottinh functions from 'scripts.maplayput' module
+import scripts.plotting.chrolopleth_maps as mapsone
 # Importing Table Plotting functions from 'scripts.map_layout' module
-import scripts.map_layout.table as table_d
+import scripts.plotting.table as table_d
 
 
 # Create a Flask web application instance and set a secret key for session security
