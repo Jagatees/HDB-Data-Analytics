@@ -69,15 +69,15 @@
                     <form id="myForm_PageCount" action="/scrapping_prop" method="POST">
                       <input type="submit" value="Scrapping-Propnex" onclick="startLoadingThree()"/>
                       <div id="loadingCircleThree" class="loading"></div>
-                      <label id="demoThree">
+                      <!-- <label id="demoThree">
                           {{ prop_one }}
-                      </label>
+                      </label> -->
                     </form>
 
-                    <form id="myForm_PageCount" action="/clean_data_prop" method="POST">
-                      <input type="submit" value="Clean Data" onclick="startLoadingTwo()"/>
-                      <!-- <div id="loadingCircleTwo" class="loading"></div>
-                      <label id="demoTwo">
+                    <form id="myForm_PageCount" action="/formatRSX" method="POST">
+                      <input type="submit" value="Clean Data" onclick="startLoadingRSX()"/>
+                      <div id="loadingCircleRSX" class="loading"></div>
+                      <!-- <label id="demoTwo">
                           {{ valueSix }}
                       </label> -->
                     </form>
@@ -195,6 +195,21 @@ function startLoadingFour() {
 function startLoadingFive() {
   var loadingCircle = document.getElementById("loadingCircleFive");
   var demoLabel = document.getElementById("demoFive");
+
+  loadingCircle.style.display = "block"; // Show loading circle
+  demoLabel.style.display = "none"; // Hide demo label
+
+  // Simulate loading time with a timeout (replace with your actual data loading logic)
+  setTimeout(function() {
+    // Once the value is available, hide loading circle and show demo label
+    loadingCircle.style.display = "none";
+    demoLabel.style.display = "block";
+  }, 1000000); // Adjust the time as needed
+}
+
+function startLoadingRSX() {
+  var loadingCircle = document.getElementById("loadingCircleRSX");
+  var demoLabel = document.getElementById("demoRSX");
 
   loadingCircle.style.display = "block"; // Show loading circle
   demoLabel.style.display = "none"; // Hide demo label

@@ -13,7 +13,13 @@ import scripts.srx.getdatafromHTML as srx_thirdpage
 # Importing [PENDING] from 'scripts.algo' module
 import scripts.algo.ToIntegrate as alogone
 # Importing Mergering functions from 'scripts.merger_json' module
-import scripts.merger_json.cleandata as clean_CO
+import scripts.merger_json.convert_co as convertCo
+import scripts.merger_json.clean_co as cleanCo
+# Importing Mergering functions from 'scripts.merger_json' module
+import scripts.merger_json.convert_srx as convertSRX
+import scripts.merger_json.clean_srx as cleanSRX
+# Importing Merger Function from 'scripst.merger_json' module
+import scripts.merger_json.merger as merger_csv
 # Importing custom map plottinh functions from 'scripts.maplayput' module
 import scripts.plotting.chrolopleth_maps as mapsone
 # Importing Table Plotting functions from 'scripts.map_layout' module
@@ -57,7 +63,7 @@ mapbox_styles = [
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
     print('Get Both Website Page Count')
-    return render_template('index.html',valueFive=co_firstpage.main(), prop_value_page=srx_firstpage.main())
+    return render_template('index.html')
 
 
 '''
@@ -152,8 +158,23 @@ def scrapping_prop():
 @app.route('/formatCO', methods=['GET', 'POST'])
 def formatCO():
     if request.method == 'POST':
-        clean_CO.co_clean_data(
-            'scripts/merger_json/data.csv', 'scripts/merger_json/clean_data.csv')
+        # Add File Path here later
+        convertCo.convert_csv('centralized/99co/json/nintynine_scrap.json', 'centralized/99co/json/99co_excel.csv')
+        cleanCo.clean_co('centralized/99co/json/99co_excel.csv', 'centralized/99co/json/99co_final.csv')
+        return render_template('index.html')
+    
+'''
+    Route : /formatCO
+    Description : Clean & Format 99co JSON
+    Methods : GET & POST
+'''
+
+
+@app.route('/formatRSX', methods=['GET', 'POST'])
+def formatRSX():
+    if request.method == 'POST':
+        convertSRX.convert_csv('centralized/srx/json/srx_scrapping.json', 'centralized/srx/json/srx_excel.csv')
+        cleanSRX.clean_co('centralized/srx/json/srx_excel.csv', 'centralized/srx/json/srx_final.csv')
         return render_template('index.html')
 
 
@@ -167,6 +188,9 @@ def formatCO():
 @app.route('/merger_data', methods=['GET', 'POST'])
 def merger_data():
     if request.method == 'POST':
+        merger_csv.meger_csv('centralized/99co/json/99co_excel.csv', 
+                             'centralized/srx/json/srx_excel.csv',
+                             'centralized/merger/csv_merged_final.csv')
         return render_template('index.html')
 
 
@@ -212,6 +236,13 @@ def run_logic():
     if request.method == 'POST':
         alogone.algo()
         return render_template('charts.html')
+    
+@app.route('/run_prediction', methods=['GET', 'POST'])
+def run_prediction():
+    if request.method == 'POST':
+        get_percentage = alogone.predicition_for_percentage()
+        print(get_percentage)
+        return render_template('charts.html')
 
 
 '''
@@ -231,4 +262,4 @@ def scrapping():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5000, debug=True)
+    app.run('127.0.0.1', 5003, debug=True)

@@ -1,17 +1,15 @@
 import math
 import time
 import requests
-import pandas as pd
 from sklearn.linear_model import LinearRegression
 from statistics import mean
 import numpy as np
 from sklearn.metrics import r2_score
+from statistics import mean
+import pandas as pd
 
 
-'''
-    Args : AddressArray(List), Filepath(String)
-    Description : Convert a list of address and it will output at a Filepath
-'''
+
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
     api_key = "pk.02ff73880ec7a133cfe62191e54c3bd1"
@@ -43,8 +41,16 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         # Extract and append the latitude and longitude to the coordinates list
                         latitude = data[0]["lat"]
                         longitude = data[0]["lon"]
-                        coordinatesLong.append((longitude))
-                        coordinatesLat.append((latitude))
+
+                        CheckLong = float(latitude)
+                        CheckLat = float(longitude)
+
+                        if CheckLong > 0 and CheckLat > 0:
+                            coordinatesLong.append((longitude))
+                            coordinatesLat.append((latitude))
+                        else:
+                            coordinatesLong.append((0))
+                            coordinatesLat.append((0))
                         #Coordinates = latitude + ", " + longitude
                     else:
                         print(f"Location not found for address: {address}")
@@ -55,16 +61,16 @@ def GetLongLatFromAddress(AddressArray, Filepath):
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
     AddressDataFrame = AddressDataFrame.drop(0)
-
+    
     AddressDataFrame['Long'] = coordinatesLong
     AddressDataFrame['Lat'] = coordinatesLat
 
+    for index, row in AddressDataFrame.iterrows():
+        if row['Long'] == 0:
+            AddressDataFrame.drop(index, inplace=True)
+
     AddressDataFrame.to_csv(Filepath, index=False)
 
-'''
-    Args : XXXX
-    Description : XXXXX
-'''
 def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
     # Convert latitude and longitude from degrees to radians
     lat1 = math.radians(lat1)
@@ -84,10 +90,6 @@ def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
 
     return distance
 
-'''
-    Args : XXXX
-    Description : XXXXX
-'''
 def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long, AmentiesName):
     distances = []
 
@@ -99,10 +101,6 @@ def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long,
 
     return distances
 
-'''
-    Args : FiletPath (String)
-    Description : XXX
-'''
 def ReadCSVFile(FilePath):
 
     #Store address in this array
@@ -126,34 +124,27 @@ def ReadCSVFile(FilePath):
 
     return AddressArray
 
-'''
-    Args : XXXX
-    Description : XXXXX
-'''
 def GetCoordinatesfromcsv(FilePath):
-
-    column_names = ['Location_Type', 'Long', 'Lat']
-
     CSVLongLat = pd.read_csv(FilePath, header=None)
-    CSVLongLat = CSVLongLat[[1, 6, 7]]
-    CSVLongLat.columns = ['Location_Type', 'Long', 'Lat']
+    CSVLongLat = CSVLongLat[[0, 1, 6, 7]]
+    CSVLongLat.columns = ['Location_Name','Location_Type', 'Long', 'Lat']
     CSVLongLat = CSVLongLat.drop(0)
 
     return CSVLongLat
 
-'''
-    Args : XXXX
-    Description : XXXXX
-'''
+def GetUserDatafromcsv(FilePath):
+    UserData = pd.read_csv(FilePath, header=None)
+    UserData = UserData[[0, 1, 6, 7, 8]]
+    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'Link']
+    UserData = UserData.drop(0)
+
+    return UserData
+
 def FilterDataTableByDistance(datatable, distance):
     
     filterdf = datatable[datatable['Distance (km)'] < distance]
     return filterdf
 
-'''
-    Args : XXXX
-    Description : XXXXX
-'''
 def Preediction(Dataframe, year):
     Predict_DF = Dataframe.copy()
 
@@ -200,12 +191,94 @@ def Preediction(Dataframe, year):
     print(prediction_df)
 
 '''
-    Args : XXXX
-    Description : XXXXX
+    Predicition & Algo
 '''
-def algo():
-    print('starting algo done')
 
+
+def predicition_for_percentage():
+    csv_file = 'scripts/algo/Excel/output/HistoryResaleData.csv'
+    HistoryResaleDataDF = pd.read_csv(csv_file, header=None)
+
+    #Take only selected col
+    HistoryResaleDataDF = HistoryResaleDataDF[[0, 1, 2, 10]]
+    #Change col name
+    HistoryResaleDataDF.columns = ['Year', 'Town', 'Flat_Type' ,'Price']
+    #Drop first row
+    HistoryResaleDataDF = HistoryResaleDataDF.drop(0)
+
+    # Convert the "Price" column to numeric
+    HistoryResaleDataDF['Price'] = pd.to_numeric(HistoryResaleDataDF['Price'])
+    HistoryResaleDataDF['Year'] = pd.to_numeric(HistoryResaleDataDF['Year'])
+
+    #get all the unique values and find the average price of it.
+    UniqueGroupValues = HistoryResaleDataDF.groupby(['Year', 'Town', 'Flat_Type'])['Price'].mean().reset_index()
+    UniqueGroupValues_sorted = UniqueGroupValues.sort_values(by=['Year', 'Town'])
+
+    print('Filter Done')
+    #Save dataframe into new csv file
+    UniqueGroupValues_sorted.to_csv('scripts/algo/Excel/output/Cleaned_UnPredicted_HistoryData.csv', index=False)
+
+    Actual2023DF = UniqueGroupValues_sorted[UniqueGroupValues_sorted['Year'] == 2023]
+
+    Predict2023_DF = UniqueGroupValues_sorted.copy()
+
+    # Specify the flat types to predict
+    flat_types_to_predict = ["2 ROOM", "3 ROOM", "4 ROOM", "5 ROOM", "EXECUTIVE"]
+
+    # Create a DataFrame to store the prediction results
+    prediction_results = []
+
+    # Loop through towns
+    for town in ["ANG MO KIO", "BEDOK", "BISHAN", "BUKIT BATOK", "BUKIT MERAH", "BUKIT PANJANG", "BUKIT TIMAH"
+                , "CENTRAL AREA", "CHOA CHU KANG", "CLEMENTI", "GEYLANG", "HOUGANG", "JURONG EAST", "JURONG WEST"
+                , "KALLANG/WHAMPOA", "MARINE PARADE", "PASIR RIS", "PUNGGOL", "QUEENSTOWN", "SEMBAWANG", "SENGKANG"
+                , "SERANGOON", "TAMPINES", "TOA PAYOH", "WOODLANDS", "YISHUN"]:
+        for flat_type in flat_types_to_predict:
+
+            # Filter data for the specified town and flat type
+            filtered_data = Predict2023_DF[(Predict2023_DF['Town'] == town) & (Predict2023_DF['Flat_Type'] == flat_type)]
+
+            if not filtered_data.empty:
+                # Separate the features (X) and target (y)
+                X = filtered_data[['Year']]
+                y = filtered_data['Price']
+
+                # Create a linear regression model
+                model = LinearRegression()
+
+                # Fit the model to the data
+                model.fit(X, y)
+
+                # Predict price
+                predicted_price = model.predict([[2023]])[0]
+
+                # Append the prediction results to the list
+                prediction_results.append({"Year": 2023,"Town": town,"Flat_Type": flat_type,"Predicted_Price": predicted_price})
+            else:
+                # If data is not available, set the price to 0
+                prediction_results.append({"Year": 2023,"Town": town,"Flat_Type": flat_type,"Predicted_Price": 0})
+
+    # Create a DataFrame from the prediction results
+    prediction_2023_df = pd.DataFrame(prediction_results)
+    print(prediction_2023_df)
+
+    merged_Predictiondf = Actual2023DF.merge(prediction_2023_df[['Year', 'Town', 'Flat_Type', 'Predicted_Price']], on=['Year', 'Town', 'Flat_Type'], how='left')
+
+    # Loop through the PredictedPrice column and replace empty values with 0
+    for index, row in merged_Predictiondf.iterrows():
+        if pd.isna(row['Predicted_Price']):
+            merged_Predictiondf.at[index, 'Predicted_Price'] = 0
+
+    merged_Predictiondf["Accuracy_Percentage"] = merged_Predictiondf["Predicted_Price"] / merged_Predictiondf["Price"] * 100
+
+    Accuracy = merged_Predictiondf["Accuracy_Percentage"].mean()
+    Accuracy_percentage = math.floor(Accuracy)
+
+    merged_Predictiondf.to_csv('scripts/algo/Excel/output/Cleaned_HistoryData.csv', index=False)
+
+    print(str(Accuracy_percentage) + "%")
+
+def algo():
     #CSV File Paths
     FairpriceFilePath = 'scripts/algo/Excel/Amenities/fairprice.csv'
     HospitalFilePath = 'scripts/algo/Excel/Amenities/HospitalClinic.csv'
@@ -228,13 +301,7 @@ def algo():
     Supermarket_MallPoint = 2
     ParksPoint = 1
 
-    #Read the CSV File
-    UserAddressArray = ReadCSVFile(UserHseFilePath)
 
-    #Convert User Address into coordinates
-    GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
-
-    #get long and lat from all csv file save into datatable
     FairpriceDT = GetCoordinatesfromcsv(FairpriceFilePath)
     HospitalDT = GetCoordinatesfromcsv(HospitalFilePath)
     MallsDT = GetCoordinatesfromcsv(MallsFilePath)
@@ -245,7 +312,7 @@ def algo():
     TertairyDT = GetCoordinatesfromcsv(TertiaryFilePath)
     UniversityDT = GetCoordinatesfromcsv(UniversityFilePath)
     MDollarHseDT =  GetCoordinatesfromcsv(MDollarHseFilePath)
-    UserHseDT = GetCoordinatesfromcsv(UserHseFilePath)
+    UserHseDT = GetUserDatafromcsv(UserHseFilePath)
 
     #Remove all the duplicated values
     MDollarHseDF = MDollarHseDT.drop_duplicates() 
@@ -333,29 +400,38 @@ def algo():
     UserHse_FairpriceDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, FairpriceLat_Float, FairpriceLong_Float, 'Fairprice')
     UserHse_FairpriceDT = pd.DataFrame(UserHse_FairpriceDist)
 
+
     UserHse_HosDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, HospitalLat_Float, HospitalLong_Float, 'HosClinic')
     UserHse_HosDT = pd.DataFrame(UserHse_HosDist)
+
 
     UserHse_MallsDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, MallsLat_Float, MallsLong_Float, 'Malls')
     UserHse_MallsDT = pd.DataFrame(UserHse_MallsDist)
 
+
     UserHse_MRTDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, MRTLat_Float, MRTLong_Float, 'MRT')
     UserHse_MRTDT = pd.DataFrame(UserHse_MRTDist)
+
 
     UserHse_ParksDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, ParksLat_Float, ParksLong_Float, 'Parks')
     UserHse_ParksDT = pd.DataFrame(UserHse_ParksDist)
 
+
     UserHse_PriSchDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, PriSchLat_Float, PriSchLong_Float, 'Primary School')
     UserHse_PriSchDT = pd.DataFrame(UserHse_PriSchDist)
+
 
     UserHse_SecSchDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, SecSchLat_Float, SecSchLong_Float, 'Secondary School')
     UserHse_SecSchDT = pd.DataFrame(UserHse_SecSchDist)
 
+
     UserHse_TertairyDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, TertairyLat_Float, TertairyLong_Float, 'Tertairy')
     UserHse_TertairyDT = pd.DataFrame(UserHse_TertairyDist)
 
+
     UserHse_UniDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, UniLat_Float, UniLong_Float, 'Uni')
     UserHse_UniDT = pd.DataFrame(UserHse_UniDist)
+
 
     #Filter and get all amenties within 1km radius
     DistanceinKM = 1
@@ -400,6 +476,7 @@ def algo():
     FilterUserHse_SecSchDT['Distance(M)'] = FilterUserHse_SecSchDT['Distance (km)'] * 1000
     FilterUserHse_TertairyDT['Distance(M)'] = FilterUserHse_TertairyDT['Distance (km)'] * 1000
     FIlterUserHse_UniDT['Distance(M)'] = FIlterUserHse_UniDT['Distance (km)'] * 1000
+
     
     #Calculate the points
     FilterMDollarHse_FairpriceDT['FairpricePoints'] = Supermarket_MallPoint *( 1 / FilterMDollarHse_FairpriceDT['Distance(M)'])
@@ -493,12 +570,95 @@ def algo():
 
     print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
-    ##Compare all the user address points towards the average points and get those above average out.
+    ##Compare all the user address points towards the average points.
     Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
+
+    #Adding 2 Column into FilteredUserHse.csv
+    UserFilteredCoordinates = Filtered_UserHse['Coordinates'].to_list()
+
+    # Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
+    SplitLat = [coord.split(', ')[0] for coord in UserFilteredCoordinates]
+    SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
+
+    # Create 2 list to store the matching datas
+    matched_areas = []
+    matched_Links = []
+    matched_USerHseTypes = []
+
+    # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
+    for i in range(len(SplitLat)):
+        lat = SplitLat[i]
+        long = SplitLong[i]
+        for index, row in UserHseDF.iterrows():
+            if lat == row['Lat'] and long == row['Long']:
+                matched_area = row['Location_Name']
+                matched_Link = row['Link']
+                matched_USerHseType = row['Location_Type']
+                matched_areas.append(matched_area)
+                matched_Links.append(matched_Link)
+                matched_USerHseTypes.append(matched_USerHseType)
+
+    Filtered_UserHse['Area'] = matched_areas
+    Filtered_UserHse['Location_Type'] = matched_USerHseType
+    Filtered_UserHse['Link'] = matched_Links
+
+    #Adding 2 col to FilteredMillionDollarHse.CSV
+    MillionFilteredCoordinates = MDollarHSe_Meraged_Points['Coordinates'].to_list()
+
+    # Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
+    SplitMillionLat = [coord.split(', ')[0] for coord in MillionFilteredCoordinates]
+    SplitMillionLong = [coord.split(', ')[1] for coord in MillionFilteredCoordinates]
+
+    # Create empty lists to store the matching data
+    matched_Millionareas = []
+    matched_Milliontypes = []
+
+    # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Location_Type' Data
+    for Mlat, Mlong in zip(SplitMillionLat, SplitMillionLong):
+        match_found = False
+        for index, row in MDollarHseDF.iterrows():
+            if Mlat == row['Lat'] and Mlong == row['Long']:
+                matched_Millionareas.append(row['Location_Name'])
+                matched_Milliontypes.append(row['Location_Type'])
+                match_found = True
+                break  # Exit inner loop once a match is found
+
+        if not match_found:
+            matched_Millionareas.append(None)  # or any placeholder value
+            matched_Milliontypes.append(None)  # or any placeholder value
+
+    # Add the new columns to MDollarHSe_Meraged_Points
+    MDollarHSe_Meraged_Points['Area'] = matched_Millionareas
+    MDollarHSe_Meraged_Points['Location_Type'] = matched_Milliontypes
+
+
+    #Take only the last 3 column from FilteredMillionDollarHse.CSV
+    PercentageCalculationDF = MDollarHSe_Meraged_Points.iloc[:, -3:]
+
+    #Calculate the Average of total points based on the Area and Location_Type
+    grouped_Area_HseType = PercentageCalculationDF.groupby(["Area", "Location_Type"])["Total_Points"].mean().reset_index()
+
+    # Merge based on 'Area' and 'Location_Type'
+    merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
+
+    # Rename the 'Total_Points' column
+    merged_df.rename(columns={'Total_Points_x': 'Total_Points', 'Total_Points_y': 'History_Avg_Point'}, inplace=True)
+
+    #calculate the accuracy percentage
+    merged_df['Percent'] = (merged_df['Total_Points'] / merged_df['History_Avg_Point'] * 100).clip(upper=100)
+    merged_df['Percent'] = merged_df['Percent'].apply(lambda x: 100 if x > 100 else x / 2)
 
     #pass the dataframe into a CSV file
     MDollarHSe_Meraged_Points.to_csv('scripts/algo/Excel/output/FilteredMillionDollarHse.csv', index=True)
-    Filtered_UserHse.to_csv('scripts/algo/Excel/output/FilteredUserHse.csv', index=True)
+    grouped_Area_HseType.to_csv('scripts/algo/Excel/output/ForPredictionHistory.csv', index=True)
+    merged_df.to_csv('scripts/algo/Excel/output/FilteredUserHse.csv', index=True)
+    print('done')
 
-    print('algo done')
-    return 'Done Algo'
+
+'''
+    Take Past Data Percentage & Current Add them togather based on the type and area and append
+    back to file then show it
+    Filter - House Type 
+    Filter - Best House
+    Show Price Prediction For Area Also 
+'''
