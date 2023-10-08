@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../static/website2.css">
+<link rel="stylesheet" href="../static/style.css">
 
 <body>
 <div class="container">
@@ -41,10 +41,10 @@
 
                     <!-- Chose Page Count -->
                     <form id="myForm" action="/website" method="POST">
-                        <label for="my_dropdown">Chose Website : (1st)</label>
+                        <label for="my_dropdown">Chose Website :</label>
                         <select name="my_dropdown" id="my_dropdown">
                             <option value="1">99co</option>
-                            <option value="2">PropNex</option>
+                            <option value="2">RSX</option>
                         </select>
                         <input type="submit" value=OK />
                       </form>
@@ -61,8 +61,8 @@
                     </div>
                       
                     <form id="myForm_PageCount" action="/get_page_count_prop" method="POST">
-                      <label for="my_page_prop">Number of Page : (3nd)</label>
-                      <input id="my_page_prop" name="my_page_prop" type="number" min="0" max={{ prop_value_page }}>
+                      <label for="my_page_prop">Number of Page :</label>
+                      <input id="my_page_prop" name="my_page_prop" type="number" min="10" max={{ prop_value_page }}>
                       <input type="submit" value=OK />
                     </form>
 
@@ -88,8 +88,8 @@
                             <h3 class="section-header">99co</h3>                                                              
                         </div>
                           <form id="myForm_PageCount" action="/get_page_count_co" method="POST">
-                            <label for="my_page_co">Number of Page : (2nd)</label>
-                            <input id="my_page_co" name="my_page_co" type="number" min="0" max={{ valueFive }}>
+                            <label for="my_page_co">Number of Page : </label>
+                            <input id="my_page_co" name="my_page_co" type="number" min="10" max={{ valueFive }}>
                             <input type="submit" value=OK />
                           </form>
                       

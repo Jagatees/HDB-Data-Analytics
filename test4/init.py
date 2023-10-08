@@ -32,7 +32,7 @@ app.secret_key = 'some key that you will never guess'
 
 
 '''
-    ---------- Initialize Init 
+    Initialize Init 
 '''
 user_input_page_count = 0
 user_input_page_count_co = 0
@@ -62,8 +62,8 @@ mapbox_styles = [
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    print('Welcome to ICT1001 Porgramming A1')
-    return render_template('index.html')
+    print('Get Both Website Page Count')
+    return render_template('index.html',valueFive=co_firstpage.main(), prop_value_page=srx_firstpage.main())
 
 
 '''
@@ -221,24 +221,8 @@ def run_logic():
 
 
 '''
-    TESTING 
+    Nav-Bar
 '''
-
-
-@app.route('/get_options', methods=['GET', 'POST'])
-def get_options():
-    option_to_image = {
-        '1': 'static/99co.png',
-        '2': 'static/ris.png',
-        '3': 'static/99co.png',
-        '4': 'static/ris.png'
-    }
-
-    selected_option = request.form.get('options')
-    image_value = option_to_image.get(selected_option, None)
-    return render_template('index.html', imagevalue=image_value)
-
-
 @app.route('/Charts')
 def Charts():
     return render_template('charts.html')
@@ -253,4 +237,4 @@ def scrapping():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5005, debug=True)
+    app.run('127.0.0.1', 5000, debug=True)

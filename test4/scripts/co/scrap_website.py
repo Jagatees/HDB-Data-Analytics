@@ -1,14 +1,11 @@
 import os
-import time
 from bs4 import BeautifulSoup
 import json
-import math
-import requests
-import asyncio
-from requests_html import AsyncHTMLSession
 from datetime import datetime
 
-
+'''
+    Initialize Init 
+'''
 title = []
 room_type_title = []
 address = []
@@ -22,7 +19,10 @@ sqrt_feet = []
 yearbuilt = []
 remaingyear = []
 
-# Return list of item in folder
+'''
+    Args : int
+    Description : Return list of item in folder
+'''
 def get_item_in_dic(x):
     txtfiles = []
     arr = os.listdir(x)
@@ -30,6 +30,12 @@ def get_item_in_dic(x):
         txtfiles.append(file)
     return txtfiles
 
+
+
+'''
+    Args : int
+    Description : Scrap Website for elements and output to json file
+'''
 def main(x):
     list_item = get_item_in_dic(x)
     print('Length : ' + str(len(list_item)))
@@ -40,10 +46,6 @@ def main(x):
         print(index)
         with open(x + "/" + str(index), "r") as f:
             doc = BeautifulSoup(f, "html.parser")
-
-            # Get Higest Page Count 
-            # page_count = doc.find(class_='kiAZx').find_all('a')[4]['aria-label'].split(' ')[1]
-            # print(page_count)
 
             title_of_room = doc.find_all(class_ = '_12dss')
             for index in title_of_room:

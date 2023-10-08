@@ -1,23 +1,32 @@
-import asyncio
+# Importing Time module for timing calculation
 import time
-from bs4 import BeautifulSoup
-import requests
+# Importing Selenium module for web scraping
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+# Importing Threading module for multi-threading
 import threading
+# Importing OS module for system-related operations
 import os
 
 
-
+'''
+    Initialize Init 
+'''
 urls_X = []
 threads = []
 
+'''
+    Args : Int
+    Description : Store all URL into array for 99co website 
+'''
 def storeallurl(x):
     for index in range(1, x + 1):
         urls_X.append(f'https://www.srx.com.sg/singapore-property-listings/hdb-for-sale?page={index}')
 
+'''
+    Args : String, String
+    Description : Extract HTML from 99co website save to Folder 
+'''
 def GetHTMLPAGE(url, output):
-    chrome_driver_path = '/Users/jagatees/Downloads/chromedriver'
 
     # Options - look into the lib to see the options
     # idsable image on website 
@@ -26,29 +35,21 @@ def GetHTMLPAGE(url, output):
     prefs = {"profile.managed_default_content_settings.images": 2}
     chrome_options.add_experimental_option("prefs", prefs)
 
-    # options=chrome_options
     driver = webdriver.Chrome(options=chrome_options)
-
-    # Open the URL
     driver.get(url)
 
     # driver.implicitly_wait(10)  # Implicitly wait up to 10 seconds (adjust as needed)
 
-    # Get the HTML content of the entire webpage
     html_content = driver.page_source
-
-    # Close the WebDriver
     driver.quit()
-
     html_file_path = output
-    
-    # Write the entire HTML content to the file
     with open(output, 'w', encoding='utf-8') as html_file:
         html_file.write(html_content)
 
-    print(f"Entire HTML page has been saved to {html_file_path}")
-
-# Function to scrape a chunk of URLs
+'''
+    Args : Int, Int
+    Description : Create Folder for storing scrapping and json and saving html page into html
+'''
 def scrape_urls(urls_chunk, thread_num):
     if not os.path.exists("centralized/srx/scrapping"):
         os.makedirs("centralized/srx/scrapping")
@@ -58,7 +59,10 @@ def scrape_urls(urls_chunk, thread_num):
         GetHTMLPAGE(url, output_path)
     
 
-
+'''
+    Args : Int
+    Description : Take in page count and split scrapping process into threads  
+'''
 def main(pagelength):
     storeallurl(pagelength)
 

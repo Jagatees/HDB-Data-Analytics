@@ -7,6 +7,11 @@ from statistics import mean
 import numpy as np
 from sklearn.metrics import r2_score
 
+
+'''
+    Args : AddressArray(List), Filepath(String)
+    Description : Convert a list of address and it will output at a Filepath
+'''
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
     api_key = "pk.02ff73880ec7a133cfe62191e54c3bd1"
@@ -56,6 +61,10 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
     AddressDataFrame.to_csv(Filepath, index=False)
 
+'''
+    Args : XXXX
+    Description : XXXXX
+'''
 def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
     # Convert latitude and longitude from degrees to radians
     lat1 = math.radians(lat1)
@@ -75,6 +84,10 @@ def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
 
     return distance
 
+'''
+    Args : XXXX
+    Description : XXXXX
+'''
 def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long, AmentiesName):
     distances = []
 
@@ -86,6 +99,10 @@ def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long,
 
     return distances
 
+'''
+    Args : FiletPath (String)
+    Description : XXX
+'''
 def ReadCSVFile(FilePath):
 
     #Store address in this array
@@ -109,6 +126,10 @@ def ReadCSVFile(FilePath):
 
     return AddressArray
 
+'''
+    Args : XXXX
+    Description : XXXXX
+'''
 def GetCoordinatesfromcsv(FilePath):
 
     column_names = ['Location_Type', 'Long', 'Lat']
@@ -120,11 +141,19 @@ def GetCoordinatesfromcsv(FilePath):
 
     return CSVLongLat
 
+'''
+    Args : XXXX
+    Description : XXXXX
+'''
 def FilterDataTableByDistance(datatable, distance):
     
     filterdf = datatable[datatable['Distance (km)'] < distance]
     return filterdf
 
+'''
+    Args : XXXX
+    Description : XXXXX
+'''
 def Preediction(Dataframe, year):
     Predict_DF = Dataframe.copy()
 
@@ -170,6 +199,10 @@ def Preediction(Dataframe, year):
     # Display the prediction results
     print(prediction_df)
 
+'''
+    Args : XXXX
+    Description : XXXXX
+'''
 def algo():
     print('starting algo done')
 

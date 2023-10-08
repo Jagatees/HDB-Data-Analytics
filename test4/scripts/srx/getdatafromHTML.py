@@ -1,31 +1,30 @@
 import datetime
 import os
-import time
 from bs4 import BeautifulSoup
 import json
-import math
-import requests
-import asyncio
-from requests_html import AsyncHTMLSession
 from datetime import datetime
 
-
+'''
+    Initialize Init 
+'''
 links = []
 title = []
 bed_numbers = []
 toilet_numbers = []
 size_house = []
-
 room = []
 model = []
 built_year = []
-
 price_list = []
 reaming_lease = []
+
 year = datetime.now().year
 
 
-# Return list of item in folder
+'''
+    Args : int
+    Description : Return list of item in folder
+'''
 def get_item_in_dic(x):
     txtfiles = []
     arr = os.listdir(x)
@@ -33,6 +32,10 @@ def get_item_in_dic(x):
         txtfiles.append(file)
     return txtfiles
 
+'''
+    Args : int
+    Description : Scrap Website for elements and output to json file
+'''
 def main(x):
     list_item = get_item_in_dic(x)
     print('Length : ' + str(len(list_item)))

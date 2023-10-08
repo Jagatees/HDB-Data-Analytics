@@ -1,12 +1,9 @@
-import csv
-import random
-from flask import Flask, render_template
-import numpy as np
-import plotly.express as px
 import pandas as pd
 import plotly.graph_objects as go
 
-
+'''
+    Description : Plot the Table, Return Table
+'''
 def display_table():
     # Read the CSV file and parse its data
     csv_file = 'scripts/algo/Excel/output/MillionDollarHse.csv'

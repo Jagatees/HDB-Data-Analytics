@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    height: 100vh;
+}
+
+/* -------------- CONTAINER -------------- */
+.container {
+    display: flex;
+    height: 100%;
+}
+
+/* -------------- SIDEBAR -------------- */
+.sidebar {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-between;
+    border-right: 1px solid #F3F5F7;
+    padding: 0 16px;
+    overflow: auto;
+}
+
+.sidebar__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 56px -30px;
+}
+
+.sidebar__logo-header {
+    margin-left: 14px;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-nav__header {
+    font-size: 14px;
+    line-height: 21px;
+    color: #90A3BF;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.side-nav__header, .side-nav__item > span {
+    letter-spacing: -2%;
+    font-weight: 500;
+}
+
+.side-nav__item {
+    list-style: none;
+    color: #596780;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0 14px 16px;    
+    border-radius: 10px;
+    transition: all .4s;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.side-nav__item > svg {
+  flex-shrink: 0;
+}
+
+.side-nav__item.last-item {
+    margin-bottom: 32px;
+}
+
+.side-nav__item:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.side-nav__item:hover,  .side-nav__item-active {
+    background-color: #7C5CFC;
+    color: white;
+}
+
+/* -------------- MAIN CONTENT -------------- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+}
+
+/* -------------- TOP CONTAINER -------------- */
+.top-container {
+    border-bottom: 1px solid #F3F5F7;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -------------- BOTTOM CONTAINER -------------- */
+.bottom-container {
+    display: flex;
+    gap: 24px;
+    padding: 32px;
+    background-color: #F3F5F7;
+}
+
+.box {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px; /*fix later*/
+}
+
+.bottom-container__left {
+    width: 70%;
+}
+
+.bottom-container__right {
+    width: 30%;
+}
+
+.spending-statistics {
+    max-height: 338px;
+}
+
+/* -------------- HEADER -------------- */
+.header-container {
+    color: #1A202C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+    font-weight: 600;
+    letter-spacing: -2%;
+}
+
+.section-header {
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.header-container span {
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.year-selector {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.total-box {
+    display: flex;
+}
+
+.total-box__left {
+    border-right: 1px solid #F0F0F0;
+    flex: 1;
+}
+
+.total-box__right {
+    flex: 1;
+}
+
+.up-arrow, .total-box__left {
+    margin-right: 24px;
+}
+
+.price {
+    line-height: 150%;
+    margin-bottom: 14px;
+}
+
+.price-currency {
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #90A3BF;
+    margin-left: 8px;
+}
+
+.total-box p, .box p {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.02em;
+    color: #90A3BF;
+}
+
+
+
+/* -------------- BUTTON -------------- */
+.button-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 56px;
+}
+
+.btn {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-purple {
+    background-color: hsl(252, 96%, 67%);
+    color: white;
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+    border: 2px solid #7C5CFC;
+}
+
+
+
+.label {
+    gap: 12px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #596780;
+} 
+
+.label__color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+
+
+
+#myForm_PageCount input[type="submit"] {
+    /* Your CSS styles here */
+    /* For example, changing the background color */
+    background-color: hsl(252, 96%, 67%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#myForm_PageCount input[type="submit"]:hover {
+     background-color: rgb(187, 163, 232);
+      transition: 0.7s;
+}
+
+/* Loader  */
+.loading {
+    display: none;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #7C5CFC;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+  
