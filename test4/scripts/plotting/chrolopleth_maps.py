@@ -1,6 +1,5 @@
 import pandas as pd
 import plotly.graph_objects as go
-from dash_clustering import ScattermapboxCluster
 
 
 '''
@@ -87,6 +86,9 @@ def generate_plotly_chart(map_style, area, hdb_type):
 
     # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+    area_text = ""
+    hdb_type_text = ""
+    
     if area != "All" and hdb_type != "All":
         df1 = df1[(df1['Area'] == area) & (df1['Location_Type'] == hdb_type)]
         area_text = "All Area"

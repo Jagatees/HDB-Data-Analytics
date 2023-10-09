@@ -658,18 +658,8 @@ def algo():
 
 
 '''
-    Take Past Data Percentage & Current Add them togather based on the type and area and append
-    back to file then show it
-    Filter - House Type 
-    Filter - Best House
-    Show Price Prediction For Area Also 
-    Create Function : to compare with the million dollar house and get the percentage out and append tot he user house 
-    remeber to reduce to 50% each 
+    Take User Data and Past Data to combine to get percenatge to use in display
 '''
-
-
-
-# Read the Million Door File (centralized/merger)
 
 def get_data_from_million_door_file():
     df1 = pd.read_csv('Excel/percentage/Cleaned_HistoryData.csv')
