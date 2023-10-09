@@ -75,3 +75,5 @@ def generate_plotly_chart(map_style):
     plot_div = fig.to_html(full_html=False)
 
     return plot_div
+
+

@@ -7,6 +7,7 @@ import numpy as np
 from sklearn.metrics import r2_score
 from statistics import mean
 import pandas as pd
+import csv
 
 
 
@@ -661,4 +662,29 @@ def algo():
     Filter - House Type 
     Filter - Best House
     Show Price Prediction For Area Also 
+    Create Function : to compare with the million dollar house and get the percentage out and append tot he user house 
+    remeber to reduce to 50% each 
 '''
+
+
+
+# Read the Million Door File (centralized/merger)
+
+def get_data_from_million_door_file():
+    df1 = pd.read_csv('Excel/percentage/Cleaned_HistoryData.csv')
+    df2 = pd.read_csv('Excel/percentage/FilteredUserHse.csv')
+
+
+    # Re write the code here
+    accuracy_dict = df1.set_index(['Town', 'Flat_Type'])['Accuracy_Percentage'].to_dict()
+    df2['Accuracy_Percentage'] = df2.apply(lambda row: accuracy_dict.get((row['Area'], row['Location_Type']), None), axis=1)
+    df2.to_csv('Excel/percentage/UpdatedUserHse.csv', index=False)
+
+    # Get both value from the Percent & Accuracy_Percentage = get the total percentage
+
+
+
+
+
+
+get_data_from_million_door_file()
