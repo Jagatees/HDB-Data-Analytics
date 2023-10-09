@@ -25,10 +25,10 @@ Supermarket_MallPoint = 2
 ParksPoint = 1
 
 #Read the CSV File
-#UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
+UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
 
 #Convert User Address into coordinates
-#KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
 
 #get long and lat from all csv file save into datatable
 FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
@@ -40,13 +40,12 @@ PriSchDT = KerwinFunction.GetCoordinatesfromcsv(PriSchFilePath)
 SecSchDT = KerwinFunction.GetCoordinatesfromcsv(SecSchFilePath)
 TertairyDT = KerwinFunction.GetCoordinatesfromcsv(TertiaryFilePath)
 UniversityDT = KerwinFunction.GetCoordinatesfromcsv(UniversityFilePath)
-MDollarHseDT =  KerwinFunction.GetCoordinatesfromcsv(MDollarHseFilePath)
+MDollarHseDT =  KerwinFunction.GetHistoryfromcsv(MDollarHseFilePath)
 UserHseDT = KerwinFunction.GetUserDatafromcsv(UserHseFilePath)
 
 #Remove all the duplicated values
 MDollarHseDF = MDollarHseDT.drop_duplicates() 
 UserHseDF = UserHseDT.drop_duplicates()
-
 
 #Retrieve the long and lat and store them indivually into a list
 FairpriceLong = FairpriceDT['Long'].tolist()
@@ -290,29 +289,19 @@ UserHse_Meraged_Points['SecSchPoints'].replace([np.inf, -np.inf, np.nan], 0, inp
 UserHse_Meraged_Points['TertairyPoints'].replace([np.inf, -np.inf, np.nan], 0, inplace=True)
 UserHse_Meraged_Points['UniPoints'].replace([np.inf, -np.inf, np.nan], 0, inplace=True)
 
-#Calculate the total points starting from the thrid column
-MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points.iloc[:, 2:].sum(axis=1)
-UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points.iloc[:, 2:].sum(axis=1)
-
-#calculate average points
-MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-
-print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
-
-##Compare all the user address points towards the average points.
-Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
-
-#Adding 2 Column into FilteredUserHse.csv
-UserFilteredCoordinates = Filtered_UserHse['Coordinates'].to_list()
+#Adding Columns into FilteredUserHse.csv
+UserFilteredCoordinates = UserHse_Meraged_Points['Coordinates'].to_list()
 
 # Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
 SplitLat = [coord.split(', ')[0] for coord in UserFilteredCoordinates]
 SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
 
-# Create 2 list to store the matching datas
+# Create lists to store the matching datas
 matched_areas = []
 matched_Links = []
 matched_USerHseTypes = []
+matched_UserSQMs = []
+matched_UserLeases = []
 
 # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
 for i in range(len(SplitLat)):
@@ -323,15 +312,22 @@ for i in range(len(SplitLat)):
             matched_area = row['Location_Name']
             matched_Link = row['Link']
             matched_USerHseType = row['Location_Type']
+            matched_UserSQM = row['floor_area_sqm']
+            matched_UserLease = row['remaining_lease']
             matched_areas.append(matched_area)
             matched_Links.append(matched_Link)
             matched_USerHseTypes.append(matched_USerHseType)
+            matched_UserSQMs.append(matched_UserSQM)
+            matched_UserLeases.append(matched_UserLease)
 
-Filtered_UserHse['Area'] = matched_areas
-Filtered_UserHse['Location_Type'] = matched_USerHseType
-Filtered_UserHse['Link'] = matched_Links
+UserHse_Meraged_Points['Area'] = matched_areas
+UserHse_Meraged_Points['Location_Type'] = matched_USerHseTypes
+UserHse_Meraged_Points['Link'] = matched_Links
+UserHse_Meraged_Points['floor_area_sqm'] = matched_UserSQMs
+UserHse_Meraged_Points['remaining_lease'] = matched_UserLeases
 
-#Adding 2 col to FilteredMillionDollarHse.CSV
+
+#Adding cols to FilteredMillionDollarHse.CSV
 MillionFilteredCoordinates = MDollarHSe_Meraged_Points['Coordinates'].to_list()
 
 # Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
@@ -341,6 +337,8 @@ SplitMillionLong = [coord.split(', ')[1] for coord in MillionFilteredCoordinates
 # Create empty lists to store the matching data
 matched_Millionareas = []
 matched_Milliontypes = []
+matched_MillionSQMs = []
+matched_MillionLeases = []
 
 # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Location_Type' Data
 for Mlat, Mlong in zip(SplitMillionLat, SplitMillionLong):
@@ -349,6 +347,9 @@ for Mlat, Mlong in zip(SplitMillionLat, SplitMillionLong):
         if Mlat == row['Lat'] and Mlong == row['Long']:
             matched_Millionareas.append(row['Location_Name'])
             matched_Milliontypes.append(row['Location_Type'])
+            matched_MillionSQMs.append(row['floor_area_sqm'])
+            matched_MillionLeases.append(row['remaining_lease'])
+
             match_found = True
             break  # Exit inner loop once a match is found
 
@@ -359,13 +360,42 @@ for Mlat, Mlong in zip(SplitMillionLat, SplitMillionLong):
 # Add the new columns to MDollarHSe_Meraged_Points
 MDollarHSe_Meraged_Points['Area'] = matched_Millionareas
 MDollarHSe_Meraged_Points['Location_Type'] = matched_Milliontypes
+MDollarHSe_Meraged_Points['floor_area_sqm'] = matched_MillionSQMs
+MDollarHSe_Meraged_Points['remaining_lease'] = matched_MillionLeases
 
 
-#Take only the last 3 column from FilteredMillionDollarHse.CSV
-PercentageCalculationDF = MDollarHSe_Meraged_Points.iloc[:, -3:]
+#calculations of points with ragards to the Lease and SQM.
+MDollarHSe_Meraged_Points['Lease_Points'] = MDollarHSe_Meraged_Points['remaining_lease'].apply(KerwinFunction.calculate_lease_points)
+MDollarHSe_Meraged_Points['SQM_Points'] = MDollarHSe_Meraged_Points['floor_area_sqm'].apply(KerwinFunction.calculate_sqm_points)
+UserHse_Meraged_Points['Lease_Points'] = UserHse_Meraged_Points['remaining_lease'].apply(KerwinFunction.calculate_lease_points)
+UserHse_Meraged_Points['SQM_Points'] = UserHse_Meraged_Points['floor_area_sqm'].apply(KerwinFunction.calculate_sqm_points)
+
+#to specify which col to add up for total point calculations
+Sum_MillionDollarcolumns = ['FairpricePoints', 'HosPoints', 'MallPoints', 'MRTPoints', 'ParksPoints', 'PriSchPoints', 'SecSchPoints', 
+                                'TertairyPoints', 'UniPoints', 'Lease_Points', 'SQM_Points']
+
+Sum_Usercolumns = ['FairpricePoints', 'HosPoints', 'MallPoints', 'MRTPoints', 'ParksPoints', 'PriSchPoints', 'SecSchPoints', 
+                    'TertairyPoints', 'UniPoints', 'Lease_Points', 'SQM_Points']
+
+#Calculate the total points starting from the thrid column
+MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points[Sum_MillionDollarcolumns].sum(axis=1)
+UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
+
+#calculate average points
+#MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+MDollar_AveragePoint = 0.10
+
+print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
+
+##Compare all the user address points towards the average points.
+Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
+
+
+#For percentage Calculations
+PercentageCalculationDF = MDollarHSe_Meraged_Points.copy()
 
 #Calculate the Average of total points based on the Area and Location_Type
-grouped_Area_HseType = PercentageCalculationDF.groupby(["Area", "Location_Type"])["Total_Points"].mean().reset_index()
+grouped_Area_HseType = PercentageCalculationDF.groupby(['Area', 'Location_Type'])['Total_Points'].mean().reset_index()
 
 # Merge based on 'Area' and 'Location_Type'
 merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
@@ -377,8 +407,18 @@ merged_df.rename(columns={'Total_Points_x': 'Total_Points', 'Total_Points_y': 'H
 merged_df['Percent'] = (merged_df['Total_Points'] / merged_df['History_Avg_Point'] * 100).clip(upper=100)
 merged_df['Percent'] = merged_df['Percent'].apply(lambda x: 100 if x > 100 else x / 2)
 
+#append 0 for empty fills
+for index, row in merged_df.iterrows():
+
+    if pd.isna(row['Percent']):
+        merged_df.at[index, 'Percent'] = 0
+
+    if pd.isna(row['History_Avg_Point']):
+        merged_df.at[index, 'History_Avg_Point'] = 0
+
 #pass the dataframe into a CSV file
 MDollarHSe_Meraged_Points.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
 grouped_Area_HseType.to_csv('ProjTest\\Excel Data\\ForPredictionHistory.csv', index=True)
 merged_df.to_csv('ProjTest\\Excel Data\\FilteredUserHse.csv', index=True)
 
+print('Done')

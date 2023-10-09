@@ -7,6 +7,38 @@ from statistics import mean
 import numpy as np
 from sklearn.metrics import r2_score
 
+lease_points = {
+    89: 0.05,
+    79: 0.04,
+    69: 0.035,
+    59: 0.03,
+    49: 0.025,
+    39: 0.02,
+    29: 0.015,
+    19: 0.01,
+}
+
+sqm_points = {
+    149: 0.05,
+    109: 0.04,
+    90: 0.035,
+    70: 0.025,
+    45: 0.02,
+}
+
+def calculate_lease_points(remaining_lease_str):
+    remaining_lease = int(remaining_lease_str)
+    for years, points in lease_points.items():
+        if remaining_lease >= years:
+            return points
+    return 0.005
+
+def calculate_sqm_points(floor_area_sqm):
+    for sqm, points in sqm_points.items():
+        if float(floor_area_sqm) >= sqm:  # Convert floor_area_sqm to float
+            return points
+    return 1 
+
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
     api_key = "pk.02ff73880ec7a133cfe62191e54c3bd1"
@@ -56,7 +88,8 @@ def GetLongLatFromAddress(AddressArray, Filepath):
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
     AddressDataFrame = pd.read_csv(Filepath, header=None)
-    AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+    AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
+                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
     AddressDataFrame = AddressDataFrame.drop(0)
     
     AddressDataFrame['Long'] = coordinatesLong
@@ -105,7 +138,8 @@ def ReadCSVFile(FilePath):
 
     #Read CSV File
     AddressCSV = pd.read_csv(FilePath, header=None)
-    AddressCSV.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+    AddressCSV = AddressCSV[[0, 1, 2, 3, 6, 7]]
+    AddressCSV.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Long', 'Lat']
     AddressCSV = AddressCSV.drop(0)
 
     # Iterate through the DataFrame
@@ -129,10 +163,18 @@ def GetCoordinatesfromcsv(FilePath):
 
     return CSVLongLat
 
+def GetHistoryfromcsv(FilePath):
+    CSVLongLat = pd.read_csv(FilePath, header=None)
+    CSVLongLat = CSVLongLat[[1, 2, 7, 8, 10, 11]]
+    CSVLongLat.columns = ['Location_Name','Location_Type', 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm']
+    CSVLongLat = CSVLongLat.drop(0)
+
+    return CSVLongLat
+
 def GetUserDatafromcsv(FilePath):
     UserData = pd.read_csv(FilePath, header=None)
-    UserData = UserData[[0, 1, 6, 7, 8]]
-    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'Link']
+    UserData = UserData[[0, 1, 6, 7, 8, 9, 11]]
+    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm', 'Link']
     UserData = UserData.drop(0)
 
     return UserData
