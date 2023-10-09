@@ -44,7 +44,6 @@ mapbox_styles = [
     "carto-darkmatter",
     "stamen-terrain",
     "stamen-toner",
-    "stamen-watercolor",
 ]
 
 
@@ -208,7 +207,7 @@ def request_chart():
         selected_option_area = request.form['drop_down_area']
         selected_option_type = request.form['drop_down_room_type']
         plot_div = mapsone.generate_plotly_chart(
-            mapbox_styles[int(selected_option)])
+            mapbox_styles[int(selected_option)], selected_option_area, selected_option_type)
         return render_template('charts.html', plot_div=plot_div)
 
 

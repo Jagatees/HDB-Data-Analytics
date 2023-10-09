@@ -1,5 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
+from dash_clustering import ScattermapboxCluster
+
 
 '''
 Description: Return New Trace For Scatter Box to append to
@@ -68,7 +70,7 @@ def room_type(room_type, title, color):
 Description: Plot the Map, Return Map
 '''
 
-def generate_plotly_chart(map_style):
+def generate_plotly_chart(map_style, area, hdb_type):
     center_lat = 1.3521  # Replace with your desired latitude
     center_lon = 103.8198  # Replace with your desired longitude
     zoom_level = 10  # Adjust the zoom level as needed
@@ -83,28 +85,55 @@ def generate_plotly_chart(map_style):
     df1['Latitude'] = pd.to_numeric(df1['Latitude'])
     df1['Longitude'] = pd.to_numeric(df1['Longitude'])
 
-     
-    five_room = room_type('5 ROOM', '5 ROOM HDB', '#FF0000')
-    four_room = room_type('4 ROOM', '4 ROOM HDB', '#00FF00')
-    three_room = room_type('3 ROOM', '3 ROOM HDB', '#0000FF')
-    two_room = room_type('2 ROOM', '2 ROOM HDB', '#FFFF00')
-    one_room = room_type('1 ROOM', '1 ROOM HDB', '#00FFFF')
+    # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+    if area != "All" and hdb_type != "All":
+        df1 = df1[(df1['Area'] == area) & (df1['Location_Type'] == hdb_type)]
+        area_text = "All Area"
+        hdb_type_text = "& type"
+    elif area != "All" and hdb_type == "All":
+        df1 = df1[df1['Area'] == area]
+        area_text = area
+        hdb_type_text = "All type"
+    elif area == "All" and hdb_type != "All":
+        df1 = df1[df1['Location_Type'] == hdb_type]
+        area_text = "ALL Area"
+        hdb_type_text = hdb_type
 
 
-    # Add Amenities to the Map
+
+
+    text_to_display = (
+        "Final Percentage: " + df1['Final_Percentage'].astype(str) + "<br>" +
+        "Area: " + df1['Area'].astype(str) + "<br>" +
+        "Location_Type: " + df1['Location_Type'].astype(str)
+    )
+
+    # Create traces for 4-room and 5-room HDB
+    customQuery = go.Scattermapbox(
+        lat=df1['Latitude'],
+        lon=df1['Longitude'],
+        mode='markers',
+        marker=go.scattermapbox.Marker(
+            size=15,
+            color='#FFFF00',
+        ),
+        text=text_to_display,
+        name= area_text  + " "+ hdb_type_text
+    )
+
+
+
     fairprice_file_path = "scripts/algo/Excel/Amenities/fairprice.csv"
     hospital_file_path = "scripts/algo/Excel/Amenities/HospitalClinic.csv"
 
     # Create a figure with all the traces
     fig = go.Figure(data=[
-        five_room,
-        four_room,
-        three_room,
-        two_room,
-        one_room,
+        customQuery,
         create_scattermapbox(fairprice_file_path, 'FairPrice'),
         create_scattermapbox(hospital_file_path, 'Hospital')
     ])
+
 
     # Update the layout of the map
     fig.update_layout(
@@ -117,15 +146,14 @@ def generate_plotly_chart(map_style):
         title_x=0.5,
 
         legend=dict(
-            title="Legends",  # Add a title to the legend
-            bgcolor="rgba(255, 255, 255, 0.6)",  # Set background color
-            bordercolor="black",    # Set border color
-            borderwidth=1,          # Set border width
-            font=dict(size=12),     # Set font size for legend items
+            title="Legends",  
+            bgcolor="rgba(255, 255, 255, 0.6)", 
+            bordercolor="black",    
+            borderwidth=1,          
+            font=dict(size=12),     
         )
     )
-
-    # Convert the plot to HTML and return it
+    
     plot_div = fig.to_html(full_html=False)
 
     return plot_div

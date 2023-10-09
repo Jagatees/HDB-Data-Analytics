@@ -38,6 +38,15 @@
                     <div class="header-container">
                         <!-- Title Website Scrapping Selection -->
                         <h3 class="section-header">HDB Scrapping Section</h3>
+
+                        <form id="myForm_PageCount" action="/display_table" method="POST">
+                            <input type="submit" value="Draw Table" onclick="startLoadingTwo()"/>
+                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
+                            <!-- <label id="demoTwo">
+                                {{ algo_one }}
+                            </label> -->
+                        </form>
+
                         
                         <form id="myForm_PageCount" action="/run_logic" method="POST">
                             <input type="submit" value="Complie Logic" onclick="startLoadingTwo()"/>
@@ -64,20 +73,20 @@
                         <!-- Title Website Scrapping Selection -->
                         <h3 class="section-header">Map Filter</h3>
 
-                        <form id="myForm" action="/request_chart" method="POST">
-                            <label for="my_dropdown_map">Map</label>
+                        <form id="myForm_PageCount" action="/request_chart" method="POST">
+                            <label for="my_dropdown_map">Style</label>
                             <select name="my_dropdown_map" id="my_dropdown">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option value="0">open-street-map</option>
+                                <option value="1">Light Mode</option>
+                                <option value="2">Dark Mode</option>
+                                <option value="3">stamen-terrain</option>
+                                <option value="4">Black & White</option>
                             </select>
 
        
                             <label for="drop_down_area">Area</label>
                             <select name="drop_down_area" id="my_dropdown">
+                                <option value="All">All</option>
                                 <option value="ANG MO KIO">ANG MO KIO</option>
                                 <option value="BEDOK">BEDOK</option>
                                 <option value="BISHAN">BISHAN</option>
@@ -107,29 +116,24 @@
 
                             <label for="drop_down_room_type">Room Type</label>
                             <select name="drop_down_room_type" id="my_dropdown">
+                                <option value="All">All</option>
                                 <option value="5 ROOM">5 ROOM</option>
-                                <option value="4 ROOM">4 Room</option>
+                                <option value="4 ROOM">4 ROOM</option>
                                 <option value="3 ROOM">3 ROOM</option>
                                 <option value="2 ROOM">2 ROOM</option>
                                 <option value="1 ROOM">1 ROOM</option>
                             </select>
 
-                            <input type="submit" value="Draw Map" />
+                            <input type="submit" value="Draw Map"/>
                         </form>
 
-                       
+                        
 
-
-                        <form id="myForm_PageCount" action="/display_table" method="POST">
-                            <input type="submit" value="Draw Table" onclick="startLoadingTwo()"/>
-                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
-                            <!-- <label id="demoTwo">
-                                {{ algo_one }}
-                            </label> -->
-                          </form>
-
+                    
                     </div>
                 </div>
+
+               
 
                 <div class="box spending-box">
                     <div class="header-container">
