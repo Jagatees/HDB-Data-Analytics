@@ -279,6 +279,7 @@ def predicition_for_percentage():
 
     print(str(Accuracy_percentage) + "%")
 
+# Waittinf for kerwin to finish the code to can run this with the new file path place to get data
 def algo():
     #CSV File Paths
     FairpriceFilePath = 'scripts/algo/Excel/Amenities/fairprice.csv'
@@ -678,13 +679,20 @@ def get_data_from_million_door_file():
     # Re write the code here
     accuracy_dict = df1.set_index(['Town', 'Flat_Type'])['Accuracy_Percentage'].to_dict()
     df2['Accuracy_Percentage'] = df2.apply(lambda row: accuracy_dict.get((row['Area'], row['Location_Type']), None), axis=1)
-    df2.to_csv('Excel/percentage/UpdatedUserHse.csv', index=False)
+    df2.to_csv('Excel/percentage/UpdatedUserHse.csv', index=False)    
 
-    # Get both value from the Percent & Accuracy_Percentage = get the total percentage
+def calcuator_final_Percentage():
+    df = pd.read_csv('Excel/percentage/UpdatedUserHse.csv')
+    # Calculate the Final_Percentage column
+    df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']
+
+    # Check if the Final_Percentage is less than or equal to 100
+    # If it's greater than 100, subtract the excess from Accuracy_Percentage
+    excess = df[df['Final_Percentage'] > 100]['Final_Percentage'] - 100
+    df.loc[df['Final_Percentage'] > 100, 'Accuracy_Percentage'] -= excess
+    df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']
+
+    # Save the updated DataFrame to a new CSV file
+    df.to_csv('Excel/percentage/UpdatedUserHse.csv', index=False)
 
 
-
-
-
-
-get_data_from_million_door_file()

@@ -62,7 +62,7 @@
                 <div class="box spending-box">
                     <div class="header-container">
                         <!-- Title Website Scrapping Selection -->
-                        <h3 class="section-header">HDB Scrapping Section</h3>
+                        <h3 class="section-header">Map Filter</h3>
 
                         <form id="myForm" action="/request_chart" method="POST">
                             <label for="my_dropdown_map">Map</label>
@@ -74,8 +74,50 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
+
+       
+                            <label for="drop_down_area">Area</label>
+                            <select name="drop_down_area" id="my_dropdown">
+                                <option value="ANG MO KIO">ANG MO KIO</option>
+                                <option value="BEDOK">BEDOK</option>
+                                <option value="BISHAN">BISHAN</option>
+                                <option value="BUKIT BATOK">BUKIT BATOK</option>
+                                <option value="BUKIT MERAH">BUKIT MERAH</option>
+                                <option value="BUKIT PANJANG">BUKIT PANJANG</option>
+                                <option value="BUKIT TIMAH">BUKIT TIMAH</option>
+                                <option value="CENTRAL AREA">CENTRAL AREA</option>
+                                <option value="CHOA CHU KANG">CHOA CHU KANG</option>
+                                <option value="CLEMENTI">CLEMENTI</option>
+                                <option value="GEYLANG">GEYLANG</option>
+                                <option value="HOUGANG">HOUGANG</option>
+                                <option value="JURONG EAST">JURONG EAST</option>
+                                <option value="JURONG WEST">JURONG WEST</option>
+                                <option value="KALLANG/WHAMPOA">KALLANG/WHAMPOA</option>
+                                <option value="MARINE PARADE">MARINE PARADE</option>
+                                <option value="PASIR RIS">PASIR RIS</option>
+                                <option value="PUNGGOL">PUNGGOL</option>
+                                <option value="QUEENSTOWN">QUEENSTOWN</option>
+                                <option value="SEMBAWANG">SEMBAWANG</option>
+                                <option value="SENGKANG">SENGKANG</option>
+                                <option value="TAMPINES">TAMPINES</option>
+                                <option value="TOA PAYOH">TOA PAYOH</option>
+                                <option value="WOODLANDS">WOODLANDS</option>
+                                <option value="YISHUN">YISHUN</option>
+                            </select>
+
+                            <label for="drop_down_room_type">Room Type</label>
+                            <select name="drop_down_room_type" id="my_dropdown">
+                                <option value="5 ROOM">5 ROOM</option>
+                                <option value="4 ROOM">4 Room</option>
+                                <option value="3 ROOM">3 ROOM</option>
+                                <option value="2 ROOM">2 ROOM</option>
+                                <option value="1 ROOM">1 ROOM</option>
+                            </select>
+
                             <input type="submit" value="Draw Map" />
                         </form>
+
+                       
 
 
                         <form id="myForm_PageCount" action="/display_table" method="POST">

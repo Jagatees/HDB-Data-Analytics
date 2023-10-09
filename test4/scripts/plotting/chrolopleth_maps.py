@@ -1,9 +1,8 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-
 '''
-    Description : Return New Trace For Scatter Box to append to
+Description: Return New Trace For Scatter Box to append to
 '''
 def create_scattermapbox(file_path, trace_name):
     df = pd.read_csv(file_path)
@@ -17,7 +16,7 @@ def create_scattermapbox(file_path, trace_name):
             size=5,
             color="#00ff00",
         ),
-        text='None',  
+        text='None',
         name=trace_name,
     )
 
@@ -25,53 +24,108 @@ def create_scattermapbox(file_path, trace_name):
 
 
 '''
-    Description : Plot the Map, Return Map
+Description: Create Room Type 
 '''
-def generate_plotly_chart(map_style):
 
-    center_lat = 1.3521  # Replace with your desired latitude
-    center_lon = 103.8198  # Replace with your desired longitude
-    zoom_level = 10  # Adjust the zoom level as needed
+def room_type(room_type, title, color):
 
-    # for hdb is a special
-    hdb_file_path1 = "scripts/algo/Excel/output/FilteredUserHse.csv"
+    hdb_file_path1 = "scripts/algo/Excel/percentage/UpdatedUserHse.csv"
     df1 = pd.read_csv(hdb_file_path1)
+    
+    # Split coordinates into latitude and longitude columns
     df1[['Latitude', 'Longitude']] = df1['Coordinates'].str.split(
         ', ', expand=True)
     df1['Latitude'] = pd.to_numeric(df1['Latitude'])
     df1['Longitude'] = pd.to_numeric(df1['Longitude'])
 
-    # DF1
+    # FILTER LOCATION TYPE
+    df1 = df1[df1['Location_Type'] == room_type]
+
+    text_to_display = (
+        "Final Percentage: " + df1['Final_Percentage'].astype(str) + "<br>" +
+        "Area: " + df1['Area'].astype(str) + "<br>" +
+        "Location_Type: " + df1['Location_Type'].astype(str)
+    )
+
+    # Create traces for 4-room and 5-room HDB
     hdb_house_onsale = go.Scattermapbox(
         lat=df1['Latitude'],
         lon=df1['Longitude'],
         mode='markers',
         marker=go.scattermapbox.Marker(
             size=15,
-            color="#ff0000",
+            color=color,
         ),
-        text= df1['Total_Points'],  # If df1 has "Total_Points"
-        name="HDB House",
+        text=text_to_display,
+        name=title,
     )
 
-    # Replace with the path to your second CSV file
+    return hdb_house_onsale
+
+
+
+'''
+Description: Plot the Map, Return Map
+'''
+
+def generate_plotly_chart(map_style):
+    center_lat = 1.3521  # Replace with your desired latitude
+    center_lon = 103.8198  # Replace with your desired longitude
+    zoom_level = 10  # Adjust the zoom level as needed
+
+    # Read HDB data
+    hdb_file_path1 = "scripts/algo/Excel/percentage/UpdatedUserHse.csv"
+    df1 = pd.read_csv(hdb_file_path1)
+    
+    # Split coordinates into latitude and longitude columns
+    df1[['Latitude', 'Longitude']] = df1['Coordinates'].str.split(
+        ', ', expand=True)
+    df1['Latitude'] = pd.to_numeric(df1['Latitude'])
+    df1['Longitude'] = pd.to_numeric(df1['Longitude'])
+
+     
+    five_room = room_type('5 ROOM', '5 ROOM HDB', '#FF0000')
+    four_room = room_type('4 ROOM', '4 ROOM HDB', '#00FF00')
+    three_room = room_type('3 ROOM', '3 ROOM HDB', '#0000FF')
+    two_room = room_type('2 ROOM', '2 ROOM HDB', '#FFFF00')
+    one_room = room_type('1 ROOM', '1 ROOM HDB', '#00FFFF')
+
+
+    # Add Amenities to the Map
     fairprice_file_path = "scripts/algo/Excel/Amenities/fairprice.csv"
     hospital_file_path = "scripts/algo/Excel/Amenities/HospitalClinic.csv"
 
-    # Create a figure with both traces
+    # Create a figure with all the traces
     fig = go.Figure(data=[
-        hdb_house_onsale, 
-        create_scattermapbox(fairprice_file_path, 'FairPrice'), 
-        create_scattermapbox(hospital_file_path, 'Hospital')])
+        five_room,
+        four_room,
+        three_room,
+        two_room,
+        one_room,
+        create_scattermapbox(fairprice_file_path, 'FairPrice'),
+        create_scattermapbox(hospital_file_path, 'Hospital')
+    ])
 
-    fig.update_layout(mapbox_style=map_style, 
-                      mapbox_center={"lat": center_lat, "lon": center_lon}, 
-                      mapbox_zoom=zoom_level,
-                      height=720,
-                      width=980,
-                      title_text = "TITLE",
-                      title_x = 0.5,
-                      )
+    # Update the layout of the map
+    fig.update_layout(
+        mapbox_style=map_style,
+        mapbox_center={"lat": center_lat, "lon": center_lon},
+        mapbox_zoom=zoom_level,
+        height=720,
+        width=980, 
+        title_text="Map HDB on Sale",
+        title_x=0.5,
+
+        legend=dict(
+            title="Legends",  # Add a title to the legend
+            bgcolor="rgba(255, 255, 255, 0.6)",  # Set background color
+            bordercolor="black",    # Set border color
+            borderwidth=1,          # Set border width
+            font=dict(size=12),     # Set font size for legend items
+        )
+    )
+
+    # Convert the plot to HTML and return it
     plot_div = fig.to_html(full_html=False)
 
     return plot_div

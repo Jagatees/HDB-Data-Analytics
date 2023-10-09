@@ -1,14 +1,40 @@
 import pandas as pd
 
 def clean_co(file_path, output_path):
-    # Read the CSV file
     df = pd.read_csv(file_path)
 
-    df = df.drop(['Type','Title'], axis=1)  
+    df = df.drop(['Type','Title'], axis=1)
 
-    df.rename(columns={"YearLeft": "Lease_Used"}, inplace=True)
+    # Drop rows with empty values
+    df.dropna(inplace=True)
 
-    df = df.reindex(columns=['Location_Name','Room_Type', 'Blk_No', 'Address', 'Postal_Code', 'Full Address', 'Price', 'Link', 'Lease', 'Lease_Used', 'Sqft', 'Num_Bed', 'Num_Toilet'])
+    # Optionally, reset the index of the DataFrame
+    df.reset_index(drop=True, inplace=True)
+
+    df.rename(columns={"YearLeft": "Lease_Used", "Room_Type": "Location_Type", "Sqft": "floor_area_sqm"}, inplace=True)
+
+    df = df.reindex(columns=['Location_Name','Location_Type', 'Blk_No', 'Address', 'Postal_Code', 'Full Address', 'Long', 'Lat', 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Lease_Used', 'Num_Bed', 'Num_Toilet'])
+
+    def calculate_remain_lease(value):
+        leftover = 99 - int(value)
+        return leftover
+    df['remaining_lease'] = df['Lease_Used'].apply(calculate_remain_lease)
+
+    def calculate_sqm(value):
+        value = value.replace(',', '')
+        convert_sqm = float(value) / 10.7639
+        return int(convert_sqm)
+    df['floor_area_sqm'] = df['floor_area_sqm'].apply(calculate_sqm)
+
+    def putinfront_hdb(value):
+        if 'Exec HDB' in value:
+            rename_value = 'HDB Executive'
+            return rename_value
+        else:
+            words = value.split()
+            new_value = " ".join((words[2], words[0], words[1]))
+            return new_value
+    df['Location_Type'] = df['Location_Type'].apply(putinfront_hdb)
 
     def replace_r_with_road(value):
         words = value.split()
@@ -58,3 +84,4 @@ def clean_co(file_path, output_path):
     df['Location_Name'] = df['Location_Name'].apply(remove_avenue)
 
     df.to_csv(output_path, index=False)
+

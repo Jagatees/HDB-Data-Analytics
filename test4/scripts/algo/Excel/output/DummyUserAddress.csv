@@ -1,26 +1,276 @@
-﻿Location_Name,Location_Type,Blk_No,Address,Postal_Code,Full_Address,Long,Lat,Link
-ANG MO KIO,HDB 2 ROOM,509,Ang Mo Kio Ave 8,,509 Ang Mo Kio Ave 8,103.8501409,1.3739996,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b9 
-ANG MO KIO,HDB 3 ROOM,539,Ang Mo Kio Ave 10,,539 Ang Mo Kio Ave 10,103.8542602,1.37538595,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b10
-ANG MO KIO,HDB 4 ROOM,565,Ang Mo Kio Ave 3,,565 Ang Mo Kio Ave 3,103.8584192,1.36959125,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b11
-ANG MO KIO,HDB 5 ROOM,207,Ang Mo Kio Ave 1,,207 Ang Mo Kio Ave 1,103.8428847,1.3658312,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b12
-ANG MO KIO,HDB EXECUTIVE,171,Ang Mo Kio Ave 4,,171 Ang Mo Kio Ave 4,103.838387,1.3826079,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b13
-CHOA CHU KANG,HDB 2 ROOM,217,Choa Chu Kang Central,,217 Choa Chu Kang Central,103.7463701,1.3832,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b14
-CHOA CHU KANG,HDB 3 ROOM,412,Choa Chu Kang Ave 3,,412 Choa Chu Kang Ave 3,103.7421019,1.3816301,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b15
-CHOA CHU KANG,HDB 4 ROOM,505,Choa Chu Kang Street 51,,505 Choa Chu Kang Street 51,103.742431,1.389497,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b16
-CHOA CHU KANG,HDB 5 ROOM,543,Choa Chu Kang Street 52,,543 Choa Chu Kang Street 52,103.7454848,1.3960629,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b17
-CHOA CHU KANG,HDB EXECUTIVE,767,Choa Chu Kang Street 54,,767 Choa Chu Kang Street 54,103.7502777,1.3955363,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b18
-BEDOK,HDB 2 ROOM,33,Bedok South Ave 2,,33 Bedok South Ave 2,103.9390511,1.3228104,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b19
-BEDOK,HDB 3 ROOM,415,Bedok North Ave 2,,415 Bedok North Ave 2,103.9302479,1.32963155,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b20
-BEDOK,HDB 4 ROOM,138,Bedok North Street 2,,138 Bedok North Street 2,103.9360954,1.32946495,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b21
-BEDOK,HDB 5 ROOM,188A ,Bedok North Street 4,,188A Bedok North Street 4,103.9413965,1.33158995,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b22
-BEDOK,HDB EXECUTIVE,77,Bedok North Rd,,77 Bedok North Rd,103.9419603,1.328667,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b23
-BUKIT MERAH,HDB 2 ROOM,131B ,Kim Tian Rd,,131B Kim Tian Rd,103.828363,1.2809001,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b24
-BUKIT MERAH,HDB 3 ROOM,126,Bukit Merah View,,126 Bukit Merah View,103.8239822,1.2844211,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b25
-BUKIT MERAH,HDB 4 ROOM,108,Jalan Bukit Merah,,108 Jalan Bukit Merah,103.8256864,1.27913545,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b26
-BUKIT MERAH,HDB 5 ROOM,123,Bukit Merah View,,123 Bukit Merah View,103.8232467,1.28409355,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b27
-BUKIT MERAH,HDB EXECUTIVE,117,Jalan Bukit Merah,,117 Jalan Bukit Merah,103.8268093,1.2817242,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b28
-SEMBAWANG,HDB 2 ROOM,339A ,Sembawang Close,,339A Sembawang Close,103.8177235,1.44801595,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b29
-SEMBAWANG,HDB 3 ROOM,326,Sembawang Crescent,,326 Sembawang Crescent,103.8145405,1.447638,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b30
-SEMBAWANG,HDB 4 ROOM,313,Sembawang Drive,,313 Sembawang Drive,103.8217493,1.4446168,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b31
-SEMBAWANG,HDB 5 ROOM,315,Sembawang Vista,,315 Sembawang Vista,103.8205015,1.44684315,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b32
-SEMBAWANG,HDB EXECUTIVE,329,Sembawang Close,,329 Sembawang Close,103.8178443,1.4462705,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b33
+﻿Title,Room_Type,Full Address,Price,Link,Type,Num_Bed,Num_Toilet,Lease,Yearbuilt,YearLeft,Sqft,Bed,Toilet,Size,Room,Model,Built,Remaing
+4 Room HDB in 927 Hougang Street 91,4 Room HDB , 927 Hougang Street 91,590000,https://www.99.co/singapore/sale/property/927-hougang-street-91-hdb-kvBqJTaRN4yCQaVCMtvdHd,HDB (4A),3,2.0,99 years,1998.0,25.0,"1,087",,,,,,,
+4 Room HDB in 619 Ang Mo Kio Avenue 4,4 Room HDB , 619 Ang Mo Kio Avenue 4,690000,https://www.99.co/singapore/sale/property/619-ang-mo-kio-avenue-4-hdb-gUHBxo8nUycSCiCBsBh3iM,HDB (4A),3,2.0,99 years,1996.0,27.0,"1,152",,,,,,,
+4 Room HDB in 105 Tampines Street 11,4 Room HDB , 105 Tamp,599000,https://www.99.co/singapore/sale/property/105-tampines-street-11-hdb-AdBqJjAdpo8J6XbwicJFm5,HDB (4A),3,2.0,99 years,1982.0,41.0,"1,130",,,,,,,
+Exec HDB in 606 Yishun Street 61,Exec HDB , 606 Yishun Street 61,830000,https://www.99.co/singapore/sale/property/606-yishun-street-61-hdb-BZM94XrBWsnHhK3nDEYN4k,HDB (EA),3,2.0,99 years,1987.0,36.0,"1,528",,,,,,,
+5 Room HDB in 988B Jurong West Street 93,5 Room HDB , 988B Jurong West Street 93,650000,https://www.99.co/singapore/sale/property/988b-jurong-west-street-93-hdb-aK8dm7NxVWWPmmA6DPm4og,HDB (5A),3,2.0,99 years,2008.0,15.0,"1,183",,,,,,,
+Exec HDB in 221 Bukit Batok East Avenue 3,Exec HDB , 221 Bukit Batok East Avenue 3,870000,https://www.99.co/singapore/sale/property/221-bukit-batok-east-avenue-3-hdb-BGXnYvAhreejoetVVV8V8s,HDB (EM),4,3.0,99 years,1985.0,38.0,"1,603",,,,,,,
+4 Room HDB in 261 Toa Payoh East,4 Room HDB , 261 Toa Payoh East,1100000,https://www.99.co/singapore/sale/property/261-toa-payoh-east-hdb-EQcNGVyuPUaVUjivwqPbU5,HDB (4A),3,2.0,99 years,2018.0,5.0,990,,,,,,,
+4 Room HDB in 90B Telok Blangah Street 31,4 Room HDB , 90B Telok Blangah Street 31,988000,https://www.99.co/singapore/sale/property/90b-telok-blangah-street-31-hdb-K8GHYTP4s4GVCxYRdNjCUD,HDB (4RM),3,2.0,99 years,,,"1,001",,,,,,,
+3 Room HDB in 214 Tampines Street 23,3 Room HDB , 214 Tamp,450000,https://www.99.co/singapore/sale/property/214-tampines-street-23-hdb-BeyvvDHKuSZ6nzLLN4put7,HDB (3NG),2,2.0,99 years,1985.0,38.0,720,,,,,,,
+Exec HDB in 740 Tampines Street 72,Exec HDB , 740 Tamp,840000,https://www.99.co/singapore/sale/property/740-tampines-street-72-hdb-4hD5UCp5Znr4wRePkNgPHq,HDB (EA),4,2.0,99 years,1997.0,26.0,"1,517",,,,,,,
+4 Bed HDB in 453 Choa Chu Kang Avenue 4,4 Bed HDB , 453 Choa Chu Kang Avenue 4,739888,https://www.99.co/singapore/sale/property/453-choa-chu-kang-avenue-4-hdb-6QLPcipyuDHC8uPQLWm96r,HDB,4,2.0,99 years,2000.0,23.0,"1,528",,,,,,,
+5 Room HDB in 312B Sumang Link,5 Room HDB , 312B Sumang L,740000,https://www.99.co/singapore/sale/property/312b-sumang-link-hdb-Dz9Xbzpx2nAs6Q84Rtjpor,HDB (5I),3,2.0,99 years,2015.0,8.0,"1,206",,,,,,,
+2 Bed HDB in 682C Edgedale Plains,2 Bed HDB , 682C Edgedale Pla,475000,https://www.99.co/singapore/sale/property/682c-edgedale-plains-hdb-PHGsJsPEcpiaDuDX2cRhpe,HDB,2,2.0,99 years,2018.0,5.0,731,,,,,,,
+4 Room HDB in 672 Jalan Damai,4 Room HDB , 672 Jalan Damai,670000,https://www.99.co/singapore/sale/property/672-jalan-damai-hdb-35hKzNgZ5RVZUiee23MbvC,HDB (4A),3,2.0,99 years,1996.0,27.0,"1,163",,,,,,,
+3 Bed HDB in 237 Serangoon Avenue 3,3 Bed HDB , 237 Serangoon Avenue 3,588000,https://www.99.co/singapore/sale/property/237-serangoon-avenue-3-hdb-4mRFtWDMjCStHoqXvn5sQ9,HDB,3,2.0,99 years,1985.0,38.0,904,,,,,,,
+4 Room HDB in 271C Punggol Walk,4 Room HDB , 271C Punggol Walk,718000,https://www.99.co/singapore/sale/property/271c-punggol-walk-hdb-UcuLne5YCiytqzLsZzZjHJ,HDB (4I),3,2.0,99 years,2014.0,9.0,"1,001",,,,,,,
+4 Room HDB in 446B Jalan Kayu,4 Room HDB , 446B Jalan Kayu,600000,https://www.99.co/singapore/sale/property/446b-jalan-kayu-hdb-657VoqkdeRFCDGFzSpkfyr,HDB (4A),3,2.0,99 years,2013.0,10.0,"1,001",,,,,,,
+Exec HDB in 220 Pasir Ris Street 21,Exec HDB , 220 Pasir Ris Street 21,830000,https://www.99.co/singapore/sale/property/220-pasir-ris-street-21-hdb-cQAqfAGiUGcD2A2tfc2FcW,HDB (EA),4,2.0,99 years,1993.0,30.0,"1,593",,,,,,,
+4 Room HDB in 965 Hougang Avenue 9,4 Room HDB , 965 Hougang Avenue 9,513000,https://www.99.co/singapore/sale/property/965-hougang-avenue-9-hdb-EnJK5WBPbbM2if5GY3zwtr,HDB (4A),3,2.0,99 years,1999.0,24.0,"1,086",,,,,,,
+4 Room HDB in 91A Telok Blangah Street 31,4 Room HDB , 91A Telok Blangah Street 31,800000,https://www.99.co/singapore/sale/property/91a-telok-blangah-street-31-hdb-BKnpGFMMRfsRJXkHz6FhMy,HDB (4A),3,2.0,99 years,,,"1,001",,,,,,,
+5 Room HDB in 260B Ang Mo Kio Street 21,5 Room HDB , 260B Ang Mo Kio Street 21,1188888,https://www.99.co/singapore/sale/property/260b-ang-mo-kio-street-21-hdb-9ZwxAjeJGRZ4aTujzJziT9,HDB (5A),3,2.0,99 years,2018.0,5.0,"1,216",,,,,,,
+4 Room HDB in 811A Choa Chu Kang Avenue 7,4 Room HDB , 811A Choa Chu Kang Avenue 7,586000,https://www.99.co/singapore/sale/property/811a-choa-chu-kang-avenue-7-hdb-jJnMxSMif86G3Nge8mknpk,HDB (4RM),3,2.0,99 years,2017.0,6.0,"1,001",,,,,,,
+3 Room HDB in 537 Ang Mo Kio Avenue 5,3 Room HDB , 537 Ang Mo Kio Avenue 5,518000,https://www.99.co/singapore/sale/property/537-ang-mo-kio-avenue-5-hdb-Sd3tBfp3UYMyUwQDknjBN6,HDB (3RM),3,2.0,99 years,1980.0,43.0,990,,,,,,,
+5 Room HDB in 62 Lorong 4 Toa Payoh,5 Room HDB , 62 Lorong 4 Toa Payoh,1015000,https://www.99.co/singapore/sale/property/62-lorong-4-toa-payoh-hdb-Va8rJVHYi4dojBbcMbzg42,HDB (5I),3,2.0,99 years,1999.0,24.0,"1,292",,,,,,,
+2 Bed HDB in 432A Yishun Avenue 1,2 Bed HDB , 432A Yishun Avenue 1,650000,https://www.99.co/singapore/sale/property/432a-yishun-avenue-1-hdb-EST8J6nQjmVaPHbb9YdagP,HDB,2,2.0,99 years,2015.0,8.0,"1,205",,,,,,,
+4 Room HDB in 449B Bukit Batok West Avenue 9,4 Room HDB , 449B Bukit Batok West Avenue 9,580000,https://www.99.co/singapore/sale/property/449b-bukit-batok-west-avenue-9-hdb-28GHdjVWyAjQuzaKQQozVG,HDB (4A),3,2.0,99 years,2019.0,4.0,"1,000",,,,,,,
+Exec HDB in 326 Yishun Ring Road,Exec HDB , 326 Yishun R,928000,https://www.99.co/singapore/sale/property/326-yishun-ring-road-hdb-Q4GfhS7hHzgPwgobcMGSxT,HDB (EM),4,3.0,99 years,1988.0,35.0,"1,571",,,,,,,
+3 Room HDB in 322 Ang Mo Kio Avenue 3,3 Room HDB , 322 Ang Mo Kio Avenue 3,470000,https://www.99.co/singapore/sale/property/322-ang-mo-kio-avenue-3-hdb-NKg5zvNof6ejggaZKHn4b9,HDB (3NG),2,2.0,99 years,1977.0,46.0,785,,,,,,,
+4 Room HDB in 567 Hougang Street 51,4 Room HDB , 567 Hougang Street 51,599000,https://www.99.co/singapore/sale/property/567-hougang-street-51-hdb-QPPYhJrXooon6kBF6ZUpg3,HDB (4NG),3,2.0,99 years,1997.0,26.0,"1,066",,,,,,,
+3 Room HDB in 75 Whampoa Drive,3 Room HDB , 75 Whampoa Drive,360000,https://www.99.co/singapore/sale/property/75-whampoa-drive-hdb-WMfSwuPFayx4iUK9VbKKyx,HDB (3I),2,1.0,99 years,1974.0,49.0,700,,,,,,,
+4 Room HDB in 338B Anchorvale Crescent,4 Room HDB , 338B Anchorvale Crescent,600000,https://www.99.co/singapore/sale/property/338b-anchorvale-crescent-hdb-CQt3nnNqaGT9USqrfUkpH7,HDB (4A),3,2.0,99 years,2018.0,5.0,"1,001",,,,,,,
+4 Room HDB in 1 Toh Yi Drive,4 Room HDB , 1 Toh Yi Drive,950000,https://www.99.co/singapore/sale/property/1-toh-yi-drive-hdb-YXh6uMhivm87RoVftV2mKT,HDB (4A),3,2.0,99 years,1988.0,35.0,"1,119",,,,,,,
+3 Room HDB in 435 Ang Mo Kio Avenue 10,3 Room HDB , 435 Ang Mo Kio Avenue 10,388000,https://www.99.co/singapore/sale/property/435-ang-mo-kio-avenue-10-hdb-BhsKyqeWAUvTsphbzzn6Mc,HDB (3NG),2,2.0,99 years,1979.0,44.0,721,,,,,,,
+5 Room HDB in 14 Upper Boon Keng Road,5 Room HDB , 14 Upper Boon Keng Road,938000,https://www.99.co/singapore/sale/property/14-upper-boon-keng-road-hdb-SQdNwTp6tu7FXpFNwXDEeB,HDB (5I),4,2.0,99 years,1999.0,24.0,"1,292",,,,,,,
+4 Room HDB in 310A Ang Mo Kio Avenue 1,4 Room HDB , 310A Ang Mo Kio Avenue 1,748865,https://www.99.co/singapore/sale/property/310a-ang-mo-kio-avenue-1-hdb-FpHtEbCbDvhPCEkRXdtFiS,HDB (4A),3,2.0,99 years,2012.0,11.0,"1,011",,,,,,,
+4 Room HDB in 859 Tampines Avenue 5,4 Room HDB , 859 Tamp,630000,https://www.99.co/singapore/sale/property/859-tampines-avenue-5-hdb-EhM2huVmRnZGuK5vhMNCbE,HDB (4A),3,2.0,99 years,1988.0,35.0,"1,119",,,,,,,
+3 Room HDB in 123 Hougang Avenue 1,3 Room HDB , 123 Hougang Avenue 1,378000,https://www.99.co/singapore/sale/property/123-hougang-avenue-1-hdb-Kreyf4Xy5s6fXmZfKZp6RV,HDB (3NG),2,2.0,99 years,1981.0,42.0,721,,,,,,,
+4 Room HDB in 114 Edgefield Plains,4 Room HDB , 114 Edgefield Pla,750000,https://www.99.co/singapore/sale/property/114-edgefield-plains-hdb-naoir3hTgrmMnbFw6FNr5X,HDB (4RM),4,2.0,99 years,2003.0,20.0,"1,400",,,,,,,
+4 Bed HDB in 218D Boon Lay Avenue,4 Bed HDB , 218D Boon Lay Avenue,718888,https://www.99.co/singapore/sale/property/218d-boon-lay-avenue-hdb-D4v4idDZqCr3df73eEvJSg,HDB,4,3.0,99 years,2018.0,5.0,"1,302",,,,,,,
+4 Room HDB in 211D Compassvale Lane,4 Room HDB , 211D Compassvale Lane,600000,https://www.99.co/singapore/sale/property/211d-compassvale-lane-hdb-HpaMa9FQ7ZoCnK6QLe2zYy,HDB (4A),3,2.0,99 years,2013.0,10.0,"1,001",,,,,,,
+4 Room HDB in 540 Bedok North Street 3,4 Room HDB , 540 Bedok North Street 3,515000,https://www.99.co/singapore/sale/property/540-bedok-north-street-3-hdb-FHj6HzJpxiWDALYP2X4xgk,HDB (4NG),3,2.0,99 years,1980.0,43.0,"1,001",,,,,,,
+3 Room HDB in 182 Ang Mo Kio Avenue 5,3 Room HDB , 182 Ang Mo Kio Avenue 5,390000,https://www.99.co/singapore/sale/property/182-ang-mo-kio-avenue-5-hdb-ac5VsmN97gF9YyqQ2BP7Wc,HDB (3NG),2,2.0,99 years,1981.0,42.0,732,,,,,,,
+3 Room HDB in 104A Canberra Street,3 Room HDB , 104A Canberra Street,458000,https://www.99.co/singapore/sale/property/104a-canberra-street-hdb-QwfHcHM9QMPGAHo72xnMbb,HDB (3A),2,2.0,99 years,2018.0,5.0,731,,,,,,,
+Exec HDB in 448 Pasir Ris Drive 6,Exec HDB , 448 Pasir Ris Drive 6,950000,https://www.99.co/singapore/sale/property/448-pasir-ris-drive-6-hdb-hUZvRU4RLnBsg357ciUykh,HDB (EM),4,3.0,99 years,1989.0,34.0,"1,571",,,,,,,
+5 Room HDB in 604 Senja Road,5 Room HDB , 604 Senja Road,809000,https://www.99.co/singapore/sale/property/604-senja-road-hdb-MtKbyvruGcg9gZYJwy3F8F,HDB (5I),3,2.0,99 years,1999.0,24.0,"1,291",,,,,,,
+4 Room HDB in 426 Ang Mo Kio Avenue 3,4 Room HDB , 426 Ang Mo Kio Avenue 3,500000,https://www.99.co/singapore/sale/property/426-ang-mo-kio-avenue-3-hdb-7zbvCnL6rJAAYAAXHwnz5t,HDB (4NG),3,2.0,99 years,1978.0,45.0,990,,,,,,,
+3 Bed HDB in 202 Toa Payoh North,3 Bed HDB , 202 Toa Payoh North,460000,https://www.99.co/singapore/sale/property/202-toa-payoh-north-hdb-N9MwuJ39bgTP6gm7xJHpf2,HDB,3,2.0,99 years,1973.0,50.0,936,,,,,,,
+Exec HDB in 558 Jurong West Street 42,Exec HDB , 558 Jurong West Street 42,777000,https://www.99.co/singapore/sale/property/558-jurong-west-street-42-hdb-8sG9hNSAETEijno5AmyLLc,HDB (EM),3,3.0,99 years,1985.0,38.0,"1,615",,,,,,,
+3 Room HDB in 54 Teban Gardens Road,3 Room HDB , 54 Teban Gardens Road,359999,https://www.99.co/singapore/sale/property/54-teban-gardens-road-hdb-nG7faEBciXbg7YN2HWbmyC,HDB (3S),2,2.0,99 years,1986.0,37.0,688,,,,,,,
+4 Room HDB in 683A Woodlands Drive 62,4 Room HDB , 683A Woodlands Drive 62,540000,https://www.99.co/singapore/sale/property/683a-woodlands-drive-62-hdb-KhF7RbKjU5CJUY2EUN9D6T,HDB (4A),3,2.0,99 years,2000.0,23.0,"1,130",,,,,,,
+4 Room HDB in 122 Lorong 2 Toa Payoh,4 Room HDB , 122 Lorong 2 Toa Payoh,838000,https://www.99.co/singapore/sale/property/122-lorong-2-toa-payoh-hdb-TaadnSHzvZ5goqpijJD6og,HDB (4A),3,2.0,99 years,1999.0,24.0,"1,087",,,,,,,
+5 Room HDB in 117 Serangoon North Avenue 1,5 Room HDB , 117 Serangoon North Avenue 1,655000,https://www.99.co/singapore/sale/property/117-serangoon-north-avenue-1-hdb-Pen5eXrLveuVEi3XNTiAjv,HDB (5I),4,2.0,99 years,1985.0,38.0,"1,301",,,,,,,
+3 Room HDB in 418 Ang Mo Kio Avenue 10,3 Room HDB , 418 Ang Mo Kio Avenue 10,399999,https://www.99.co/singapore/sale/property/418-ang-mo-kio-avenue-10-hdb-DNa66C8jb7DbRc3XKo74hu,HDB (3NG),3,2.0,99 years,1979.0,44.0,777,,,,,,,
+4 Room HDB in 108 Bukit Batok West Avenue 6,4 Room HDB , 108 Bukit Batok West Avenue 6,545000,https://www.99.co/singapore/sale/property/108-bukit-batok-west-avenue-6-hdb-78SWWeuTvJHazJmDScFSj4,HDB (4A),3,2.0,99 years,1985.0,38.0,"1,119",,,,,,,
+4 Room HDB in 461A Bukit Batok West Avenue 8,4 Room HDB , 461A Bukit Batok West Avenue 8,680000,https://www.99.co/singapore/sale/property/461a-bukit-batok-west-avenue-8-hdb-UrskP8bYGdATFpxRtGBvUV,HDB (4A),3,2.0,99 years,2019.0,4.0,"1,001",,,,,,,
+3 Room HDB in 134 Potong Pasir Avenue 3,3 Room HDB , 134 Potong Pasir Avenue 3,480000,https://www.99.co/singapore/sale/property/134-potong-pasir-avenue-3-hdb-UoAWVz2QxsW5LTWvNknT5A,HDB (3A),2,2.0,99 years,1984.0,39.0,796,,,,,,,
+3 Room HDB in 687A Woodlands Drive 75,3 Room HDB , 687A Woodlands Drive 75,568000,https://www.99.co/singapore/sale/property/687a-woodlands-drive-75-hdb-6eboNheoYNy5chuLGzrk7r,HDB (3RM),3,2.0,99 years,2003.0,20.0,"1,227",,,,,,,
+5 Room HDB in 310 Serangoon Avenue 2,5 Room HDB , 310 Serangoon Avenue 2,800000,https://www.99.co/singapore/sale/property/310-serangoon-avenue-2-hdb-VjuPHV8fRXFzhG5mRvy6Vm,HDB (5I),3,2.0,99 years,1985.0,38.0,"1,302",,,,,,,
+4 Room HDB in 450B Bukit Batok West Avenue 6,4 Room HDB , 450B Bukit Batok West Avenue 6,599999,https://www.99.co/singapore/sale/property/450b-bukit-batok-west-avenue-6-hdb-PhRYGRqCsNy2GBqRJFjJMo,HDB (4RM),3,2.0,99 years,2019.0,4.0,"1,000",,,,,,,
+5 Room HDB in 452A Bukit Batok West Avenue 6,5 Room HDB , 452A Bukit Batok West Avenue 6,810000,https://www.99.co/singapore/sale/property/452a-bukit-batok-west-avenue-6-hdb-Gfae4rMoKRhFhXevYpn6c8,HDB (5I),3,2.0,99 years,2019.0,4.0,"1,237",,,,,,,
+5 Room HDB in 111 Jurong East Street 13,5 Room HDB , 111 Jurong East Street 13,628000,https://www.99.co/singapore/sale/property/111-jurong-east-street-13-hdb-EvrsHpMAmdRUTv3yaWELu8,HDB (5I),3,2.0,99 years,1981.0,42.0,"1,291",,,,,,,
+Exec HDB in 345 Woodlands Street 32,Exec HDB , 345 Woodlands Street 32,1020000,https://www.99.co/singapore/sale/property/345-woodlands-street-32-hdb-ZsPLJwvmc3BWnwxukDnYW9,HDB (6RM Jumbo),6,4.0,99 years,1995.0,28.0,"1,873",,,,,,,
+4 Room HDB in 976 Hougang Street 91,4 Room HDB , 976 Hougang Street 91,598000,https://www.99.co/singapore/sale/property/976-hougang-street-91-hdb-mkn3R5w87DFoy38rCm8rnt,HDB (4A),3,2.0,99 years,1999.0,24.0,"1,087",,,,,,,
+5 Room HDB in 234B Sumang Lane,5 Room HDB , 234B Sumang Lane,699999,https://www.99.co/singapore/sale/property/234b-sumang-lane-hdb-UAR4aE97y8qnHNBs9F35hJ,HDB (5RM),3,2.0,99 years,2018.0,5.0,"1,216",,,,,,,
+3 Room HDB in 187 Boon Lay Avenue,3 Room HDB , 187 Boon Lay Avenue,330000,https://www.99.co/singapore/sale/property/187-boon-lay-avenue-hdb-QAvxTAyvFCjiSxgHEiArQq,HDB (3I),2,1.0,99 years,1978.0,45.0,731,,,,,,,
+4 Room HDB in 271C Punggol Walk,4 Room HDB , 271C Punggol Walk,680000,https://www.99.co/singapore/sale/property/271c-punggol-walk-hdb-7LH5yxyD2CkxDyurMtYtoE,HDB (4A),3,2.0,99 years,2014.0,9.0,"1,001",,,,,,,
+3 Room HDB in 345 Clementi Avenue 5,3 Room HDB , 345 Clementi Avenue 5,498000,https://www.99.co/singapore/sale/property/345-clementi-avenue-5-hdb-AryVKTtLEn2WRAz4tNGFWU,HDB (3NG),2,2.0,99 years,1979.0,44.0,882,,,,,,,
+3 Room HDB in 53 Strathmore Avenue,3 Room HDB , 53 Strathmore Avenue,780000,https://www.99.co/singapore/sale/property/53-strathmore-avenue-hdb-REDaMm87GYyW9F4Aw278oM,HDB (3RM Premium),2,2.0,99 years,2006.0,17.0,667,,,,,,,
+5 Room HDB in 481 Segar Road,5 Room HDB , 481 Segar Road,520000,https://www.99.co/singapore/sale/property/481-segar-road-hdb-7cyTaxVSLnf4yPu99NmqrW,HDB (5I),3,2.0,99 years,2002.0,21.0,"1,184",,,,,,,
+3 Room HDB in 109 Hougang Avenue 1,3 Room HDB , 109 Hougang Avenue 1,450000,https://www.99.co/singapore/sale/property/109-hougang-avenue-1-hdb-gQCnJCS5badbDpeH6D8act,HDB (3A),2,2.0,99 years,1983.0,40.0,861,,,,,,,
+2 Bed HDB in 302 Shunfu Road,2 Bed HDB , 302 Shunfu Road,550000,https://www.99.co/singapore/sale/property/302-shunfu-road-hdb-NqPVvxvCmVaUzqzLdaqaAi,HDB,2,2.0,99 years,1984.0,39.0,764,,,,,,,
+4 Room HDB in 667 Woodlands Ring Road,4 Room HDB , 667 Woodlands R,488800,https://www.99.co/singapore/sale/property/667-woodlands-ring-road-hdb-9oxTB2kycNzgUhuVmVUcZ7,HDB (4A),4,2.0,99 years,2001.0,22.0,968,,,,,,,
+3 Room HDB in 426 Bedok North Road,3 Room HDB , 426 Bedok North Road,420000,https://www.99.co/singapore/sale/property/426-bedok-north-road-hdb-mkywHqojTUicng3zpq83CL,HDB (3NG),3,2.0,99 years,1979.0,44.0,721,,,,,,,
+1 Bed HDB in 992A Buangkok Link,1 Bed HDB , 992A Buangkok L,348888,https://www.99.co/singapore/sale/property/992a-buangkok-link-hdb-6XTu7kevxtgmE6Dd6r87wd,HDB (1RM),1Bed,1.0,99 years,2019.0,4.0,409,,,,,,,
+Exec HDB in 831 Jurong West Street 81,Exec HDB , 831 Jurong West Street 81,768000,https://www.99.co/singapore/sale/property/831-jurong-west-street-81-hdb-3aCQDcnauca9F9JJH7F2k3,HDB (EA),4,2.0,99 years,1993.0,30.0,"1,571",,,,,,,
+3 Bed HDB in 676C Yishun Ring Road,3 Bed HDB , 676C Yishun R,565000,https://www.99.co/singapore/sale/property/676c-yishun-ring-road-hdb-5Dd7fYj3bEpSiZuvDDGEUA,HDB,3,2.0,99 years,2018.0,5.0,"1,001",,,,,,,
+Exec HDB in 503 Jelapang Road,Exec HDB , 503 Jelapang Road,909000,https://www.99.co/singapore/sale/property/503-jelapang-road-hdb-FA3oJyZZL5imn9gHywcWjS,HDB (EM),4,3.0,99 years,1998.0,25.0,"1,556",,,,,,,
+3 Room HDB in 334A Anchorvale Crescent,3 Room HDB , 334A Anchorvale Crescent,488000,https://www.99.co/singapore/sale/property/334a-anchorvale-crescent-hdb-daXLBcyzYQWHTN2Cdxn6gf,HDB (3NG),2,2.0,99 years,2015.0,8.0,720,,,,,,,
+Exec HDB in 849 Woodlands Street 82,Exec HDB , 849 Woodlands Street 82,1050000,https://www.99.co/singapore/sale/property/849-woodlands-street-82-hdb-ddiZjFqmnfYUqJZyHHnjbe,HDB (6RM Jumbo),6,2.0,99 years,1995.0,28.0,"1,926",,,,,,,
+5 Room HDB in 655 Senja Road,5 Room HDB , 655 Senja Road,535000,https://www.99.co/singapore/sale/property/655-senja-road-hdb-WcLvNKgbwMSj27PiLRXsK7,HDB (5A),3,2.0,99 years,2001.0,22.0,"1,183",,,,,,,
+Exec HDB in 359 Woodlands Avenue 5,Exec HDB , 359 Woodlands Avenue 5,888888,https://www.99.co/singapore/sale/property/359-woodlands-avenue-5-hdb-5DF5ErcpER2uDJTobvuPKk,HDB (EM),4,3.0,99 years,1996.0,27.0,"1,615",,,,,,,
+5 Room HDB in 259C Punggol Field,5 Room HDB , 259C Punggol Field,729000,https://www.99.co/singapore/sale/property/259c-punggol-field-hdb-7uC9wwcRp8qmteJueoUJdw,HDB (5I),3,2.0,99 years,2016.0,7.0,"1,216",,,,,,,
+4 Room HDB in 683 Tessensohn Road,4 Room HDB , 683 Tessensohn Road,680000,https://www.99.co/singapore/sale/property/683-tessensohn-road-hdb-TVnAcMNAvFn7RLMTSC6pYW,HDB (4A),3,2.0,99 years,1986.0,37.0,103,,,,,,,
+3 Room HDB in 37 Margaret Drive,3 Room HDB , 37 Margaret Drive,880000,https://www.99.co/singapore/sale/property/37-margaret-drive-hdb-Vo7JMSPKQGRHHPqfk28Uja,HDB (3RM),2,2.0,99 years,,,667,,,,,,,
+5 Room HDB in 552 Ang Mo Kio Avenue 10,5 Room HDB , 552 Ang Mo Kio Avenue 10,758000,https://www.99.co/singapore/sale/property/552-ang-mo-kio-avenue-10-hdb-NX5GtYqFKppiEfWKc7SAJN,HDB (5I),3,2.0,99 years,1980.0,43.0,"1,280",,,,,,,
+4 Room HDB in 34 Marine Crescent,4 Room HDB , 34 Mar,560000,https://www.99.co/singapore/sale/property/34-marine-crescent-hdb-DecQwFgbqtfq8VcdPCyT27,HDB (4I),3,1.0,99 years,1975.0,48.0,883,,,,,,,
+3 Bed HDB in 4B Saint George's Lane,3 Bed HDB , 4B Sa,710000,https://www.99.co/singapore/sale/property/4b-saint-georges-lane-hdb-XUBrzMk3drnqEmFUyigzw4,HDB,3,2.0,99 years,1996.0,27.0,"1,130",,,,,,,
+3 Room HDB in 271 Queen Street,3 Room HDB , 271 Queen Street,630000,https://www.99.co/singapore/sale/property/271-queen-street-hdb-ZCtuQHTmrZ4yrRTU5XB3hk,HDB (3I),2,2.0,99 years,1979.0,44.0,732,,,,,,,
+5 Room HDB in 118C Jalan Membina,5 Room HDB , 118C Jalan Memb,980000,https://www.99.co/singapore/sale/property/118c-jalan-membina-hdb-P8uW4ohrHibQSFt5uUHzd3,HDB (5I),3,2.0,99 years,2003.0,20.0,"1,184",,,,,,,
+3 Bed HDB in 95A Henderson Road,3 Bed HDB , 95A Henderson Road,1100000,https://www.99.co/singapore/sale/property/95a-henderson-road-hdb-UwEhwtczUtjP6NNnkDNMo5,HDB,3,2.0,99 years,2019.0,4.0,"1,001",,,,,,,
+4 Room HDB in 678A Punggol Drive,4 Room HDB , 678A Punggol Drive,650000,https://www.99.co/singapore/sale/property/678a-punggol-drive-hdb-RbqksevaFPHthYTZNxkELS,HDB (4RM),3,2.0,99 years,2016.0,7.0,"1,001",,,,,,,
+1 Bed HDB in 150A Corporation Drive,1 Bed HDB , 150A Corporation Drive,358000,https://www.99.co/singapore/sale/property/150a-corporation-drive-hdb-ghZ2cL8oAoSrCmsFjJCuEQ,HDB,1Bed,1.0,99 years,2018.0,5.0,409,,,,,,,
+4 Room HDB in 908 Tampines Avenue 4,4 Room HDB , 908 Tamp,615000,https://www.99.co/singapore/sale/property/908-tampines-avenue-4-hdb-GeqUYtta9XdQZEkUZcouuG,HDB (4A),3,2.0,99 years,1983.0,40.0,"1,119",,,,,,,
+Exec HDB in 636 Bedok Reservoir Road,Exec HDB , 636 Bedok Reservoir Road,1199988,https://www.99.co/singapore/sale/property/636-bedok-reservoir-road-hdb-EQy6RRpY4UeDkidRfFHguK,HDB (EA),4,2.0,99 years,1993.0,30.0,"1,561",,,,,,,
+3 Room HDB in 237 Bukit Batok East Avenue 5,3 Room HDB , 237 Bukit Batok East Avenue 5,388000,https://www.99.co/singapore/sale/property/237-bukit-batok-east-avenue-5-hdb-DugAVJJVjFzpKijSMvTmbN,HDB (3NG),2,2.0,99 years,1985.0,38.0,785,,,,,,,
+4 Room HDB in 684D Edgedale Plains,4 Room HDB , 684D Edgedale Pla,619888,https://www.99.co/singapore/sale/property/684d-edgedale-plains-hdb-Dz2YnHQVfk7399CoqXamQv,HDB (4RM),3,2.0,99 years,2018.0,5.0,"1,001",,,,,,,
+4 Room HDB in 113 Lengkong Tiga,4 Room HDB , 113 Lengkong Tiga,728000,https://www.99.co/singapore/sale/property/113-lengkong-tiga-hdb-H93qqMBePNRWWdwDoWXRT7,HDB (4A),3,2.0,99 years,1989.0,34.0,"1,162",,,,,,,
+5 Room HDB in 807C Choa Chu Kang Avenue 1,5 Room HDB , 807C Choa Chu Kang Avenue 1,650000,https://www.99.co/singapore/sale/property/807c-choa-chu-kang-avenue-1-hdb-EqRea7VJdK3PRzpLjW62rt,HDB (5RM),3,2.0,99 years,2017.0,6.0,"1,206",,,,,,,
+3 Bed HDB in 308 Hougang Avenue 5,3 Bed HDB , 308 Hougang Avenue 5,550000,https://www.99.co/singapore/sale/property/308-hougang-avenue-5-hdb-EhFTzV2CzrjqLh6DXRNMEE,HDB,3,2.0,99 years,1983.0,40.0,"1,001",,,,,,,
+4 Bed HDB in 331 Woodlands Avenue 1,4 Bed HDB , 331 Woodlands Avenue 1,1000000,https://www.99.co/singapore/sale/property/331-woodlands-avenue-1-hdb-jKf8Nd5oifRkeiHwLBt6qc,HDB,4,3.0,99 years,1994.0,29.0,"2,066",,,,,,,
+4 Room HDB in 275C Compassvale Link,4 Room HDB , 275C Compassvale L,670000,https://www.99.co/singapore/sale/property/275c-compassvale-link-hdb-6JFsEeXkwwC3KkmKVjx8DX,HDB (4A),3,2.0,99 years,2009.0,14.0,969,,,,,,,
+3 Room HDB in 419 Ang Mo Kio Avenue 10,3 Room HDB , 419 Ang Mo Kio Avenue 10,450000,https://www.99.co/singapore/sale/property/419-ang-mo-kio-avenue-10-hdb-b83xY7xfvR89iG34cPuFjK,HDB (3NG),2,2.0,99 years,1979.0,44.0,957,,,,,,,
+4 Room HDB in 361 Tampines Street 34,4 Room HDB , 361 Tamp,738888,https://www.99.co/singapore/sale/property/361-tampines-street-34-hdb-9275u7BHF6faAnqPfCvfAJ,HDB (4RM),4,2.0,99 years,1996.0,27.0,"1,377",,,,,,,
+Exec HDB in 124 Tampines Street 11,Exec HDB , 124 Tamp,888000,https://www.99.co/singapore/sale/property/124-tampines-street-11-hdb-ZVtnFpvB9C2YDmoSDwU3nc,HDB (EM),3,3.0,99 years,1986.0,37.0,"1,593",,,,,,,
+5 Room HDB in 650A Jurong West Street 61,5 Room HDB , 650A Jurong West Street 61,620000,https://www.99.co/singapore/sale/property/650a-jurong-west-street-61-hdb-UyFJzxGhGLBPs8y6RScb3Y,HDB (5I),3,2.0,99 years,2000.0,23.0,"1,183",,,,,,,
+4 Room HDB in 512B Yishun Street 51,4 Room HDB , 512B Yishun Street 51,545000,https://www.99.co/singapore/sale/property/512b-yishun-street-51-hdb-Y9Ws2JxEJJhV4fSJoQxGjQ,HDB (4RM),3,2.0,99 years,2017.0,6.0,"1,001",,,,,,,
+4 Room HDB in 219 Jurong East Street 21,4 Room HDB , 219 Jurong East Street 21,508000,https://www.99.co/singapore/sale/property/219-jurong-east-street-21-hdb-DvAHUhxxhSSosibXhQwgRV,HDB (4NG),3,2.0,99 years,1985.0,38.0,979,,,,,,,
+4 Room HDB in 843 Tampines Street 83,4 Room HDB , 843 Tamp,508000,https://www.99.co/singapore/sale/property/843-tampines-street-83-hdb-cRPsS87wh5rfRVD73dtxvZ,HDB (4S),3,2.0,99 years,1988.0,35.0,904,,,,,,,
+Exec HDB in 315C Anchorvale Road,Exec HDB , 315C Anchorvale Road,718888,https://www.99.co/singapore/sale/property/315c-anchorvale-road-hdb-jgPhzLUSb8tF3hG23wozMF,HDB (EA),3,2.0,99 years,2003.0,20.0,"1,345",,,,,,,
+3 Room HDB in 126 Bedok North Street 2,3 Room HDB , 126 Bedok North Street 2,380000,https://www.99.co/singapore/sale/property/126-bedok-north-street-2-hdb-cfisJGtktjzzCSywrxRrSh,HDB (3NG),2,2.0,99 years,1978.0,45.0,720,,,,,,,
+1 Bed HDB in 998A Buangkok Crescent,1 Bed HDB , 998A Buangkok Crescent,368888,https://www.99.co/singapore/sale/property/998a-buangkok-crescent-hdb-nSiH9mfR48wfsSrWFPFiUt,HDB,1Bed,1.0,99 years,2018.0,5.0,505,,,,,,,
+4 Room HDB in 11 Toh Yi Drive,4 Room HDB , 11 Toh Yi Drive,938000,https://www.99.co/singapore/sale/property/11-toh-yi-drive-hdb-7wAoUUASawvd39kXE9V4Hz,HDB (4A),3,2.0,99 years,1989.0,34.0,"1,162",,,,,,,
+3 Room HDB in 308C Punggol Walk,3 Room HDB , 308C Punggol Walk,500000,https://www.99.co/singapore/sale/property/308c-punggol-walk-hdb-QVgfGTuhNa4qoySz3XhNhk,HDB (3RM),2,2.0,99 years,2016.0,7.0,721,,,,,,,
+3 Bed HDB in 693B Woodlands Avenue 6,3 Bed HDB , 693B Woodlands Avenue 6,610000,https://www.99.co/singapore/sale/property/693b-woodlands-avenue-6-hdb-YtRc9d8YZ5fkngLfGKEcfw,HDB,3,2.0,99 years,2018.0,5.0,990,,,,,,,
+5 Room HDB in 440D Bukit Batok West Avenue 8,5 Room HDB , 440D Bukit Batok West Avenue 8,695000,https://www.99.co/singapore/sale/property/440d-bukit-batok-west-avenue-8-hdb-gogGUnMij5yauuR4fZS488,HDB (5I),3,2.0,99 years,2019.0,4.0,"1,205",,,,,,,
+Exec HDB in 582 Pasir Ris Street 53,Exec HDB , 582 Pasir Ris Street 53,900000,https://www.99.co/singapore/sale/property/582-pasir-ris-street-53-hdb-MB7eKXadY3TsqXLwKM8Pc8,HDB (EA),4,2.0,99 years,1995.0,28.0,"1,582",,,,,,,
+4 Room HDB in 251 Tampines Street 21,4 Room HDB , 251 Tamp,595000,https://www.99.co/singapore/sale/property/251-tampines-street-21-hdb-5KFEjLFcrikuPfEpUpLLV7,HDB (4A),3,2.0,99 years,1985.0,38.0,"1,097",,,,,,,
+3 Bed HDB in 207 Bukit Batok Street 21,3 Bed HDB , 207 Bukit Batok Street 21,540000,https://www.99.co/singapore/sale/property/207-bukit-batok-street-21-hdb-VFMoDqigCntuYePnPDGCJr,HDB,3,2.0,99 years,1983.0,40.0,"1,119",,,,,,,
+5 Room HDB in 475C Upper Serangoon Crescent,5 Room HDB , 475C Upper Serangoon Crescent,1000000,https://www.99.co/singapore/sale/property/475c-upper-serangoon-crescent-hdb-RQbLT2eyKc7KSPb3w4kakF,HDB (5RM),4,2.0,99 years,2014.0,9.0,"1,205",,,,,,,
+Exec HDB in 336 Tampines Street 32,Exec HDB , 336 Tamp,875000,https://www.99.co/singapore/sale/property/336-tampines-street-32-hdb-gQsHxrKkCu4vcbXorDoJcA,HDB (EA),3,2.0,99 years,1996.0,27.0,"1,582",,,,,,,
+2 Room HDB in 9 Joo Seng Road,2 Room HDB , 9 Joo Seng Road,580000,https://www.99.co/singapore/sale/property/9-joo-seng-road-hdb-AucyrHsu3qaRgdFvX25dxj,HDB (2RM),2,2.0,99 years,2017.0,6.0,732,,,,,,,
+3 Bed HDB in 231A Sumang Lane,3 Bed HDB , 231A Sumang Lane,618888,https://www.99.co/singapore/sale/property/231a-sumang-lane-hdb-42iiccAW4QDpeJkv9ZnXTJ,HDB,3,2.0,99 years,2018.0,5.0,"1,001",,,,,,,
+4 Room HDB in 692B Choa Chu Kang Crescent,4 Room HDB , 692B Choa Chu Kang Crescent,518000,https://www.99.co/singapore/sale/property/692b-choa-chu-kang-crescent-hdb-HportMJ4M2wJtZmbuvNujz,HDB (4A),3,2.0,99 years,2003.0,20.0,968,,,,,,,
+3 Bed HDB in 115B Yishun Ring Road,3 Bed HDB , 115B Yishun R,498888,https://www.99.co/singapore/sale/property/115b-yishun-ring-road-hdb-7KcqdwWvsd4M4RDNuD9no6,HDB,3,2.0,99 years,2001.0,22.0,989,,,,,,,
+5 Room HDB in 260 Tampines Street 21,5 Room HDB , 260 Tamp,688888,https://www.99.co/singapore/sale/property/260-tampines-street-21-hdb-JmBuSMqkkT5cRwivGC3stR,HDB (5A),3,2.0,99 years,1984.0,39.0,"1,431",,,,,,,
+3 Room HDB in 345 Ang Mo Kio Avenue 3,3 Room HDB , 345 Ang Mo Kio Avenue 3,490000,https://www.99.co/singapore/sale/property/345-ang-mo-kio-avenue-3-hdb-XU4bgEYz7rfko9XjJQUop6,HDB (3NG),2,2.0,99 years,1978.0,45.0,786,,,,,,,
+5 Room HDB in 468C Fernvale Link,5 Room HDB , 468C Fernvale L,750000,https://www.99.co/singapore/sale/property/468c-fernvale-link-hdb-E8b9Hii7bUG7snQ7J63vqx,HDB (5I),3,2.0,99 years,2016.0,7.0,"1,216",,,,,,,
+Exec HDB in 10E Bedok South Avenue 2,Exec HDB , 10E Bedok South Avenue 2,980000,https://www.99.co/singapore/sale/property/10e-bedok-south-avenue-2-hdb-oFtP7mokXNK8t2SfYuzbB7,HDB (EA),4,2.0,99 years,1993.0,30.0,142,,,,,,,
+5 Room HDB in 676C Yishun Ring Road,5 Room HDB , 676C Yishun R,728000,https://www.99.co/singapore/sale/property/676c-yishun-ring-road-hdb-Mse5fMR7PzzeeK5xVZDMbz,HDB (5RM),3,2.0,99 years,2018.0,5.0,"1,216",,,,,,,
+4 Room HDB in 357 Woodlands Avenue 5,4 Room HDB , 357 Woodlands Avenue 5,900000,https://www.99.co/singapore/sale/property/357-woodlands-avenue-5-hdb-VrZoPvp6Haca6bnrQ4igGa,HDB (4RM),4,3.0,99 years,1996.0,27.0,"1,550",,,,,,,
+Exec HDB in 938 Tampines Avenue 5,Exec HDB , 938 Tamp,898000,https://www.99.co/singapore/sale/property/938-tampines-avenue-5-hdb-djwA9jiViEk2KAwxQEtLRg,HDB (EM),4,3.0,99 years,1988.0,35.0,"1,572",,,,,,,
+4 Room HDB in 113 Lengkong Tiga,4 Room HDB , 113 Lengkong Tiga,728000,https://www.99.co/singapore/sale/property/113-lengkong-tiga-hdb-7KirkfA2P5wpwCJqhH3XMb,HDB (4A),3,2.0,99 years,1989.0,34.0,"1,163",,,,,,,
+5 Room HDB in 25A Jalan Membina,5 Room HDB , 25A Jalan Memb,1199000,https://www.99.co/singapore/sale/property/25a-jalan-membina-hdb-hUMBPEwNd2q9r6iANQSE8x,HDB (5I),3,2.0,99 years,2008.0,15.0,"1,184",,,,,,,
+5 Room HDB in 783A Woodlands Rise,5 Room HDB , 783A Woodlands Rise,650000,https://www.99.co/singapore/sale/property/783a-woodlands-rise-hdb-NLZngytDSGDyhjuahCBD4e,HDB (5I),3,2.0,99 years,2018.0,5.0,"1,216",,,,,,,
+1 Bed HDB in 161 Lorong 1 Toa Payoh,1 Bed HDB , 161 Lorong 1 Toa Payoh,310000,https://www.99.co/singapore/sale/property/161-lorong-1-toa-payoh-hdb-AQUW8QKDwksda93HjCqai5,HDB (1RM),1Bed,1.0,99 years,1972.0,51.0,430,,,,,,,
+Exec HDB in 111 Simei Street 1,Exec HDB , 111 Simei Street 1,950000,https://www.99.co/singapore/sale/property/111-simei-street-1-hdb-ePow4oEhqUZmzR6LzpMEuW,HDB (EM),4,3.0,99 years,1987.0,36.0,"1,571",,,,,,,
+4 Room HDB in 310B Punggol Walk,4 Room HDB , 310B Punggol Walk,678888,https://www.99.co/singapore/sale/property/310b-punggol-walk-hdb-bPP8Be7g8bfPeSUWcfPnyW,HDB (4A),3,2.0,99 years,2016.0,7.0,990,,,,,,,
+5 Room HDB in 504 Hougang Avenue 8,5 Room HDB , 504 Hougang Avenue 8,600000,https://www.99.co/singapore/sale/property/504-hougang-avenue-8-hdb-B4mB9Ng6o2B4QKmtKoSADu,HDB (5I),3,2.0,99 years,1987.0,36.0,"1,302",,,,,,,
+4 Room HDB in 330 Sembawang Close,4 Room HDB , 330 Sembawang Close,650000,https://www.99.co/singapore/sale/property/330-sembawang-close-hdb-5nfTtbEo5qj3Kth5SXfo6M,HDB (4RM),4,2.0,99 years,1999.0,24.0,"1,291",,,,,,,
+3 Room HDB in 116 Bishan Street 12,3 Room HDB , 116 Bishan Street 12,490000,https://www.99.co/singapore/sale/property/116-bishan-street-12-hdb-Lmte5dDvCXbbb25NydR6Jn,HDB (3S),2,2.0,99 years,1985.0,38.0,688,,,,,,,
+Exec HDB in 578 Hougang Avenue 4,Exec HDB , 578 Hougang Avenue 4,1158888,https://www.99.co/singapore/sale/property/578-hougang-avenue-4-hdb-fvKZaRwwbWB5nWyXLkhbHi,HDB (EM),4,3.0,99 years,1997.0,26.0,"1,507",,,,,,,
+3 Room HDB in 805C Keat Hong Close,3 Room HDB , 805C Keat Hong Close,610000,https://www.99.co/singapore/sale/property/805c-keat-hong-close-hdb-bBdJWBe6K4V86pv4B4X4S6,HDB (3RM),3,2.0,99 years,2017.0,6.0,113,,,,,,,
+4 Room HDB in 211B Compassvale Lane,4 Room HDB , 211B Compassvale Lane,620000,https://www.99.co/singapore/sale/property/211b-compassvale-lane-hdb-Cj78eHrbdprtLVKCREC5XS,HDB (4A),3,3.0,99 years,2013.0,10.0,"1,022",,,,,,,
+3 Room HDB in 401 Bedok North Avenue 3,3 Room HDB , 401 Bedok North Avenue 3,360000,https://www.99.co/singapore/sale/property/401-bedok-north-avenue-3-hdb-o7eAuv9mDWtkc3E8wLyFcJ,HDB (3NG),2,2.0,99 years,1979.0,44.0,721,,,,,,,
+Exec HDB in 723 Bedok Reservoir Road,Exec HDB , 723 Bedok Reservoir Road,860000,https://www.99.co/singapore/sale/property/723-bedok-reservoir-road-hdb-6xtMMAN5mq4gDaEFjGfzav,HDB (EM),3,3.0,99 years,1984.0,39.0,"1,475",,,,,,,
+4 Room HDB in 485 Admiralty Link,4 Room HDB , 485 Admiralty L,488000,https://www.99.co/singapore/sale/property/485-admiralty-link-hdb-SWYu5FG4TL5hpixxjRs9zW,HDB (4A2),3,2.0,99 years,2003.0,20.0,914,,,,,,,
+3 Room HDB in 115 Lorong 1 Toa Payoh,3 Room HDB , 115 Lorong 1 Toa Payoh,360000,https://www.99.co/singapore/sale/property/115-lorong-1-toa-payoh-hdb-ko5c9dUjBXLJ2ULg2eswHL,HDB (3I),3,2.0,99 years,1967.0,56.0,699,,,,,,,
+4 Room HDB in 506A Yishun Avenue 4,4 Room HDB , 506A Yishun Avenue 4,550000,https://www.99.co/singapore/sale/property/506a-yishun-avenue-4-hdb-CtoXTjGczgGQ8mCgsXBBGG,HDB (4A),3,2.0,99 years,2018.0,5.0,"1,001",,,,,,,
+2 Room HDB in 78 Dawson Road,2 Room HDB , 78 Dawson Road,630000,https://www.99.co/singapore/sale/property/78-dawson-road-hdb-EVx5i3mLBkPGp4cTBCT5Nb,HDB (2RM),2,2.0,99 years,,,667,,,,,,,
+4 Room HDB in 133 Bedok North Avenue 3,4 Room HDB , 133 Bedok North Avenue 3,550000,https://www.99.co/singapore/sale/property/133-bedok-north-avenue-3-hdb-CHymos2j2nhGtQG4REo3cj,HDB (4NG),3,2.0,99 years,1978.0,45.0,990,,,,,,,
+5 Room HDB in 804 Yishun Ring Road,5 Room HDB , 804 Yishun R,699999,https://www.99.co/singapore/sale/property/804-yishun-ring-road-hdb-Z35NJtMnxKQnTpq6mt9gpp,HDB (5I),3,2.0,99 years,1987.0,36.0,"1,313",,,,,,,
+3 Room HDB in 1 Ghim Moh Road,3 Room HDB , 1 Ghim Moh Road,438000,https://www.99.co/singapore/sale/property/1-ghim-moh-road-hdb-iJ75ySdExdBASZ6tPGALA4,HDB,2,1.0,99 years,1976.0,47.0,700,,,,,,,
+3 Room HDB in 462A Yishun Avenue 6,3 Room HDB , 462A Yishun Avenue 6,468000,https://www.99.co/singapore/sale/property/462a-yishun-avenue-6-hdb-XrUL6e7feTwmwR9us4EAQT,HDB (3RM),2,2.0,99 years,2018.0,5.0,731,,,,,,,
+Exec HDB in 167 Woodlands Street 11,Exec HDB , 167 Woodlands Street 11,1068000,https://www.99.co/singapore/sale/property/167-woodlands-street-11-hdb-BuXUFijNpnTbV4bn2yyFnr,HDB (EA),4,2.0,99 years,1994.0,29.0,"1,755",,,,,,,
+4 Room HDB in 140A Corporation Drive,4 Room HDB , 140A Corporation Drive,598000,https://www.99.co/singapore/sale/property/140a-corporation-drive-hdb-NHstfNf4rYa4ncbE3jZ97y,HDB (4A),3,2.0,99 years,2019.0,4.0,"1,001",,,,,,,
+4 Room HDB in 415 Hougang Avenue 10,4 Room HDB , 415 Hougang Avenue 10,538000,https://www.99.co/singapore/sale/property/415-hougang-avenue-10-hdb-btbLw829zndnuQxkJg3f6w,HDB (4NG),3,2.0,99 years,1985.0,38.0,980,,,,,,,
+4 Room HDB in 506C Yishun Avenue 4,4 Room HDB , 506C Yishun Avenue 4,625000,https://www.99.co/singapore/sale/property/506c-yishun-avenue-4-hdb-ayptqxCfhEQfJFQVkEpV6s,HDB (4A),3,2.0,99 years,2018.0,5.0,"1,001",,,,,,,
+4 Room HDB in 161 Bishan Street 13,4 Room HDB , 161 Bishan Street 13,690000,https://www.99.co/singapore/sale/property/161-bishan-street-13-hdb-BPnGW8ioRZV5QTjRWTUQLT,HDB (4A),3,2.0,99 years,1988.0,35.0,"1,119",,,,,,,
+4 Room HDB in 879 Yishun Street 81,4 Room HDB , 879 Yishun Street 81,488000,https://www.99.co/singapore/sale/property/879-yishun-street-81-hdb-KEDZDz36iNyhoaFGgsDKVk,HDB (4S),3,2.0,99 years,1987.0,36.0,904,,,,,,,
+Exec HDB in 578 Ang Mo Kio Avenue 10,Exec HDB , 578 Ang Mo Kio Avenue 10,1150000,https://www.99.co/singapore/sale/property/578-ang-mo-kio-avenue-10-hdb-Ytid5Gj7sy3sUf5sMEGbfp,HDB (EA),4,4.0,99 years,1980.0,43.0,"1,603",,,,,,,
+5 Room HDB in 114 Depot Road,5 Room HDB , 114 Depot Road,700000,https://www.99.co/singapore/sale/property/114-depot-road-hdb-9rtzdyvrxd9RutNZ8UFHUt,HDB (5A),3,2.0,99 years,1976.0,47.0,"1,259",,,,,,,
+5 Room HDB in 641 Pasir Ris Drive 1,5 Room HDB , 641 Pasir Ris Drive 1,685000,https://www.99.co/singapore/sale/property/641-pasir-ris-drive-1-hdb-LRX5imbfaTyiBzJWMkidT9,HDB (5I),3,2.0,99 years,1995.0,28.0,"1,323",,,,,,,
+3 Room HDB in 38 Beo Crescent,3 Room HDB , 38 Beo Crescent,386000,https://www.99.co/singapore/sale/property/38-beo-crescent-hdb-iTFRN9KaFjWoBgNdmVqvon,HDB (3STD),2,1.0,99 years,1971.0,52.0,635,,,,,,,
+5 Room HDB in 530D Pasir Ris Drive 1,5 Room HDB , 530D Pasir Ris Drive 1,940000,https://www.99.co/singapore/sale/property/530d-pasir-ris-drive-1-hdb-2XPwiZCqc8eSKWf8ypagGU,HDB (5RM),3,2.0,99 years,2015.0,8.0,"1,130",,,,,,,
+4 Room HDB in 863B Tampines Street 83,4 Room HDB , 863B Tamp,565000,https://www.99.co/singapore/sale/property/863b-tampines-street-83-hdb-MCBqr8RpmtM9FdwZp6hBMY,HDB (4A),3,2.0,99 years,1988.0,35.0,"1,119",,,,,,,
+5 Room HDB in 623 Senja Road,5 Room HDB , 623 Senja Road,668000,https://www.99.co/singapore/sale/property/623-senja-road-hdb-9XhqnDqSXJoVtDaT3VKUi6,HDB (5I),3,2.0,99 years,2001.0,22.0,"1,183",,,,,,,
+5 Room HDB in 467 Admiralty Drive,5 Room HDB , 467 Admiralty Drive,638000,https://www.99.co/singapore/sale/property/467-admiralty-drive-hdb-NJraoyrZhQAUcWi6t5vzek,HDB (5I),3,2.0,99 years,2001.0,22.0,"1,237",,,,,,,
+4 Room HDB in 449B Bukit Batok West Avenue 9,4 Room HDB , 449B Bukit Batok West Avenue 9,680000,https://www.99.co/singapore/sale/property/449b-bukit-batok-west-avenue-9-hdb-X4ogfhZEQSuSqmN5PVS6Dk,HDB (4A),3,2.0,99 years,2019.0,4.0,"1,001",,,,,,,
+4 Room HDB in 136 Bukit Batok West Avenue 6,4 Room HDB , 136 Bukit Batok West Avenue 6,488000,https://www.99.co/singapore/sale/property/136-bukit-batok-west-avenue-6-hdb-TWaYBrUGuPqdZ4wVuewKk7,HDB (4NG),3,2.0,99 years,1984.0,39.0,"1,001",,,,,,,
+5 Room HDB in 117 Simei Street 1,5 Room HDB , 117 Simei Street 1,650000,https://www.99.co/singapore/sale/property/117-simei-street-1-hdb-GxfeVHUzt9HSM6vRVVFj8X,HDB (5A),3,2.0,99 years,1988.0,35.0,"1,313",,,,,,,
+Exec HDB in 627 Bukit Batok Central,Exec HDB , 627 Bukit Batok Central,1080000,https://www.99.co/singapore/sale/property/627-bukit-batok-central-hdb-FaykdDfgrHhBeKMFJG6PSq,HDB (EM),4,3.0,99 years,1997.0,26.0,"1,550",,,,,,,
+5 Room HDB in 461C Bukit Batok West Avenue 8,5 Room HDB , 461C Bukit Batok West Avenue 8,799000,https://www.99.co/singapore/sale/property/461c-bukit-batok-west-avenue-8-hdb-nmKgDNjmhM8YGgh9cs884D,HDB (5A),3,2.0,99 years,2019.0,4.0,"1,227",,,,,,,
+4 Room HDB in 244 Yishun Ring Road,4 Room HDB , 244 Yishun R,550000,https://www.99.co/singapore/sale/property/244-yishun-ring-road-hdb-69eiiejXuYTYFV8a96M3Sf,HDB (4A),3,,99 years,1985.0,38.0,"1,130",,,,,,,
+4 Room HDB in 476B Choa Chu Kang Avenue 5,4 Room HDB , 476B Choa Chu Kang Avenue 5,528000,https://www.99.co/singapore/sale/property/476b-choa-chu-kang-avenue-5-hdb-jQpqrhUC8Pydu6DR3nDvwf,HDB (4A),3,2.0,99 years,2013.0,10.0,989,,,,,,,
+Exec HDB in 153 Pasir Ris Street 13,Exec HDB , 153 Pasir Ris Street 13,810000,https://www.99.co/singapore/sale/property/153-pasir-ris-street-13-hdb-58UWb5unoifxYNfQDGKfoy,HDB (EA),3,2.0,99 years,1995.0,28.0,"1,561",,,,,,,
+Blk 461 Pasir Ris Drive 4,,,555000,https://www.srx.com.sg/listings/99347651/for-sale-pasir-ris-drive-4-pasir-ris-drive-4,,,,,,,,3,2.0,104.0,4 Room,Model A,1992.0,31.0
+Blk 35 Circuit Road,,,555000,https://www.srx.com.sg/listings/100497381/for-sale-circuit-road-circuit-road,,,,,,,,3,2.0,72.0,3 Room,Model A,1971.0,52.0
+Blk 9 City View @ Boon Keng,,,555000,https://www.srx.com.sg/listings/96208961/for-sale-city-view-boon-keng-boon-keng-road,,,,,,,,3,2.0,107.0,5 Room,Model A,2011.0,12.0
+Blk 440D Bukit Batok West Avenue 8,,,395000,https://www.srx.com.sg/listings/100301971/for-sale-bukit-batok-west-avenue-8-bukit-batok-west-avenue-8,,,,,,,,3,2.0,112.0,5 Room,Improved,2019.0,4.0
+Blk 835 Hougang Central,,,395000,https://www.srx.com.sg/listings/99074051/for-sale-hougang-central-4-room-for-sale,,,,,,,,3,2.0,110.0,4 Room,Model A,1992.0,31.0
+Blk 925 Hougang Street 91,,,395000,https://www.srx.com.sg/listings/100492111/for-sale-hougang-street-91-hougang-street-91,,,,,,,,3,2.0,101.0,4 Room,Model A,1998.0,25.0
+Blk 252 Hougang Avenue 3,,,1122011,https://www.srx.com.sg/listings/100631711/for-sale-hougang-avenue-3-hougang-avenue-3,,,,,,,,3,2.0,93.0,4 Room,New Generation,1985.0,38.0
+Blk 66 Lorong 4 Toa Payoh,,,1122011,https://www.srx.com.sg/listings/100652291/for-sale-lorong-4-toa-payoh-3rm-with-utility-room-unit-for-sale,,,,,,,,2,1.0,64.0,3 Room,Standard,1969.0,54.0
+Blk 310C Punggol Walk,,,1122011,https://www.srx.com.sg/listings/100614981/for-sale-punggol-walk-new-listing-spacious-3-bedrooms-near-mrt-n-mall-f,,,,,,,,3,2.0,92.0,4 Room,Model A,2016.0,7.0
+Blk 686A Woodlands Drive 73,,,695000,https://www.srx.com.sg/listings/100652101/for-sale-woodlands-drive-73-modern-designer-renovation,,,,,,,,3,2.0,114.0,5 Room,Model A,2003.0,20.0
+Blk 40 Holland Drive,,,695000,https://www.srx.com.sg/listings/100224821/for-sale-holland-drive-great-location-priced-to-sell-renovate-to-your-o,,,,,,,,2,1.0,59.0,3 Room,Improved,1975.0,48.0
+Blk 573B Woodlands Drive 16,,,695000,https://www.srx.com.sg/listings/100590251/for-sale-woodlands-drive-16-woodlands-drive-16,,,,,,,,1,1.0,47.0,2 Room,Model A,2018.0,5.0
+Blk 925 Jurong West Street 92,,,680000,https://www.srx.com.sg/listings/100067471/for-sale-jurong-west-street-92-jurong-west-street-92,,,,,,,,2,2.0,73.0,3 Room,Model A,1988.0,35.0
+Blk 774 Woodlands Crescent,,,680000,https://www.srx.com.sg/listings/100418261/for-sale-woodlands-crescent-woodlands-crescent,,,,,,,,3,2.0,91.0,4 Room,Model A,1997.0,26.0
+Blk 442C Bukit Batok West Avenue 8,,,680000,https://www.srx.com.sg/listings/100185781/for-sale-bukit-batok-west-avenue-8-bukit-batok-west-avenue-8,,,,,,,,3,2.0,92.0,4 Room,Model A,2019.0,4.0
+Blk 102 Henderson Crescent,,,560000,https://www.srx.com.sg/listings/99706761/for-sale-henderson-crescent-henderson-crescent,,,,,,,,3,2.0,80.0,4 Room,Improved,1970.0,53.0
+Blk 17 MARSILING LANE,,,560000,https://www.srx.com.sg/listings/100019081/for-sale-marsiling-lane-marsiling-lane,,,,,,,,2,2.0,65.0,3 Room,Improved,1984.0,39.0
+Blk 514 Bukit Batok Street 52,,,560000,https://www.srx.com.sg/listings/99101921/for-sale-bukit-batok-street-52-bukit-batok-street-52,,,,,,,,3,2.0,84.0,4 Room,Simplified,1986.0,37.0
+Blk 460 Choa Chu Kang Avenue 4,,,505000,https://www.srx.com.sg/listings/100114821/for-sale-choa-chu-kang-avenue-4-choa-chu-kang-avenue-4,,,,,,,,4,2.0,123.0,5 Room,Improved,2000.0,23.0
+Blk 166A Teck Whye Crescent,,,505000,https://www.srx.com.sg/listings/100020351/for-sale-teck-whye-crescent-teck-whye-crescent,,,,,,,,2,2.0,68.0,3 Room,Model A,2015.0,8.0
+Blk 301 Tampines Street 32,,,505000,https://www.srx.com.sg/listings/100375231/for-sale-tampines-street-32-tampines-street-32,,,,,,,,4,2.0,125.0,,,,
+Blk 534 Ang Mo Kio Avenue 10,,,368000,https://www.srx.com.sg/listings/100647241/for-sale-ang-mo-kio-avenue-10-ang-mo-kio-avenue-10,,,,,,,,3,2.0,93.0,4 Room,Model A,1980.0,43.0
+Blk 322B Punggol Bayview,,,368000,https://www.srx.com.sg/listings/100404761/for-sale-punggol-bayview-322b-sumang-walk-punggol-bayview-hdb,,,,,,,,3,2.0,93.0,4 Room,Improved,2019.0,4.0
+Blk 204 Tampines Street 21,,,368000,https://www.srx.com.sg/listings/98870871/for-sale-tampines-street-21-tampines-street-21,,,,,,,,2,2.0,68.0,3 Room,Improved,1983.0,40.0
+Blk 475A Parkland Residences,,,650000,https://www.srx.com.sg/listings/99725401/for-sale-parkland-residences-upper-serangoon-crescent,,,,,,,,3,2.0,92.0,4 Room,Model A,2014.0,9.0
+Blk 207 Bukit Batok Street 21,,,650000,https://www.srx.com.sg/listings/100653341/for-sale-bukit-batok-street-21-6-mins-walk-to-mrt-and-mall-corner-4-room-for-sal,,,,,,,,3,2.0,104.0,4 Room,Model A,1983.0,40.0
+Blk 503 Ang Mo Kio Avenue 5,,,650000,https://www.srx.com.sg/listings/100606211/for-sale-ang-mo-kio-avenue-5-ang-mo-kio-avenue-5,,,,,,,,2,2.0,68.0,3 Room,New Generation,1981.0,42.0
+Blk 186B Fengshan Greenville,,,618000,https://www.srx.com.sg/listings/99868881/for-sale-fengshan-greenville-bedok-north-street-4,,,,,,,,3,2.0,93.0,4 Room,Model A,2018.0,5.0
+Blk 228C Compassvale Walk,,,618000,https://www.srx.com.sg/listings/99104811/for-sale-compassvale-walk-compassvale-walk,,,,,,,,3,2.0,121.0,5 Room,Model A,2000.0,23.0
+Blk 9B Tiong Bahru View,,,618000,https://www.srx.com.sg/listings/91618701/for-sale-tiong-bahru-view-boon-tiong-road,,,,,,,,3,2.0,112.0,5 Room,Improved,2016.0,7.0
+Blk 310 Shunfu Gardens,,,380000,https://www.srx.com.sg/listings/100340061/for-sale-shunfu-gardens-shunfu-road,,,,,,,,3,2.0,121.0,5 Room,Improved,1984.0,39.0
+Blk 308C Punggol Walk,,,380000,https://www.srx.com.sg/listings/100614171/for-sale-punggol-walk-punggol-walk,,,,,,,,2,2.0,67.0,,,,
+Blk 220 Serangoon Avenue 4,,,380000,https://www.srx.com.sg/listings/100417071/for-sale-serangoon-avenue-4-unblocked-view,,,,,,,,2,2.0,67.0,3 Room,New Generation,1984.0,39.0
+Blk 308 Hougang Avenue 5,,,358000,https://www.srx.com.sg/listings/100652991/for-sale-hougang-avenue-5-c-h-e-a-p-c-h-e-a-p-c-h-e-a-p-f-u-l-l-y-r-e-n,,,,,,,,3,2.0,93.0,4 Room,Model A,1983.0,40.0
+Blk 662B Edgedale Plains,,,358000,https://www.srx.com.sg/listings/100150051/for-sale-edgedale-plains-edgedale-plains,,,,,,,,2,2.0,68.0,,,,
+Blk 214 Bukit Batok Street 21,,,358000,https://www.srx.com.sg/listings/100538471/for-sale-bukit-batok-street-21-bukit-batok-street-21,,,,,,,,2,1.0,60.0,3 Room,Improved,1984.0,39.0
+Blk 233 Tampines Street 21,,,400000,https://www.srx.com.sg/listings/100597391/for-sale-tampines-street-21-tampines-street-21,,,,,,,,3,2.0,121.0,5 Room,Improved,1985.0,38.0
+Blk 64 Telok Blangah Drive,,,400000,https://www.srx.com.sg/listings/100385521/for-sale-telok-blangah-drive-telok-blangah-drive,,,,,,,,2,2.0,67.0,3 Room,New Generation,1978.0,45.0
+Blk 671 Jalan Damai,,,400000,https://www.srx.com.sg/listings/100596791/for-sale-jalan-damai-jalan-damai,,,,,,,,3,2.0,108.0,4 Room,Model A,1996.0,27.0
+Blk 620 Bedok Reservoir Road,,,478000,https://www.srx.com.sg/listings/100574391/for-sale-bedok-reservoir-road-bedok-reservoir-road,,,,,,,,2,2.0,60.0,3 Room,Improved,1986.0,37.0
+Blk 43 Telok Blangah Rise,,,478000,https://www.srx.com.sg/listings/100558441/for-sale-telok-blangah-rise-471-segar-road,,,,,,,,2,1.0,59.0,3 Room,Simplified,1976.0,47.0
+Blk 291 Tampines Street 22,,,478000,https://www.srx.com.sg/listings/100530651/for-sale-tampines-street-22-no-extension-required-immediate-submission-to-hdb,,,,,,,,2,2.0,73.0,3 Room,Model A,1984.0,39.0
+Blk 291 Tampines Street 22,,,635000,https://www.srx.com.sg/listings/100534931/for-sale-tampines-street-22-tampines-street-22,,,,,,,,2,2.0,73.0,3 Room,Model A,1984.0,39.0
+Blk 196C Punggol Field,,,635000,https://www.srx.com.sg/listings/100511641/for-sale-punggol-field-punggol-field,,,,,,,,3,2.0,110.0,5 Room,Improved,2003.0,20.0
+Blk 638 Hougang Avenue 8,,,635000,https://www.srx.com.sg/listings/99924301/for-sale-hougang-avenue-8-hougang-avenue-8,,,,,,,,4,3.0,154.0,HDB Executive,Maisonette,1987.0,36.0
+Blk 467 Admiralty Drive,,,530000,https://www.srx.com.sg/listings/100565611/for-sale-admiralty-drive-admiralty-drive,,,,,,,,3,2.0,115.0,5 Room,Improved,2001.0,22.0
+Blk 5 Ghim Moh Road,,,530000,https://www.srx.com.sg/listings/99442571/for-sale-ghim-moh-road-new-list-for-sales,,,,,,,,2,1.0,65.0,3 Room,Improved,1976.0,47.0
+Blk 120 Teck Whye Lane,,,530000,https://www.srx.com.sg/listings/99795671/for-sale-teck-whye-lane-teck-whye-lane,,,,,,,,3,3.0,146.0,HDB Executive,Maisonette,1989.0,34.0
+Blk 628 Hougang Avenue 8,,,350000,https://www.srx.com.sg/listings/98898301/for-sale-hougang-avenue-8-rare-corner-mansionette-with-a-million-dollar-unbl,,,,,,,,3,3.0,147.0,HDB Executive,Maisonette,1986.0,37.0
+Blk 589 Woodlands Drive 16,,,350000,https://www.srx.com.sg/listings/100502041/for-sale-woodlands-drive-16-woodlands-drive-16,,,,,,,,4,2.0,131.0,HDB Executive,Apartment,2001.0,22.0
+Blk 201 Boon Lay Drive,,,350000,https://www.srx.com.sg/listings/97197921/for-sale-boon-lay-drive-boon-lay-drive,,,,,,,,3,2.0,122.0,5 Room,Improved,1976.0,47.0
+Blk 20 Joo Seng Road,,,448000,https://www.srx.com.sg/listings/100279721/for-sale-joo-seng-road-rare-maisonette-for-sale,,,,,,,,3+1,3.0,142.0,HDB Executive,Maisonette,1988.0,35.0
+Blk 824 Yishun Street 81,,,448000,https://www.srx.com.sg/listings/100279571/for-sale-yishun-street-81-khatib-masonette-for-sale-quiet-convenient-and-a,,,,,,,,,,146.0,HDB Executive,Maisonette,1987.0,36.0
+Blk 220B Matilda Edge,,,448000,https://www.srx.com.sg/listings/100493521/for-sale-matilda-edge-new-unit-recently-mop,,,,,,,,,,68.0,3 Room,Standard,2018.0,5.0
+Blk 7 Toh Yi Drive,,,588000,https://www.srx.com.sg/listings/100509951/for-sale-toh-yi-drive-toh-yi-drive,,,,,,,,3,3.0,150.0,HDB Executive,Maisonette,1989.0,34.0
+Blk 268C Boon Lay Drive,,,588000,https://www.srx.com.sg/listings/97817371/for-sale-boon-lay-drive-high-floor-corner-unit-facing-greenery-save-on-re,,,,,,,,3,2.0,111.0,5 Room,Improved,2002.0,21.0
+Blk 841 Yishun Street 81,,,588000,https://www.srx.com.sg/listings/100181141/for-sale-yishun-street-81-841-yishun-street-81-nicely-renovated-next-to-co,,,,,,,,3,2.0,104.0,4 Room,Model A,1988.0,35.0
+Blk 226 Lorong 8 Toa Payoh,,,400000,https://www.srx.com.sg/listings/100017781/for-sale-lorong-8-toa-payoh-high-floor-door-to-door-corner-unit-with-3-large-b,,,,,,,,3,2.0,82.0,4 Room,Improved,1976.0,47.0
+Blk 169 Toa Payoh Green,,,400000,https://www.srx.com.sg/listings/100185741/for-sale-toa-payoh-green-no-extension-well-kept-mid-floor-unit-with-2-bedr,,,,,,,,3,2.0,65.0,3 Room,Improved,1972.0,51.0
+Blk 13 Lorong 7 Toa Payoh,,,400000,https://www.srx.com.sg/listings/96791461/for-sale-lorong-7-toa-payoh-rarely-available-ground-floor-unit-with-2-bedrooms,,,,,,,,3,2.0,66.0,3 Room,Improved,1970.0,53.0
+Blk 25B Jalan Membina,,,715000,https://www.srx.com.sg/listings/99406111/for-sale-jalan-membina-jalan-membina,,,,,,,,3,2.0,110.0,5 Room,Improved,2009.0,14.0
+Blk 271C Jurong West Street 24,,,715000,https://www.srx.com.sg/listings/100549491/for-sale-jurong-west-street-24-5rm-premium-apartment-design-and-build,,,,,,,,3,2.0,113.0,5 Room,Improved,2003.0,20.0
+Blk 59 Strathmore Avenue,,,715000,https://www.srx.com.sg/listings/100326721/for-sale-strathmore-avenue-strathmore-avenue,,,,,,,,3,2.0,96.0,4 Room,Model A,2000.0,23.0
+Blk 700C Ang Mo Kio Avenue 6,,,488000,https://www.srx.com.sg/listings/99759021/for-sale-ang-mo-kio-avenue-6-rarely-available-unit-in-the-heart-of-ang-mo-kio,,,,,,,,3,2.0,111.0,5 Room,Improved,2003.0,20.0
+Blk 33 Eunos Crescent,,,488000,https://www.srx.com.sg/listings/100581241/for-sale-eunos-crescent-eunos-crescent,,,,,,,,2,1.0,60.0,3 Room,Model A,2007.0,16.0
+Blk 700A Ang Mo Kio Avenue 6,,,488000,https://www.srx.com.sg/listings/100367171/for-sale-ang-mo-kio-avenue-6-ang-mo-kio-avenue-6,,,,,,,,3,2.0,110.0,5 Room,Improved,2003.0,20.0
+Blk 231 Bukit Batok East Avenue 5,,,665888,https://www.srx.com.sg/listings/100618421/for-sale-bukit-batok-east-avenue-5-bukit-batok-east-avenue-5,,,,,,,,2,2.0,67.0,3 Room,New Generation,1985.0,38.0
+Blk 138A Lake Vista @ Yuan Ching,,,665888,https://www.srx.com.sg/listings/99410821/for-sale-lake-vista-yuan-ching-yuan-ching-road,,,,,,,,3,2.0,105.0,5 Room,Improved,2014.0,9.0
+Blk 210 Yishun Street 21,,,665888,https://www.srx.com.sg/listings/100209281/for-sale-yishun-street-21-yishun-street-21,,,,,,,,2,2.0,67.0,3 Room,New Generation,1985.0,38.0
+Blk 351A Canberra Road,,,480000,https://www.srx.com.sg/listings/98460211/for-sale-canberra-road-across-the-mrt-station-superb-location-5-room-f,,,,,,,,3,2.0,110.0,5 Room,Improved,2001.0,22.0
+Blk 258A Compassvale Road,,,480000,https://www.srx.com.sg/listings/100294131/for-sale-compassvale-road-compassvale-road,,,,,,,,3,2.0,110.0,5 Room,Improved,2001.0,22.0
+Blk 408 Jurong West Street 42,,,480000,https://www.srx.com.sg/listings/100649071/for-sale-jurong-west-street-42-jurong-west-street-42,,,,,,,,3,2.0,108.0,4 Room,Model A,1984.0,39.0
+Blk 158 Tampines Street 12,,,770000,https://www.srx.com.sg/listings/100413291/for-sale-tampines-street-12-tampines-street-12,,,,,,,,3,2.0,92.0,4 Room,New Generation,1984.0,39.0
+Blk 210 Yishun Street 21,,,770000,https://www.srx.com.sg/listings/100170101/for-sale-yishun-street-21-yishun-street-21,,,,,,,,2,2.0,67.0,3 Room,New Generation,1985.0,38.0
+Blk 476A Upper Serangoon View,,,770000,https://www.srx.com.sg/listings/100460531/for-sale-upper-serangoon-view-upper-serangoon-view,,,,,,,,2,2.0,68.0,3 Room,Model A,2016.0,7.0
+Blk 351A Canberra Road,,,540000,https://www.srx.com.sg/listings/98465721/for-sale-canberra-road-canberra-road,,,,,,,,3,2.0,110.0,5 Room,Improved,2001.0,22.0
+Blk 481 Jurong West Street 41,,,540000,https://www.srx.com.sg/listings/100212541/for-sale-jurong-west-street-41-jurong-west-street-41,,,,,,,,2,2.0,66.0,3 Room,New Generation,1985.0,38.0
+Blk 364 Yishun Ring Road,,,540000,https://www.srx.com.sg/listings/100647431/for-sale-yishun-ring-road-yishun-ring-road,,,,,,,,4,3.0,145.0,HDB Executive,Maisonette,1988.0,35.0
+Blk 425 Choa Chu Kang Avenue 4,,,418888,https://www.srx.com.sg/listings/100576751/for-sale-choa-chu-kang-avenue-4-corner-unit-unobstructed-view-upcoming-mrt-at-do,,,,,,,,3,2.0,104.0,4 Room,Model A,1992.0,31.0
+Blk 306B Anchorvale Link,,,418888,https://www.srx.com.sg/listings/100438621/for-sale-anchorvale-link-high-floor-well-maintained-unit-spacious-3-bedro,,,,,,,,4,2.0,128.0,HDB Executive,Apartment,2001.0,22.0
+Blk 521 Jelapang Road,,,418888,https://www.srx.com.sg/listings/100326671/for-sale-jelapang-road-jelapang-road,,,,,,,,3,2.0,144.0,HDB Executive,Apartment,1998.0,25.0
+Blk 459 Segar Road,,,850000,https://www.srx.com.sg/listings/100520251/for-sale-segar-road-segar-road,,,,,,,,2,2.0,68.0,3 Room,Model A,2015.0,8.0
+Blk 948 Jurong West Street 91,,,850000,https://www.srx.com.sg/listings/100579581/for-sale-jurong-west-street-91-jurong-west-street-91,,,,,,,,3,2.0,105.0,4 Room,Model A,1989.0,34.0
+Blk 911 Jurong West Street 91,,,850000,https://www.srx.com.sg/listings/100570251/for-sale-jurong-west-street-91-jurong-west-street-91,,,,,,,,3,2.0,122.0,5 Room,Improved,1989.0,34.0
+Blk 461 Crawford Lane,,,668000,https://www.srx.com.sg/listings/99834291/for-sale-crawford-lane-crawford-lane,,,,,,,,3,2.0,122.0,5 Room,Standard,1981.0,42.0
+Blk 408 Tampines Street 41,,,668000,https://www.srx.com.sg/listings/99962731/for-sale-tampines-street-41-tampines-street-41,,,,,,,,2,1.0,60.0,3 Room,New Generation,1985.0,38.0
+Blk 898A Woodlands Drive 50,,,668000,https://www.srx.com.sg/listings/98817091/for-sale-woodlands-drive-50-woodlands-drive-50,,,,,,,,3,2.0,100.0,4 Room,Model A,1997.0,26.0
+Blk 111 Simei Street 1,,,1400000,https://www.srx.com.sg/listings/100549161/for-sale-simei-street-1-simei-street-1,,,,,,,,4,3.0,146.0,HDB Executive,Maisonette,1987.0,36.0
+Blk 185C Marsiling Greenview,,,1400000,https://www.srx.com.sg/listings/100631531/for-sale-marsiling-greenview-woodlands-street-13,,,,,,,,2,2.0,68.0,3 Room,Model A,2019.0,4.0
+Blk 13 Holland Vista,,,1400000,https://www.srx.com.sg/listings/100358591/for-sale-holland-vista-holland-drive,,,,,,,,2,1.0,65.0,3 Room,Improved,1975.0,48.0
+Blk 561B Spring Haven @ Jurong,,,930000,https://www.srx.com.sg/listings/99636411/for-sale-spring-haven-jurong-fully-renovated-north-south-high-floor-corner,,,,,,,,3,2.0,93.0,4 Room,Model A,2018.0,5.0
+Blk 461D West Rock @ Bukit Batok,,,930000,https://www.srx.com.sg/listings/100650341/for-sale-west-rock-bukit-batok-bukit-batok-west-avenue-8,,,,,,,,3,2.0,114.0,5 Room,Improved,2019.0,4.0
+Blk 514 Serangoon North Avenue 4,,,930000,https://www.srx.com.sg/listings/100481341/for-sale-serangoon-north-avenue-4-serangoon-north-avenue-4,,,,,,,,3,2.0,103.0,4 Room,Model A,1992.0,31.0
+Blk 742 Yishun Avenue 5,,,500000,https://www.srx.com.sg/listings/100644631/for-sale-yishun-avenue-5-yishun-avenue-5,,,,,,,,2,2.0,67.0,3 Room,New Generation,1985.0,38.0
+Blk 98 Bedok North Avenue 4,,,500000,https://www.srx.com.sg/listings/100651561/for-sale-bedok-north-avenue-4-98-bedok-north-avenue-4,,,,,,,,3,2.0,123.0,5 Room,Improved,1978.0,45.0
+Blk 94 Havelock Road,,,500000,https://www.srx.com.sg/listings/98929601/for-sale-havelock-road-havelock-road,,,,,,,,3,2.0,118.0,5 Room,Improved,1983.0,40.0
+Blk 205 Petir Road,,,375000,https://www.srx.com.sg/listings/100598141/for-sale-petir-road-petir-road,,,,,,,,2,2.0,73.0,3 Room,Model A,1988.0,35.0
+Blk 593A Montreal Ville,,,375000,https://www.srx.com.sg/listings/100268361/for-sale-montreal-ville-montreal-link,,,,,,,,3,2.0,93.0,4 Room,Model A,2015.0,8.0
+Blk 58 Circuit Road,,,375000,https://www.srx.com.sg/listings/99892591/for-sale-circuit-road-circuit-road,,,,,,,,2,1.0,56.0,,,,
+Blk 27 Marine Crescent Ville,,,550000,https://www.srx.com.sg/listings/99529201/for-sale-marine-crescent-ville-1-km-to-tao-nan-and-upcoming-mrt,,,,,,,,4,2.0,126.0,5 Room,Simplified,1975.0,48.0
