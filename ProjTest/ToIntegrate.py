@@ -15,7 +15,7 @@ UniversityFilePath = 'ProjTest\\Excel Data\\univeristies.csv'
 MDollarHseFilePath = 'ProjTest\\Excel Data\\MillionDollarHse.csv'
 
 #Add scrapping code here
-UserHseFilePath = 'ProjTest\\Excel Data\\DummyUserAddress.csv'
+UserHseFilePath = 'ProjTest\\Excel Data\\csv_merged_final.csv'
 
 #Amenties Points
 Hospital_ClinicPoint = 5
@@ -27,8 +27,15 @@ ParksPoint = 1
 #Read the CSV File
 #UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
 
-#Convert User Address into coordinates
 #KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+
+UserData = pd.read_csv(UserHseFilePath, header=None)
+UserData.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
+                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
+UserData = UserData.drop(0)
+UserData = UserData.drop(1)
+
+UserData.to_csv(UserHseFilePath, index=False)
 
 #get long and lat from all csv file save into datatable
 FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
@@ -159,7 +166,6 @@ UserHse_TertairyDT = pd.DataFrame(UserHse_TertairyDist)
 
 UserHse_UniDist = KerwinFunction.Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, UniLat_Float, UniLong_Float, 'Uni')
 UserHse_UniDT = pd.DataFrame(UserHse_UniDist)
-
 
 #Filter and get all amenties within 1km radius
 DistanceinKM = 1
@@ -309,7 +315,7 @@ for i in range(len(SplitLat)):
     lat = SplitLat[i]
     long = SplitLong[i]
     for index, row in UserHseDF.iterrows():
-         if lat == row['Lat'] and long == row['Long']:
+        if lat == row['Lat'] and long == row['Long']:
             matched_area = row['Location_Name']
             matched_Link = row['Link']
             matched_USerHseType = row['Location_Type']
@@ -323,6 +329,8 @@ for i in range(len(SplitLat)):
             matched_UserLeases.append(matched_UserLease)
             matched_UserPrices.append(matched_UserPrice)
 
+
+UserHse_Meraged_Points = UserHse_Meraged_Points.reindex(range(len(matched_areas)))
 UserHse_Meraged_Points['Area'] = matched_areas
 UserHse_Meraged_Points['Location_Type'] = matched_USerHseTypes
 UserHse_Meraged_Points['Link'] = matched_Links
@@ -386,8 +394,8 @@ MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points[Sum_Millio
 UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
 #calculate average points
-#MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-MDollar_AveragePoint = 0.10
+MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+#MDollar_AveragePoint = 0.10
 
 print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 

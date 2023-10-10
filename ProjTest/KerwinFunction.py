@@ -37,11 +37,11 @@ def calculate_sqm_points(floor_area_sqm):
     for sqm, points in sqm_points.items():
         if float(floor_area_sqm) >= sqm:  # Convert floor_area_sqm to float
             return points
-    return 1 
+    return 0.01 
 
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = "pk.02ff73880ec7a133cfe62191e54c3bd1"
+    api_key = "pk.ead7fbde295979a6898558976cf28c8b"
 
     coordinatesLong = []
     coordinatesLat = []
@@ -77,6 +77,7 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         if CheckLong > 0 and CheckLat > 0:
                             coordinatesLong.append((longitude))
                             coordinatesLat.append((latitude))
+                            print(url)
                         else:
                             coordinatesLong.append((0))
                             coordinatesLat.append((0))
@@ -87,19 +88,27 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                     print(f"Error: Unable to access the LocationIQ API for address: {address}")
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
+
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
     AddressDataFrame = AddressDataFrame.drop(0)
-    
+
+    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLong)))
+    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLat)))
     AddressDataFrame['Long'] = coordinatesLong
     AddressDataFrame['Lat'] = coordinatesLat
 
     for index, row in AddressDataFrame.iterrows():
+
         if row['Long'] == 0:
             AddressDataFrame.drop(index, inplace=True)
 
+    print(AddressDataFrame)
+
     AddressDataFrame.to_csv(Filepath, index=False)
+
+    
 
 def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
     # Convert latitude and longitude from degrees to radians
