@@ -1,29 +1,27 @@
 import KerwinFunction
 import pandas as pd
+import requests
+import time
 
-MDollarHseFilePath = 'ProjTest\\Excel Data\\MillionDollarHse.csv'
-HistoryFilePath = 'ProjTest\\Excel Data\\HistoryResaleData.csv'
+CSV = 'ProjTest\\Excel Data\\csv_merged_final.csv'
+#Read the CSV File
+UserDF = pd.read_csv(CSV)
 
-#Add scrapping code here
-MDollarHseDT =  pd.read_csv(MDollarHseFilePath)
-MDollarHseDT['Concat_Add'] = MDollarHseDT['Blk_No'] + ' ' + MDollarHseDT['Address']
+Row_Count_Start = len(UserDF)
 
-HistoryHseDT = pd.read_csv(HistoryFilePath)
-HistoryHseDT['Concat_Add'] = HistoryHseDT['block'] + ' ' + HistoryHseDT['street_name']
+print("Row COunt with duplicates: " + str(Row_Count_Start))
 
-#df3 = MDollarHseDT[MDollarHseDT['Concat_Add'].isin(HistoryHseDT['Concat_Add'])]
+UserDF.drop_duplicates(subset='Full Address', keep='first', inplace=True)
 
-#merged_df = pd.merge(MDollarHseDT, HistoryHseDT, left_on='Concat_Add', right_on='Concat_Add', how='inner')
+Row_Count_Drop = len(UserDF)
 
-#df3.drop_duplicates()
+print("Row Count without duplicates: " + str(Row_Count_Drop))
 
-#df3.to_csv('ProjTest\\Excel Data\\TestRun.csv', index=True)
+if Row_Count_Drop > 4500:
+    # If there are more than 100 rows, drop rows beyond the first 100
+    UserDF = UserDF.head(4500)
 
-merged_df = MDollarHseDT.merge(HistoryHseDT, on='Concat_Add')
+Row_Count_MoreDrop = len(UserDF)
 
-MDollarHseDT['remaining_lease'] = merged_df['remaining_lease']
-MDollarHseDT['floor_area_sqm'] = merged_df['floor_area_sqm']
+print("Count of rows after dropping those exceeding 4500 is: " + str(Row_Count_MoreDrop))
 
-merged_df.drop_duplicates()
-MDollarHseDT.to_csv('ProjTest\\Excel Data\\MillionDollarHse.csv', index=True)
-print('done')

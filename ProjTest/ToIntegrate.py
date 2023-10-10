@@ -15,7 +15,7 @@ UniversityFilePath = 'ProjTest\\Excel Data\\univeristies.csv'
 MDollarHseFilePath = 'ProjTest\\Excel Data\\MillionDollarHse.csv'
 
 #Add scrapping code here
-UserHseFilePath = 'ProjTest\\Excel Data\\DummyUserAddress.csv'
+UserHseFilePath = 'ProjTest\\Excel Data\\csv_merged_final.csv'
 
 #Amenties Points
 Hospital_ClinicPoint = 5
@@ -382,8 +382,8 @@ MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points[Sum_Millio
 UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
 #calculate average points
-#MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-MDollar_AveragePoint = 0.10
+MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+#MDollar_AveragePoint = 0.10
 
 print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
