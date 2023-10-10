@@ -13,7 +13,14 @@ import csv
 
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = "pk.02ff73880ec7a133cfe62191e54c3bd1"
+    api_keys = [
+        "pk.02ff73880ec7a133cfe62191e54c3bd1",
+        "pk.d67416f0ccfa0f9ad6ea725c7984a5bf",
+        "pk.ead7fbde295979a6898558976cf28c8b",
+        "pk.206bfbfc88642ed9428cd1bf70f3dc47",
+        "pk.8d21174809834f54f7e9d0b16305de0c"
+    ]
+    api_key_index = 0  # Initialize the API key index to 0
 
     coordinatesLong = []
     coordinatesLat = []
@@ -21,8 +28,10 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
     # Iterate through the addresses and convert them to coordinates
     for address in AddressArray:
+        current_api_key = api_keys[api_key_index]
         # Construct the API request URL
-        url = f"https://us1.locationiq.com/v1/search.php?key={api_key}&q={address}&format=json"
+        url = f"https://us1.locationiq.com/v1/search.php?key={current_api_key}&q={address}&format=json"
+        print(url)
             
         try:
             # Make the API request
@@ -57,6 +66,11 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         print(f"Location not found for address: {address}")
                 else:
                     print(f"Error: Unable to access the LocationIQ API for address: {address}")
+
+                    api_key_index += 1
+                    if api_key_index == len(api_keys):
+                        api_key_index = 0
+                        print("All API keys have been tried for this address.")
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
     AddressDataFrame = pd.read_csv(Filepath, header=None)
@@ -654,9 +668,9 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     merged_df['Percent'] = merged_df['Percent'].apply(lambda x: 100 if x > 100 else x / 2)
 
     #pass the dataframe into a CSV file
-    MDollarHSe_Meraged_Points.to_csv('scripts/algo/Excel/output/FilteredMillionDollarHse.csv', index=True)
-    grouped_Area_HseType.to_csv('scripts/algo/Excel/output/ForPredictionHistory.csv', index=True)
-    merged_df.to_csv('scripts/algo/Excel/output/FilteredUserHse.csv', index=True)
+    MDollarHSe_Meraged_Points.to_csv('scripts/algo/Excel/per/FilteredMillionDollarHse.csv', index=True)
+    grouped_Area_HseType.to_csv('scripts/algo/Excel/per/ForPredictionHistory.csv', index=True)
+    merged_df.to_csv('scripts/algo/Excel/per/FilteredUserHse.csv', index=True)
     print('done')
 
 

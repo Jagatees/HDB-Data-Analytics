@@ -240,10 +240,12 @@ def run_logic():
         user_mrt = request.form['drop_down_mrt']
         user_supermarket = request.form['drop_down_supermarket']
         user_park = request.form['drop_down_parks']
+
         alogone.algo(int(user_hospital), int(user_area), int(user_mrt), int(user_supermarket),int(user_park))
+        
         alogone.predicition_for_percentage()
-        alogone.get_data_from_million_door_file()
-        alogone.calcuator_final_Percentage()
+        # alogone.get_data_from_million_door_file()
+        # alogone.calcuator_final_Percentage()
         return render_template('charts.html')
     
 
@@ -264,4 +266,4 @@ def scrapping():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5009, debug=True)
+    app.run('127.0.0.1', 5000, debug=True)
