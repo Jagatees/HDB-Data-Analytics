@@ -11,16 +11,41 @@ import csv
 
 
 
+lease_points = {
+    89: 0.05,
+    79: 0.04,
+    69: 0.035,
+    59: 0.03,
+    49: 0.025,
+    39: 0.02,
+    29: 0.015,
+    19: 0.01,
+}
+
+sqm_points = {
+    149: 0.05,
+    109: 0.04,
+    90: 0.035,
+    70: 0.025,
+    45: 0.02,
+}
+
+def calculate_lease_points(remaining_lease_str):
+    remaining_lease = int(remaining_lease_str)
+    for years, points in lease_points.items():
+        if remaining_lease >= years:
+            return points
+    return 0.005
+
+def calculate_sqm_points(floor_area_sqm):
+    for sqm, points in sqm_points.items():
+        if float(floor_area_sqm) >= sqm:  # Convert floor_area_sqm to float
+            return points
+    return 0.01
+
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_keys = [
-        "pk.02ff73880ec7a133cfe62191e54c3bd1",
-        "pk.d67416f0ccfa0f9ad6ea725c7984a5bf",
-        "pk.ead7fbde295979a6898558976cf28c8b",
-        "pk.206bfbfc88642ed9428cd1bf70f3dc47",
-        "pk.8d21174809834f54f7e9d0b16305de0c"
-    ]
-    api_key_index = 0  # Initialize the API key index to 0
+    api_key = "pk.ead7fbde295979a6898558976cf28c8b"
 
     coordinatesLong = []
     coordinatesLat = []
@@ -28,10 +53,8 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
     # Iterate through the addresses and convert them to coordinates
     for address in AddressArray:
-        current_api_key = api_keys[api_key_index]
         # Construct the API request URL
-        url = f"https://us1.locationiq.com/v1/search.php?key={current_api_key}&q={address}&format=json"
-        print(url)
+        url = f"https://us1.locationiq.com/v1/search.php?key={api_key}&q={address}&format=json"
             
         try:
             # Make the API request
@@ -58,6 +81,7 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         if CheckLong > 0 and CheckLat > 0:
                             coordinatesLong.append((longitude))
                             coordinatesLat.append((latitude))
+                            print(url)
                         else:
                             coordinatesLong.append((0))
                             coordinatesLat.append((0))
@@ -66,24 +90,25 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         print(f"Location not found for address: {address}")
                 else:
                     print(f"Error: Unable to access the LocationIQ API for address: {address}")
-
-                    api_key_index += 1
-                    if api_key_index == len(api_keys):
-                        api_key_index = 0
-                        print("All API keys have been tried for this address.")
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
+
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
     AddressDataFrame = AddressDataFrame.drop(0)
-    
+
+    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLong)))
+    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLat)))
     AddressDataFrame['Long'] = coordinatesLong
     AddressDataFrame['Lat'] = coordinatesLat
 
     for index, row in AddressDataFrame.iterrows():
+
         if row['Long'] == 0:
             AddressDataFrame.drop(index, inplace=True)
+
+    print(AddressDataFrame)
 
     AddressDataFrame.to_csv(Filepath, index=False)
 
@@ -149,10 +174,18 @@ def GetCoordinatesfromcsv(FilePath):
 
     return CSVLongLat
 
+def GetHistoryfromcsv(FilePath):
+    CSVLongLat = pd.read_csv(FilePath, header=None)
+    CSVLongLat = CSVLongLat[[1, 2, 7, 8, 10, 11]]
+    CSVLongLat.columns = ['Location_Name','Location_Type', 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm']
+    CSVLongLat = CSVLongLat.drop(0)
+
+    return CSVLongLat
+
 def GetUserDatafromcsv(FilePath):
     UserData = pd.read_csv(FilePath, header=None)
-    UserData = UserData[[0, 1, 6, 7, 8]]
-    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'Link']
+    UserData = UserData[[0, 1, 6, 7, 8, 9, 10, 11]]
+    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm','Price', 'Link']
     UserData = UserData.drop(0)
 
     return UserData
@@ -207,6 +240,7 @@ def Preediction(Dataframe, year):
     # Display the prediction results
     print(prediction_df)
 
+   
 '''
     Predicition & Algo
 '''
@@ -295,8 +329,8 @@ def predicition_for_percentage():
 
     print(str(Accuracy_percentage) + "%")
 
-def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
-    #CSV File Paths
+def algo():
+
     FairpriceFilePath = 'scripts/algo/Excel/Amenities/fairprice.csv'
     HospitalFilePath = 'scripts/algo/Excel/Amenities/HospitalClinic.csv'
     MallsFilePath = 'scripts/algo/Excel/Amenities/Malls.csv'
@@ -308,19 +342,29 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     UniversityFilePath = 'scripts/algo/Excel/Amenities/univeristies.csv'
     MDollarHseFilePath = 'scripts/algo/Excel/output/MillionDollarHse.csv'
 
-    #Add scrapping code here
     UserHseFilePath = 'centralized/merger/csv_merged_final.csv'
 
     #Amenties Points
-    Hospital_ClinicPoint = hos
-    SchoolsPoint = school
-    MRTPoint = mrt
-    Supermarket_MallPoint = supermarket
-    ParksPoint = parks
+    Hospital_ClinicPoint = 5
+    SchoolsPoint = 4
+    MRTPoint = 3
+    Supermarket_MallPoint = 2
+    ParksPoint = 1
 
-    UserAddressArray = ReadCSVFile(UserHseFilePath)  
-    GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+    #Read the CSV File
+    # UserAddressArray = ReadCSVFile(UserHseFilePath)
 
+    # GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+
+    # UserData = pd.read_csv(UserHseFilePath, header=None)
+    # UserData.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
+    #                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
+    # UserData = UserData.drop(0)
+    # UserData = UserData.drop(1)
+
+    # UserData.to_csv(UserHseFilePath, index=False)
+
+    # #get long and lat from all csv file save into datatable
     FairpriceDT = GetCoordinatesfromcsv(FairpriceFilePath)
     HospitalDT = GetCoordinatesfromcsv(HospitalFilePath)
     MallsDT = GetCoordinatesfromcsv(MallsFilePath)
@@ -330,13 +374,12 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     SecSchDT = GetCoordinatesfromcsv(SecSchFilePath)
     TertairyDT = GetCoordinatesfromcsv(TertiaryFilePath)
     UniversityDT = GetCoordinatesfromcsv(UniversityFilePath)
-    MDollarHseDT =  GetCoordinatesfromcsv(MDollarHseFilePath)
+    MDollarHseDT =  GetHistoryfromcsv(MDollarHseFilePath)
     UserHseDT = GetUserDatafromcsv(UserHseFilePath)
 
     #Remove all the duplicated values
     MDollarHseDF = MDollarHseDT.drop_duplicates() 
     UserHseDF = UserHseDT.drop_duplicates()
- 
 
     #Retrieve the long and lat and store them indivually into a list
     FairpriceLong = FairpriceDT['Long'].tolist()
@@ -450,7 +493,6 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
 
     UserHse_UniDist = Calculate_Hse_Amenities_Dist(UserHseLat_Float, UserHseLong_Float, UniLat_Float, UniLong_Float, 'Uni')
     UserHse_UniDT = pd.DataFrame(UserHse_UniDist)
-
 
     #Filter and get all amenties within 1km radius
     DistanceinKM = 1
@@ -580,29 +622,20 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     UserHse_Meraged_Points['TertairyPoints'].replace([np.inf, -np.inf, np.nan], 0, inplace=True)
     UserHse_Meraged_Points['UniPoints'].replace([np.inf, -np.inf, np.nan], 0, inplace=True)
 
-    #Calculate the total points starting from the thrid column
-    MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points.iloc[:, 2:].sum(axis=1)
-    UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points.iloc[:, 2:].sum(axis=1)
-
-    #calculate average points
-    MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-
-    print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
-
-    ##Compare all the user address points towards the average points.
-    Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
-
-    #Adding 2 Column into FilteredUserHse.csv
-    UserFilteredCoordinates = Filtered_UserHse['Coordinates'].to_list()
+    #Adding Columns into FilteredUserHse.csv
+    UserFilteredCoordinates = UserHse_Meraged_Points['Coordinates'].to_list()
 
     # Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
     SplitLat = [coord.split(', ')[0] for coord in UserFilteredCoordinates]
     SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
 
-    # Create 2 list to store the matching datas
+    # Create lists to store the matching datas
     matched_areas = []
     matched_Links = []
     matched_USerHseTypes = []
+    matched_UserSQMs = []
+    matched_UserLeases = []
+    matched_UserPrices = []
 
     # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
     for i in range(len(SplitLat)):
@@ -613,15 +646,27 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
                 matched_area = row['Location_Name']
                 matched_Link = row['Link']
                 matched_USerHseType = row['Location_Type']
+                matched_UserSQM = row['floor_area_sqm']
+                matched_UserLease = row['remaining_lease']
+                matched_UserPrice = row['Price']
                 matched_areas.append(matched_area)
                 matched_Links.append(matched_Link)
                 matched_USerHseTypes.append(matched_USerHseType)
+                matched_UserSQMs.append(matched_UserSQM)
+                matched_UserLeases.append(matched_UserLease)
+                matched_UserPrices.append(matched_UserPrice)
 
-    Filtered_UserHse['Area'] = matched_areas
-    Filtered_UserHse['Location_Type'] = matched_USerHseType
-    Filtered_UserHse['Link'] = matched_Links
 
-    #Adding 2 col to FilteredMillionDollarHse.CSV
+    UserHse_Meraged_Points = UserHse_Meraged_Points.reindex(range(len(matched_areas)))
+    UserHse_Meraged_Points['Area'] = matched_areas
+    UserHse_Meraged_Points['Location_Type'] = matched_USerHseTypes
+    UserHse_Meraged_Points['Link'] = matched_Links
+    UserHse_Meraged_Points['floor_area_sqm'] = matched_UserSQMs
+    UserHse_Meraged_Points['remaining_lease'] = matched_UserLeases
+    UserHse_Meraged_Points['Sale_Price'] = matched_UserPrices
+
+
+    #Adding cols to FilteredMillionDollarHse.CSV
     MillionFilteredCoordinates = MDollarHSe_Meraged_Points['Coordinates'].to_list()
 
     # Split the latitude and longitude from the UserFilteredCoordinates list and store them seperately
@@ -631,6 +676,8 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     # Create empty lists to store the matching data
     matched_Millionareas = []
     matched_Milliontypes = []
+    matched_MillionSQMs = []
+    matched_MillionLeases = []
 
     # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Location_Type' Data
     for Mlat, Mlong in zip(SplitMillionLat, SplitMillionLong):
@@ -639,6 +686,9 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
             if Mlat == row['Lat'] and Mlong == row['Long']:
                 matched_Millionareas.append(row['Location_Name'])
                 matched_Milliontypes.append(row['Location_Type'])
+                matched_MillionSQMs.append(row['floor_area_sqm'])
+                matched_MillionLeases.append(row['remaining_lease'])
+
                 match_found = True
                 break  # Exit inner loop once a match is found
 
@@ -649,13 +699,42 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     # Add the new columns to MDollarHSe_Meraged_Points
     MDollarHSe_Meraged_Points['Area'] = matched_Millionareas
     MDollarHSe_Meraged_Points['Location_Type'] = matched_Milliontypes
+    MDollarHSe_Meraged_Points['floor_area_sqm'] = matched_MillionSQMs
+    MDollarHSe_Meraged_Points['remaining_lease'] = matched_MillionLeases
 
 
-    #Take only the last 3 column from FilteredMillionDollarHse.CSV
-    PercentageCalculationDF = MDollarHSe_Meraged_Points.iloc[:, -3:]
+    #calculations of points with ragards to the Lease and SQM.
+    MDollarHSe_Meraged_Points['Lease_Points'] = MDollarHSe_Meraged_Points['remaining_lease'].apply(calculate_lease_points)
+    MDollarHSe_Meraged_Points['SQM_Points'] = MDollarHSe_Meraged_Points['floor_area_sqm'].apply(calculate_sqm_points)
+    UserHse_Meraged_Points['Lease_Points'] = UserHse_Meraged_Points['remaining_lease'].apply(calculate_lease_points)
+    UserHse_Meraged_Points['SQM_Points'] = UserHse_Meraged_Points['floor_area_sqm'].apply(calculate_sqm_points)
+
+    #to specify which col to add up for total point calculations
+    Sum_MillionDollarcolumns = ['FairpricePoints', 'HosPoints', 'MallPoints', 'MRTPoints', 'ParksPoints', 'PriSchPoints', 'SecSchPoints', 
+                                    'TertairyPoints', 'UniPoints', 'Lease_Points', 'SQM_Points']
+
+    Sum_Usercolumns = ['FairpricePoints', 'HosPoints', 'MallPoints', 'MRTPoints', 'ParksPoints', 'PriSchPoints', 'SecSchPoints', 
+                        'TertairyPoints', 'UniPoints', 'Lease_Points', 'SQM_Points']
+
+    #Calculate the total points starting from the thrid column
+    MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points[Sum_MillionDollarcolumns].sum(axis=1)
+    UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
+
+    #calculate average points
+    MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+    #MDollar_AveragePoint = 0.10
+
+    print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
+
+    ##Compare all the user address points towards the average points.
+    Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
+
+
+    #For percentage Calculations
+    PercentageCalculationDF = MDollarHSe_Meraged_Points.copy()
 
     #Calculate the Average of total points based on the Area and Location_Type
-    grouped_Area_HseType = PercentageCalculationDF.groupby(["Area", "Location_Type"])["Total_Points"].mean().reset_index()
+    grouped_Area_HseType = PercentageCalculationDF.groupby(['Area', 'Location_Type'])['Total_Points'].mean().reset_index()
 
     # Merge based on 'Area' and 'Location_Type'
     merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
@@ -667,11 +746,25 @@ def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     merged_df['Percent'] = (merged_df['Total_Points'] / merged_df['History_Avg_Point'] * 100).clip(upper=100)
     merged_df['Percent'] = merged_df['Percent'].apply(lambda x: 100 if x > 100 else x / 2)
 
+    #append 0 for empty fills
+    for index, row in merged_df.iterrows():
+
+        if pd.isna(row['Percent']):
+            merged_df.at[index, 'Percent'] = 0
+
+        if pd.isna(row['History_Avg_Point']):
+            merged_df.at[index, 'History_Avg_Point'] = 0
+
+
+
+
     #pass the dataframe into a CSV file
-    MDollarHSe_Meraged_Points.to_csv('scripts/algo/Excel/per/FilteredMillionDollarHse.csv', index=True)
-    grouped_Area_HseType.to_csv('scripts/algo/Excel/per/ForPredictionHistory.csv', index=True)
-    merged_df.to_csv('scripts/algo/Excel/per/FilteredUserHse.csv', index=True)
-    print('done')
+    MDollarHSe_Meraged_Points.to_csv('scripts/algo/Excel/output/FilteredMillionDollarHse.csv', index=True)
+    grouped_Area_HseType.to_csv('scripts/algo/Excel/output/ForPredictionHistory.csv', index=True)
+    merged_df.to_csv('scripts/algo/Excel/output/FilteredUserHse.csv', index=True)
+
+    print('Done')
+
 
 
 '''
@@ -690,11 +783,8 @@ def get_data_from_million_door_file():
 
 def calcuator_final_Percentage():
     df = pd.read_csv('scripts/algo/Excel/output/UpdatedUserHse.csv')
-    # Calculate the Final_Percentage column
     df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']
 
-    # Check if the Final_Percentage is less than or equal to 100
-    # If it's greater than 100, subtract the excess from Accuracy_Percentage
     excess = df[df['Final_Percentage'] > 100]['Final_Percentage'] - 100
     df.loc[df['Final_Percentage'] > 100, 'Accuracy_Percentage'] -= excess
     df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']

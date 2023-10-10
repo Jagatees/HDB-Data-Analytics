@@ -11,6 +11,7 @@ def clean_co(file_path, output_path):
     # Optionally, reset the index of the DataFrame
     df.reset_index(drop=True, inplace=True)
 
+    # Rename column names
     df.rename(columns={"YearLeft": "Lease_Used", "Room_Type": "Location_Type", "Sqft": "floor_area_sqm"}, inplace=True)
 
     df = df.reindex(columns=['Location_Name','Location_Type', 'Blk_No', 'Address', 'Postal_Code', 'Full Address', 'Long', 'Lat', 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Lease_Used', 'Num_Bed', 'Num_Toilet'])
@@ -82,6 +83,11 @@ def clean_co(file_path, output_path):
         else:
             return value
     df['Location_Name'] = df['Location_Name'].apply(remove_avenue)
+
+    pattern = r'[@#&$%+\-/*]'
+
+    spec_remove = df['Address'].str.contains(pattern)
+    df = df[~spec_remove]
 
     df.to_csv(output_path, index=False)
 

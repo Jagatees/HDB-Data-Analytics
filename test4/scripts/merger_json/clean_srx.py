@@ -1,7 +1,7 @@
 import pandas as pd
 
 def clean_co(file_path, output_path):
-    # Read the CSV file
+        # Read the CSV file
     df = pd.read_csv(file_path)
 
     df = df.drop(['Model','Built'], axis=1)
@@ -54,6 +54,11 @@ def clean_co(file_path, output_path):
     df['Location_Name'] = df['Location_Name'].apply(remove_avenue)
 
     df["Location_Name"] = df["Location_Name"].str.split("@").str[0].str.strip()
+
+    pattern = r'[@#&$%+\-/*]'
+
+    spec_remove = df['Address'].str.contains(pattern)
+    df = df[~spec_remove]
 
     df.to_csv(output_path, index=False)
 
