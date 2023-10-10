@@ -60,7 +60,8 @@ def GetLongLatFromAddress(AddressArray, Filepath):
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
     AddressDataFrame = pd.read_csv(Filepath, header=None)
-    AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+    AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
+                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
     AddressDataFrame = AddressDataFrame.drop(0)
     
     AddressDataFrame['Long'] = coordinatesLong
@@ -109,7 +110,8 @@ def ReadCSVFile(FilePath):
 
     #Read CSV File
     AddressCSV = pd.read_csv(FilePath, header=None)
-    AddressCSV.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat']
+    AddressCSV = AddressCSV[[0, 1, 2, 3, 6, 7]]
+    AddressCSV.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Long', 'Lat']
     AddressCSV = AddressCSV.drop(0)
 
     # Iterate through the DataFrame
@@ -303,6 +305,8 @@ def algo():
     Supermarket_MallPoint = 2
     ParksPoint = 1
 
+    UserAddressArray = ReadCSVFile(UserHseFilePath)  
+    GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
 
     FairpriceDT = GetCoordinatesfromcsv(FairpriceFilePath)
     HospitalDT = GetCoordinatesfromcsv(HospitalFilePath)
