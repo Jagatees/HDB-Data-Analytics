@@ -173,8 +173,8 @@ def GetHistoryfromcsv(FilePath):
 
 def GetUserDatafromcsv(FilePath):
     UserData = pd.read_csv(FilePath, header=None)
-    UserData = UserData[[0, 1, 6, 7, 8, 9, 11]]
-    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm', 'Link']
+    UserData = UserData[[0, 1, 6, 7, 8, 9, 10, 11]]
+    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm','Price', 'Link']
     UserData = UserData.drop(0)
 
     return UserData

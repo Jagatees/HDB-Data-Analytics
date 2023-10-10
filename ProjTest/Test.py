@@ -18,7 +18,7 @@ Row_Count_Drop = len(UserDF)
 print("Row Count without duplicates: " + str(Row_Count_Drop))
 
 if Row_Count_Drop > 4500:
-    # If there are more than 100 rows, drop rows beyond the first 100
+    # If there are more than 4500 rows, drop rows beyond the first 4500
     UserDF = UserDF.head(4500)
 
 Row_Count_MoreDrop = len(UserDF)

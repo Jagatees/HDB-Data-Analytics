@@ -15,7 +15,7 @@ UniversityFilePath = 'ProjTest\\Excel Data\\univeristies.csv'
 MDollarHseFilePath = 'ProjTest\\Excel Data\\MillionDollarHse.csv'
 
 #Add scrapping code here
-UserHseFilePath = 'ProjTest\\Excel Data\\csv_merged_final.csv'
+UserHseFilePath = 'ProjTest\\Excel Data\\DummyUserAddress.csv'
 
 #Amenties Points
 Hospital_ClinicPoint = 5
@@ -25,10 +25,10 @@ Supermarket_MallPoint = 2
 ParksPoint = 1
 
 #Read the CSV File
-UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
+#UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
 
 #Convert User Address into coordinates
-KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+#KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
 
 #get long and lat from all csv file save into datatable
 FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
@@ -302,6 +302,7 @@ matched_Links = []
 matched_USerHseTypes = []
 matched_UserSQMs = []
 matched_UserLeases = []
+matched_UserPrices = []
 
 # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
 for i in range(len(SplitLat)):
@@ -314,17 +315,20 @@ for i in range(len(SplitLat)):
             matched_USerHseType = row['Location_Type']
             matched_UserSQM = row['floor_area_sqm']
             matched_UserLease = row['remaining_lease']
+            matched_UserPrice = row['Price']
             matched_areas.append(matched_area)
             matched_Links.append(matched_Link)
             matched_USerHseTypes.append(matched_USerHseType)
             matched_UserSQMs.append(matched_UserSQM)
             matched_UserLeases.append(matched_UserLease)
+            matched_UserPrices.append(matched_UserPrice)
 
 UserHse_Meraged_Points['Area'] = matched_areas
 UserHse_Meraged_Points['Location_Type'] = matched_USerHseTypes
 UserHse_Meraged_Points['Link'] = matched_Links
 UserHse_Meraged_Points['floor_area_sqm'] = matched_UserSQMs
 UserHse_Meraged_Points['remaining_lease'] = matched_UserLeases
+UserHse_Meraged_Points['Sale_Price'] = matched_UserPrices
 
 
 #Adding cols to FilteredMillionDollarHse.CSV
@@ -382,8 +386,8 @@ MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points[Sum_Millio
 UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
 #calculate average points
-MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-#MDollar_AveragePoint = 0.10
+#MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+MDollar_AveragePoint = 0.10
 
 print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
