@@ -8,15 +8,13 @@ def meger_csv(first_file, second_file, output_file):
         if not os.path.exists("centralized/merger"):
             os.makedirs("centralized/merger")
 
-        # Specify the paths to the two CSV files
-        csv_file1 = first_file
-        csv_file2 = second_file
+            df1 = pd.read_csv(first_file)
+            df2 = pd.read_csv(second_file)
 
-        # Read the CSV files into DataFrames
-        df1 = pd.read_csv(csv_file1)
-        df2 = pd.read_csv(csv_file2)
+            merged_df = pd.concat([df1, df2], ignore_index=True)
+            merged_df.drop_duplicates(subset='Full Address', keep='first', inplace=True)
 
-        # Merge the DataFrames based on a common column (e.g., 'ID')
-        merged_df = pd.concat([df1, df2], ignore_index=True)
-        # Save the merged DataFrame to a new CSV file
-        merged_df.to_csv(output_file, index=False)  # Change the output filename as needed
+            max_rows = 4000
+            merged_df = merged_df.head(max_rows)
+
+            merged_df.to_csv(output_file, index=False)

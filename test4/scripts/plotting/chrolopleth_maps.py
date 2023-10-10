@@ -75,7 +75,7 @@ def generate_plotly_chart(map_style, area, hdb_type):
     zoom_level = 10  # Adjust the zoom level as needed
 
     # Read HDB data
-    hdb_file_path1 = "scripts/algo/Excel/percentage/UpdatedUserHse.csv"
+    hdb_file_path1 = "scripts/algo/Excel/output/UpdatedUserHse.csv"
     df1 = pd.read_csv(hdb_file_path1)
     
     # Split coordinates into latitude and longitude columns
@@ -86,8 +86,7 @@ def generate_plotly_chart(map_style, area, hdb_type):
 
     # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-    area_text = ""
-    hdb_type_text = ""
+   
     
     if area != "All" and hdb_type != "All":
         df1 = df1[(df1['Area'] == area) & (df1['Location_Type'] == hdb_type)]
@@ -101,6 +100,10 @@ def generate_plotly_chart(map_style, area, hdb_type):
         df1 = df1[df1['Location_Type'] == hdb_type]
         area_text = "ALL Area"
         hdb_type_text = hdb_type
+    else:
+        area_text = "start"
+        hdb_type_text = "start"
+
 
 
 

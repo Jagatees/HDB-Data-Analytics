@@ -56,3 +56,5 @@ def clean_co(file_path, output_path):
     df["Location_Name"] = df["Location_Name"].str.split("@").str[0].str.strip()
 
     df.to_csv(output_path, index=False)
+
+

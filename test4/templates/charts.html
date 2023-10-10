@@ -33,46 +33,72 @@
         </div>
         <div class="bottom-container">
             <div class="bottom-container__left">
+
+
                 <!-- Box 1 -->
                 <div class="box spending-box">
                     <div class="header-container">
                         <!-- Title Website Scrapping Selection -->
-                        <h3 class="section-header">HDB Scrapping Section</h3>
-
-                        <form id="myForm_PageCount" action="/display_table" method="POST">
-                            <input type="submit" value="Draw Table" onclick="startLoadingTwo()"/>
-                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
-                            <!-- <label id="demoTwo">
-                                {{ algo_one }}
-                            </label> -->
-                        </form>
-
-                        
-                        <form id="myForm_PageCount" action="/run_logic" method="POST">
-                            <input type="submit" value="Complie Logic" onclick="startLoadingTwo()"/>
-                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
-                            <!-- <label id="demoTwo">
-                                {{ algo_one }}
-                            </label> -->
-                        </form>
-
-
-                        <form id="myForm_PageCount" action="/run_prediction" method="POST">
-                            <input type="submit" value="Run_predicion" onclick="startLoadingEight()"/>
-                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
-                            <!-- <label id="demoTwo">
-                                {{ algo_one }}
-                            </label> -->
-                        </form>
-
+                        <h2> Press Algorithm Button At least Onse Before plotting</h2>
                     </div>
                 </div>
 
                 <div class="box spending-box">
                     <div class="header-container">
-                        <!-- Title Website Scrapping Selection -->
-                        <h3 class="section-header">Map Filter</h3>
+                        <form id="myForm_PageCount" action="/run_logic" method="POST">
+                            <label for="my_dropdown_hospital">Hospital</label>
+                                <select name="my_dropdown_hospital" id="my_dropdown">
+                                    <option value="5" selected>5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                    <option value="2">2</option>
+                                    <option value="1">1</option>
+                                </select>
+       
+                            <label for="drop_down_area">School</label>
+                            <select name="drop_down_area" id="my_dropdown">
+                                <option value="5" >5</option>
+                                <option value="4"selected>4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
 
+                            <label for="drop_down_mrt">MRT</label>
+                            <select name="drop_down_mrt" id="my_dropdown">
+                                <option value="5" >5</option>
+                                <option value="4">4</option>
+                                <option value="3"selected>3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+
+                            <label for="drop_down_supermarket">SuperMarket</label>
+                            <select name="drop_down_supermarket" id="my_dropdown">
+                                <option value="5" >5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2"selected>2</option>
+                                <option value="1">1</option>
+                            </select>
+
+                            <label for="drop_down_parks">Parks</label>
+                            <select name="drop_down_parks" id="my_dropdown">
+                                <option value="5" >5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1"selected>1</option>
+                            </select>
+                            <input type="submit" value="Algorithm"/>
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Draw Map -->
+                <div class="box spending-box">
+                    <div class="header-container">
                         <form id="myForm_PageCount" action="/request_chart" method="POST">
                             <label for="my_dropdown_map">Style</label>
                             <select name="my_dropdown_map" id="my_dropdown">
@@ -123,30 +149,36 @@
                                 <option value="2 ROOM">2 ROOM</option>
                                 <option value="1 ROOM">1 ROOM</option>
                             </select>
-
                             <input type="submit" value="Draw Map"/>
+
+                            {{ plot_div | safe }}
                         </form>
-
-                        
-
-                    
                     </div>
                 </div>
 
-               
+             
 
+                <!-- Draw table -->
                 <div class="box spending-box">
                     <div class="header-container">
                         <h3 class="section-header">Plot 1</h3>
                     </div>
                     <div id="plot1">
+                        <form id="myForm_PageCount" action="/display_table" method="POST">
+                            <input type="submit" value="Draw Table" onclick="startLoadingTwo()"/>
+                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
+                            <!-- <label id="demoTwo">
+                                {{ algo_one }}
+                            </label> -->
+                        </form>
+
                         {{ data | safe }}
+
                     </div>
                 </div>
 
                 
-                {{ plot_div | safe }}
-
+               
             </div>
         </div>
     </main>

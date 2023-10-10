@@ -187,8 +187,8 @@ def formatRSX():
 @app.route('/merger_data', methods=['GET', 'POST'])
 def merger_data():
     if request.method == 'POST':
-        merger_csv.meger_csv('centralized/99co/json/99co_excel.csv', 
-                             'centralized/srx/json/srx_excel.csv',
+        merger_csv.meger_csv('centralized/99co/json/99co_final.csv', 
+                             'centralized/srx/json/srx_final.csv',
                              'centralized/merger/csv_merged_final.csv')
         return render_template('index.html')
 
@@ -234,17 +234,18 @@ def display_table():
 
 @app.route('/run_logic', methods=['GET', 'POST'])
 def run_logic():
-    if request.method == 'POST':
-        alogone.algo()
+    if request.method == 'POST':       
+        user_hospital = request.form['my_dropdown_hospital']
+        user_area = request.form['drop_down_area']
+        user_mrt = request.form['drop_down_mrt']
+        user_supermarket = request.form['drop_down_supermarket']
+        user_park = request.form['drop_down_parks']
+        alogone.algo(int(user_hospital), int(user_area), int(user_mrt), int(user_supermarket),int(user_park))
+        alogone.predicition_for_percentage()
+        alogone.get_data_from_million_door_file()
+        alogone.calcuator_final_Percentage()
         return render_template('charts.html')
     
-@app.route('/run_prediction', methods=['GET', 'POST'])
-def run_prediction():
-    if request.method == 'POST':
-        get_percentage = alogone.predicition_for_percentage()
-        print(get_percentage)
-        return render_template('charts.html')
-
 
 '''
     Nav-Bar
@@ -263,4 +264,4 @@ def scrapping():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5003, debug=True)
+    app.run('127.0.0.1', 5009, debug=True)

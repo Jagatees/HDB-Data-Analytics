@@ -281,8 +281,7 @@ def predicition_for_percentage():
 
     print(str(Accuracy_percentage) + "%")
 
-# Waittinf for kerwin to finish the code to can run this with the new file path place to get data
-def algo():
+def algo(hos = 1, school = 2, mrt = 3, supermarket = 4, parks = 5):
     #CSV File Paths
     FairpriceFilePath = 'scripts/algo/Excel/Amenities/fairprice.csv'
     HospitalFilePath = 'scripts/algo/Excel/Amenities/HospitalClinic.csv'
@@ -296,14 +295,14 @@ def algo():
     MDollarHseFilePath = 'scripts/algo/Excel/output/MillionDollarHse.csv'
 
     #Add scrapping code here
-    UserHseFilePath = 'scripts/algo/Excel/output/DummyUserAddress.csv'
+    UserHseFilePath = 'centralized/merger/csv_merged_final.csv'
 
     #Amenties Points
-    Hospital_ClinicPoint = 5
-    SchoolsPoint = 4
-    MRTPoint = 3
-    Supermarket_MallPoint = 2
-    ParksPoint = 1
+    Hospital_ClinicPoint = hos
+    SchoolsPoint = school
+    MRTPoint = mrt
+    Supermarket_MallPoint = supermarket
+    ParksPoint = parks
 
     UserAddressArray = ReadCSVFile(UserHseFilePath)  
     GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
@@ -323,7 +322,7 @@ def algo():
     #Remove all the duplicated values
     MDollarHseDF = MDollarHseDT.drop_duplicates() 
     UserHseDF = UserHseDT.drop_duplicates()
-
+ 
 
     #Retrieve the long and lat and store them indivually into a list
     FairpriceLong = FairpriceDT['Long'].tolist()
@@ -666,17 +665,17 @@ def algo():
 '''
 
 def get_data_from_million_door_file():
-    df1 = pd.read_csv('Excel/percentage/Cleaned_HistoryData.csv')
-    df2 = pd.read_csv('Excel/percentage/FilteredUserHse.csv')
+    df1 = pd.read_csv('scripts/algo/Excel/output/Cleaned_HistoryData.csv')
+    df2 = pd.read_csv('scripts/algo/Excel/output/FilteredUserHse.csv')
 
 
     # Re write the code here
     accuracy_dict = df1.set_index(['Town', 'Flat_Type'])['Accuracy_Percentage'].to_dict()
     df2['Accuracy_Percentage'] = df2.apply(lambda row: accuracy_dict.get((row['Area'], row['Location_Type']), None), axis=1)
-    df2.to_csv('Excel/percentage/UpdatedUserHse.csv', index=False)    
+    df2.to_csv('scripts/algo/Excel/output/UpdatedUserHse.csv', index=False)    
 
 def calcuator_final_Percentage():
-    df = pd.read_csv('Excel/percentage/UpdatedUserHse.csv')
+    df = pd.read_csv('scripts/algo/Excel/output/UpdatedUserHse.csv')
     # Calculate the Final_Percentage column
     df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']
 
@@ -687,6 +686,6 @@ def calcuator_final_Percentage():
     df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']
 
     # Save the updated DataFrame to a new CSV file
-    df.to_csv('Excel/percentage/UpdatedUserHse.csv', index=False)
+    df.to_csv('scripts/algo/Excel/output/UpdatedUserHse.csv', index=False)
 
 
