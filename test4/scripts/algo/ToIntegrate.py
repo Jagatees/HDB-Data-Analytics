@@ -98,8 +98,6 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
     AddressDataFrame = AddressDataFrame.drop(0)
 
-    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLong)))
-    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLat)))
     AddressDataFrame['Long'] = coordinatesLong
     AddressDataFrame['Lat'] = coordinatesLat
 
@@ -274,7 +272,7 @@ def predicition_for_percentage():
     Predict2023_DF = UniqueGroupValues_sorted.copy()
 
     # Specify the flat types to predict
-    flat_types_to_predict = ["2 ROOM", "3 ROOM", "4 ROOM", "5 ROOM", "EXECUTIVE"]
+    flat_types_to_predict = ["HDB 2 ROOM", "HDB 3 ROOM", "HDB 4 ROOM", "HDB 5 ROOM", "HDB EXECUTIVE"]
 
     # Create a DataFrame to store the prediction results
     prediction_results = []
@@ -352,17 +350,17 @@ def algo():
     ParksPoint = 1
 
     #Read the CSV File
-    # UserAddressArray = ReadCSVFile(UserHseFilePath)
+    UserAddressArray = ReadCSVFile(UserHseFilePath)
 
-    # GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+    GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
 
-    # UserData = pd.read_csv(UserHseFilePath, header=None)
-    # UserData.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
-    #                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
-    # UserData = UserData.drop(0)
-    # UserData = UserData.drop(1)
+    UserData = pd.read_csv(UserHseFilePath, header=None)
+    UserData.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
+                                    'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
+    UserData = UserData.drop(0)
+    UserData = UserData.drop(1)
 
-    # UserData.to_csv(UserHseFilePath, index=False)
+    UserData.to_csv(UserHseFilePath, index=False)
 
     # #get long and lat from all csv file save into datatable
     FairpriceDT = GetCoordinatesfromcsv(FairpriceFilePath)
@@ -379,7 +377,7 @@ def algo():
 
     #Remove all the duplicated values
     MDollarHseDF = MDollarHseDT.drop_duplicates() 
-    UserHseDF = UserHseDT.drop_duplicates()
+    UserHseDF = UserHseDT.drop_duplicates(subset=['Long', 'Lat'], keep = False)
 
     #Retrieve the long and lat and store them indivually into a list
     FairpriceLong = FairpriceDT['Long'].tolist()
@@ -721,8 +719,8 @@ def algo():
     UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
     #calculate average points
-    MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-    #MDollar_AveragePoint = 0.10
+    # MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+    MDollar_AveragePoint = 0.10
 
     print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
@@ -776,7 +774,6 @@ def get_data_from_million_door_file():
     df2 = pd.read_csv('scripts/algo/Excel/output/FilteredUserHse.csv')
 
 
-    # Re write the code here
     accuracy_dict = df1.set_index(['Town', 'Flat_Type'])['Accuracy_Percentage'].to_dict()
     df2['Accuracy_Percentage'] = df2.apply(lambda row: accuracy_dict.get((row['Area'], row['Location_Type']), None), axis=1)
     df2.to_csv('scripts/algo/Excel/output/UpdatedUserHse.csv', index=False)    

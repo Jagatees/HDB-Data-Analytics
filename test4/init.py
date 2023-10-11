@@ -206,8 +206,9 @@ def request_chart():
         selected_option = request.form['my_dropdown_map']
         selected_option_area = request.form['drop_down_area']
         selected_option_type = request.form['drop_down_room_type']
-        plot_div = mapsone.generate_plotly_chart(
-            mapbox_styles[int(selected_option)], selected_option_area, selected_option_type)
+        # plot_div = mapsone.generate_plotly_chart(
+        #     mapbox_styles[int(selected_option)], selected_option_area, selected_option_type)
+        plot_div = mapsone.plot_simple_map()
         return render_template('charts.html', plot_div=plot_div)
 
 
@@ -242,9 +243,9 @@ def run_logic():
         user_park = request.form['drop_down_parks']
 
         alogone.algo()
-        alogone.predicition_for_percentage()
-        alogone.get_data_from_million_door_file()
-        alogone.calcuator_final_Percentage()
+        # alogone.predicition_for_percentage()
+        # alogone.get_data_from_million_door_file()
+        # alogone.calcuator_final_Percentage()
         return render_template('charts.html')
     
 
@@ -265,4 +266,4 @@ def scrapping():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5022, debug=True)
+    app.run('127.0.0.1', 5023, debug=True)
