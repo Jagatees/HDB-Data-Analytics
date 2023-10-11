@@ -94,8 +94,6 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
     AddressDataFrame = AddressDataFrame.drop(0)
 
-    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLong)))
-    AddressDataFrame = AddressDataFrame.reindex(range(len(coordinatesLat)))
     AddressDataFrame['Long'] = coordinatesLong
     AddressDataFrame['Lat'] = coordinatesLat
 
