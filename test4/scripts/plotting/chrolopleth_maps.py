@@ -70,6 +70,9 @@ Description: Plot the Map, Return Map
 '''
 
 def generate_plotly_chart(map_style, area, hdb_type):
+
+    found_query_states = "Found Match"
+    return_list = []
     center_lat = 1.3521  # Replace with your desired latitude
     center_lon = 103.8198  # Replace with your desired longitude
     zoom_level = 10  # Adjust the zoom level as needed
@@ -95,26 +98,14 @@ def generate_plotly_chart(map_style, area, hdb_type):
         df1 = df1[df1['Location_Type'] == hdb_type]
     elif area != "All" and hdb_type != "All":
         df1 = df1[(df1['Area'] == area) & (df1['Location_Type'] == hdb_type)]
-   
-    # area_text = "All Area"  # Default value
-    # hdb_type_text = "All type"  # Default value
 
-    # if area != "All" and hdb_type != "All":
+
+    print(df1)
+    if df1.empty:
+        print("No matching data found.")
+        found_query_states = 'No Match'
         
-    #     area_text = "All Area"
-    #     hdb_type_text = "& type"
-    # elif area != "All" and hdb_type == "All":
-    #     df1 = df1[df1['Area'] == area]
-    #     area_text = area
-    #     hdb_type_text = "All type"
-    # elif area == "All" and hdb_type != "All":
-    #     df1 = df1[df1['Location_Type'] == hdb_type]
-    #     area_text = "ALL Area"
-    #     hdb_type_text = hdb_type
-
-
-
-
+   
 
 
     text_to_display = (
@@ -169,7 +160,10 @@ def generate_plotly_chart(map_style, area, hdb_type):
     
     plot_div = fig.to_html(full_html=False)
 
-    return plot_div
+    return_list.append(plot_div)
+    return_list.append(found_query_states)
+
+    return return_list
 
 
 def plot_simple_map():

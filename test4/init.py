@@ -208,8 +208,7 @@ def request_chart():
         selected_option_type = request.form['drop_down_room_type']
         plot_div = mapsone.generate_plotly_chart(
             mapbox_styles[int(selected_option)], selected_option_area, selected_option_type)
-        # plot_div = mapsone.plot_simple_map()
-        return render_template('charts.html', plot_div=plot_div)
+        return render_template('charts.html', plot_div=plot_div[0], map_query = plot_div[1])
 
 
 '''
@@ -243,10 +242,10 @@ def run_logic():
         user_park = request.form['drop_down_parks']
 
         alogone.algo()
-        # alogone.predicition_for_percentage()
+        alogone.predicition_for_percentage()
         # alogone.get_data_from_million_door_file()
         # alogone.calcuator_final_Percentage()
-        return render_template('charts.html')
+        return render_template('charts.html' )
     
 
 '''
