@@ -78,7 +78,7 @@ def generate_plotly_chart(map_style, area, hdb_type):
     zoom_level = 10  # Adjust the zoom level as needed
 
     # Read HDB data
-    hdb_file_path1 = "scripts/algo/Excel/output/FilteredUserHse.csv"
+    hdb_file_path1 = "scripts/algo/Excel/output/UpdatedUserHse.csv"
     df1 = pd.read_csv(hdb_file_path1)
     
     # Split coordinates into latitude and longitude columns
@@ -106,11 +106,10 @@ def generate_plotly_chart(map_style, area, hdb_type):
         found_query_states = 'No Match'
         
    
-
-
     text_to_display = (
         "Area: " + df1['Area'].astype(str) + "<br>" +
-        "Location_Type: " + df1['Location_Type'].astype(str)
+        "Location_Type: " + df1['Location_Type'].astype(str) + "<br>" +
+        "Percetage: " + df1['NewPercentage'].astype(str)
     )
 
     # Create traces for 4-room and 5-room HDB
@@ -166,51 +165,3 @@ def generate_plotly_chart(map_style, area, hdb_type):
     return return_list
 
 
-def plot_simple_map():
-    # Read the CSV file
-    df = pd.read_csv('scripts/algo/Excel/output/FilteredUserHse.csv')
-
-     # Split coordinates into latitude and longitude columns
-    df[['Latitude', 'Longitude']] = df['Coordinates'].str.split(
-        ', ', expand=True)
-    
-    text_to_display = (
-        "Area: " + df['Area'].astype(str) + "<br>" +
-        "Location_Type: " + df['Location_Type'].astype(str)
-    )
-
-    # Create a scattermapbox trace
-    trace = go.Scattermapbox(
-        lat=df['Latitude'],
-        lon=df['Longitude'],
-        mode='markers',
-        marker=go.scattermapbox.Marker(
-            size=15,
-            color='#FFFF00',
-        ),
-        text = text_to_display
-    )
-     
-
-    # Create the figure
-    fig = go.Figure(data=[trace])
-
-    center_lat = 1.3521  # Replace with your desired latitude
-    center_lon = 103.8198  # Replace with your desired longitude
-    zoom_level = 10  # Adjust the zoom level as needed
-
-    # Update the layout of the map
-    fig.update_layout(
-        mapbox_style="open-street-map",
-        mapbox_center={"lat": center_lat, "lon": center_lon},
-        mapbox_zoom=zoom_level,
-        height=720,
-        width=980,
-        title_text="Simple Map",
-        title_x=0.5
-    )
-
-    # Get the HTML representation of the map
-    plot_div = fig.to_html(full_html=False)
-
-    return plot_div

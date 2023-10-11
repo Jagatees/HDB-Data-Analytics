@@ -23,7 +23,7 @@ import scripts.merger_json.merger as merger_csv
 # Importing custom map plottinh functions from 'scripts.maplayput' module
 import scripts.plotting.chrolopleth_maps as mapsone
 # Importing Table Plotting functions from 'scripts.map_layout' module
-import scripts.plotting.table as table_d
+import scripts.plotting.different_plot as table_d
 
 
 # Create a Flask web application instance and set a secret key for session security
@@ -243,9 +243,28 @@ def run_logic():
 
         alogone.algo()
         alogone.predicition_for_percentage()
-        # alogone.get_data_from_million_door_file()
-        # alogone.calcuator_final_Percentage()
+        alogone.get_data_from_million_door_file()
         return render_template('charts.html' )
+    
+
+'''
+    Route : /which_chart
+    Description : Chose which chart to plot
+    Methods : GET & POST
+'''
+
+
+@app.route('/which_chart', methods=['GET', 'POST'])
+def which_chart():
+    if request.method == 'POST':       
+        userchoice = request.form['my_dropdown_plot']
+
+        if userchoice == "0":
+            data = table_d.display_table()
+        elif userchoice == "1":
+            data = table_d.display_table()
+
+        return render_template('charts.html', data = data)
     
 
 '''

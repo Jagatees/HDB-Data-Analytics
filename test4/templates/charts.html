@@ -149,36 +149,34 @@
                                 <option value="HDB 2 Room">2 Room</option>
                                 <option value="HDB 1 Room">1 Room</option>
                             </select>
-                            <input type="submit" value="Draw Map"/>
 
                             {{ map_query }}
+
+                            <input type="submit" value="Draw Map"/>
+
+                           
 
                             {{ plot_div | safe }}
                         </form>
                     </div>
                 </div>
 
-             
-
-                <!-- Draw table -->
+                <!-- Draw Map -->
                 <div class="box spending-box">
                     <div class="header-container">
-                        <h3 class="section-header">Plot 1</h3>
-                    </div>
-                    <div id="plot1">
-                        <form id="myForm_PageCount" action="/display_table" method="POST">
-                            <input type="submit" value="Draw Table" onclick="startLoadingTwo()"/>
-                            <!-- <div id="loadingCircleTwo" class="loading"></div> -->
-                            <!-- <label id="demoTwo">
-                                {{ algo_one }}
-                            </label> -->
+                        <form id="myForm_PageCount" action="/which_chart" method="POST">
+                            <label for="my_dropdown_plot">Plot Anaylsia</label>
+                            <select name="my_dropdown_plot" id="my_dropdown">
+                                <option value="0">Table One</option>
+                                <option value="1">HeatMap</option>
+                            </select>
+                          
+                            <input type="submit" value="Plot"/>
                         </form>
-
-                        {{ data | safe }}
-
                     </div>
                 </div>
 
+                {{ data | safe }}
                 
                
             </div>

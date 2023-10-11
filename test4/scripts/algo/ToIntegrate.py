@@ -780,23 +780,27 @@ def algo():
 '''
 
 def get_data_from_million_door_file():
-    df1 = pd.read_csv('scripts/algo/Excel/output/Cleaned_HistoryData.csv')
-    df2 = pd.read_csv('scripts/algo/Excel/output/FilteredUserHse.csv')
+    cleaned_data = pd.read_csv('scripts/algo/Excel/output/Cleaned_HistoryData.csv')
+    filtered_data = pd.read_csv('scripts/algo/Excel/output/FilteredUserHse.csv')
 
+    # Initialize the 'New_Percent' column with the 'Percent' values
+    filtered_data['NewPercentage'] = filtered_data['Percent']
+    # Iterate through rows in cleaned_data
+    for index, row in cleaned_data.iterrows():
+        town = row['Town'].lower()  # Convert to lowercase
+        flat_type = row['Flat_Type'].lower()  # Convert to lowercase
+        accuracy_percentage = row['Accuracy_Percentage']
 
-    accuracy_dict = df1.set_index(['Town', 'Flat_Type'])['Accuracy_Percentage'].to_dict()
-    df2['Accuracy_Percentage'] = df2.apply(lambda row: accuracy_dict.get((row['Area'], row['Location_Type']), None), axis=1)
-    df2.to_csv('scripts/algo/Excel/output/UpdatedUserHse.csv', index=False)    
+        # Find matching row in filtered_data based on 'Town' and 'Flat_Type', ignoring case
+        matching_rows = filtered_data[
+            (filtered_data['Area'].str.lower() == town) & (filtered_data['Location_Type'].str.lower() == flat_type)]
 
-def calcuator_final_Percentage():
-    df = pd.read_csv('scripts/algo/Excel/output/UpdatedUserHse.csv')
-    df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']
+        for matching_index in matching_rows.index:
+            # Calculate 'NewPercentage' by adding 'Accuracy_Percentage' divided by 2
+            filtered_data.loc[matching_index, 'NewPercentage'] = filtered_data.loc[matching_index, 'Percent'] + accuracy_percentage / 2
 
-    excess = df[df['Final_Percentage'] > 100]['Final_Percentage'] - 100
-    df.loc[df['Final_Percentage'] > 100, 'Accuracy_Percentage'] -= excess
-    df['Final_Percentage'] = df['Percent'] + df['Accuracy_Percentage']
-
-    # Save the updated DataFrame to a new CSV file
-    df.to_csv('scripts/algo/Excel/output/UpdatedUserHse.csv', index=False)
+    # Save the updated data to a new CSV file
+    savefilepath = 'scripts/algo/Excel/output/UpdatedUserHse.csv' #Change as needed
+    filtered_data.to_csv(savefilepath, index=False)
 
 
