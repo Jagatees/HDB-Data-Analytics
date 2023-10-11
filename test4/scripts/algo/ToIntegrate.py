@@ -86,7 +86,7 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         if CheckLong > 0 and CheckLat > 0:
                             coordinatesLong.append((longitude))
                             coordinatesLat.append((latitude))
-                            print(url)
+                            print(".")
                         else:
                             coordinatesLong.append((0))
                             coordinatesLat.append((0))
