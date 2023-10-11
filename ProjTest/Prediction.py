@@ -32,8 +32,10 @@ Actual2023DF = UniqueGroupValues_sorted[UniqueGroupValues_sorted['Year'] == 2023
 
 Predict2023_DF = UniqueGroupValues_sorted.copy()
 
+print(Predict2023_DF)
+
 # Specify the flat types to predict
-flat_types_to_predict = ["2 ROOM", "3 ROOM", "4 ROOM", "5 ROOM", "EXECUTIVE"]
+flat_types_to_predict = ["HDB 2 ROOM", "HDB 3 ROOM", "HDB 4 ROOM", "HDB 5 ROOM", "HDB EXECUTIVE"]
 
 # Create a DataFrame to store the prediction results
 prediction_results = []

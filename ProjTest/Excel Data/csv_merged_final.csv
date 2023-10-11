@@ -1,20 +1,4 @@
 Location_Name,Location_Type,Blk_No,Address,Postal_Code,Full_Address,Long,Lat,floor_area_sqm,remaining_lease,Price,Link,Leased_Used,Num_Bed,Num_Toilet
-Ang Mo Kio,HDB 3 Room,345,Ang Mo Kio Avenue 3,,345 Ang Mo Kio Avenue 3,103.69474520353214,1.3449643999999998,73,54,490000,https://www.99.co/singapore/sale/property/345-ang-mo-kio-avenue-3-hdb-XU4bgEYz7rfko9XjJQUop6,45,2,2
-Jurong West,HDB Executive,831,Jurong West Street 81,,831 Jurong West Street 81,103.83209517491406,1.4504511,145,69,768000,https://www.99.co/singapore/sale/property/831-jurong-west-street-81-hdb-3aCQDcnauca9F9JJH7F2k3,30,4,2
-Canberra,HDB 3 Room,104A,Canberra Street,,104A Canberra Street,103.7724303,1.3871612,67,94,458000,https://www.99.co/singapore/sale/property/104a-canberra-street-hdb-QwfHcHM9QMPGAHo72xnMbb,5,2,2
-Segar,HDB 5 Room,481,Segar Road,,481 Segar Road,103.74122046968948,1.35200965,109,78,525000,https://www.99.co/singapore/sale/property/481-segar-road-hdb-7cyTaxVSLnf4yPu99NmqrW,21,3,2
-Bukit Batok West,HDB 4 Room,449B,Bukit Batok West Avenue 9,,449B Bukit Batok West Avenue 9,103.9449039,1.3578346,92,95,580000,https://www.99.co/singapore/sale/property/449b-bukit-batok-west-avenue-9-hdb-28GHdjVWyAjQuzaKQQozVG,4,3,2
-Tampines,HDB 2 Bed,405,Tampines,,405 Tamp,103.69578853719722,1.3362063000000002,59,61,399000,https://www.99.co/singapore/sale/property/405-tampines-street-41-hdb-VuLr2vhqzEhKKZB7j9sANn,38,2,2
-Jurong West,HDB 5 Room,988B,Jurong West Street 93,,988B Jurong West Street 93,103.93872908541844,1.3504382000000001,109,84,650000,https://www.99.co/singapore/sale/property/988b-jurong-west-street-93-hdb-aK8dm7NxVWWPmmA6DPm4og,15,3,2
-Tampines,HDB 4 Room,908,Tampines,,908 Tamp,103.95352502116896,1.35468965,103,59,615000,https://www.99.co/singapore/sale/property/908-tampines-avenue-4-hdb-GeqUYtta9XdQZEkUZcouuG,40,3,2
-Tampines,HDB 3 Room,214,Tampines,,214 Tamp,103.72191338742039,1.32674395,66,61,450000,https://www.99.co/singapore/sale/property/214-tampines-street-23-hdb-BeyvvDHKuSZ6nzLLN4put7,38,2,2
-Corporation,HDB 1 Bed,150A,Corporation Drive,,150A Corporation Drive,103.7494054077894,1.3462442000000001,37,94,358000,https://www.99.co/singapore/sale/property/150a-corporation-drive-hdb-ghZ2cL8oAoSrCmsFjJCuEQ,5,1Bed,1
-Bukit Batok,HDB 3 Bed,207,Bukit Batok Street 21,,207 Bukit Batok Street 21,103.83848947021875,1.3785227500000001,103,59,540000,https://www.99.co/singapore/sale/property/207-bukit-batok-street-21-hdb-VFMoDqigCntuYePnPDGCJr,40,3,2
-Ang Mo Kio,HDB 4 Room,619,Ang Mo Kio Avenue 4,,619 Ang Mo Kio Avenue 4,103.8338372238754,1.36895025,107,72,690000,https://www.99.co/singapore/sale/property/619-ang-mo-kio-avenue-4-hdb-gUHBxo8nUycSCiCBsBh3iM,27,3,2
-Ang Mo Kio,HDB 5 Room,260B,Ang Mo Kio Street 21,,260B Ang Mo Kio Street 21,103.7845391372372,1.43323285,112,94,1188888,https://www.99.co/singapore/sale/property/260b-ang-mo-kio-street-21-hdb-9ZwxAjeJGRZ4aTujzJziT9,5,3,2
-Woodlands,HDB 4 Room,357,Woodlands Avenue 5,,357 Woodlands Avenue 5,103.7933269,1.4443687,143,72,900000,https://www.99.co/singapore/sale/property/357-woodlands-avenue-5-hdb-VrZoPvp6Haca6bnrQ4igGa,27,4,3
-Woodlands,HDB Executive,849,Woodlands Street 82,,849 Woodlands Street 82,103.94176813148232,1.34779425,178,71,1050000,https://www.99.co/singapore/sale/property/849-woodlands-street-82-hdb-ddiZjFqmnfYUqJZyHHnjbe,28,6,2
-Tampines,HDB Executive,938,Tampines,,938 Tamp,103.7994296,1.4458254,146,64,898000,https://www.99.co/singapore/sale/property/938-tampines-avenue-5-hdb-djwA9jiViEk2KAwxQEtLRg,35,4,3
 Woodlands,HDB 3 Bed,693B,Woodlands Avenue 6,,693B Woodlands Avenue 6,103.93280765177364,1.3593575,91,94,610000,https://www.99.co/singapore/sale/property/693b-woodlands-avenue-6-hdb-YtRc9d8YZ5fkngLfGKEcfw,5,3,2
 Tampines,HDB Executive,740,Tampines,,740 Tamp,103.91188732693576,1.3235764,140,73,840000,https://www.99.co/singapore/sale/property/740-tampines-street-72-hdb-4hD5UCp5Znr4wRePkNgPHq,26,4,2
 Lengkong Tiga,HDB 4 Room,113,Lengkong Tiga,,113 Lengkong Tiga,103.9626695157531,1.3557844000000001,108,65,728000,https://www.99.co/singapore/sale/property/113-lengkong-tiga-hdb-7KirkfA2P5wpwCJqhH3XMb,34,3,2

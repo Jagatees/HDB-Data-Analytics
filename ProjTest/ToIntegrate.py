@@ -52,7 +52,8 @@ UserHseDT = KerwinFunction.GetUserDatafromcsv(UserHseFilePath)
 
 #Remove all the duplicated values
 MDollarHseDF = MDollarHseDT.drop_duplicates() 
-UserHseDF = UserHseDT.drop_duplicates()
+UserHseDF = UserHseDT.drop_duplicates(subset=['Long', 'Lat'], keep=False)
+print(len(UserHseDF))
 
 #Retrieve the long and lat and store them indivually into a list
 FairpriceLong = FairpriceDT['Long'].tolist()
@@ -302,6 +303,8 @@ UserFilteredCoordinates = UserHse_Meraged_Points['Coordinates'].to_list()
 SplitLat = [coord.split(', ')[0] for coord in UserFilteredCoordinates]
 SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
 
+print(len(SplitLat))
+
 # Create lists to store the matching datas
 matched_areas = []
 matched_Links = []
@@ -309,6 +312,7 @@ matched_USerHseTypes = []
 matched_UserSQMs = []
 matched_UserLeases = []
 matched_UserPrices = []
+count = 0
 
 # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
 for i in range(len(SplitLat)):
@@ -316,6 +320,7 @@ for i in range(len(SplitLat)):
     long = SplitLong[i]
     for index, row in UserHseDF.iterrows():
         if lat == row['Lat'] and long == row['Long']:
+
             matched_area = row['Location_Name']
             matched_Link = row['Link']
             matched_USerHseType = row['Location_Type']
@@ -329,8 +334,7 @@ for i in range(len(SplitLat)):
             matched_UserLeases.append(matched_UserLease)
             matched_UserPrices.append(matched_UserPrice)
 
-
-UserHse_Meraged_Points = UserHse_Meraged_Points.reindex(range(len(matched_areas)))
+#UserHse_Meraged_Points = UserHse_Meraged_Points.reindex(range(len(matched_areas)))
 UserHse_Meraged_Points['Area'] = matched_areas
 UserHse_Meraged_Points['Location_Type'] = matched_USerHseTypes
 UserHse_Meraged_Points['Link'] = matched_Links
@@ -338,6 +342,7 @@ UserHse_Meraged_Points['floor_area_sqm'] = matched_UserSQMs
 UserHse_Meraged_Points['remaining_lease'] = matched_UserLeases
 UserHse_Meraged_Points['Sale_Price'] = matched_UserPrices
 
+UserHse_Meraged_Points.to_csv('ProjTest\\Excel Data\\TestOutput.csv', index=True)
 
 #Adding cols to FilteredMillionDollarHse.CSV
 MillionFilteredCoordinates = MDollarHSe_Meraged_Points['Coordinates'].to_list()
@@ -394,8 +399,8 @@ MDollarHSe_Meraged_Points['Total_Points'] = MDollarHSe_Meraged_Points[Sum_Millio
 UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
 #calculate average points
-MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-#MDollar_AveragePoint = 0.10
+#MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+MDollar_AveragePoint = 0.10
 
 print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
@@ -427,6 +432,8 @@ for index, row in merged_df.iterrows():
 
     if pd.isna(row['History_Avg_Point']):
         merged_df.at[index, 'History_Avg_Point'] = 0
+
+
 
 #pass the dataframe into a CSV file
 MDollarHSe_Meraged_Points.to_csv('ProjTest\\Excel Data\\FilteredMillionDollarHse.csv', index=True)
