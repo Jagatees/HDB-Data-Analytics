@@ -244,6 +244,7 @@ def run_logic():
         alogone.algo()
         alogone.predicition_for_percentage()
         alogone.get_data_from_million_door_file()
+        alogone.profit()
         return render_template('charts.html' )
     
 

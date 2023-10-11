@@ -16,6 +16,8 @@ def clean_co(file_path, output_path):
 
     df = df.reindex(columns=['Location_Name','Location_Type', 'Blk_No', 'Address', 'Postal_Code', 'Full Address', 'Long', 'Lat', 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Lease_Used', 'Num_Bed', 'Num_Toilet'])
 
+    df = df[~df['Full Address'].str.contains('140A Yung Ho Spring I')]
+
     def calculate_remain_lease(value):
         leftover = 99 - int(value)
         return leftover

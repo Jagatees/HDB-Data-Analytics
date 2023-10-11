@@ -1,7 +1,7 @@
 import pandas as pd
 
 def clean_co(file_path, output_path):
-        # Read the CSV file
+    # Read the CSV file
     df = pd.read_csv(file_path)
 
     df = df.drop(['Model','Built'], axis=1)
@@ -36,6 +36,8 @@ def clean_co(file_path, output_path):
 
     df = df.reindex(columns=['Location_Name','Location_Type', 'Blk_No', 'Address', 'Postal_Code', 'Full Address', 'Long', 'Lat', 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Lease_Used', 'Num_Bed', 'Num_Toilet'])
 
+    df = df[~df['Full Address'].str.contains('140A Yung Ho Spring I')]
+
     df["Location_Name"] = df['Address']
 
     def remove_avenue(value):
@@ -61,5 +63,4 @@ def clean_co(file_path, output_path):
     df = df[~spec_remove]
 
     df.to_csv(output_path, index=False)
-
 

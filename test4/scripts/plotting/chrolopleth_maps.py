@@ -69,6 +69,9 @@ def room_type(room_type, title, color):
 Description: Plot the Map, Return Map
 '''
 
+def format_profit(profit):
+    return "${:.2f}".format(profit)
+
 def generate_plotly_chart(map_style, area, hdb_type):
 
     found_query_states = "Found Match"
@@ -109,7 +112,8 @@ def generate_plotly_chart(map_style, area, hdb_type):
     text_to_display = (
         "Area: " + df1['Area'].astype(str) + "<br>" +
         "Location_Type: " + df1['Location_Type'].astype(str) + "<br>" +
-        "Percetage: " + df1['NewPercentage'].astype(str)
+        "Percetage: " + df1['NewPercentage'].astype(str) + "<br>" +
+        "Profit: " + df1['Profit'].apply(format_profit).astype(str)
     )
 
     # Create traces for 4-room and 5-room HDB

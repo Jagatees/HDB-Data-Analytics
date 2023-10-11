@@ -804,3 +804,29 @@ def get_data_from_million_door_file():
     filtered_data.to_csv(savefilepath, index=False)
 
 
+def profit():
+    df_H = pd.read_csv('scripts/algo/Excel/output/Cleaned_HistoryData.csv')
+    df_U = pd.read_csv('scripts/algo/Excel/output/UpdatedUserHse.csv')
+
+    profit_list = [] #empty profit list
+
+    for i in range(len(df_U)): #loop through user HDBs
+        found = False
+        for x in range(len(df_H)): #Loop through History HDBs
+            if df_U['Area'][i].lower() == df_H['Town'][x].lower() and df_U["Location_Type"][i].lower() == df_H["Flat_Type"][x].lower(): #Find those in same area and house type
+                #print (df_U['Area'][i])
+                profit = df_H['Predicted_Price'][x] - df_U['Sale_Price'][i] #find profit
+                profit_list.append(round(profit,2)) #add to profit list
+                found = True #say you found something
+        if not found: #if didnt find match for this HDB then put profit as 0
+            profit_list.append(0)
+
+    #print (profit_list)
+
+    df_U['Profit'] = profit_list #Add to data frame
+
+    #print(df_U.head())
+
+    df_U.to_csv("scripts/algo/Excel/output/UpdatedUserHse.csv", index=False) #turn data frame to csv
+
+
