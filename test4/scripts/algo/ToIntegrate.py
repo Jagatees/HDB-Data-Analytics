@@ -45,16 +45,21 @@ def calculate_sqm_points(floor_area_sqm):
 
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = "pk.ead7fbde295979a6898558976cf28c8b"
+    api_key = ["pk.ead7fbde295979a6898558976cf28c8b",
+               "pk.d67416f0ccfa0f9ad6ea725c7984a5bf",
+               "pk.206bfbfc88642ed9428cd1bf70f3dc47",
+               "pk.02ff73880ec7a133cfe62191e54c3bd1",
+               ]
 
     coordinatesLong = []
     coordinatesLat = []
     #Coordinates = ""
+    api_key_index = 0
 
     # Iterate through the addresses and convert them to coordinates
     for address in AddressArray:
         # Construct the API request URL
-        url = f"https://us1.locationiq.com/v1/search.php?key={api_key}&q={address}&format=json"
+        url = f"https://us1.locationiq.com/v1/search.php?key={api_key[api_key_index]}&q={address}&format=json"
             
         try:
             # Make the API request
@@ -90,6 +95,11 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         print(f"Location not found for address: {address}")
                 else:
                     print(f"Error: Unable to access the LocationIQ API for address: {address}")
+
+                    api_key_index += 1
+                    if api_key_index == len(api_key):
+                        api_key_index = 0
+
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
 
@@ -719,8 +729,8 @@ def algo():
     UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
     #calculate average points
-    # MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-    MDollar_AveragePoint = 0.10
+    MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+    # MDollar_AveragePoint = 0.10
 
     print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 

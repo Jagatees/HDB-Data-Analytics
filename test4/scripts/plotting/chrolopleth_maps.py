@@ -86,30 +86,38 @@ def generate_plotly_chart(map_style, area, hdb_type):
 
     # ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-   
-    
-    if area != "All" and hdb_type != "All":
-        df1 = df1[(df1['Area'] == area) & (df1['Location_Type'] == hdb_type)]
-        area_text = "All Area"
-        hdb_type_text = "& type"
+
+    if area == "All" and hdb_type == "All":
+         df1 = df1
     elif area != "All" and hdb_type == "All":
         df1 = df1[df1['Area'] == area]
-        area_text = area
-        hdb_type_text = "All type"
     elif area == "All" and hdb_type != "All":
         df1 = df1[df1['Location_Type'] == hdb_type]
-        area_text = "ALL Area"
-        hdb_type_text = hdb_type
-    else:
-        area_text = "start"
-        hdb_type_text = "start"
+    elif area != "All" and hdb_type != "All":
+        df1 = df1[(df1['Area'] == area) & (df1['Location_Type'] == hdb_type)]
+   
+    # area_text = "All Area"  # Default value
+    # hdb_type_text = "All type"  # Default value
+
+    # if area != "All" and hdb_type != "All":
+        
+    #     area_text = "All Area"
+    #     hdb_type_text = "& type"
+    # elif area != "All" and hdb_type == "All":
+    #     df1 = df1[df1['Area'] == area]
+    #     area_text = area
+    #     hdb_type_text = "All type"
+    # elif area == "All" and hdb_type != "All":
+    #     df1 = df1[df1['Location_Type'] == hdb_type]
+    #     area_text = "ALL Area"
+    #     hdb_type_text = hdb_type
+
 
 
 
 
 
     text_to_display = (
-        # "Final Percentage: " + df1['Final_Percentage'].astype(str) + "<br>" +
         "Area: " + df1['Area'].astype(str) + "<br>" +
         "Location_Type: " + df1['Location_Type'].astype(str)
     )
@@ -124,7 +132,7 @@ def generate_plotly_chart(map_style, area, hdb_type):
             color='#FFFF00',
         ),
         text=text_to_display,
-        name= area_text  + " "+ hdb_type_text
+        name= area  + " "+ hdb_type
     )
 
 
