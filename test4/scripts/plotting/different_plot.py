@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 '''
 def display_table():
     # Read the CSV file and parse its data
-    csv_file = 'scripts/algo/Excel/output/MillionDollarHse.csv'
+    csv_file = 'scripts/algo/Excel/output/UpdatedUserHse.csv'
     df = pd.read_csv(csv_file)
     
     # Step 3: Create a Plotly table from the DataFrame

@@ -16,8 +16,6 @@ def clean_co(file_path, output_path):
 
     df = df.reindex(columns=['Location_Name','Location_Type', 'Blk_No', 'Address', 'Postal_Code', 'Full Address', 'Long', 'Lat', 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Lease_Used', 'Num_Bed', 'Num_Toilet'])
 
-    df = df[~df['Full Address'].str.contains('140A Yung Ho Spring I')]
-
     def calculate_remain_lease(value):
         leftover = 99 - int(value)
         return leftover
@@ -38,6 +36,23 @@ def clean_co(file_path, output_path):
             new_value = " ".join((words[2], words[0], words[1]))
             return new_value
     df['Location_Type'] = df['Location_Type'].apply(putinfront_hdb)
+
+    def change_bed_to_room(value):
+        if 'HDB 1 Bed' in value:
+            changed2_word = 'HDB 2 Room'
+            return changed2_word
+        elif 'HDB 2 Bed' in value:
+            changed3_word = 'HDB 3 Room'
+            return changed3_word
+        elif 'HDB 3 Bed' in value:
+            changed4_word = 'HDB 4 Room'
+            return changed4_word
+        elif 'HDB 4 Bed' in value:
+            changed5_word = "HDB 5 Room"
+            return changed5_word
+        else:
+            return value
+    df['Location_Type'] = df['Location_Type'].apply(change_bed_to_room)
 
     def replace_r_with_road(value):
         words = value.split()
@@ -64,6 +79,9 @@ def clean_co(file_path, output_path):
     df['Full Address'] = df['Full Address'].apply(replace_pl_with_plains)
 
     df["Blk_No"] = df["Full Address"].str.split().str[0].str.strip()
+
+    df = df[~df['Full Address'].str.endswith(' I')]
+    df = df[~df['Full Address'].str.endswith(' 1')]
 
     df["Address"] = df["Full Address"].str.split().str[1:].str.join(" ")
 

@@ -36,8 +36,6 @@ def clean_co(file_path, output_path):
 
     df = df.reindex(columns=['Location_Name','Location_Type', 'Blk_No', 'Address', 'Postal_Code', 'Full Address', 'Long', 'Lat', 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Lease_Used', 'Num_Bed', 'Num_Toilet'])
 
-    df = df[~df['Full Address'].str.contains('140A Yung Ho Spring I')]
-
     df["Location_Name"] = df['Address']
 
     def remove_avenue(value):
@@ -56,6 +54,9 @@ def clean_co(file_path, output_path):
     df['Location_Name'] = df['Location_Name'].apply(remove_avenue)
 
     df["Location_Name"] = df["Location_Name"].str.split("@").str[0].str.strip()
+
+    df = df[~df['Full Address'].str.endswith(' I')]
+    df = df[~df['Full Address'].str.endswith(' 1')]
 
     pattern = r'[@#&$%+\-/*]'
 

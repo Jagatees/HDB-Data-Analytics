@@ -45,21 +45,19 @@ def calculate_sqm_points(floor_area_sqm):
 
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = ["pk.ead7fbde295979a6898558976cf28c8b",
-               "pk.d67416f0ccfa0f9ad6ea725c7984a5bf",
-               "pk.206bfbfc88642ed9428cd1bf70f3dc47",
-               "pk.02ff73880ec7a133cfe62191e54c3bd1",
-               ]
+    api_key = "pk.389cc563f02c28ec68fa6820301c1fbe"
 
     coordinatesLong = []
     coordinatesLat = []
     #Coordinates = ""
     api_key_index = 0
 
+    counter_text = 0
+
     # Iterate through the addresses and convert them to coordinates
     for address in AddressArray:
         # Construct the API request URL
-        url = f"https://us1.locationiq.com/v1/search.php?key={api_key[api_key_index]}&q={address}&format=json"
+        url = f"https://us1.locationiq.com/v1/search.php?key={api_key}&q={address}&format=json"
             
         try:
             # Make the API request
@@ -86,7 +84,8 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         if CheckLong > 0 and CheckLat > 0:
                             coordinatesLong.append((longitude))
                             coordinatesLat.append((latitude))
-                            print(".")
+                            print(counter_text)
+                            counter_text += 1
                         else:
                             coordinatesLong.append((0))
                             coordinatesLat.append((0))
@@ -95,11 +94,6 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         print(f"Location not found for address: {address}")
                 else:
                     print(f"Error: Unable to access the LocationIQ API for address: {address}")
-
-                    api_key_index += 1
-                    if api_key_index == len(api_key):
-                        api_key_index = 0
-
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
 
@@ -112,7 +106,6 @@ def GetLongLatFromAddress(AddressArray, Filepath):
     AddressDataFrame['Lat'] = coordinatesLat
 
     for index, row in AddressDataFrame.iterrows():
-
         if row['Long'] == 0:
             AddressDataFrame.drop(index, inplace=True)
 
@@ -337,7 +330,7 @@ def predicition_for_percentage():
 
     print(str(Accuracy_percentage) + "%")
 
-def algo():
+def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
 
     FairpriceFilePath = 'scripts/algo/Excel/Amenities/fairprice.csv'
     HospitalFilePath = 'scripts/algo/Excel/Amenities/HospitalClinic.csv'
@@ -353,11 +346,11 @@ def algo():
     UserHseFilePath = 'centralized/merger/csv_merged_final.csv'
 
     #Amenties Points
-    Hospital_ClinicPoint = 5
-    SchoolsPoint = 4
-    MRTPoint = 3
-    Supermarket_MallPoint = 2
-    ParksPoint = 1
+    Hospital_ClinicPoint = hosp
+    SchoolsPoint = sch
+    MRTPoint = mrt
+    Supermarket_MallPoint = supermarket
+    ParksPoint = parks
 
     #Read the CSV File
     UserAddressArray = ReadCSVFile(UserHseFilePath)
@@ -729,8 +722,8 @@ def algo():
     UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
     #calculate average points
-    MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-    # MDollar_AveragePoint = 0.10
+    # MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+    MDollar_AveragePoint = 0.10
 
     print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
