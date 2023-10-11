@@ -722,8 +722,8 @@ def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
     UserHse_Meraged_Points['Total_Points'] = UserHse_Meraged_Points[Sum_Usercolumns].sum(axis=1)
 
     #calculate average points
-    # MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
-    MDollar_AveragePoint = 0.10
+    MDollar_AveragePoint = MDollarHSe_Meraged_Points['Total_Points'].mean()
+    # MDollar_AveragePoint = 0.10
 
     print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoint))
 
