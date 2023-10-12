@@ -45,7 +45,7 @@ def calculate_sqm_points(floor_area_sqm):
 
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = "pk.ead7fbde295979a6898558976cf28c8b"
+    api_key = "pk.c80ddc04ba0cf21a915f684f0c7f0dd2"
 
     coordinatesLong = []
     coordinatesLat = []
