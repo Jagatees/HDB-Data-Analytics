@@ -24,6 +24,8 @@ import scripts.merger_json.merger as merger_csv
 import scripts.plotting.chrolopleth_maps as mapsone
 # Importing Table Plotting functions from 'scripts.map_layout' module
 import scripts.plotting.different_plot as table_d
+# Importing Clearning for Area from 'scripts.filter' 
+import scripts.filter_area.Area as areaCleaning 
 
 
 # Create a Flask web application instance and set a secret key for session security
@@ -190,6 +192,7 @@ def merger_data():
         merger_csv.meger_csv('centralized/99co/json/99co_final.csv', 
                              'centralized/srx/json/srx_final.csv',
                              'centralized/merger/csv_merged_final.csv')
+        areaCleaning.area_cleaning()
         return render_template('index.html')
 
 
@@ -285,4 +288,4 @@ def scrapping():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5002, debug=True)
+    app.run('127.0.0.1', 5008, debug=True)

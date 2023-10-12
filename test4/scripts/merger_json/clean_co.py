@@ -103,6 +103,7 @@ def clean_co(file_path, output_path):
         else:
             return value
     df['Location_Name'] = df['Location_Name'].apply(remove_avenue)
+    df = df[~df['Full Address'].str.contains('23 Jalan Memb')]
 
     pattern = r'[@#&$%+\-/*]'
 

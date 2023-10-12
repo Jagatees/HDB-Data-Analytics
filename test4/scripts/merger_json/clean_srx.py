@@ -57,6 +57,7 @@ def clean_co(file_path, output_path):
 
     df = df[~df['Full Address'].str.endswith(' I')]
     df = df[~df['Full Address'].str.endswith(' 1')]
+    df = df[~df['Full Address'].str.contains('23 Jalan Memb')]
 
     pattern = r'[@#&$%+\-/*]'
 

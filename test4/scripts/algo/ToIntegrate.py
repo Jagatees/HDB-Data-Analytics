@@ -31,7 +31,7 @@ sqm_points = {
 }
 
 def calculate_lease_points(remaining_lease_str):
-    remaining_lease = int(remaining_lease_str)
+    remaining_lease = int(remaining_lease_str.replace(',', ''))
     for years, points in lease_points.items():
         if remaining_lease >= years:
             return points
@@ -45,7 +45,7 @@ def calculate_sqm_points(floor_area_sqm):
 
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = "pk.389cc563f02c28ec68fa6820301c1fbe"
+    api_key = "pk.ead7fbde295979a6898558976cf28c8b"
 
     coordinatesLong = []
     coordinatesLat = []
@@ -84,7 +84,7 @@ def GetLongLatFromAddress(AddressArray, Filepath):
                         if CheckLong > 0 and CheckLat > 0:
                             coordinatesLong.append((longitude))
                             coordinatesLat.append((latitude))
-                            print(counter_text)
+                            print(str(counter_text) + url)
                             counter_text += 1
                         else:
                             coordinatesLong.append((0))
@@ -99,7 +99,7 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
-                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
+                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet', 'LocationChange']
     AddressDataFrame = AddressDataFrame.drop(0)
 
     AddressDataFrame['Long'] = coordinatesLong
@@ -185,8 +185,8 @@ def GetHistoryfromcsv(FilePath):
 
 def GetUserDatafromcsv(FilePath):
     UserData = pd.read_csv(FilePath, header=None)
-    UserData = UserData[[0, 1, 6, 7, 8, 9, 10, 11]]
-    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm','Price', 'Link']
+    UserData = UserData[[0, 1, 6, 7, 8, 9, 10, 11, 15]]
+    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm','Price', 'Link', 'LocationChange']
     UserData = UserData.drop(0)
 
     return UserData
@@ -359,7 +359,7 @@ def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
 
     UserData = pd.read_csv(UserHseFilePath, header=None)
     UserData.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
-                                    'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
+                                    'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet', 'LocationChange' ]
     UserData = UserData.drop(0)
     UserData = UserData.drop(1)
 
@@ -637,6 +637,8 @@ def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
     matched_UserSQMs = []
     matched_UserLeases = []
     matched_UserPrices = []
+    matched_UserLocations = []
+    count = 0
 
     # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
     for i in range(len(SplitLat)):
@@ -644,27 +646,31 @@ def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
         long = SplitLong[i]
         for index, row in UserHseDF.iterrows():
             if lat == row['Lat'] and long == row['Long']:
+
                 matched_area = row['Location_Name']
                 matched_Link = row['Link']
                 matched_USerHseType = row['Location_Type']
                 matched_UserSQM = row['floor_area_sqm']
                 matched_UserLease = row['remaining_lease']
                 matched_UserPrice = row['Price']
+                matched_UserLocation = row['LocationChange']
+
                 matched_areas.append(matched_area)
                 matched_Links.append(matched_Link)
                 matched_USerHseTypes.append(matched_USerHseType)
                 matched_UserSQMs.append(matched_UserSQM)
                 matched_UserLeases.append(matched_UserLease)
                 matched_UserPrices.append(matched_UserPrice)
+                matched_UserLocations.append(matched_UserLocation)
 
-
-    UserHse_Meraged_Points = UserHse_Meraged_Points.reindex(range(len(matched_areas)))
+    #UserHse_Meraged_Points = UserHse_Meraged_Points.reindex(range(len(matched_areas)))
     UserHse_Meraged_Points['Area'] = matched_areas
     UserHse_Meraged_Points['Location_Type'] = matched_USerHseTypes
     UserHse_Meraged_Points['Link'] = matched_Links
     UserHse_Meraged_Points['floor_area_sqm'] = matched_UserSQMs
     UserHse_Meraged_Points['remaining_lease'] = matched_UserLeases
     UserHse_Meraged_Points['Sale_Price'] = matched_UserPrices
+    UserHse_Meraged_Points['Location'] = matched_UserLocations
 
 
     #Adding cols to FilteredMillionDollarHse.CSV
@@ -767,7 +773,6 @@ def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
     print('Done')
 
 
-
 '''
     Take User Data and Past Data to combine to get percenatge to use in display
 '''
@@ -776,9 +781,8 @@ def get_data_from_million_door_file():
     cleaned_data = pd.read_csv('scripts/algo/Excel/output/Cleaned_HistoryData.csv')
     filtered_data = pd.read_csv('scripts/algo/Excel/output/FilteredUserHse.csv')
 
-    # Initialize the 'New_Percent' column with the 'Percent' values
     filtered_data['NewPercentage'] = filtered_data['Percent']
-    # Iterate through rows in cleaned_data
+
     for index, row in cleaned_data.iterrows():
         town = row['Town'].lower()  # Convert to lowercase
         flat_type = row['Flat_Type'].lower()  # Convert to lowercase
@@ -786,15 +790,12 @@ def get_data_from_million_door_file():
 
         # Find matching row in filtered_data based on 'Town' and 'Flat_Type', ignoring case
         matching_rows = filtered_data[
-            (filtered_data['Area'].str.lower() == town) & (filtered_data['Location_Type'].str.lower() == flat_type)]
-
+            (filtered_data['Location'].str.lower() == town) & (filtered_data['Location_Type'].str.lower() == flat_type)]
         for matching_index in matching_rows.index:
             # Calculate 'NewPercentage' by adding 'Accuracy_Percentage' divided by 2
-            filtered_data.loc[matching_index, 'NewPercentage'] = filtered_data.loc[matching_index, 'Percent'] + accuracy_percentage / 2
+            filtered_data.loc[matching_index, 'NewPercentage'] = filtered_data.loc[
+                                                                    matching_index, 'Percent'] + accuracy_percentage / 2
 
-    column_to_replace = 'NewPercentage'
-    filtered_data[column_to_replace] = filtered_data[column_to_replace].replace(0, 47)
-    
     # Save the updated data to a new CSV file
     savefilepath = 'scripts/algo/Excel/output/UpdatedUserHse.csv' #Change as needed
     filtered_data.to_csv(savefilepath, index=False)

@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 '''
 Description: Return New Trace For Scatter Box to append to
 '''
-def create_scattermapbox(file_path, trace_name):
+def create_scattermapbox(file_path, trace_name, colors, islegend):
     df = pd.read_csv(file_path)
     lat, lon = df['Lat'], df['Long']
 
@@ -15,10 +15,12 @@ def create_scattermapbox(file_path, trace_name):
         mode='markers',
         marker=go.scattermapbox.Marker(
             size=5,
-            color="#00ff00",
+            color=colors,
         ),
         text='None',
         name=trace_name,
+        showlegend=islegend,  # Set showlegend to control initial visibility
+
     )
 
     return scattermapbox_trace
@@ -123,7 +125,7 @@ def generate_plotly_chart(map_style, area, hdb_type):
         mode='markers',
         marker=go.scattermapbox.Marker(
             size=15,
-            color='#FFFF00',
+            color='#FF0000',
         ),
         text=text_to_display,
         name= area  + " "+ hdb_type
@@ -133,12 +135,26 @@ def generate_plotly_chart(map_style, area, hdb_type):
 
     fairprice_file_path = "scripts/algo/Excel/Amenities/fairprice.csv"
     hospital_file_path = "scripts/algo/Excel/Amenities/HospitalClinic.csv"
+    malls_file_path = 'scripts/algo/Excel/Amenities/Malls.csv'
+    mrt_file_path = 'scripts/algo/Excel/Amenities/MRTData.csv'
+    park_file_path = 'scripts/algo/Excel/Amenities/Parks.csv'
+    pri_file_path = 'scripts/algo/Excel/Amenities/primaryschool.csv'
+    secon_file_path = 'scripts/algo/Excel/Amenities/secondaryschool.csv'
+    ter_file_path = 'scripts/algo/Excel/Amenities/tertiaryschool.csv'
+    uni_file_path = 'scripts/algo/Excel/Amenities/univeristies.csv'
 
     # Create a figure with all the traces
     fig = go.Figure(data=[
         customQuery,
-        create_scattermapbox(fairprice_file_path, 'FairPrice'),
-        create_scattermapbox(hospital_file_path, 'Hospital')
+        create_scattermapbox(fairprice_file_path, 'FairPrice', "#0000FF", True),
+        create_scattermapbox(hospital_file_path, 'Hospital', "#FFFF00", True),
+        create_scattermapbox(malls_file_path, 'Malls', "#FFEBCD", True),
+        create_scattermapbox(mrt_file_path, 'MRT', "#FFA500", True),
+        create_scattermapbox(park_file_path, 'Parks', "#90EE90", True),
+        create_scattermapbox(pri_file_path, 'Primary', "#CBC3E3", True),
+        create_scattermapbox(secon_file_path, 'Secondary', "#FFB6C1", True),
+        create_scattermapbox(ter_file_path, 'Tertiary', "#C4A484", True),
+        create_scattermapbox(uni_file_path, 'Univeristies', "#FFD700", True),
     ])
 
 
