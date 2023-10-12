@@ -792,6 +792,9 @@ def get_data_from_million_door_file():
             # Calculate 'NewPercentage' by adding 'Accuracy_Percentage' divided by 2
             filtered_data.loc[matching_index, 'NewPercentage'] = filtered_data.loc[matching_index, 'Percent'] + accuracy_percentage / 2
 
+    column_to_replace = 'NewPercentage'
+    filtered_data[column_to_replace] = filtered_data[column_to_replace].replace(0, 47)
+    
     # Save the updated data to a new CSV file
     savefilepath = 'scripts/algo/Excel/output/UpdatedUserHse.csv' #Change as needed
     filtered_data.to_csv(savefilepath, index=False)
