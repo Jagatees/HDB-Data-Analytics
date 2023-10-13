@@ -288,4 +288,4 @@ def scrapping():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5010, debug=True)
+    app.run('127.0.0.1', 5012, debug=True)
