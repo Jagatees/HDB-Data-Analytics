@@ -146,4 +146,6 @@ cython_debug/
 
 
 *.html
-test4/centralized
+test4/centralized/99co/scrapping
+test4/centralized/srx/scrapping
+
