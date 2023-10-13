@@ -29,14 +29,6 @@ ParksPoint = 1
 
 #KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
 
-UserData = pd.read_csv(UserHseFilePath, header=None)
-UserData.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
-                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
-UserData = UserData.drop(0)
-UserData = UserData.drop(1)
-
-UserData.to_csv(UserHseFilePath, index=False)
-
 #get long and lat from all csv file save into datatable
 FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
 HospitalDT = KerwinFunction.GetCoordinatesfromcsv(HospitalFilePath)
@@ -53,7 +45,6 @@ UserHseDT = KerwinFunction.GetUserDatafromcsv(UserHseFilePath)
 #Remove all the duplicated values
 MDollarHseDF = MDollarHseDT.drop_duplicates() 
 UserHseDF = UserHseDT.drop_duplicates(subset=['Long', 'Lat'], keep=False)
-print(len(UserHseDF))
 
 #Retrieve the long and lat and store them indivually into a list
 FairpriceLong = FairpriceDT['Long'].tolist()
@@ -312,6 +303,7 @@ matched_USerHseTypes = []
 matched_UserSQMs = []
 matched_UserLeases = []
 matched_UserPrices = []
+matched_UserLocations = []
 count = 0
 
 # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
@@ -327,12 +319,15 @@ for i in range(len(SplitLat)):
             matched_UserSQM = row['floor_area_sqm']
             matched_UserLease = row['remaining_lease']
             matched_UserPrice = row['Price']
+            matched_UserLocation = row['LocationChange']
+
             matched_areas.append(matched_area)
             matched_Links.append(matched_Link)
             matched_USerHseTypes.append(matched_USerHseType)
             matched_UserSQMs.append(matched_UserSQM)
             matched_UserLeases.append(matched_UserLease)
             matched_UserPrices.append(matched_UserPrice)
+            matched_UserLocations.append(matched_UserLocation)
 
 #UserHse_Meraged_Points = UserHse_Meraged_Points.reindex(range(len(matched_areas)))
 UserHse_Meraged_Points['Area'] = matched_areas
@@ -341,8 +336,8 @@ UserHse_Meraged_Points['Link'] = matched_Links
 UserHse_Meraged_Points['floor_area_sqm'] = matched_UserSQMs
 UserHse_Meraged_Points['remaining_lease'] = matched_UserLeases
 UserHse_Meraged_Points['Sale_Price'] = matched_UserPrices
+UserHse_Meraged_Points['Location'] = matched_UserLocations
 
-UserHse_Meraged_Points.to_csv('ProjTest\\Excel Data\\TestOutput.csv', index=True)
 
 #Adding cols to FilteredMillionDollarHse.CSV
 MillionFilteredCoordinates = MDollarHSe_Meraged_Points['Coordinates'].to_list()
@@ -415,7 +410,8 @@ PercentageCalculationDF = MDollarHSe_Meraged_Points.copy()
 grouped_Area_HseType = PercentageCalculationDF.groupby(['Area', 'Location_Type'])['Total_Points'].mean().reset_index()
 
 # Merge based on 'Area' and 'Location_Type'
-merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
+#merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
+merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Location', 'Location_Type'], how='left')
 
 # Rename the 'Total_Points' column
 merged_df.rename(columns={'Total_Points_x': 'Total_Points', 'Total_Points_y': 'History_Avg_Point'}, inplace=True)

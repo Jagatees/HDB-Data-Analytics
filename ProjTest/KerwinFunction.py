@@ -91,7 +91,7 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
-                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet']
+                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet', 'LocationChange  ']
     AddressDataFrame = AddressDataFrame.drop(0)
 
     AddressDataFrame['Long'] = coordinatesLong
@@ -180,8 +180,8 @@ def GetHistoryfromcsv(FilePath):
 
 def GetUserDatafromcsv(FilePath):
     UserData = pd.read_csv(FilePath, header=None)
-    UserData = UserData[[0, 1, 6, 7, 8, 9, 10, 11]]
-    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm','Price', 'Link']
+    UserData = UserData[[0, 1, 6, 7, 8, 9, 10, 11, 15]]
+    UserData.columns = ['Location_Name','Location_Type' , 'Long', 'Lat', 'remaining_lease', 'floor_area_sqm','Price', 'Link', 'LocationChange']
     UserData = UserData.drop(0)
 
     return UserData
