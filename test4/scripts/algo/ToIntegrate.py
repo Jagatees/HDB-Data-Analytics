@@ -80,15 +80,6 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
                         CheckLong = float(latitude)
                         CheckLat = float(longitude)
-
-                        if CheckLong > 0 and CheckLat > 0:
-                            coordinatesLong.append((longitude))
-                            coordinatesLat.append((latitude))
-                            print(str(counter_text) + url)
-                            counter_text += 1
-                        else:
-                            coordinatesLong.append((0))
-                            coordinatesLat.append((0))
                         #Coordinates = latitude + ", " + longitude
                     else:
                         print(f"Location not found for address: {address}")
@@ -97,6 +88,15 @@ def GetLongLatFromAddress(AddressArray, Filepath):
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
 
+        if CheckLong > 0 and CheckLat > 0:
+            coordinatesLong.append((longitude))
+            coordinatesLat.append((latitude))
+            print(str(counter_text) + url)
+            counter_text += 1
+        else:
+            coordinatesLong.append((0))
+            coordinatesLat.append((0))
+            
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet', 'LocationChange']
