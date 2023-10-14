@@ -25,9 +25,9 @@ Supermarket_MallPoint = 2
 ParksPoint = 1
 
 #Read the CSV File
-#UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
+UserAddressArray = KerwinFunction.ReadCSVFile(UserHseFilePath)
 
-#KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
+KerwinFunction.GetLongLatFromAddress(UserAddressArray, UserHseFilePath)
 
 #get long and lat from all csv file save into datatable
 FairpriceDT = KerwinFunction.GetCoordinatesfromcsv(FairpriceFilePath)
@@ -294,8 +294,6 @@ UserFilteredCoordinates = UserHse_Meraged_Points['Coordinates'].to_list()
 SplitLat = [coord.split(', ')[0] for coord in UserFilteredCoordinates]
 SplitLong = [coord.split(', ')[1] for coord in UserFilteredCoordinates]
 
-print(len(SplitLat))
-
 # Create lists to store the matching datas
 matched_areas = []
 matched_Links = []
@@ -304,7 +302,6 @@ matched_UserSQMs = []
 matched_UserLeases = []
 matched_UserPrices = []
 matched_UserLocations = []
-count = 0
 
 # Check if SplitLat and SplitLong match UserHseDF 'Lat' and UserHseDF 'Long' and retrieve the 'Location_Name' & 'Link' Data
 for i in range(len(SplitLat)):
@@ -402,19 +399,24 @@ print("Average point for the Million Dollar House is: " + str(MDollar_AveragePoi
 ##Compare all the user address points towards the average points.
 Filtered_UserHse = UserHse_Meraged_Points[UserHse_Meraged_Points['Total_Points'] > MDollar_AveragePoint]
 
-
 #For percentage Calculations
 PercentageCalculationDF = MDollarHSe_Meraged_Points.copy()
 
 #Calculate the Average of total points based on the Area and Location_Type
 grouped_Area_HseType = PercentageCalculationDF.groupby(['Area', 'Location_Type'])['Total_Points'].mean().reset_index()
 
-# Merge based on 'Area' and 'Location_Type'
+grouped_Area_HseType = grouped_Area_HseType.rename(columns={'Area': 'Location'})
+
+Filtered_UserHse['Location_Type'] = Filtered_UserHse['Location_Type'].str.upper()
+grouped_Area_HseType['Location_Type'] = grouped_Area_HseType['Location_Type'].str.upper()
+
 #merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
 merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Location', 'Location_Type'], how='left')
+#merged_df = Filtered_UserHse.merge(grouped_Area_HseType[['Location_Type', 'Location', 'Total_Points']], on=['Location_Type', 'Location'], how='left')
+# Merge DF1 into DF2 based on specified columns
 
-# Rename the 'Total_Points' column
-merged_df.rename(columns={'Total_Points_x': 'Total_Points', 'Total_Points_y': 'History_Avg_Point'}, inplace=True)
+merged_df = merged_df.rename(columns={'Total_Points_x': 'Total_Points'})
+merged_df = merged_df.rename(columns={'Total_Points_y': 'History_Avg_Point'})
 
 #calculate the accuracy percentage
 merged_df['Percent'] = (merged_df['Total_Points'] / merged_df['History_Avg_Point'] * 100).clip(upper=100)
@@ -428,7 +430,6 @@ for index, row in merged_df.iterrows():
 
     if pd.isna(row['History_Avg_Point']):
         merged_df.at[index, 'History_Avg_Point'] = 0
-
 
 
 #pass the dataframe into a CSV file

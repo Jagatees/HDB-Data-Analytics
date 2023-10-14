@@ -27,6 +27,7 @@ sqm_points = {
 }
 
 def calculate_lease_points(remaining_lease_str):
+    remaining_lease_str = remaining_lease_str.replace(',', '')
     remaining_lease = int(remaining_lease_str)
     for years, points in lease_points.items():
         if remaining_lease >= years:
@@ -41,11 +42,14 @@ def calculate_sqm_points(floor_area_sqm):
 
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
-    api_key = "pk.ead7fbde295979a6898558976cf28c8b"
+    api_key = "pk.c80ddc04ba0cf21a915f684f0c7f0dd2"
 
     coordinatesLong = []
     coordinatesLat = []
     #Coordinates = ""
+    api_key_index = 0
+
+    counter_text = 0
 
     # Iterate through the addresses and convert them to coordinates
     for address in AddressArray:
@@ -57,8 +61,8 @@ def GetLongLatFromAddress(AddressArray, Filepath):
             with requests.Session() as session:
                 response = session.get(url)
 
-                # min 1 min no lesser
-                # Add 1 min is so it give it breather time to make a request and not prevent any closing and open session at the same time 
+                # min 1 sec no lesser
+                # Add 1 sec is so it give it breather time to make a request and not prevent any closing and open session at the same time 
                 time.sleep(1) 
                     
                 # Check if the request was successful (status code 200)
@@ -73,14 +77,6 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
                         CheckLong = float(latitude)
                         CheckLat = float(longitude)
-
-                        if CheckLong > 0 and CheckLat > 0:
-                            coordinatesLong.append((longitude))
-                            coordinatesLat.append((latitude))
-                            print(url)
-                        else:
-                            coordinatesLong.append((0))
-                            coordinatesLat.append((0))
                         #Coordinates = latitude + ", " + longitude
                     else:
                         print(f"Location not found for address: {address}")
@@ -89,16 +85,24 @@ def GetLongLatFromAddress(AddressArray, Filepath):
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
 
+        if CheckLong > 0 and CheckLat > 0:
+            coordinatesLong.append((longitude))
+            coordinatesLat.append((latitude))
+            print(str(counter_text) + url)
+            counter_text += 1
+        else:
+            coordinatesLong.append((0))
+            coordinatesLat.append((0))
+            
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
-                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet', 'LocationChange  ']
+                                'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet', 'LocationChange']
     AddressDataFrame = AddressDataFrame.drop(0)
 
     AddressDataFrame['Long'] = coordinatesLong
     AddressDataFrame['Lat'] = coordinatesLat
 
     for index, row in AddressDataFrame.iterrows():
-
         if row['Long'] == 0:
             AddressDataFrame.drop(index, inplace=True)
 
