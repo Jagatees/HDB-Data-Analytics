@@ -1,353 +1,149 @@
-# # Byte-compiled / optimized / DLL files
-# __pycache__/
-# *.py[cod]
-# *$py.class
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# # C extensions
-# *.so
+# C extensions
+*.so
 
-# # Distribution / packaging
-# .Python
-# build/
-# develop-eggs/
-# dist/
-# downloads/
-# eggs/
-# .eggs/
-# lib/
-# lib64/
-# parts/
-# sdist/
-# var/
-# wheels/
-# share/python-wheels/
-# *.egg-info/
-# .installed.cfg
-# *.egg
-# MANIFEST
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# # PyInstaller
-# #  Usually these files are written by a python script from a template
-# #  before PyInstaller builds the exe, so as to inject date/other infos into it.
-# *.manifest
-# *.spec
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
 
-# # Installer logs
-# pip-log.txt
-# pip-delete-this-directory.txt
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-# # Unit test / coverage reports
-# htmlcov/
-# .tox/
-# .nox/
-# .coverage
-# .coverage.*
-# .cache
-# nosetests.xml
-# coverage.xml
-# *.cover
-# *.py,cover
-# .hypothesis/
-# .pytest_cache/
-# cover/
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 
-# # Translations
-# *.mo
-# *.pot
+# Translations
+*.mo
+*.pot
 
-# # Django stuff:
-# *.log
-# local_settings.py
-# db.sqlite3
-# db.sqlite3-journal
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
 
-# # Flask stuff:
-# instance/
-# .webassets-cache
+# Flask stuff:
+instance/
+.webassets-cache
 
-# # Scrapy stuff:
-# .scrapy
+# Scrapy stuff:
+.scrapy
 
-# # Sphinx documentation
-# docs/_build/
+# Sphinx documentation
+docs/_build/
 
-# # PyBuilder
-# .pybuilder/
-# target/
+# PyBuilder
+.pybuilder/
+target/
 
-# # Jupyter Notebook
-# .ipynb_checkpoints
+# Jupyter Notebook
+.ipynb_checkpoints
 
-# # IPython
-# profile_default/
-# ipython_config.py
+# IPython
+profile_default/
+ipython_config.py
 
-# # pyenv
-# #   For a library or package, you might want to ignore these files since the code is
-# #   intended to run in multiple environments; otherwise, check them in:
-# # .python-version
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
 
-# # pipenv
-# #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-# #   However, in case of collaboration, if having platform-specific dependencies or dependencies
-# #   having no cross-platform support, pipenv may install dependencies that don't work, or not
-# #   install all needed dependencies.
-# #Pipfile.lock
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
 
-# # poetry
-# #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-# #   This is especially recommended for binary packages to ensure reproducibility, and is more
-# #   commonly ignored for libraries.
-# #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-# #poetry.lock
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
 
-# # PEP 582; used by e.g. github.com/David-OConnor/pyflow
-# __pypackages__/
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
 
-# # Celery stuff
-# celerybeat-schedule
-# celerybeat.pid
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
 
-# # SageMath parsed files
-# *.sage.py
+# SageMath parsed files
+*.sage.py
 
-# # Environments
-# .env
-# .venv
-# env/
-# venv/
-# ENV/
-# env.bak/
-# venv.bak/
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# # Spyder project settings
-# .spyderproject
-# .spyproject
+# Spyder project settings
+.spyderproject
+.spyproject
 
-# # Rope project settings
-# .ropeproject
+# Rope project settings
+.ropeproject
 
-# # mkdocs documentation
-# /site
+# mkdocs documentation
+/site
 
-# # mypy
-# .mypy_cache/
-# .dmypy.json
-# dmypy.json
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
 
-# # Pyre type checker
-# .pyre/
+# Pyre type checker
+.pyre/
 
-# # pytype static type analyzer
-# .pytype/
+# pytype static type analyzer
+.pytype/
 
-# # Cython debug symbols
-# cython_debug/
-
-
-# *.html
-# test4/centralized/99co/scrapping
-# test4/centralized/srx/scrapping
+# Cython debug symbols
+cython_debug/
 
 
-# # Exclude the "templates" file from being ignored
-# !templates/
-test4/
-test4/centralized/99co/scrapping/0.html
-test4/centralized/99co/scrapping/1.html
-test4/centralized/99co/scrapping/10.html
-test4/centralized/99co/scrapping/11.html
-test4/centralized/99co/scrapping/12.html
-test4/centralized/99co/scrapping/13.html
-test4/centralized/99co/scrapping/14.html
-test4/centralized/99co/scrapping/15.html
-test4/centralized/99co/scrapping/16.html
-test4/centralized/99co/scrapping/17.html
-test4/centralized/99co/scrapping/18.html
-test4/centralized/99co/scrapping/19.html
-test4/centralized/99co/scrapping/2.html
-test4/centralized/99co/scrapping/20.html
-test4/centralized/99co/scrapping/21.html
-test4/centralized/99co/scrapping/22.html
-test4/centralized/99co/scrapping/23.html
-test4/centralized/99co/scrapping/24.html
-test4/centralized/99co/scrapping/25.html
-test4/centralized/99co/scrapping/26.html
-test4/centralized/99co/scrapping/27.html
-test4/centralized/99co/scrapping/28.html
-test4/centralized/99co/scrapping/29.html
-test4/centralized/99co/scrapping/3.html
-test4/centralized/99co/scrapping/30.html
-test4/centralized/99co/scrapping/31.html
-test4/centralized/99co/scrapping/32.html
-test4/centralized/99co/scrapping/33.html
-test4/centralized/99co/scrapping/34.html
-test4/centralized/99co/scrapping/35.html
-test4/centralized/99co/scrapping/36.html
-test4/centralized/99co/scrapping/37.html
-test4/centralized/99co/scrapping/38.html
-test4/centralized/99co/scrapping/39.html
-test4/centralized/99co/scrapping/4.html
-test4/centralized/99co/scrapping/40.html
-test4/centralized/99co/scrapping/41.html
-test4/centralized/99co/scrapping/42.html
-test4/centralized/99co/scrapping/43.html
-test4/centralized/99co/scrapping/44.html
-test4/centralized/99co/scrapping/45.html
-test4/centralized/99co/scrapping/46.html
-test4/centralized/99co/scrapping/47.html
-test4/centralized/99co/scrapping/48.html
-test4/centralized/99co/scrapping/49.html
-test4/centralized/99co/scrapping/5.html
-test4/centralized/99co/scrapping/50.html
-test4/centralized/99co/scrapping/51.html
-test4/centralized/99co/scrapping/52.html
-test4/centralized/99co/scrapping/53.html
-test4/centralized/99co/scrapping/54.html
-test4/centralized/99co/scrapping/55.html
-test4/centralized/99co/scrapping/56.html
-test4/centralized/99co/scrapping/6.html
-test4/centralized/99co/scrapping/7.html
-test4/centralized/99co/scrapping/8.html
-test4/centralized/99co/scrapping/9.html
-test4/centralized/srx/scrapping/page-1-0.html
-test4/centralized/srx/scrapping/page-1-1.html
-test4/centralized/srx/scrapping/page-1-10.html
-test4/centralized/srx/scrapping/page-1-100.html
-test4/centralized/srx/scrapping/page-1-101.html
-test4/centralized/srx/scrapping/page-1-102.html
-test4/centralized/srx/scrapping/page-1-103.html
-test4/centralized/srx/scrapping/page-1-104.html
-test4/centralized/srx/scrapping/page-1-105.html
-test4/centralized/srx/scrapping/page-1-106.html
-test4/centralized/srx/scrapping/page-1-107.html
-test4/centralized/srx/scrapping/page-1-108.html
-test4/centralized/srx/scrapping/page-1-109.html
-test4/centralized/srx/scrapping/page-1-11.html
-test4/centralized/srx/scrapping/page-1-110.html
-test4/centralized/srx/scrapping/page-1-111.html
-test4/centralized/srx/scrapping/page-1-112.html
-test4/centralized/srx/scrapping/page-1-113.html
-test4/centralized/srx/scrapping/page-1-114.html
-test4/centralized/srx/scrapping/page-1-115.html
-test4/centralized/srx/scrapping/page-1-116.html
-test4/centralized/srx/scrapping/page-1-117.html
-test4/centralized/srx/scrapping/page-1-118.html
-test4/centralized/srx/scrapping/page-1-12.html
-test4/centralized/srx/scrapping/page-1-13.html
-test4/centralized/srx/scrapping/page-1-14.html
-test4/centralized/srx/scrapping/page-1-15.html
-test4/centralized/srx/scrapping/page-1-16.html
-test4/centralized/srx/scrapping/page-1-17.html
-test4/centralized/srx/scrapping/page-1-18.html
-test4/centralized/srx/scrapping/page-1-19.html
-test4/centralized/srx/scrapping/page-1-2.html
-test4/centralized/srx/scrapping/page-1-20.html
-test4/centralized/srx/scrapping/page-1-21.html
-test4/centralized/srx/scrapping/page-1-22.html
-test4/centralized/srx/scrapping/page-1-23.html
-test4/centralized/srx/scrapping/page-1-24.html
-test4/centralized/srx/scrapping/page-1-25.html
-test4/centralized/srx/scrapping/page-1-26.html
-test4/centralized/srx/scrapping/page-1-27.html
-test4/centralized/srx/scrapping/page-1-28.html
-test4/centralized/srx/scrapping/page-1-29.html
-test4/centralized/srx/scrapping/page-1-3.html
-test4/centralized/srx/scrapping/page-1-30.html
-test4/centralized/srx/scrapping/page-1-31.html
-test4/centralized/srx/scrapping/page-1-32.html
-test4/centralized/srx/scrapping/page-1-33.html
-test4/centralized/srx/scrapping/page-1-34.html
-test4/centralized/srx/scrapping/page-1-35.html
-test4/centralized/srx/scrapping/page-1-36.html
-test4/centralized/srx/scrapping/page-1-37.html
-test4/centralized/srx/scrapping/page-1-38.html
-test4/centralized/srx/scrapping/page-1-39.html
-test4/centralized/srx/scrapping/page-1-4.html
-test4/centralized/srx/scrapping/page-1-40.html
-test4/centralized/srx/scrapping/page-1-41.html
-test4/centralized/srx/scrapping/page-1-42.html
-test4/centralized/srx/scrapping/page-1-43.html
-test4/centralized/srx/scrapping/page-1-44.html
-test4/centralized/srx/scrapping/page-1-45.html
-test4/centralized/srx/scrapping/page-1-46.html
-test4/centralized/srx/scrapping/page-1-47.html
-test4/centralized/srx/scrapping/page-1-48.html
-test4/centralized/srx/scrapping/page-1-49.html
-test4/centralized/srx/scrapping/page-1-5.html
-test4/centralized/srx/scrapping/page-1-50.html
-test4/centralized/srx/scrapping/page-1-51.html
-test4/centralized/srx/scrapping/page-1-52.html
-test4/centralized/srx/scrapping/page-1-53.html
-test4/centralized/srx/scrapping/page-1-54.html
-test4/centralized/srx/scrapping/page-1-55.html
-test4/centralized/srx/scrapping/page-1-56.html
-test4/centralized/srx/scrapping/page-1-57.html
-test4/centralized/srx/scrapping/page-1-58.html
-test4/centralized/srx/scrapping/page-1-59.html
-test4/centralized/srx/scrapping/page-1-6.html
-test4/centralized/srx/scrapping/page-1-60.html
-test4/centralized/srx/scrapping/page-1-61.html
-test4/centralized/srx/scrapping/page-1-62.html
-test4/centralized/srx/scrapping/page-1-63.html
-test4/centralized/srx/scrapping/page-1-64.html
-test4/centralized/srx/scrapping/page-1-65.html
-test4/centralized/srx/scrapping/page-1-66.html
-test4/centralized/srx/scrapping/page-1-67.html
-test4/centralized/srx/scrapping/page-1-68.html
-test4/centralized/srx/scrapping/page-1-69.html
-test4/centralized/srx/scrapping/page-1-7.html
-test4/centralized/srx/scrapping/page-1-70.html
-test4/centralized/srx/scrapping/page-1-71.html
-test4/centralized/srx/scrapping/page-1-72.html
-test4/centralized/srx/scrapping/page-1-73.html
-test4/centralized/srx/scrapping/page-1-74.html
-test4/centralized/srx/scrapping/page-1-75.html
-test4/centralized/srx/scrapping/page-1-76.html
-test4/centralized/srx/scrapping/page-1-77.html
-test4/centralized/srx/scrapping/page-1-78.html
-test4/centralized/srx/scrapping/page-1-79.html
-test4/centralized/srx/scrapping/page-1-8.html
-test4/centralized/srx/scrapping/page-1-80.html
-test4/centralized/srx/scrapping/page-1-81.html
-test4/centralized/srx/scrapping/page-1-82.html
-test4/centralized/srx/scrapping/page-1-83.html
-test4/centralized/srx/scrapping/page-1-84.html
-test4/centralized/srx/scrapping/page-1-85.html
-test4/centralized/srx/scrapping/page-1-86.html
-test4/centralized/srx/scrapping/page-1-87.html
-test4/centralized/srx/scrapping/page-1-88.html
-test4/centralized/srx/scrapping/page-1-89.html
-test4/centralized/srx/scrapping/page-1-9.html
-test4/centralized/srx/scrapping/page-1-90.html
-test4/centralized/srx/scrapping/page-1-91.html
-test4/centralized/srx/scrapping/page-1-92.html
-test4/centralized/srx/scrapping/page-1-93.html
-test4/centralized/srx/scrapping/page-1-94.html
-test4/centralized/srx/scrapping/page-1-95.html
-test4/centralized/srx/scrapping/page-1-96.html
-test4/centralized/srx/scrapping/page-1-97.html
-test4/centralized/srx/scrapping/page-1-98.html
-test4/centralized/srx/scrapping/page-1-99.html
-test4/centralized/srx/scrapping/page-5-0.html
-test4/centralized/srx/scrapping/page-5-1.html
-test4/scripts/algo/__pycache__/KerwinFunction.cpython-311.pyc
-test4/scripts/algo/__pycache__/ToIntegrate.cpython-311.pyc
-test4/scripts/filter_area/__pycache__/Area.cpython-311.pyc
-test4/scripts/merger_json/__pycache__/clean_co.cpython-311.pyc
-test4/scripts/merger_json/__pycache__/clean_srx.cpython-311.pyc
-test4/scripts/merger_json/__pycache__/cleandata.cpython-311.pyc
-test4/scripts/merger_json/__pycache__/convert_co.cpython-311.pyc
-test4/scripts/merger_json/__pycache__/convert_srx.cpython-311.pyc
-test4/scripts/merger_json/__pycache__/merger.cpython-311.pyc
-test4/scripts/ninety_nine_co/__pycache__/getHTMLfromPage.cpython-311.pyc
-test4/scripts/ninety_nine_co/__pycache__/getpagecount.cpython-311.pyc
-test4/scripts/ninety_nine_co/__pycache__/rename_folder.cpython-311.pyc
-test4/scripts/ninety_nine_co/__pycache__/scrap_website.cpython-311.pyc
-test4/scripts/plotting/__pycache__/chrolopleth_maps.cpython-311.pyc
-test4/scripts/plotting/__pycache__/different_plot.cpython-311.pyc
-test4/scripts/plotting/__pycache__/script2.cpython-311.pyc
-test4/scripts/plotting/__pycache__/table.cpython-311.pyc
-test4/scripts/srx/__pycache__/getdatafromHTML.cpython-311.pyc
-test4/scripts/srx/__pycache__/getHTMLfromPage.cpython-311.pyc
-test4/scripts/srx/__pycache__/getpageCount.cpython-311.pyc
+*.html
+test4/centralized

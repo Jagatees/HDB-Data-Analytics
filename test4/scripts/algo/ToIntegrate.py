@@ -80,6 +80,15 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
                         CheckLong = float(latitude)
                         CheckLat = float(longitude)
+
+                        if CheckLong > 0 and CheckLat > 0:
+                            coordinatesLong.append((longitude))
+                            coordinatesLat.append((latitude))
+                            print(str(counter_text) + url)
+                            counter_text += 1
+                        else:
+                            coordinatesLong.append((0))
+                            coordinatesLat.append((0))
                         #Coordinates = latitude + ", " + longitude
                     else:
                         print(f"Location not found for address: {address}")
@@ -88,15 +97,6 @@ def GetLongLatFromAddress(AddressArray, Filepath):
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
 
-        if CheckLong > 0 and CheckLat > 0:
-            coordinatesLong.append((longitude))
-            coordinatesLat.append((latitude))
-            print(str(counter_text) + url)
-            counter_text += 1
-        else:
-            coordinatesLong.append((0))
-            coordinatesLat.append((0))
-            
     AddressDataFrame = pd.read_csv(Filepath, header=None)
     AddressDataFrame.columns = ['Location_Name', 'Location_Type', 'Blk_No' ,'Address', 'Postal_Code', 'Full_Address', 'Long', 'Lat', 
                                 'floor_area_sqm', 'remaining_lease', 'Price', 'Link', 'Leased_Used', 'Num_Bed', 'Num_Toilet', 'LocationChange']
@@ -743,12 +743,8 @@ def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
     #Calculate the Average of total points based on the Area and Location_Type
     grouped_Area_HseType = PercentageCalculationDF.groupby(['Area', 'Location_Type'])['Total_Points'].mean().reset_index()
 
-    grouped_Area_HseType = grouped_Area_HseType.rename(columns={'Area': 'Location'})
-    Filtered_UserHse['Location_Type'] = Filtered_UserHse['Location_Type'].str.upper()
-    grouped_Area_HseType['Location_Type'] = grouped_Area_HseType['Location_Type'].str.upper()
-
     # Merge based on 'Area' and 'Location_Type'
-    merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Location', 'Location_Type'], how='left')
+    merged_df = Filtered_UserHse.merge(grouped_Area_HseType, on=['Area', 'Location_Type'], how='left')
 
     # Rename the 'Total_Points' column
     merged_df.rename(columns={'Total_Points_x': 'Total_Points', 'Total_Points_y': 'History_Avg_Point'}, inplace=True)
