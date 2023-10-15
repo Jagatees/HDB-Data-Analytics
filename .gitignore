@@ -152,6 +152,7 @@
 
 # # Exclude the "templates" file from being ignored
 # !templates/
+test4/
 test4/centralized/99co/scrapping/0.html
 test4/centralized/99co/scrapping/1.html
 test4/centralized/99co/scrapping/10.html
