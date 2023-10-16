@@ -224,7 +224,8 @@ def request_chart():
 @app.route('/display_table', methods=['GET', 'POST'])
 def display_table():
     if request.method == 'POST':
-        data = table_d.display_table()
+        # data = table_d.display_table()
+        data = table_d.heatmap()
         return render_template('charts.html', data=data)
 
 
@@ -264,9 +265,9 @@ def which_chart():
         userchoice = request.form['my_dropdown_plot']
 
         if userchoice == "0":
-            data = table_d.display_table()
+            data = table_d.display_table_test()
         elif userchoice == "1":
-            data = table_d.display_table()
+            data = table_d.heatmap()
 
         return render_template('charts.html', data = data)
     
@@ -282,6 +283,7 @@ def Charts():
 @app.route('/scrapping')
 def scrapping():
     return render_template('index.html')
+
 
 
 '''

@@ -3,6 +3,10 @@ import os
 
 list_in_dir = []
 
+
+'''
+    Description : Rename all the HTML in a Folder 
+'''
 # rename all HTML page to simple name index.html
 def renameFiles(data_dir_path):
     for count, filename in enumerate(os.listdir(data_dir_path)):
@@ -11,7 +15,9 @@ def renameFiles(data_dir_path):
         os.rename(src, dst)
 
 
-# Return list of item in folder
+'''
+    Description :  get all content of folder then return a list of it
+'''
 def get_item_in_dic(location):
     txtfiles = []
     arr = os.listdir(location)
@@ -23,4 +29,3 @@ def get_item_in_dic(location):
 
 
 
-# get all name inside the directory of the folder and store into array

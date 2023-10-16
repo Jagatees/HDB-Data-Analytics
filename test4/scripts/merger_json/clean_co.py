@@ -1,5 +1,8 @@
 import pandas as pd
 
+'''
+    Description : Clean 99co Scrapped Data, Return data into a new csv file
+'''
 def clean_co(file_path, output_path):
     df = pd.read_csv(file_path)
 

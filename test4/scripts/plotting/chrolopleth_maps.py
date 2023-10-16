@@ -68,12 +68,16 @@ def room_type(room_type, title, color):
 
 
 '''
-Description: Plot the Map, Return Map
+Description: format price string , return string
 '''
 
 def format_profit(profit):
     return "${:.2f}".format(profit)
 
+
+'''
+    Description: Plot the Map, Return Map
+'''
 def generate_plotly_chart(map_style, area, hdb_type):
 
     found_query_states = "Found Match"
