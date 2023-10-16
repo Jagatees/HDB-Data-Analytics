@@ -35,7 +35,7 @@ def heatmap():
 
     #Map for current 1 Mil Houses
     df_C = pd.read_csv("scripts/algo/Excel/output/UpdatedUserHse.csv")
-    for i in df_C["Area"]: #Fill dictionary with relevant data from CSV
+    for i in df_C["Location"]: #Fill dictionary with relevant data from CSV
         mapDic[i] = mapDic.get(i, 0) + 1    
 
     with open('scripts/plotting/SG_HDB_Map/HeatMapFrameCurrent.csv', mode='w') as csvfile: #Write that data in new CSV

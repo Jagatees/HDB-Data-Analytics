@@ -27,7 +27,6 @@ import scripts.plotting.different_plot as table_d
 # Importing Clearning for Area from 'scripts.filter' 
 import scripts.filter_area.Area as areaCleaning 
 
-
 # Create a Flask web application instance and set a secret key for session security
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
@@ -47,6 +46,7 @@ mapbox_styles = [
     "stamen-terrain",
     "stamen-toner",
 ]
+
 
 
 '''
@@ -284,10 +284,14 @@ def Charts():
 def scrapping():
     return render_template('index.html')
 
+@app.route('/table')
+def table():
+    return render_template('table.html')
+
 
 
 '''
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5010, debug=True)
+    app.run('127.0.0.1', 5021, debug=True)
