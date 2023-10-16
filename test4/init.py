@@ -1,5 +1,7 @@
 
 # Importing Flask modules for web application development
+import subprocess
+import webbrowser
 from flask import Flask, render_template, request
 # Importing custom web scraping functions from 'scripts.co' module
 import scripts.ninety_nine_co.getpagecount as co_firstpage
@@ -31,6 +33,8 @@ import scripts.filter_area.Area as areaCleaning
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
 
+
+PORT = 5024
 
 '''
     Initialize Init 
@@ -284,9 +288,30 @@ def Charts():
 def scrapping():
     return render_template('index.html')
 
+
+# all here
+
+
+# can open a webpage
+def open_page():
+    webbrowser.open("http://127.0.0.1:5081")
+
+# can not run this properly
+def run_script3():
+    print('Running')
+    subprocess.run(["python3", "scripts/plotting/filter_table.py"])
+
+
 @app.route('/table')
 def table():
+    open_page()
     return render_template('table.html')
+
+
+@app.route('/run_script', methods=['GET', 'POST'])
+def run_script():
+    if request.method == 'POST':       
+        return render_template('table.html')
 
 
 
@@ -294,4 +319,4 @@ def table():
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5021, debug=True)
+    app.run('127.0.0.1', 5026, debug=True)
