@@ -66,7 +66,7 @@ def heatmap():
                             mapbox_style="carto-positron",
                             zoom=10,
                             opacity=0.5,
-                            title="Potential $1M HDB per area",
+                            title="Potential Profit HDB Resale House",
                             color_continuous_scale="ylorrd")
 
      #Step 4: Convert the Plotly figure to HTML
