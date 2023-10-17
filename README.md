@@ -2,39 +2,47 @@
 
 The Housing and Development Board (HDB) program, which has given Singaporeans access to high-quality public housing for decades, is largely responsible for the housing market in Singapore's distinctive combination of affordability and stability. However, the city-state has recently noticed a striking and enduring trend: the ongoing rise of HDB resale prices. This development has caused a fundamental reevaluation of property investment tactics, in order to take advantage of the booming real estate market. 
 
-
 ## Scrapping Links
 
 https://www.99.co/
 https://www.srx.com.sg/
 
+### Running the Application
 
+1. Open your command prompt (Windows) or terminal (Linux/macOS).
 
-## Setup
+2. Navigate to the directory where this project is located using the `cd` command. For example, if the project is on your desktop, you can navigate to it like this:
 
-Install Python3 
-Location : https://www.python.org/downloads/
+    ```bash
+    cd Desktop/Your_Project_Directory
+    ```
 
-### Installing Modules (have not set up this file yet PENDING)
+3. Ensure you have Python 3 installed. You can check this by running:
 
-Open Command Prompt (or Terminal if Linux), `cd` to the directory which this project is at.
-pip install -r requirement.txt
+    ```bash
+    python3 --version
+    ```
 
-It should install all the required external modules.<br>
+   If Python 3 is not installed, you can download it from the [official Python website](https://www.python.org/downloads/).
 
-### Run the Application
+4. Install the required external modules by running the following command:
 
-Run `Main.py`:
-```
-python3 init.py
+    ```bash
+    pip install -r requirement.txt
+    ```
 
+   This command will install all the necessary modules for the application.
 
-## Coding style
+5. Now, you are ready to run the application. Execute the following command:
 
-Location : codingStyle.md
+    ```bash
+    python3 Main.py
+    ```
 
+   This command will start the application.
 
-### Open Application
+6. After running the application, you may need to open Google Chrome and type 
+this into the search bar http://127.0.0.1:5028
 
-Google Chrome and type this into the search bar http://127.0.0.1:5001
-```
+That's it! You've successfully set up and run the application for exploring the Singapore housing Resale Anyaltics market.
+
