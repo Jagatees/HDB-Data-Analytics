@@ -2,7 +2,7 @@ import pandas as pd
 
 
 '''
-    Cleaning Area for missing area in data
+    Description : Cleaning Area for missing area in data
 '''
 def area_cleaning():
   df1 = pd.read_csv('centralized/merger/csv_merged_final.csv')

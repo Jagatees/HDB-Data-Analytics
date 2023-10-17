@@ -10,7 +10,9 @@ import pandas as pd
 import csv
 
 
-
+'''
+    Initialize Init 
+'''
 lease_points = {
     89: 0.05,
     79: 0.04,
@@ -30,6 +32,12 @@ sqm_points = {
     45: 0.02,
 }
 
+
+'''
+    Args : float
+    Description : calculate lease point 
+    Return : float
+'''
 def calculate_lease_points(remaining_lease_str):
     remaining_lease = int(remaining_lease_str.replace(',', ''))
     for years, points in lease_points.items():
@@ -37,12 +45,24 @@ def calculate_lease_points(remaining_lease_str):
             return points
     return 0.005
 
+'''
+    Args : float
+    Description : calculate sqm points 
+    Return : float
+'''
 def calculate_sqm_points(floor_area_sqm):
     for sqm, points in sqm_points.items():
         if float(floor_area_sqm) >= sqm:  # Convert floor_area_sqm to float
             return points
     return 0.01
 
+
+'''
+    Args : List, String (File Path)
+    Description : takes in a list of address and a output file path, send a request to locationIQ 
+    to get back the long lat of the address of the house 
+    Return : NULL
+'''
 def GetLongLatFromAddress(AddressArray, Filepath):
     #LocationIQ API key
     api_key = "pk.c80ddc04ba0cf21a915f684f0c7f0dd2"
@@ -113,6 +133,11 @@ def GetLongLatFromAddress(AddressArray, Filepath):
 
     AddressDataFrame.to_csv(Filepath, index=False)
 
+'''
+    Args : float, float, float, float
+    Description : take in lat and long of two location and return the distance between 2 corrdinates 
+    Return : float
+'''
 def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
     # Convert latitude and longitude from degrees to radians
     lat1 = math.radians(lat1)
@@ -132,6 +157,11 @@ def DistanceBetween2Coordinates(lat1, lon1, lat2, lon2):
 
     return distance
 
+'''
+    Args :
+    Description : caculate the house amenities to distanec  
+    Return : list 
+'''
 def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long, AmentiesName):
     distances = []
 
@@ -143,6 +173,10 @@ def Calculate_Hse_Amenities_Dist(Hse_lat, Hse_long, Amenties_lat, Amenties_long,
 
     return distances
 
+'''
+    Description : Reading a CSV File
+    Return : list
+'''
 def ReadCSVFile(FilePath):
 
     #Store address in this array
@@ -167,6 +201,10 @@ def ReadCSVFile(FilePath):
 
     return AddressArray
 
+'''
+    Description : Get Coordinates from csv , the long and lat will be in one value
+    Return : int 
+'''
 def GetCoordinatesfromcsv(FilePath):
     CSVLongLat = pd.read_csv(FilePath, header=None)
     CSVLongLat = CSVLongLat[[0, 1, 6, 7]]
@@ -175,6 +213,10 @@ def GetCoordinatesfromcsv(FilePath):
 
     return CSVLongLat
 
+'''
+    Description : Get History from csv , the long and lat will be in one value
+    Return : int 
+'''
 def GetHistoryfromcsv(FilePath):
     CSVLongLat = pd.read_csv(FilePath, header=None)
     CSVLongLat = CSVLongLat[[1, 2, 7, 8, 10, 11]]
@@ -183,6 +225,10 @@ def GetHistoryfromcsv(FilePath):
 
     return CSVLongLat
 
+'''
+    Description : Get User data from csv , the long and lat will be in one value
+    Return : int 
+'''
 def GetUserDatafromcsv(FilePath):
     UserData = pd.read_csv(FilePath, header=None)
     UserData = UserData[[0, 1, 6, 7, 8, 9, 10, 11, 15]]
@@ -191,11 +237,19 @@ def GetUserDatafromcsv(FilePath):
 
     return UserData
 
+'''
+    Description : Get filter data from csv , the long and lat will be in one value
+    Return : int 
+'''
 def FilterDataTableByDistance(datatable, distance):
     
     filterdf = datatable[datatable['Distance (km)'] < distance]
     return filterdf
 
+'''
+    Description : We do the predicition for the data that we gather for the area in singapore and house type
+    Return : int 
+'''
 def Preediction(Dataframe, year):
     Predict_DF = Dataframe.copy()
 
@@ -241,12 +295,11 @@ def Preediction(Dataframe, year):
     # Display the prediction results
     print(prediction_df)
 
-   
-'''
-    Predicition & Algo
-'''
 
 
+'''
+    Description : Get the Percentage for the Prediction for out output algo
+'''
 def predicition_for_percentage():
     csv_file = 'scripts/algo/Excel/output/HistoryResaleData.csv'
     HistoryResaleDataDF = pd.read_csv(csv_file, header=None)
@@ -330,6 +383,9 @@ def predicition_for_percentage():
 
     print(str(Accuracy_percentage) + "%")
 
+'''
+    Description : Caculate the Logic to plot on the map the house that have good odds
+'''
 def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
 
     FairpriceFilePath = 'scripts/algo/Excel/Amenities/fairprice.csv'
@@ -774,7 +830,7 @@ def algo(hosp = 5, sch = 4, mrt= 3, supermarket= 2, parks= 1):
 
 
 '''
-    Take User Data and Past Data to combine to get percenatge to use in display
+    Description : Take User Data and Past Data to combine to get percenatge to use in display
 '''
 
 def get_data_from_million_door_file():
