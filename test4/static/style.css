@@ -249,6 +249,16 @@ body {
 
 
 
+#myForm input[type="submit"] {
+    /* Your CSS styles here */
+    /* For example, changing the background color */
+    background-color: hsl(252, 96%, 67%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
 
 #myForm_PageCount input[type="submit"] {
     /* Your CSS styles here */
