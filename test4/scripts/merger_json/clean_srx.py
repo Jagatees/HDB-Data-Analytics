@@ -1,5 +1,9 @@
 import pandas as pd
 
+
+'''
+    Description : Clean SRX Scrapped Data, Return data into a new csv file
+'''
 def clean_co(file_path, output_path):
     # Read the CSV file
     df = pd.read_csv(file_path)

@@ -1,6 +1,10 @@
 import os
 import pandas as pd
 
+
+'''
+    Description : Merge Both CSV into one for data anayltics
+'''
 def meger_csv(first_file, second_file, output_file):
 
 
