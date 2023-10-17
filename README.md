@@ -1,4 +1,4 @@
-# Renting in Singapore
+# Maximizing Investment Returns in Singapore's HDB Resale Market
 
 The Housing and Development Board (HDB) program, which has given Singaporeans access to high-quality public housing for decades, is largely responsible for the housing market in Singapore's distinctive combination of affordability and stability. However, the city-state has recently noticed a striking and enduring trend: the ongoing rise of HDB resale prices. This development has caused a fundamental reevaluation of property investment tactics, in order to take advantage of the booming real estate market. 
 
@@ -36,7 +36,7 @@ https://www.srx.com.sg/
 5. Now, you are ready to run the application. Execute the following command:
 
     ```bash
-    python3 Main.py
+    python3 init.py
     ```
 
    This command will start the application.
@@ -44,5 +44,5 @@ https://www.srx.com.sg/
 6. After running the application, you may need to open Google Chrome and type 
 this into the search bar http://127.0.0.1:5028
 
-That's it! You've successfully set up and run the application for exploring the Singapore housing Resale Anyaltics market.
+That's it! You've successfully set up and run the application for exploring the Maximizing Investment Returns in Singapore's HDB Resale Market Project
 
