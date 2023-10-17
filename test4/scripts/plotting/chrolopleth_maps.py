@@ -14,7 +14,7 @@ def create_scattermapbox(file_path, trace_name, colors, islegend):
         lon=lon,
         mode='markers',
         marker=go.scattermapbox.Marker(
-            size=5,
+            size=10,
             color=colors,
         ),
         text='None',
@@ -128,7 +128,7 @@ def generate_plotly_chart(map_style, area, hdb_type):
         lon=df1['Longitude'],
         mode='markers',
         marker=go.scattermapbox.Marker(
-            size=15,
+            size=20,
             color='#FF0000',
         ),
         text=text_to_display,

@@ -46,14 +46,14 @@
                 <div class="box spending-box">
                     <div class="header-container">
                         <!-- Title Website Scrapping Selection -->
-                        <h2> Press Algorithm Button At least Onse Before plotting</h2>
+                        <h2>Section One : In this section, users have the freedom to assign scores to each amenity based on its significance in their home selection process.</h2>
                     </div>
                 </div>
 
                 <div class="box spending-box">
                     <div class="header-container">
                         <form id="myForm_PageCount" action="/run_logic" method="POST">
-                            <label for="my_dropdown_hospital">Hospital</label>
+                            <label for="my_dropdown_hospital">Hospital & Clinic Score :</label>
                                 <select name="my_dropdown_hospital" id="my_dropdown">
                                     <option value="5" selected>5</option>
                                     <option value="4">4</option>
@@ -62,7 +62,7 @@
                                     <option value="1">1</option>
                                 </select>
        
-                            <label for="drop_down_area">School</label>
+                            <label for="drop_down_area">School Score :</label>
                             <select name="drop_down_area" id="my_dropdown">
                                 <option value="5" >5</option>
                                 <option value="4"selected>4</option>
@@ -71,7 +71,7 @@
                                 <option value="1">1</option>
                             </select>
 
-                            <label for="drop_down_mrt">MRT</label>
+                            <label for="drop_down_mrt">MRT Score :</label>
                             <select name="drop_down_mrt" id="my_dropdown">
                                 <option value="5" >5</option>
                                 <option value="4">4</option>
@@ -80,7 +80,7 @@
                                 <option value="1">1</option>
                             </select>
 
-                            <label for="drop_down_supermarket">SuperMarket</label>
+                            <label for="drop_down_supermarket">SuperMarket Score :</label>
                             <select name="drop_down_supermarket" id="my_dropdown">
                                 <option value="5" >5</option>
                                 <option value="4">4</option>
@@ -89,7 +89,7 @@
                                 <option value="1">1</option>
                             </select>
 
-                            <label for="drop_down_parks">Parks</label>
+                            <label for="drop_down_parks">Parks Score :</label>
                             <select name="drop_down_parks" id="my_dropdown">
                                 <option value="5" >5</option>
                                 <option value="4">4</option>
@@ -107,7 +107,7 @@
                 <div class="box spending-box">
                     <div class="header-container">
                         <form id="myForm_PageCount" action="/request_chart" method="POST">
-                            <label for="my_dropdown_map">Style</label>
+                            <label for="my_dropdown_map">Style Of Map Plot</label>
                             <select name="my_dropdown_map" id="my_dropdown">
                                 <option value="0">open-street-map</option>
                                 <option value="1">Light Mode</option>
@@ -117,7 +117,7 @@
                             </select>
 
        
-                            <label for="drop_down_area">Area</label>
+                            <label for="drop_down_area">Chose Area :</label>
                             <select name="drop_down_area" id="my_dropdown">
                                 <option value="All">All</option>
                                 <option value="Ang Mo Kio">ANG MO KIO</option>
@@ -147,7 +147,7 @@
                                 <option value="YISHUN">YISHUN</option>
                             </select>
 
-                            <label for="drop_down_room_type">Room Type</label>
+                            <label for="drop_down_room_type">Chose Room Type : </label>
                             <select name="drop_down_room_type" id="my_dropdown">
                                 <option value="All">All</option>
                                 <option value="HDB 5 Room">5 Room</option>
@@ -168,14 +168,22 @@
                     </div>
                 </div>
 
+
+                <div class="box spending-box">
+                    <div class="header-container">
+                        <!-- Title Website Scrapping Selection -->
+                        <h2>Section Two : In this section, user here can plot other kind of charts to have a better view on the data set.</h2>
+                    </div>
+                </div>
+
                 <!-- Draw Map -->
                 <div class="box spending-box">
                     <div class="header-container">
                         <form id="myForm_PageCount" action="/which_chart" method="POST">
-                            <label for="my_dropdown_plot">Plot Anaylsia</label>
+                            <label for="my_dropdown_plot">Plot</label>
                             <select name="my_dropdown_plot" id="my_dropdown">
-                                <option value="0">Table One</option>
-                                <option value="1">HeatMap</option>
+                                <option value="0">Table Plot</option>
+                                <option value="1">HeatMap Plot</option>
                             </select>
                           
                             <input type="submit" value="Plot"/>

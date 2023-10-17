@@ -33,9 +33,6 @@ import scripts.filter_area.Area as areaCleaning
 app = Flask(__name__)
 app.secret_key = 'some key that you will never guess'
 
-
-PORT = 5024
-
 '''
     Initialize Init 
 '''
@@ -289,9 +286,6 @@ def scrapping():
     return render_template('index.html')
 
 
-# all here
-
-
 # can open a webpage
 def open_page():
     webbrowser.open("http://127.0.0.1:5081")
@@ -314,9 +308,8 @@ def run_script():
         return render_template('table.html')
 
 
-
 '''
     Run the Flask application on the local server 
 '''
 if __name__ == "__main__":
-    app.run('127.0.0.1', 5026, debug=True)
+    app.run('127.0.0.1', 5028, debug=True)

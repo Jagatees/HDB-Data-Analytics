@@ -37,11 +37,19 @@
         <div class="bottom-container">
             <div class="bottom-container__left">
 
+               <!-- Box 1 -->
+               <div class="box spending-box">
+                <div class="header-container">
+                    <!-- Title Website Scrapping Selection -->
+                    <h2>Section One : In this section, users have the freedom to chose which website they want to scrape from and ones they are done they can meger the data and then .</h2>
+                </div>
+            </div>
+
                 <!-- Section 1 -->
                 <div class="box spending-box">
                     <div class="header-container">
                       <form id="myForm" action="/" method="POST"> 
-                        <h3 class="section-header">HDB Scrapping Section</h3>
+                        <h3 class="section-header"></h3>
                       </form> 
                     </div>
 
@@ -63,7 +71,7 @@
                 <div class="box total-box">
                     <div class="total-box__left">
                       <div class="header-container">
-                        <h3 class="section-header">PropNex</h3>                        
+                        <h3 class="section-header">RSX</h3>                        
                     </div>
                       
                     <form id="myForm_PageCount" action="/get_page_count_prop" method="POST">
@@ -73,7 +81,7 @@
                     </form>
 
                     <form id="myForm_PageCount" action="/scrapping_prop" method="POST">
-                      <input type="submit" value="Scrapping-Propnex" onclick="startLoadingThree()"/>
+                      <input type="submit" value="Scrape RSX Website" onclick="startLoadingThree()"/>
                       <div id="loadingCircleThree" class="loading"></div>
                       <!-- <label id="demoThree">
                           {{ prop_one }}

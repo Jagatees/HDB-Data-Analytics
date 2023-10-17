@@ -16,13 +16,21 @@ def display_table_test():
     csv_file = 'scripts/algo/Excel/output/UpdatedUserHse.csv'
     df = pd.read_csv(csv_file)
     
-    # Step 3: Create a Plotly table from the DataFrame
+    # Define a list of columns to remove
+    columns_to_remove = ['Unnamed: 0', 'FairpricePoints', 'HosPoints', 'MallPoints', 'MRTPoints', 'ParksPoints',
+                         'PriSchPoints', 'SecSchPoints', 'TertairyPoints', 'UniPoints', 'SQM_Points', 'Total_Points', 
+                         'History_Avg_Point', 'Percent', 'NewPercentage', 'Coordinates', 'Link', 'Lease']  # Replace with the actual column names to remove
+
+    # Remove the specified columns from the DataFrame
+    df = df.drop(columns=columns_to_remove, errors='ignore')
+
+    # Step 3: Create a Plotly table from the modified DataFrame
     table_fig = go.Figure(data=[go.Table(
         header=dict(values=list(df.columns)),
         cells=dict(values=[df[col] for col in df.columns]))
     ])
 
-    #Step 4: Convert the Plotly figure to HTML
+    # Step 4: Convert the Plotly figure to HTML
     table_html = table_fig.to_html(full_html=False)
 
     return table_html
