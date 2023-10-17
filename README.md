@@ -44,5 +44,7 @@ https://www.srx.com.sg/
 6. After running the application, you may need to open Google Chrome and type 
 this into the search bar http://127.0.0.1:5028
 
+* There are proloaded data inside the repo , so that you will be able to do plotting with out waitting for hours as the api we use has limitaion on the request and it will take longer if there are more then 100 request
+
 That's it! You've successfully set up and run the application for exploring the Maximizing Investment Returns in Singapore's HDB Resale Market Project
 
