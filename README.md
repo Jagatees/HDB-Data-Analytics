@@ -1,15 +1,18 @@
 # Renting in Singapore
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Housing and Development Board (HDB) program, which has given Singaporeans access to high-quality public housing for decades, is largely responsible for the housing market in Singapore's distinctive combination of affordability and stability. However, the city-state has recently noticed a striking and enduring trend: the ongoing rise of HDB resale prices. This development has caused a fundamental reevaluation of property investment tactics, in order to take advantage of the booming real estate market. 
+
 
 ## Scrapping Links
 
-https://rentinsingapore.com.sg/rooms-for-rent
+https://www.99.co/
+https://www.srx.com.sg/
+
 
 
 ## Setup
 
-Make sure Python3 is installed 
+Install Python3 
 Location : https://www.python.org/downloads/
 
 ### Installing Modules (have not set up this file yet PENDING)
@@ -23,11 +26,15 @@ It should install all the required external modules.<br>
 
 Run `Main.py`:
 ```
-python3 main.py
-```
+python3 init.py
 
-There are pre-crawled data for use under `SampleData` folder.
 
 ## Coding style
 
 Location : codingStyle.md
+
+
+### Open Application
+
+Google Chrome and type this into the search bar http://127.0.0.1:5001
+```

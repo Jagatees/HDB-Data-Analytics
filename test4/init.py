@@ -3,16 +3,16 @@
 from flask import Flask, render_template, request
 
 # Importing custom web scraping functions from 'scripts.co' module
-import scripts.ninety_nine_co.getpagecount as co_firstpage
-import scripts.ninety_nine_co.getHTMLfromPage as co_secondpage
-import scripts.ninety_nine_co.rename_folder as co_thirdpage
-import scripts.ninety_nine_co.scrap_website as co_fourpage
+import scripts.ninety_nine_co.getpagecount as co_getPageCount
+import scripts.ninety_nine_co.getHTMLfromPage as co_extractHTMLfromPages
+import scripts.ninety_nine_co.rename_folder as co_Renamefolder
+import scripts.ninety_nine_co.scrap_website as co_Scrapewebsite
 # Importing custom web scraping functions from 'scripts.srx' module
-import scripts.srx.getpageCount as srx_firstpage
-import scripts.srx.getHTMLfromPage as srx_secondpage
-import scripts.srx.getdatafromHTML as srx_thirdpage
-# Importing [PENDING] from 'scripts.algo' module
-import scripts.algo.ToIntegrate as alogone
+import scripts.srx.getpageCount as srx_getPageCount
+import scripts.srx.getHTMLfromPage as srx_extractHTMLfromPages
+import scripts.srx.getdatafromHTML as srx_GetDatafromHTML
+# Importing algo from 'scripts.algo' module
+import scripts.algo.ToIntegrate as logic_caculation
 # Importing Mergering functions from 'scripts.merger_json' module
 import scripts.merger_json.convert_co as convertCo
 import scripts.merger_json.clean_co as cleanCo
@@ -22,9 +22,9 @@ import scripts.merger_json.clean_srx as cleanSRX
 # Importing Merger Function from 'scripst.merger_json' module
 import scripts.merger_json.merger as merger_csv
 # Importing custom map plottinh functions from 'scripts.maplayput' module
-import scripts.plotting.chrolopleth_maps as mapsone
+import scripts.plotting.chrolopleth_maps as plotMap
 # Importing Table Plotting functions from 'scripts.map_layout' module
-import scripts.plotting.different_plot as table_d
+import scripts.plotting.different_plot as plotCharts
 # Importing Clearning for Area from 'scripts.filter' 
 import scripts.filter_area.Area as areaCleaning 
 
@@ -81,9 +81,9 @@ def website():
         selected_option = request.form['my_dropdown']
         # RENTinSINGAPORE
         if selected_option == '1':
-            return render_template('index.html', valueFive=co_firstpage.main())
+            return render_template('index.html', valueFive=co_getPageCount.main())
         elif selected_option == '2':
-            return render_template('index.html', prop_value_page=srx_firstpage.main())
+            return render_template('index.html', prop_value_page=srx_getPageCount.main())
 
 
 '''
@@ -112,9 +112,9 @@ def get_page_count_co():
 @app.route('/scrapping_co', methods=['GET', 'POST'])
 def scrapping_co():
     global user_input_page_count_co
-    x = co_secondpage.main(int(user_input_page_count_co))
-    co_thirdpage.renameFiles('centralized/99co/scrapping')
-    co_fourpage.main('centralized/99co/scrapping')
+    x = co_extractHTMLfromPages.main(int(user_input_page_count_co))
+    co_Renamefolder.renameFiles('centralized/99co/scrapping')
+    co_Scrapewebsite.main('centralized/99co/scrapping')
     return render_template('index.html', valueSix=x)
 
 
@@ -144,8 +144,8 @@ def get_page_count_prop():
 @app.route('/scrapping_prop', methods=['GET', 'POST'])
 def scrapping_prop():
     global user_input_page_count_prop
-    x = srx_secondpage.main(int(user_input_page_count_prop))
-    srx_thirdpage.main('centralized/srx/scrapping')
+    x = srx_extractHTMLfromPages.main(int(user_input_page_count_prop))
+    srx_GetDatafromHTML.main('centralized/srx/scrapping')
     return render_template('index.html', prop_one=x)
 
 
@@ -209,7 +209,7 @@ def request_chart():
         selected_option = request.form['my_dropdown_map']
         selected_option_area = request.form['drop_down_area']
         selected_option_type = request.form['drop_down_room_type']
-        plot_div = mapsone.generate_plotly_chart(
+        plot_div = plotMap.generate_plotly_chart(
             mapbox_styles[int(selected_option)], selected_option_area, selected_option_type)
         return render_template('charts.html', plot_div=plot_div[0], map_query = plot_div[1])
 
@@ -224,8 +224,8 @@ def request_chart():
 @app.route('/display_table', methods=['GET', 'POST'])
 def display_table():
     if request.method == 'POST':
-        # data = table_d.display_table()
-        data = table_d.heatmap()
+        # data = plotCharts.display_table()
+        data = plotCharts.heatmap()
         return render_template('charts.html', data=data)
 
 
@@ -245,10 +245,10 @@ def run_logic():
         user_supermarket = request.form['drop_down_supermarket']
         user_park = request.form['drop_down_parks']
 
-        alogone.algo(int(user_hospital), int(user_area), int(user_mrt), int(user_supermarket), int(user_park))
-        alogone.predicition_for_percentage()
-        alogone.get_data_from_million_door_file()
-        alogone.profit()
+        logic_caculation.algo(int(user_hospital), int(user_area), int(user_mrt), int(user_supermarket), int(user_park))
+        logic_caculation.predicition_for_percentage()
+        logic_caculation.get_data_from_million_door_file()
+        logic_caculation.profit()
         return render_template('charts.html' )
     
 
@@ -265,9 +265,9 @@ def which_chart():
         userchoice = request.form['my_dropdown_plot']
 
         if userchoice == "0":
-            data = table_d.display_table_test()
+            data = plotCharts.display_table_test()
         elif userchoice == "1":
-            data = table_d.heatmap()
+            data = plotCharts.heatmap()
 
         return render_template('charts.html', data = data)
     
