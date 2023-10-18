@@ -21,7 +21,7 @@ The user can just press all other button if they wasnt to test out the scrapping
 2. Navigate to the directory where this project is located using the `cd` command. For example, if the project is on your desktop, you can navigate to it like this:
 
     ```bash
-    cd Desktop/Your_Project_Directory
+    cd Desktop/HDB_Project
     ```
 
 3. Ensure you have Python 3 installed. You can check this by running:
