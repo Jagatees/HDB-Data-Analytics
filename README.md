@@ -7,6 +7,13 @@ The Housing and Development Board (HDB) program, which has given Singaporeans ac
 https://www.99.co/
 https://www.srx.com.sg/
 
+
+## Restrcition and limitation
+
+Due to the API Limitation we have loading the project with pre saved data so the user will not need to run the "Run Algoritm Button" as the api limit to 2 request per sec and if based on how many page the user scrape the it will be 2 to the power of n = x sex, There is a limit of 5000 request per day 
+
+The user can just press all other button if they wasnt to test out the scrapping and drawing of map and plot just be mind full that if u run the algoithm button it will take a while based on how many page the user has scrapper :)
+
 ### Running the Application
 
 1. Open your command prompt (Windows) or terminal (Linux/macOS).
