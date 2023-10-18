@@ -13,13 +13,11 @@ body {
     height: 100vh;
 }
 
-/* -------------- CONTAINER -------------- */
 .container {
     display: flex;
     height: 100%;
 }
 
-/* -------------- SIDEBAR -------------- */
 .sidebar {
     width: 240px;
     display: flex;
@@ -98,7 +96,6 @@ body {
     overflow: auto;
 }
 
-/* -------------- TOP CONTAINER -------------- */
 .top-container {
     border-bottom: 1px solid #F3F5F7;
     padding: 18px 32px;
@@ -107,7 +104,6 @@ body {
     align-items: center;
 }
 
-/* -------------- BOTTOM CONTAINER -------------- */
 .bottom-container {
     display: flex;
     gap: 24px;
@@ -119,7 +115,7 @@ body {
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 24px;
-    margin-bottom: 24px; /*fix later*/
+    margin-bottom: 24px;
 }
 
 .bottom-container__left {
@@ -134,7 +130,6 @@ body {
     max-height: 338px;
 }
 
-/* -------------- HEADER -------------- */
 .header-container {
     color: #1A202C;
     display: flex;
@@ -202,7 +197,6 @@ body {
 
 
 
-/* -------------- BUTTON -------------- */
 .button-box {
     display: flex;
     justify-content: space-between;
