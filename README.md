@@ -55,3 +55,10 @@ this into the search bar http://127.0.0.1:5001
 
 That's it! You've successfully set up and run the application for exploring the Maximizing Investment Returns in Singapore's HDB Resale Market Project
 
+## Video
+
+[![Video](https://img.youtube.com/vi/URZFbuW5BkY/0.jpg)](https://youtu.be/URZFbuW5BkY)
+
+Click on the image above to watch the video.
+
+
