@@ -59,6 +59,9 @@ That's it! You've successfully set up and run the application for exploring the 
 
 [![Video](https://img.youtube.com/vi/URZFbuW5BkY/0.jpg)](https://youtu.be/URZFbuW5BkY)
 
+Click on the image above to watch the video.
+
+
 ## Teammates
 
 <table>
@@ -81,6 +84,5 @@ Jongohzh</b></sub></a><br />
 </table>
 
 
-Click on the image above to watch the video.
 
 
